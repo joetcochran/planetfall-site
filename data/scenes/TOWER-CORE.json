@@ -1,0 +1,26 @@
+{
+  "note": "Tower Core built from the parts kit (DR-063), against its approved TOWER-CORE.metadata.json. This is the kit's second shell: a drum rather than a box, which is the point of proving it here -- the room is a small circular interior and the graybox could only ever draw it as four flat walls. Gap angles are degrees clockwise from north, and each one is the arc its opening subtends at the wall: half-angle = asin(halfWidth / radius). `head` is the height of the opening, matching the north frame's 2.5 m: without it the gap is a slot cut to the ceiling, and DR-092's fixture above the north door has no wall to be mounted on.",
+  "parts": [
+    { "part": "drum", "radius": 3.4, "height": 4.2, "segments": 56,
+      "wall": "concrete", "floor": "concrete-worn", "ceiling": "ceiling",
+      "gaps": [
+        { "from": -19, "to": 19, "head": 2.5 },
+        { "from": 32, "to": 58, "head": 2.5 },
+        { "from": 212, "to": 238, "head": 2.5 }
+      ] },
+
+    { "part": "frame", "at": [0, 1.25, -3.34], "facing": "NORTH", "size": [2.2, 2.5], "band": 0.16, "depth": 0.12,
+      "material": "trim" },
+    { "part": "prop", "at": [0, 1.25, -3.4], "size": [2.16, 2.46, 0.1], "material": "plate-steel",
+      "when": "UPPER-ELEVATOR-DOOR without OPENBIT" },
+
+    { "part": "stair", "from": [-2.2, 0.06, 1.05], "to": [-2.2, 4.1, -1.05], "width": 1.1, "treads": 16,
+      "tread": "plate-steel", "rail": "trim" },
+    { "part": "prop", "at": [-2.2, 0.5, 0], "size": [0.34, 1.0, 0.34], "shape": "cylinder", "material": "trim" },
+
+    { "part": "light", "at": [0, 4.05, 0], "size": [1.4, 0.07, 0.3], "material": "lamp-cool",
+      "cast": { "intensity": 30, "distance": 14 } },
+    { "part": "light", "at": [1.9, 2.5, -1.9], "size": [0.3, 0.05, 0.18], "material": "lamp-warm",
+      "cast": { "intensity": 8, "distance": 6, "color": 14198368 } }
+  ]
+}

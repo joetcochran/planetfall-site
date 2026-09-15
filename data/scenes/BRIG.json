@@ -1,0 +1,94 @@
+{
+  "note": [
+    "The Brig's fabric (DR-109), from scripts/fabric-feinstein.mjs -- regenerate from there, do not hand-edit. BRIG v1: a 4 x 2.6 x 4 cell, the eye at the middle. It sees nothing and nothing sees it; its place in the file's frame is not a claim about the map.",
+    "South, the cell door shut in a 1.0 x 2.1 m opening, set 5 cm back behind a 0.3 m frame; it never opens. One lamp. Bare walls: the graffiti that cover them are the painting's."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        4,
+        2.6,
+        4
+      ],
+      "thickness": 0.1,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.05,
+          1,
+          2.1
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.05,
+        2.05
+      ],
+      "size": [
+        1,
+        0.1,
+        0.1
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.05,
+        2.075
+      ],
+      "size": [
+        1,
+        2.1,
+        0.05
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.05,
+        1.95
+      ],
+      "facing": "SOUTH",
+      "size": [
+        1,
+        2.1
+      ],
+      "band": 0.3,
+      "depth": 0.1
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        2.56,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 14,
+        "distance": 8
+      }
+    }
+  ]
+}

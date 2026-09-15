@@ -1,0 +1,1955 @@
+{
+ "title": "How far each blind playtester got in Planetfall",
+ "maxScore": 80,
+ "maxScoreSource": "source/verbs.zil:227 (\"(out of 80 points)\"), and verbs.zil:240, where the rank Galactic Overlord is exactly 80; the port prints the same line (wwwroot/engine/verbs.js:34).",
+ "method": [
+  "Every number is read from the session transcripts that scripts/playtest.mjs wrote (scripts/out/playtest/<session>-transcript.txt). Each game response ends in a status line \"-- <room> · turn N · time T · score S\", with \"YOU HAVE DIED\" or \"GAME WON\" appended when that happens; commands are the lines beginning \"> \".",
+  "Best score is the highest score on any status line; final score is the score on the last status line of play; deaths count the \"****  You have died  ****\" banners (the status line repeats while dead, and the repeats are not counted).",
+  "Each diary was then checked against those numbers, and the diary line that states them is cited beside the transcript line. Where the two disagree the transcript is used and the difference is given in a note.",
+  "The transcripts are local files and are not in git (.gitignore: scripts/out/); the diaries in playtests/ are.",
+  "Commands include everything sent to the game: free actions such as save and restore, click-mode submenu openings, and commands answered while dead."
+ ],
+ "checkpoints": {
+  "tower-core": {
+   "room": "Tower Core",
+   "turn": 107,
+   "score": 21,
+   "source": "scripts/out/playtest/click-4-late-transcript.txt:23"
+  },
+  "lawanda": {
+   "room": "Lawanda Platform",
+   "turn": 256,
+   "score": 42,
+   "source": "scripts/out/playtest/typed-8-lawanda-transcript.txt:29"
+  }
+ },
+ "missing": "None. Every one of the 25 diaries in playtests/ has a transcript, and every tester's score was found.",
+ "rounds": [
+  {
+   "round": 1,
+   "date": "2026-09-10",
+   "testers": [
+    {
+     "session": "typed-1",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 300,
+     "bestScore": 10,
+     "finalScore": 10,
+     "finalState": "Rec Area, turn 245",
+     "deaths": 2,
+     "freshStarts": 3,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-typed.md",
+      "best": "scripts/out/playtest/typed-1-transcript.txt:735",
+      "final": "scripts/out/playtest/typed-1-transcript.txt:1250; playtests/2026-09-10/2026-09-10-typed.md:696",
+      "deaths": "scripts/out/playtest/typed-1-transcript.txt:83, scripts/out/playtest/typed-1-transcript.txt:153; playtests/2026-09-10/2026-09-10-typed.md:745"
+     },
+     "note": "Three games: two deaths on the Feinstein (attacked Blather; missed the pod), then a third game to turn 245."
+    },
+    {
+     "session": "click-1",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 376,
+     "bestScore": 19,
+     "finalScore": 19,
+     "finalState": "Reactor Access Stairs, turn 347",
+     "deaths": 1,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-click.md",
+      "best": "scripts/out/playtest/click-1-transcript.txt:39729; playtests/2026-09-10/2026-09-10-click.md:798",
+      "final": "scripts/out/playtest/click-1-transcript.txt:43619; playtests/2026-09-10/2026-09-10-click.md:892",
+      "deaths": "scripts/out/playtest/click-1-transcript.txt:43619; playtests/2026-09-10/2026-09-10-click.md:981"
+     }
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "date": "2026-09-10",
+   "testers": [
+    {
+     "session": "typed-2",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 239,
+     "bestScore": 14,
+     "finalScore": 14,
+     "finalState": "Dorm D, turn 218",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-typed-2.md",
+      "best": "scripts/out/playtest/typed-2-transcript.txt:931",
+      "final": "scripts/out/playtest/typed-2-transcript.txt:1015; playtests/2026-09-10/2026-09-10-typed-2.md:153",
+      "deaths": "no death banner in scripts/out/playtest/typed-2-transcript.txt"
+     }
+    },
+    {
+     "session": "click-2",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 203,
+     "bestScore": 8,
+     "finalScore": 8,
+     "finalState": "Dorm D, turn 191",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-click-2.md",
+      "best": "scripts/out/playtest/click-2-transcript.txt:3077",
+      "final": "scripts/out/playtest/click-2-transcript.txt:5268; playtests/2026-09-10/2026-09-10-click-2.md:230",
+      "deaths": "no death banner in scripts/out/playtest/click-2-transcript.txt; playtests/2026-09-10/2026-09-10-click-2.md:230"
+     }
+    }
+   ]
+  },
+  {
+   "round": 3,
+   "date": "2026-09-10",
+   "testers": [
+    {
+     "session": "typed-3",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 199,
+     "bestScore": 23,
+     "finalScore": 23,
+     "finalState": "Helipad, turn 191",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-typed-3.md",
+      "best": "scripts/out/playtest/typed-3-transcript.txt:926",
+      "final": "scripts/out/playtest/typed-3-transcript.txt:937; playtests/2026-09-10/2026-09-10-typed-3.md:110",
+      "deaths": "no death banner in scripts/out/playtest/typed-3-transcript.txt; playtests/2026-09-10/2026-09-10-typed-3.md:110"
+     }
+    },
+    {
+     "session": "click-3",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 248,
+     "bestScore": 28,
+     "finalScore": 28,
+     "finalState": "Tower Core, turn 233",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-click-3.md",
+      "best": "scripts/out/playtest/click-3-transcript.txt:6642",
+      "final": "scripts/out/playtest/click-3-transcript.txt:6642; playtests/2026-09-10/2026-09-10-click-3.md:144",
+      "deaths": "no death banner in scripts/out/playtest/click-3-transcript.txt; playtests/2026-09-10/2026-09-10-click-3.md:144"
+     }
+    }
+   ]
+  },
+  {
+   "round": 4,
+   "date": "2026-09-10",
+   "testers": [
+    {
+     "session": "typed-4",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 196,
+     "bestScore": 18,
+     "finalScore": 18,
+     "finalState": "Small Office, turn 167",
+     "deaths": 1,
+     "freshStarts": 2,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-typed-4.md",
+      "best": "scripts/out/playtest/typed-4-transcript.txt:913",
+      "final": "scripts/out/playtest/typed-4-transcript.txt:914; playtests/2026-09-10/2026-09-10-typed-4.md:115",
+      "deaths": "scripts/out/playtest/typed-4-transcript.txt:111; playtests/2026-09-10/2026-09-10-typed-4.md:115"
+     }
+    },
+    {
+     "session": "click-4",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 229,
+     "bestScore": 23,
+     "finalScore": 23,
+     "finalState": "Observation Deck, turn 221",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-click-4.md",
+      "best": "scripts/out/playtest/click-4-transcript.txt:5825",
+      "final": "scripts/out/playtest/click-4-transcript.txt:6162; playtests/2026-09-10/2026-09-10-click-4.md:132",
+      "deaths": "no death banner in scripts/out/playtest/click-4-transcript.txt; playtests/2026-09-10/2026-09-10-click-4.md:132"
+     }
+    },
+    {
+     "session": "click-4-late",
+     "mode": "click",
+     "start": "checkpoint \"tower-core\" (Tower Core, turn 107, score 21)",
+     "startScore": 21,
+     "legs": 1,
+     "commands": 410,
+     "bestScore": 42,
+     "finalScore": 42,
+     "finalState": "Kitchen, turn 499",
+     "deaths": 1,
+     "freshStarts": 2,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-click-4-late.md",
+      "best": "scripts/out/playtest/click-4-late-transcript.txt:9697",
+      "final": "scripts/out/playtest/click-4-late-transcript.txt:12990; playtests/2026-09-10/2026-09-10-click-4-late.md:182",
+      "deaths": "scripts/out/playtest/click-4-late-transcript.txt:12990; playtests/2026-09-10/2026-09-10-click-4-late.md:182"
+     },
+     "note": "Died at 42 at turn 499, then restarted once from the checkpoint only to confirm it (diary line 182), so the transcript's last line reads 21. The final score here is the score at the death that ended play."
+    }
+   ]
+  },
+  {
+   "round": 5,
+   "date": "2026-09-10",
+   "testers": [
+    {
+     "session": "typed-5",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 207,
+     "bestScore": 21,
+     "finalScore": 21,
+     "finalState": "Tower Core, turn 196",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-typed-5.md",
+      "best": "scripts/out/playtest/typed-5-transcript.txt:968",
+      "final": "scripts/out/playtest/typed-5-transcript.txt:969; playtests/2026-09-10/2026-09-10-typed-5.md:147",
+      "deaths": "no death banner in scripts/out/playtest/typed-5-transcript.txt; playtests/2026-09-10/2026-09-10-typed-5.md:147"
+     }
+    },
+    {
+     "session": "click-5",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 222,
+     "bestScore": 23,
+     "finalScore": 23,
+     "finalState": "Tower Core, turn 215",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-click-5.md",
+      "best": "scripts/out/playtest/click-5-transcript.txt:5653",
+      "final": "scripts/out/playtest/click-5-transcript.txt:5653; playtests/2026-09-10/2026-09-10-click-5.md:117",
+      "deaths": "no death banner in scripts/out/playtest/click-5-transcript.txt; playtests/2026-09-10/2026-09-10-click-5.md:117"
+     }
+    },
+    {
+     "session": "click-5-late",
+     "mode": "click",
+     "start": "checkpoint \"tower-core\" (Tower Core, turn 107, score 21)",
+     "startScore": 21,
+     "legs": 1,
+     "commands": 261,
+     "bestScore": 42,
+     "finalScore": 42,
+     "finalState": "Repair Room, turn 355",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-10/2026-09-10-click-5-late.md",
+      "best": "scripts/out/playtest/click-5-late-transcript.txt:6963",
+      "final": "scripts/out/playtest/click-5-late-transcript.txt:7633; playtests/2026-09-10/2026-09-10-click-5-late.md:130",
+      "deaths": "no death banner in scripts/out/playtest/click-5-late-transcript.txt"
+     }
+    }
+   ]
+  },
+  {
+   "round": 6,
+   "date": "2026-09-11",
+   "testers": [
+    {
+     "session": "typed-6",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 204,
+     "bestScore": 21,
+     "finalScore": 21,
+     "finalState": "Tower Core, turn 195",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-typed-6.md",
+      "best": "scripts/out/playtest/typed-6-transcript.txt:962",
+      "final": "scripts/out/playtest/typed-6-transcript.txt:963; playtests/2026-09-11/2026-09-11-typed-6.md:127",
+      "deaths": "no death banner in scripts/out/playtest/typed-6-transcript.txt; playtests/2026-09-11/2026-09-11-typed-6.md:127"
+     }
+    },
+    {
+     "session": "click-6",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 222,
+     "bestScore": 27,
+     "finalScore": 27,
+     "finalState": "Tower Core, turn 213",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-click-6.md",
+      "best": "scripts/out/playtest/click-6-transcript.txt:5491",
+      "final": "scripts/out/playtest/click-6-transcript.txt:5515; playtests/2026-09-11/2026-09-11-click-6.md:165",
+      "deaths": "no death banner in scripts/out/playtest/click-6-transcript.txt; playtests/2026-09-11/2026-09-11-click-6.md:165"
+     }
+    },
+    {
+     "session": "click-6-late",
+     "mode": "click",
+     "start": "checkpoint \"tower-core\" (Tower Core, turn 107, score 21)",
+     "startScore": 21,
+     "legs": 1,
+     "commands": 316,
+     "bestScore": 40,
+     "finalScore": 40,
+     "finalState": "Alfie Control East, turn 403",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-click-6-late.md",
+      "best": "scripts/out/playtest/click-6-late-transcript.txt:8482",
+      "final": "scripts/out/playtest/click-6-late-transcript.txt:8817; playtests/2026-09-11/2026-09-11-click-6-late.md:132",
+      "deaths": "no death banner in scripts/out/playtest/click-6-late-transcript.txt"
+     }
+    }
+   ]
+  },
+  {
+   "round": 7,
+   "date": "2026-09-11",
+   "testers": [
+    {
+     "session": "typed-7-late",
+     "mode": "typed",
+     "start": "checkpoint \"tower-core\" (Tower Core, turn 107, score 21)",
+     "startScore": 21,
+     "legs": 1,
+     "commands": 339,
+     "bestScore": 42,
+     "finalScore": 42,
+     "finalState": "Fork, turn 410",
+     "deaths": 0,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-typed-7-late.md",
+      "best": "scripts/out/playtest/typed-7-late-transcript.txt:1560",
+      "final": "scripts/out/playtest/typed-7-late-transcript.txt:1586; playtests/2026-09-11/2026-09-11-typed-7-late.md:167",
+      "deaths": "no death banner in scripts/out/playtest/typed-7-late-transcript.txt"
+     }
+    },
+    {
+     "session": "click-7-late",
+     "mode": "click",
+     "start": "checkpoint \"tower-core\" (Tower Core, turn 107, score 21)",
+     "startScore": 21,
+     "legs": 1,
+     "commands": 313,
+     "bestScore": 35,
+     "finalScore": 35,
+     "finalState": "Reactor Access Stairs, turn 271",
+     "deaths": 2,
+     "freshStarts": 2,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-click-7-late.md",
+      "best": "scripts/out/playtest/click-7-late-transcript.txt:9302",
+      "final": "scripts/out/playtest/click-7-late-transcript.txt:10028; playtests/2026-09-11/2026-09-11-click-7-late.md:142",
+      "deaths": "scripts/out/playtest/click-7-late-transcript.txt:4548, scripts/out/playtest/click-7-late-transcript.txt:10028; playtests/2026-09-11/2026-09-11-click-7-late.md:142"
+     },
+     "note": "Both deaths ended the game: restore after death did not work on that build, so each was a restart from the checkpoint (diary line 118)."
+    }
+   ]
+  },
+  {
+   "round": 8,
+   "date": "2026-09-11",
+   "testers": [
+    {
+     "session": "typed-8-lawanda",
+     "mode": "typed",
+     "start": "checkpoint \"lawanda\" (Lawanda Platform, turn 256, score 42)",
+     "startScore": 42,
+     "legs": 1,
+     "commands": 301,
+     "bestScore": 80,
+     "finalScore": 80,
+     "finalState": "Cryo-Anteroom, turn 510, GAME WON",
+     "deaths": 3,
+     "freshStarts": 1,
+     "won": true,
+     "wins": [
+      {
+       "score": 80,
+       "turn": 510,
+       "source": "scripts/out/playtest/typed-8-lawanda-transcript.txt:1573"
+      }
+     ],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-typed-8-lawanda.md",
+      "best": "scripts/out/playtest/typed-8-lawanda-transcript.txt:1536",
+      "final": "scripts/out/playtest/typed-8-lawanda-transcript.txt:1573; playtests/2026-09-11/2026-09-11-typed-8-lawanda.md:125",
+      "deaths": "scripts/out/playtest/typed-8-lawanda-transcript.txt:1120, scripts/out/playtest/typed-8-lawanda-transcript.txt:1351, scripts/out/playtest/typed-8-lawanda-transcript.txt:1454; playtests/2026-09-11/2026-09-11-typed-8-lawanda.md:125"
+     },
+     "note": "Three deaths, each restored from a save."
+    },
+    {
+     "session": "click-8-lawanda",
+     "mode": "click",
+     "start": "checkpoint \"lawanda\" (Lawanda Platform, turn 256, score 42)",
+     "startScore": 42,
+     "legs": 1,
+     "commands": 319,
+     "bestScore": 80,
+     "finalScore": 80,
+     "finalState": "Cryo-Anteroom, turn 369, GAME WON",
+     "deaths": 2,
+     "freshStarts": 2,
+     "won": true,
+     "wins": [
+      {
+       "score": 74,
+       "turn": 409,
+       "source": "scripts/out/playtest/click-8-lawanda-transcript.txt:4957"
+      },
+      {
+       "score": 80,
+       "turn": 369,
+       "source": "scripts/out/playtest/click-8-lawanda-transcript.txt:8749"
+      }
+     ],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-click-8-lawanda.md",
+      "best": "scripts/out/playtest/click-8-lawanda-transcript.txt:8611",
+      "final": "scripts/out/playtest/click-8-lawanda-transcript.txt:8749; playtests/2026-09-11/2026-09-11-click-8-lawanda.md:91",
+      "deaths": "scripts/out/playtest/click-8-lawanda-transcript.txt:3778, scripts/out/playtest/click-8-lawanda-transcript.txt:6548; playtests/2026-09-11/2026-09-11-click-8-lawanda.md:94"
+     },
+     "note": "Won twice: 74 of 80 at turn 409 on its second attempt (transcript line 4957), then restarted from the checkpoint by choice and won 80 of 80 at turn 369 (diary line 73 explains the restart)."
+    }
+   ]
+  },
+  {
+   "round": 10,
+   "date": "2026-09-11",
+   "testers": [
+    {
+     "session": "typed-10",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 3,
+     "commands": 941,
+     "bestScore": 35,
+     "finalScore": 35,
+     "finalState": "Rec Area, turn 583",
+     "deaths": 4,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-typed-10.md",
+      "best": "scripts/out/playtest/typed-10-transcript.txt:1941",
+      "final": "scripts/out/playtest/typed-10-transcript.txt:4742; playtests/2026-09-11/2026-09-11-typed-10.md:430",
+      "deaths": "scripts/out/playtest/typed-10-transcript.txt:1406, scripts/out/playtest/typed-10-transcript.txt:2765, scripts/out/playtest/typed-10-transcript.txt:3143, scripts/out/playtest/typed-10-transcript.txt:4671; playtests/2026-09-11/2026-09-11-typed-10.md:430"
+     },
+     "note": "Leg 3 was not strictly blind (playtests/README.md); its score did not move."
+    },
+    {
+     "session": "click-10",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 3,
+     "commands": 1212,
+     "bestScore": 53,
+     "finalScore": 53,
+     "finalState": "Infirmary, turn 1000",
+     "deaths": 1,
+     "freshStarts": 1,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-click-10.md",
+      "best": "scripts/out/playtest/click-10-transcript.txt:31419",
+      "final": "scripts/out/playtest/click-10-transcript.txt:32306; playtests/2026-09-11/2026-09-11-click-10.md:435",
+      "deaths": "scripts/out/playtest/click-10-transcript.txt:8174; playtests/2026-09-11/2026-09-11-click-10.md:435"
+     },
+     "note": "The diary's report (line 435) says two deaths by starvation in leg 1; the transcript has one death (line 8174). The other rollback in leg 1 was a restore while alive, to undo a smeared access card (diary line 92)."
+    }
+   ]
+  },
+  {
+   "round": 11,
+   "date": "2026-09-11",
+   "testers": [
+    {
+     "session": "typed-11",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 3,
+     "commands": 951,
+     "bestScore": 44,
+     "finalScore": 30,
+     "finalState": "Dorm C, turn 216",
+     "deaths": 5,
+     "freshStarts": 4,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-typed-11.md",
+      "best": "scripts/out/playtest/typed-11-transcript.txt:2353; playtests/2026-09-11/2026-09-11-typed-11.md:685",
+      "final": "scripts/out/playtest/typed-11-transcript.txt:4670; playtests/2026-09-11/2026-09-11-typed-11.md:932",
+      "deaths": "scripts/out/playtest/typed-11-transcript.txt:123, scripts/out/playtest/typed-11-transcript.txt:2847, scripts/out/playtest/typed-11-transcript.txt:3018, scripts/out/playtest/typed-11-transcript.txt:3456, scripts/out/playtest/typed-11-transcript.txt:3489; playtests/2026-09-11/2026-09-11-typed-11.md:994"
+     },
+     "note": "Best 44 in leg 2, which ended in death with no save; leg 3 restarted from the beginning twice and ended alive at 30. The diary's verdict (line 994) counts three deaths; the transcript has five: one on the Feinstein in leg 1, starvation at the end of leg 2, and three in leg 3's first fresh run (drowned, then starved twice, each restored from that run's save) before it started again from the beginning."
+    },
+    {
+     "session": "click-11",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 3,
+     "commands": 1014,
+     "bestScore": 49,
+     "finalScore": 49,
+     "finalState": "Infirmary, turn 433",
+     "deaths": 6,
+     "freshStarts": 2,
+     "won": false,
+     "wins": [],
+     "sources": {
+      "diary": "playtests/2026-09-11/2026-09-11-click-11.md",
+      "best": "scripts/out/playtest/click-11-transcript.txt:24970",
+      "final": "scripts/out/playtest/click-11-transcript.txt:25295; playtests/2026-09-11/2026-09-11-click-11.md:956",
+      "deaths": "scripts/out/playtest/click-11-transcript.txt:8747, scripts/out/playtest/click-11-transcript.txt:9071, scripts/out/playtest/click-11-transcript.txt:10053, scripts/out/playtest/click-11-transcript.txt:10312, scripts/out/playtest/click-11-transcript.txt:14707, scripts/out/playtest/click-11-transcript.txt:16098; playtests/2026-09-11/2026-09-11-click-11.md:493"
+     },
+     "note": "Leg 2 was a restart from the beginning after leg 1 drowned at 15."
+    }
+   ]
+  },
+  {
+   "round": 12,
+   "date": "2026-09-12",
+   "testers": [
+    {
+     "session": "typed-12",
+     "mode": "typed",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 2,
+     "commands": 1489,
+     "bestScore": 74,
+     "finalScore": 74,
+     "finalState": "Cryo-Anteroom, turn 692, GAME WON",
+     "deaths": 26,
+     "freshStarts": 4,
+     "won": true,
+     "wins": [
+      {
+       "score": 74,
+       "turn": 692,
+       "source": "scripts/out/playtest/typed-12-transcript.txt:7907"
+      }
+     ],
+     "sources": {
+      "diary": "playtests/2026-09-12/2026-09-12-typed-12.md",
+      "best": "scripts/out/playtest/typed-12-transcript.txt:7860",
+      "final": "scripts/out/playtest/typed-12-transcript.txt:7907; playtests/2026-09-12/2026-09-12-typed-12.md:761",
+      "deaths": "scripts/out/playtest/typed-12-transcript.txt:155, scripts/out/playtest/typed-12-transcript.txt:223, scripts/out/playtest/typed-12-transcript.txt:1370, scripts/out/playtest/typed-12-transcript.txt:4288, scripts/out/playtest/typed-12-transcript.txt:5639, scripts/out/playtest/typed-12-transcript.txt:5691, scripts/out/playtest/typed-12-transcript.txt:5732, scripts/out/playtest/typed-12-transcript.txt:5768, scripts/out/playtest/typed-12-transcript.txt:5835, scripts/out/playtest/typed-12-transcript.txt:5965, scripts/out/playtest/typed-12-transcript.txt:6066, scripts/out/playtest/typed-12-transcript.txt:6161, scripts/out/playtest/typed-12-transcript.txt:6182, scripts/out/playtest/typed-12-transcript.txt:6235, scripts/out/playtest/typed-12-transcript.txt:6337, scripts/out/playtest/typed-12-transcript.txt:6440, scripts/out/playtest/typed-12-transcript.txt:6561, scripts/out/playtest/typed-12-transcript.txt:6682, scripts/out/playtest/typed-12-transcript.txt:6769, scripts/out/playtest/typed-12-transcript.txt:6855, scripts/out/playtest/typed-12-transcript.txt:7053, scripts/out/playtest/typed-12-transcript.txt:7127, scripts/out/playtest/typed-12-transcript.txt:7257, scripts/out/playtest/typed-12-transcript.txt:7336, scripts/out/playtest/typed-12-transcript.txt:7515, scripts/out/playtest/typed-12-transcript.txt:7727; playtests/2026-09-12/2026-09-12-typed-12.md:417"
+     },
+     "note": "The leg 1 report (line 417) counts three deaths; the transcript has four (a second, 13-turn game that died waiting on the Feinstein is not in the diary). The leg 2 report (line 783) says \"roughly a dozen deaths\"; the transcript has 22 deaths from command 1127 on, six of them in the first leg 2 attempt that was cut off before writing anything."
+    },
+    {
+     "session": "click-12",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 2,
+     "commands": 1140,
+     "bestScore": 80,
+     "finalScore": 80,
+     "finalState": "Cryo-Anteroom, turn 963, GAME WON",
+     "deaths": 5,
+     "freshStarts": 2,
+     "won": true,
+     "wins": [
+      {
+       "score": 80,
+       "turn": 963,
+       "source": "scripts/out/playtest/click-12-transcript.txt:28245"
+      }
+     ],
+     "sources": {
+      "diary": "playtests/2026-09-12/2026-09-12-click-12.md",
+      "best": "scripts/out/playtest/click-12-transcript.txt:28157",
+      "final": "scripts/out/playtest/click-12-transcript.txt:28245; playtests/2026-09-12/2026-09-12-click-12.md:1054",
+      "deaths": "scripts/out/playtest/click-12-transcript.txt:513, scripts/out/playtest/click-12-transcript.txt:23963, scripts/out/playtest/click-12-transcript.txt:25464, scripts/out/playtest/click-12-transcript.txt:25757, scripts/out/playtest/click-12-transcript.txt:27271; playtests/2026-09-12/2026-09-12-click-12.md:1073"
+     },
+     "note": "The leg 2 report (line 1073) counts three deaths; the transcript has four in leg 2 (radiation poisoning twice)."
+    }
+   ]
+  }
+ ],
+ "lifeByLife": {
+  "about": "The runs from the start, played in legs (rounds 10 to 12), life by life. A life ends in a death, a win, a restore or restart while alive, or the end of the session. \"began\" says how a life started: a fresh game from the beginning (--new), or a restored save. commands is the range of the session's command count the life covers; steps are [command, score] at each change of score.",
+  "runs": [
+   {
+    "round": 10,
+    "session": "typed-10",
+    "mode": "typed",
+    "commands": 941,
+    "lives": [
+     {
+      "life": 1,
+      "began": "start",
+      "commands": [0, 292],
+      "turns": [0, 267],
+      "startScore": 0,
+      "bestScore": 23,
+      "endScore": 23,
+      "ended": "died",
+      "cause": "starved (hunger and thirst)",
+      "fatalCommand": "west",
+      "where": "Dorm Corridor",
+      "source": "scripts/out/playtest/typed-10-transcript.txt:6-1406",
+      "steps": [
+       [0, 0],
+       [23, 3],
+       [41, 6],
+       [164, 8],
+       [197, 12],
+       [237, 16],
+       [248, 18],
+       [251, 19],
+       [270, 23]
+      ]
+     },
+     {
+      "life": 2,
+      "began": "restored a save after death",
+      "commands": [293, 554],
+      "turns": [230, 475],
+      "startScore": 19,
+      "bestScore": 35,
+      "endScore": 35,
+      "ended": "died",
+      "cause": "eaten by a grue on the dark Reactor Access Stairs",
+      "fatalCommand": "down",
+      "where": "Reactor Access Stairs",
+      "source": "scripts/out/playtest/typed-10-transcript.txt:1414-2765",
+      "steps": [
+       [293, 19],
+       [309, 23],
+       [341, 27],
+       [366, 29],
+       [390, 35]
+      ]
+     },
+     {
+      "life": 3,
+      "began": "restored a save after death",
+      "commands": [555, 622],
+      "turns": [326, 384],
+      "startScore": 35,
+      "bestScore": 35,
+      "endScore": 35,
+      "ended": "died",
+      "cause": "drowned: went back down into the sea",
+      "fatalCommand": "down",
+      "where": "Underwater",
+      "source": "scripts/out/playtest/typed-10-transcript.txt:2778-3143",
+      "steps": [
+       [555, 35]
+      ]
+     },
+     {
+      "life": 4,
+      "began": "restored a save after death",
+      "commands": [623, 928],
+      "turns": [326, 605],
+      "startScore": 35,
+      "bestScore": 35,
+      "endScore": 35,
+      "ended": "died",
+      "cause": "eaten by a grue on the dark Reactor Access Stairs",
+      "fatalCommand": "down",
+      "where": "Reactor Access Stairs",
+      "source": "scripts/out/playtest/typed-10-transcript.txt:3156-4671",
+      "steps": [
+       [623, 35]
+      ]
+     },
+     {
+      "life": 5,
+      "began": "restored a save after death",
+      "commands": [929, 941],
+      "turns": [571, 583],
+      "startScore": 35,
+      "bestScore": 35,
+      "endScore": 35,
+      "ended": "session ended alive",
+      "where": "Rec Area",
+      "source": "scripts/out/playtest/typed-10-transcript.txt:4688-4742",
+      "steps": [
+       [929, 35]
+      ]
+     }
+    ]
+   },
+   {
+    "round": 10,
+    "session": "click-10",
+    "mode": "click",
+    "commands": 1212,
+    "lives": [
+     {
+      "life": 1,
+      "began": "start",
+      "commands": [0, 221],
+      "turns": [0, 190],
+      "startScore": 0,
+      "bestScore": 17,
+      "endScore": 17,
+      "ended": "left alive: restored an earlier save",
+      "where": "Plan Room",
+      "source": "scripts/out/playtest/click-10-transcript.txt:6-5433",
+      "steps": [
+       [0, 0],
+       [21, 3],
+       [41, 6],
+       [156, 8],
+       [172, 12],
+       [207, 16],
+       [212, 17]
+      ]
+     },
+     {
+      "life": 2,
+      "began": "restored a save while alive",
+      "commands": [222, 328],
+      "turns": [67, 171],
+      "startScore": 6,
+      "bestScore": 27,
+      "endScore": 27,
+      "ended": "died",
+      "cause": "starved (hunger and thirst)",
+      "fatalCommand": "diagnose",
+      "where": "Dorm D",
+      "source": "scripts/out/playtest/click-10-transcript.txt:5453-8174",
+      "steps": [
+       [222, 6],
+       [228, 8],
+       [251, 12],
+       [263, 16],
+       [266, 17],
+       [267, 18],
+       [270, 19],
+       [286, 23],
+       [314, 27]
+      ]
+     },
+     {
+      "life": 3,
+      "began": "restored a save after death",
+      "commands": [329, 1212],
+      "turns": [164, 1000],
+      "startScore": 27,
+      "bestScore": 53,
+      "endScore": 53,
+      "ended": "session ended alive",
+      "where": "Infirmary",
+      "source": "scripts/out/playtest/click-10-transcript.txt:8189-32306",
+      "steps": [
+       [329, 27],
+       [411, 33],
+       [472, 35],
+       [865, 36],
+       [884, 40],
+       [1003, 44],
+       [1154, 50],
+       [1178, 52],
+       [1179, 53]
+      ]
+     }
+    ]
+   },
+   {
+    "round": 11,
+    "session": "typed-11",
+    "mode": "typed",
+    "commands": 951,
+    "lives": [
+     {
+      "life": 1,
+      "began": "start",
+      "commands": [0, 26],
+      "turns": [0, 24],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "died",
+      "cause": "went down with the Feinstein (not in the escape pod in time)",
+      "fatalCommand": "wait",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/typed-11-transcript.txt:6-123",
+      "steps": [
+       [0, 0]
+      ]
+     },
+     {
+      "life": 2,
+      "began": "restart from the beginning (--new)",
+      "commands": [26, 601],
+      "turns": [0, 532],
+      "startScore": 0,
+      "bestScore": 44,
+      "endScore": 44,
+      "ended": "died",
+      "cause": "starved (hunger and thirst)",
+      "fatalCommand": "wait",
+      "where": "Repair Room",
+      "source": "scripts/out/playtest/typed-11-transcript.txt:147-2847",
+      "steps": [
+       [26, 0],
+       [50, 3],
+       [71, 6],
+       [205, 8],
+       [218, 9],
+       [219, 11],
+       [243, 15],
+       [267, 19],
+       [271, 21],
+       [274, 22],
+       [295, 26],
+       [330, 30],
+       [408, 36],
+       [446, 40],
+       [498, 44]
+      ]
+     },
+     {
+      "life": 3,
+      "began": "restart from the beginning (--new)",
+      "commands": [601, 636],
+      "turns": [0, 32],
+      "startScore": 0,
+      "bestScore": 6,
+      "endScore": 6,
+      "ended": "died",
+      "cause": "drowned: went back down into the sea",
+      "fatalCommand": "down",
+      "where": "Underwater",
+      "source": "scripts/out/playtest/typed-11-transcript.txt:2877-3018",
+      "steps": [
+       [601, 0],
+       [612, 3],
+       [634, 6]
+      ]
+     },
+     {
+      "life": 4,
+      "began": "restored a save after death",
+      "commands": [637, 717],
+      "turns": [31, 103],
+      "startScore": 6,
+      "bestScore": 20,
+      "endScore": 20,
+      "ended": "died",
+      "cause": "starved (hunger and thirst)",
+      "fatalCommand": "slide kitchen card through slot",
+      "where": "Mess Hall",
+      "source": "scripts/out/playtest/typed-11-transcript.txt:3026-3456",
+      "steps": [
+       [637, 6],
+       [652, 7],
+       [653, 9],
+       [684, 13],
+       [696, 17],
+       [705, 18],
+       [707, 20]
+      ]
+     },
+     {
+      "life": 5,
+      "began": "restored a save after death",
+      "commands": [718, 720],
+      "turns": [101, 103],
+      "startScore": 20,
+      "bestScore": 24,
+      "endScore": 24,
+      "ended": "died",
+      "cause": "starved (hunger and thirst)",
+      "fatalCommand": "south",
+      "where": "Kitchen",
+      "source": "scripts/out/playtest/typed-11-transcript.txt:3472-3489",
+      "steps": [
+       [718, 20],
+       [720, 24]
+      ]
+     },
+     {
+      "life": 6,
+      "began": "restart from the beginning (--new)",
+      "commands": [720, 951],
+      "turns": [0, 216],
+      "startScore": 0,
+      "bestScore": 30,
+      "endScore": 30,
+      "ended": "session ended alive",
+      "where": "Dorm C",
+      "source": "scripts/out/playtest/typed-11-transcript.txt:3497-4670",
+      "steps": [
+       [720, 0],
+       [730, 3],
+       [749, 6],
+       [763, 7],
+       [764, 9],
+       [771, 11],
+       [798, 15],
+       [809, 19],
+       [813, 21],
+       [816, 22],
+       [832, 26],
+       [889, 30]
+      ]
+     }
+    ]
+   },
+   {
+    "round": 11,
+    "session": "click-11",
+    "mode": "click",
+    "commands": 1014,
+    "lives": [
+     {
+      "life": 1,
+      "began": "start",
+      "commands": [0, 337],
+      "turns": [0, 319],
+      "startScore": 0,
+      "bestScore": 15,
+      "endScore": 15,
+      "ended": "died",
+      "cause": "drowned: went back down into the sea",
+      "fatalCommand": "go down",
+      "where": "Underwater",
+      "source": "scripts/out/playtest/click-11-transcript.txt:6-8747",
+      "steps": [
+       [0, 0],
+       [24, 3],
+       [46, 6],
+       [153, 8],
+       [154, 9],
+       [170, 13],
+       [228, 15]
+      ]
+     },
+     {
+      "life": 2,
+      "began": "restart from the beginning (--new)",
+      "commands": [337, 352],
+      "turns": [0, 14],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "died",
+      "cause": "went down with the Feinstein (not in the escape pod in time)",
+      "fatalCommand": "open escape pod bulkhead",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/click-11-transcript.txt:8761-9071",
+      "steps": [
+       [337, 0]
+      ]
+     },
+     {
+      "life": 3,
+      "began": "restored a save after death",
+      "commands": [353, 363],
+      "turns": [0, 10],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "left alive: restored an earlier save",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/click-11-transcript.txt:9083-9287",
+      "steps": [
+       [353, 0]
+      ]
+     },
+     {
+      "life": 4,
+      "began": "restored a save while alive",
+      "commands": [364, 398],
+      "turns": [0, 34],
+      "startScore": 0,
+      "bestScore": 3,
+      "endScore": 3,
+      "ended": "died",
+      "cause": "drowned: opened the sinking pod too late",
+      "fatalCommand": "open escape pod bulkhead",
+      "where": "Escape Pod",
+      "source": "scripts/out/playtest/click-11-transcript.txt:9309-10053",
+      "steps": [
+       [364, 0],
+       [373, 3]
+      ]
+     },
+     {
+      "life": 5,
+      "began": "restored a save after death",
+      "commands": [399, 412],
+      "turns": [0, 13],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "died",
+      "cause": "went down with the Feinstein (not in the escape pod in time)",
+      "fatalCommand": "look",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/click-11-transcript.txt:10065-10312",
+      "steps": [
+       [399, 0]
+      ]
+     },
+     {
+      "life": 6,
+      "began": "restored a save after death",
+      "commands": [413, 619],
+      "turns": [0, 198],
+      "startScore": 0,
+      "bestScore": 24,
+      "endScore": 24,
+      "ended": "died",
+      "cause": "fell asleep in the open and was eaten in the night",
+      "fatalCommand": "wait for the elevator",
+      "where": "Lower Elevator",
+      "source": "scripts/out/playtest/click-11-transcript.txt:10364-14707",
+      "steps": [
+       [413, 0],
+       [424, 3],
+       [444, 6],
+       [487, 10],
+       [512, 14],
+       [517, 15],
+       [520, 16],
+       [521, 17],
+       [546, 21],
+       [590, 23],
+       [591, 24]
+      ]
+     },
+     {
+      "life": 7,
+      "began": "restored a save after death",
+      "commands": [620, 681],
+      "turns": [122, 187],
+      "startScore": 21,
+      "bestScore": 32,
+      "endScore": 32,
+      "ended": "died",
+      "cause": "fell asleep in the open and was eaten in the night",
+      "fatalCommand": "go west, Rec Corridor",
+      "where": "Rec Corridor",
+      "source": "scripts/out/playtest/click-11-transcript.txt:14717-16098",
+      "steps": [
+       [620, 21],
+       [630, 23],
+       [631, 24],
+       [645, 28],
+       [664, 32]
+      ]
+     },
+     {
+      "life": 8,
+      "began": "restored a save after death",
+      "commands": [682, 1014],
+      "turns": [150, 433],
+      "startScore": 24,
+      "bestScore": 49,
+      "endScore": 49,
+      "ended": "session ended alive",
+      "where": "Infirmary",
+      "source": "scripts/out/playtest/click-11-transcript.txt:16107-25295",
+      "steps": [
+       [682, 24],
+       [718, 28],
+       [735, 32],
+       [768, 36],
+       [873, 38],
+       [880, 39],
+       [895, 43],
+       [1003, 49]
+      ]
+     }
+    ]
+   },
+   {
+    "round": 12,
+    "session": "typed-12",
+    "mode": "typed",
+    "commands": 1489,
+    "agents": [
+     {
+      "leg": 1,
+      "fromCommand": 1,
+      "source": "playtests/2026-09-12/2026-09-12-typed-12.md:7"
+     },
+     {
+      "leg": "2 (first attempt, cut off; wrote no narrative)",
+      "fromCommand": 975,
+      "fromTurn": 555,
+      "source": "playtests/2026-09-12/2026-09-12-typed-12.md:499-501; scripts/out/playtest/typed-12-transcript.txt:4855 (first command after leg 1's save and score at turn 554)"
+     },
+     {
+      "leg": "2 (second attempt)",
+      "fromCommand": 1202,
+      "fromTurn": 676,
+      "source": "playtests/2026-09-12/2026-09-12-typed-12.md:537 (\"Turns 676-676 ... inventory killed me\"); scripts/out/playtest/typed-12-transcript.txt:6038"
+     }
+    ],
+    "lives": [
+     {
+      "life": 1,
+      "began": "start",
+      "commands": [0, 32],
+      "turns": [0, 29],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "died",
+      "cause": "went down with the Feinstein (not in the escape pod in time)",
+      "fatalCommand": "open escape pod bulkhead",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6-155",
+      "steps": [
+       [0, 0]
+      ]
+     },
+     {
+      "life": 2,
+      "began": "restart from the beginning (--new)",
+      "commands": [32, 45],
+      "turns": [0, 13],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "died",
+      "cause": "went down with the Feinstein (not in the escape pod in time)",
+      "fatalCommand": "wait",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:167-223",
+      "steps": [
+       [32, 0]
+      ]
+     },
+     {
+      "life": 3,
+      "began": "restart from the beginning (--new)",
+      "commands": [45, 287],
+      "turns": [0, 224],
+      "startScore": 0,
+      "bestScore": 13,
+      "endScore": 13,
+      "ended": "died",
+      "cause": "fell asleep in the open and was eaten in the night",
+      "fatalCommand": "wait",
+      "where": "Lower Elevator",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:267-1370",
+      "steps": [
+       [45, 0],
+       [55, 3],
+       [76, 6],
+       [219, 7],
+       [221, 9],
+       [282, 13]
+      ]
+     },
+     {
+      "life": 4,
+      "began": "restart from the beginning (--new)",
+      "commands": [287, 539],
+      "turns": [0, 229],
+      "startScore": 0,
+      "bestScore": 28,
+      "endScore": 28,
+      "ended": "left alive: restored an earlier save",
+      "where": "Observation Deck",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:1386-2556",
+      "steps": [
+       [287, 0],
+       [298, 3],
+       [318, 6],
+       [365, 7],
+       [366, 9],
+       [390, 13],
+       [418, 17],
+       [491, 21],
+       [502, 23],
+       [505, 24],
+       [526, 28]
+      ]
+     },
+     {
+      "life": 5,
+      "began": "restored a save while alive",
+      "commands": [540, 870],
+      "turns": [184, 487],
+      "startScore": 17,
+      "bestScore": 42,
+      "endScore": 42,
+      "ended": "died",
+      "cause": "killed by the rusty diagnostic robot in the Infirmary bed",
+      "fatalCommand": "enter bed",
+      "where": "Infirmary",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:2565-4288",
+      "steps": [
+       [540, 17],
+       [542, 21],
+       [545, 23],
+       [548, 24],
+       [568, 28],
+       [621, 32],
+       [657, 38],
+       [725, 42]
+      ]
+     },
+     {
+      "life": 6,
+      "began": "restored a save after death",
+      "commands": [871, 1088],
+      "turns": [455, 651],
+      "startScore": 42,
+      "bestScore": 57,
+      "endScore": 57,
+      "ended": "left alive: restored an earlier save",
+      "where": "Computer Room",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:4297-5470",
+      "steps": [
+       [871, 42],
+       [930, 48],
+       [941, 50],
+       [1053, 52],
+       [1056, 53],
+       [1070, 57]
+      ]
+     },
+     {
+      "life": 7,
+      "began": "restored a save while alive",
+      "commands": [1089, 1127],
+      "turns": [635, 667],
+      "startScore": 53,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:5476-5639",
+      "steps": [
+       [1089, 53],
+       [1092, 57],
+       [1104, 65],
+       [1113, 69]
+      ]
+     },
+     {
+      "life": 8,
+      "began": "restored a save after death",
+      "commands": [1128, 1139],
+      "turns": [656, 666],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:5649-5691",
+      "steps": [
+       [1128, 69]
+      ]
+     },
+     {
+      "life": 9,
+      "began": "restored a save after death",
+      "commands": [1140, 1147],
+      "turns": [665, 672],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:5701-5732",
+      "steps": [
+       [1140, 69]
+      ]
+     },
+     {
+      "life": 10,
+      "began": "restored a save after death",
+      "commands": [1148, 1154],
+      "turns": [665, 671],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:5742-5768",
+      "steps": [
+       [1148, 69]
+      ]
+     },
+     {
+      "life": 11,
+      "began": "restored a save after death",
+      "commands": [1155, 1168],
+      "turns": [665, 676],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:5778-5835",
+      "steps": [
+       [1155, 69]
+      ]
+     },
+     {
+      "life": 12,
+      "began": "restored a save after death",
+      "commands": [1169, 1187],
+      "turns": [665, 682],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:5845-5965",
+      "steps": [
+       [1169, 69]
+      ]
+     },
+     {
+      "life": 13,
+      "began": "restored a save after death",
+      "commands": [1188, 1203],
+      "turns": [665, 677],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "inventory",
+      "where": "Bio Lab",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:5975-6066",
+      "steps": [
+       [1188, 69]
+      ]
+     },
+     {
+      "life": 14,
+      "began": "restored a save after death",
+      "commands": [1204, 1221],
+      "turns": [665, 678],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "close east door",
+      "where": "Bio Lock East",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6076-6161",
+      "steps": [
+       [1204, 69]
+      ]
+     },
+     {
+      "life": 15,
+      "began": "restored a save after death",
+      "commands": [1222, 1223],
+      "turns": [671, 672],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6171-6182",
+      "steps": [
+       [1222, 69]
+      ]
+     },
+     {
+      "life": 16,
+      "began": "restored a save after death",
+      "commands": [1224, 1230],
+      "turns": [671, 677],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "close east door",
+      "where": "Bio Lock East",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6192-6235",
+      "steps": [
+       [1224, 69]
+      ]
+     },
+     {
+      "life": 17,
+      "began": "restored a save after death",
+      "commands": [1231, 1245],
+      "turns": [671, 684],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "east",
+      "where": "Project Corridor West",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6245-6337",
+      "steps": [
+       [1231, 69]
+      ]
+     },
+     {
+      "life": 18,
+      "began": "restored a save after death",
+      "commands": [1246, 1255],
+      "turns": [671, 680],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "left alive: restored an earlier save",
+      "where": "Lab Storage",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6351-6407",
+      "steps": [
+       [1246, 69]
+      ]
+     },
+     {
+      "life": 19,
+      "began": "restored a save while alive",
+      "commands": [1256, 1261],
+      "turns": [671, 676],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open door",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6415-6440",
+      "steps": [
+       [1256, 69]
+      ]
+     },
+     {
+      "life": 20,
+      "began": "restored a save after death",
+      "commands": [1262, 1279],
+      "turns": [671, 688],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "examine equipment",
+      "where": "Physical Plant",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6450-6561",
+      "steps": [
+       [1262, 69]
+      ]
+     },
+     {
+      "life": 21,
+      "began": "restored a save after death",
+      "commands": [1280, 1297],
+      "turns": [671, 688],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "push lever up",
+      "where": "Betty Control West",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6571-6682",
+      "steps": [
+       [1280, 69]
+      ]
+     },
+     {
+      "life": 22,
+      "began": "restored a save after death",
+      "commands": [1298, 1310],
+      "turns": [671, 683],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "slide miniaturization access card through slot",
+      "where": "Miniaturization Booth",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6692-6769",
+      "steps": [
+       [1298, 69]
+      ]
+     },
+     {
+      "life": 23,
+      "began": "restored a save after death",
+      "commands": [1311, 1323],
+      "turns": [671, 682],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "open lab door",
+      "where": "Radiation Lock East",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6779-6855",
+      "steps": [
+       [1311, 69]
+      ]
+     },
+     {
+      "life": 24,
+      "began": "restored a save after death",
+      "commands": [1324, 1339],
+      "turns": [671, 685],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "left alive: restored an earlier save",
+      "where": "Repair Room",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6865-6956",
+      "steps": [
+       [1324, 69]
+      ]
+     },
+     {
+      "life": 25,
+      "began": "restored a save while alive",
+      "commands": [1340, 1353],
+      "turns": [671, 684],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "southeast",
+      "where": "Project Corridor West",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:6964-7053",
+      "steps": [
+       [1340, 69]
+      ]
+     },
+     {
+      "life": 26,
+      "began": "restored a save after death",
+      "commands": [1354, 1363],
+      "turns": [671, 680],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "southeast",
+      "where": "Bio Lock West",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7063-7127",
+      "steps": [
+       [1354, 69]
+      ]
+     },
+     {
+      "life": 27,
+      "began": "restored a save after death",
+      "commands": [1364, 1382],
+      "turns": [671, 689],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "press brown button",
+      "where": "Booth 3",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7137-7257",
+      "steps": [
+       [1364, 69]
+      ]
+     },
+     {
+      "life": 28,
+      "began": "restored a save after death",
+      "commands": [1383, 1398],
+      "turns": [671, 678],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "score",
+      "where": "Bio Lab",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7267-7336",
+      "steps": [
+       [1383, 69]
+      ]
+     },
+     {
+      "life": 29,
+      "began": "restored a save after death",
+      "commands": [1399, 1424],
+      "turns": [671, 696],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "starved (hunger and thirst)",
+      "fatalCommand": "north",
+      "where": "Project Corridor East",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7346-7515",
+      "steps": [
+       [1399, 69]
+      ]
+     },
+     {
+      "life": 30,
+      "began": "restored a save after death",
+      "commands": [1425, 1439],
+      "turns": [671, 685],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "left alive: restored an earlier save",
+      "where": "Infirmary",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7541-7631",
+      "steps": [
+       [1425, 69]
+      ]
+     },
+     {
+      "life": 31,
+      "began": "restored a save while alive",
+      "commands": [1440, 1453],
+      "turns": [671, 683],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "died",
+      "cause": "killed by the Bio Lab mutants",
+      "fatalCommand": "kill the mobile man-eating plant",
+      "where": "Library",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7639-7727",
+      "steps": [
+       [1440, 69]
+      ]
+     },
+     {
+      "life": 32,
+      "began": "restored a save after death",
+      "commands": [1454, 1466],
+      "turns": [671, 675],
+      "startScore": 69,
+      "bestScore": 69,
+      "endScore": 69,
+      "ended": "left alive: restored an earlier save",
+      "where": "Lab Office",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7737-7775",
+      "steps": [
+       [1454, 69]
+      ]
+     },
+     {
+      "life": 33,
+      "began": "restored a save while alive",
+      "commands": [1467, 1489],
+      "turns": [671, 692],
+      "startScore": 69,
+      "bestScore": 74,
+      "endScore": 74,
+      "ended": "won",
+      "where": "Cryo-Anteroom",
+      "source": "scripts/out/playtest/typed-12-transcript.txt:7783-7907",
+      "steps": [
+       [1467, 69],
+       [1480, 74]
+      ]
+     }
+    ]
+   },
+   {
+    "round": 12,
+    "session": "click-12",
+    "mode": "click",
+    "commands": 1140,
+    "agents": [
+     {
+      "leg": 1,
+      "fromCommand": 1,
+      "source": "playtests/2026-09-12/2026-09-12-click-12.md:12"
+     },
+     {
+      "leg": "2 (first attempt, cut off; wrote no narrative)",
+      "fromCommand": 398,
+      "fromTurn": 325,
+      "source": "playtests/2026-09-12/2026-09-12-click-12.md:514-515; scripts/out/playtest/click-12-transcript.txt:9444"
+     },
+     {
+      "leg": "2 (second attempt)",
+      "fromCommand": 894,
+      "fromTurn": 777,
+      "source": "playtests/2026-09-12/2026-09-12-click-12.md:730 (\"First move was 5 save\"); scripts/out/playtest/click-12-transcript.txt:22399"
+     }
+    ],
+    "lives": [
+     {
+      "life": 1,
+      "began": "start",
+      "commands": [0, 24],
+      "turns": [0, 17],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "died",
+      "cause": "went down with the Feinstein (not in the escape pod in time)",
+      "fatalCommand": "get in escape pod",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/click-12-transcript.txt:6-513",
+      "steps": [
+       [0, 0]
+      ]
+     },
+     {
+      "life": 2,
+      "began": "restart from the beginning (--new)",
+      "commands": [24, 37],
+      "turns": [0, 12],
+      "startScore": 0,
+      "bestScore": 0,
+      "endScore": 0,
+      "ended": "left alive: restored an earlier save",
+      "where": "Deck Nine",
+      "source": "scripts/out/playtest/click-12-transcript.txt:521-761",
+      "steps": [
+       [24, 0]
+      ]
+     },
+     {
+      "life": 3,
+      "began": "restored a save while alive",
+      "commands": [38, 889],
+      "turns": [0, 778],
+      "startScore": 0,
+      "bestScore": 63,
+      "endScore": 63,
+      "ended": "left alive: restored an earlier save",
+      "where": "Strip Near Relay",
+      "source": "scripts/out/playtest/click-12-transcript.txt:783-22277",
+      "steps": [
+       [38, 0],
+       [48, 3],
+       [69, 6],
+       [180, 8],
+       [181, 9],
+       [210, 13],
+       [231, 15],
+       [297, 19],
+       [324, 23],
+       [329, 24],
+       [331, 25],
+       [332, 26],
+       [346, 30],
+       [371, 34],
+       [469, 40],
+       [621, 44],
+       [749, 50],
+       [813, 56],
+       [841, 58],
+       [842, 59],
+       [858, 63]
+      ]
+     },
+     {
+      "life": 4,
+      "began": "restored a save while alive",
+      "commands": [890, 892],
+      "turns": [777, 779],
+      "startScore": 63,
+      "bestScore": 63,
+      "endScore": 63,
+      "ended": "left alive: restored an earlier save",
+      "where": "Strip Near Relay",
+      "source": "scripts/out/playtest/click-12-transcript.txt:22302-22350",
+      "steps": [
+       [890, 63]
+      ]
+     },
+     {
+      "life": 5,
+      "began": "restored a save while alive",
+      "commands": [893, 958],
+      "turns": [777, 838],
+      "startScore": 63,
+      "bestScore": 63,
+      "endScore": 63,
+      "ended": "died",
+      "cause": "starved (hunger and thirst)",
+      "fatalCommand": "go south, Mess Hall",
+      "where": "Mess Hall",
+      "source": "scripts/out/playtest/click-12-transcript.txt:22375-23963",
+      "steps": [
+       [893, 63]
+      ]
+     },
+     {
+      "life": 6,
+      "began": "restored a save after death",
+      "commands": [959, 1018],
+      "turns": [822, 878],
+      "startScore": 63,
+      "bestScore": 63,
+      "endScore": 63,
+      "ended": "died",
+      "cause": "radiation poisoning (Radiation Lab)",
+      "fatalCommand": "diagnose",
+      "where": "Radiation Lock East",
+      "source": "scripts/out/playtest/click-12-transcript.txt:23972-25464",
+      "steps": [
+       [959, 63]
+      ]
+     },
+     {
+      "life": 7,
+      "began": "restored a save after death",
+      "commands": [1019, 1032],
+      "turns": [863, 875],
+      "startScore": 63,
+      "bestScore": 63,
+      "endScore": 63,
+      "ended": "died",
+      "cause": "radiation poisoning (Radiation Lab)",
+      "fatalCommand": "open radiation-lock door",
+      "where": "Radiation Lock West",
+      "source": "scripts/out/playtest/click-12-transcript.txt:25472-25757",
+      "steps": [
+       [1019, 63]
+      ]
+     },
+     {
+      "life": 8,
+      "began": "restored a save after death",
+      "commands": [1033, 1100],
+      "turns": [869, 924],
+      "startScore": 63,
+      "bestScore": 71,
+      "endScore": 71,
+      "ended": "died",
+      "cause": "eaten by the microbe on the silicon strip",
+      "fatalCommand": "shoot silicon strip (laser)",
+      "where": "Middle of Strip",
+      "source": "scripts/out/playtest/click-12-transcript.txt:25765-27271",
+      "steps": [
+       [1033, 63],
+       [1088, 71]
+      ]
+     },
+     {
+      "life": 9,
+      "began": "restored a save after death",
+      "commands": [1101, 1140],
+      "turns": [920, 963],
+      "startScore": 71,
+      "bestScore": 80,
+      "endScore": 80,
+      "ended": "won",
+      "where": "Cryo-Anteroom",
+      "source": "scripts/out/playtest/click-12-transcript.txt:27280-28245",
+      "steps": [
+       [1101, 71],
+       [1114, 75],
+       [1137, 80]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,1219 @@
+{
+  "note": [
+    "Reactor Control's fabric (DR-106, the mech wing), cut from the one Kalamontee layout in scripts/fabric-kalamontee.mjs -- regenerate from there, do not hand-edit. 8 x 3.6 x 8, the eye at the middle. The game: \"many dials and gauges for controlling a massive planetary power reactor which, according to a diagram on the wall, must be buried far below this very complex. The exit is to the west. To the east is a metal door, and next to it, a button. A dark stairway winds downward\" (compone.zil 1451-1454).",
+    "Consoles of dials and gauges along the south wall and under the diagram on the north wall's west half; gauge panels either side of the west door and on the east wall south of the elevator door. West, the 1.2 x 2.25 door onto the Mech Corridor (its bare west wall). East, 0.5 m south of the eye, the reactor elevator's 2 x 2.5 metal doors, framed, the button beside them on the north: REACTOR-ELEVATOR-DOOR, shut (a pair of leaves) or open onto the lit car; the one switch here. North, 1.3 m east of the middle, a 1.4 x 2.3 doorway onto the stair shaft: dark, the post and the top steps dropping away inside a 0.3 m sill."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        8,
+        3.6,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.125,
+          1.2,
+          2.25
+        ],
+        "EAST": [
+          -0.5,
+          1.25,
+          2,
+          2.5
+        ],
+        "NORTH": [
+          1.3,
+          1.15,
+          1.4,
+          2.3
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.45,
+        3.5
+      ],
+      "size": [
+        5.6,
+        0.9,
+        0.8
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.15,
+        3.8
+      ],
+      "size": [
+        5.6,
+        0.5,
+        0.25
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        2.05,
+        3.95
+      ],
+      "size": [
+        5.6,
+        1.1,
+        0.06
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.45,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.75,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.05,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.35,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.35,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.05,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.75,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.45,
+        2.1,
+        3.91
+      ],
+      "size": [
+        0.22,
+        0.22,
+        0.03
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.4,
+        0.45,
+        -3.6
+      ],
+      "size": [
+        3.2,
+        0.9,
+        0.7
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.4,
+        1.12,
+        -3.85
+      ],
+      "size": [
+        3.2,
+        0.45,
+        0.25
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.4,
+        2.05,
+        -3.99
+      ],
+      "size": [
+        3.2,
+        1.3,
+        0.02
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.95,
+        1.8,
+        -2.2
+      ],
+      "size": [
+        0.06,
+        1.2,
+        1.8
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.95,
+        1.8,
+        2.2
+      ],
+      "size": [
+        0.06,
+        1.2,
+        1.8
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.95,
+        1.8,
+        2.3
+      ],
+      "size": [
+        0.06,
+        1.2,
+        2.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.65,
+        0.5,
+        2.3
+      ],
+      "size": [
+        0.6,
+        1,
+        2.4
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.98,
+        1.2,
+        -1.9
+      ],
+      "size": [
+        0.04,
+        0.3,
+        0.2
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.95,
+        1.2,
+        -1.9
+      ],
+      "size": [
+        0.03,
+        0.1,
+        0.1
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "frame",
+      "at": [
+        3.95,
+        1.25,
+        -0.5
+      ],
+      "facing": "EAST",
+      "size": [
+        2,
+        2.5
+      ],
+      "band": 0.12,
+      "depth": 0.1
+    },
+    {
+      "part": "light",
+      "at": [
+        -2,
+        3.56,
+        1.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        2,
+        3.56,
+        1.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -6.36,
+        0,
+        -1
+      ],
+      "size": [
+        4.4,
+        3.4,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          1,
+          1.125,
+          1.2,
+          2.25
+        ],
+        "WEST": [
+          2,
+          1.4,
+          2.4,
+          2.8
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -6.36,
+        3.36,
+        1
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        6.26,
+        0,
+        -0.5
+      ],
+      "size": [
+        4.2,
+        3.2,
+        3.6
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.25,
+          2,
+          2.5
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.06,
+        1.3,
+        -2.27
+      ],
+      "size": [
+        0.6,
+        0.7,
+        0.05
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.91,
+        1.45,
+        -2.24
+      ],
+      "size": [
+        0.1,
+        0.1,
+        0.03
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.91,
+        1.2,
+        -2.24
+      ],
+      "size": [
+        0.1,
+        0.1,
+        0.03
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.26,
+        1.35,
+        -2.24
+      ],
+      "size": [
+        0.14,
+        0.03,
+        0.03
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.31,
+        0.95,
+        -0.5
+      ],
+      "size": [
+        0.05,
+        0.05,
+        3.2
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "light",
+      "at": [
+        6.26,
+        3.16,
+        -0.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -15.1,
+        -7.8
+      ],
+      "size": [
+        3.76,
+        3,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.16,
+        -15.1,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.84,
+        -15.1,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -15.1,
+        -4.12
+      ],
+      "size": [
+        3.76,
+        3,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -11.9,
+        -7.8
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.16,
+        -11.9,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.84,
+        -11.9,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -11.9,
+        -4.12
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -8.5,
+        -7.8
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.16,
+        -8.5,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.84,
+        -8.5,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -8.5,
+        -4.12
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -5.1,
+        -7.8
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.16,
+        -5.1,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.84,
+        -5.1,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -5.1,
+        -4.12
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -1.7,
+        -7.8
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.16,
+        -1.7,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.84,
+        -1.7,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.4,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -1.7,
+        -4.12
+      ],
+      "size": [
+        3.76,
+        3.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        1.8,
+        -7.8
+      ],
+      "size": [
+        3.76,
+        3.6,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.16,
+        1.8,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.6,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.84,
+        1.8,
+        -5.96
+      ],
+      "size": [
+        0.08,
+        3.6,
+        3.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.36,
+        1.8,
+        -4.12
+      ],
+      "size": [
+        0.48,
+        3.6,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.94,
+        1.8,
+        -4.12
+      ],
+      "size": [
+        1.88,
+        3.6,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.3,
+        2.95,
+        -4.12
+      ],
+      "size": [
+        1.4,
+        1.3,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        3.64,
+        -5.96
+      ],
+      "size": [
+        3.76,
+        0.08,
+        3.76
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        -16.64,
+        -5.96
+      ],
+      "size": [
+        3.76,
+        0.08,
+        3.76
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.3,
+        -0.04,
+        -4.31
+      ],
+      "size": [
+        1.4,
+        0.08,
+        0.3
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "spiral",
+      "at": [
+        2,
+        -16,
+        -5.96
+      ],
+      "radius": 1.78,
+      "column": 0.25,
+      "rise": 16,
+      "turns": 5,
+      "treads": 80,
+      "from": 211.25,
+      "clockwise": true,
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        1.8,
+        -5.96
+      ],
+      "size": [
+        0.5,
+        3.6,
+        0.5
+      ],
+      "material": "plate-steel",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.08,
+        1.25,
+        -1
+      ],
+      "size": [
+        0.05,
+        2.5,
+        1
+      ],
+      "material": "plate-steel",
+      "when": "REACTOR-ELEVATOR-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.08,
+        1.25,
+        0
+      ],
+      "size": [
+        0.05,
+        2.5,
+        1
+      ],
+      "material": "plate-steel",
+      "when": "REACTOR-ELEVATOR-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.36,
+        -0.04,
+        -19.24
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.36,
+        -0.04,
+        -7.08
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.08,
+        -0.04,
+        -12.16
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.64,
+        -0.04,
+        -15.16
+      ],
+      "size": [
+        0.16,
+        0.08,
+        2.4
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.64,
+        -0.04,
+        -3
+      ],
+      "size": [
+        0.16,
+        0.08,
+        2.4
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.08,
+        -0.04,
+        0
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.36,
+        -0.04,
+        5.08
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.36,
+        -0.04,
+        13.24
+      ],
+      "size": [
+        2.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.94,
+        -0.04,
+        12.06
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.78,
+        -0.04,
+        12.06
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.94,
+        -0.04,
+        16.68
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.78,
+        -0.04,
+        16.68
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.08,
+        -0.04,
+        -0.5
+      ],
+      "size": [
+        0.16,
+        0.08,
+        2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.3,
+        -0.04,
+        -4.08
+      ],
+      "size": [
+        1.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    }
+  ]
+}

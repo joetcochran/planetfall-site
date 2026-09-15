@@ -1,0 +1,553 @@
+{
+  "note": [
+    "The West Wing's fabric (DR-106), cut from the Courtyard's own by scripts/fabric-westwing.mjs -- regenerate from there, do not hand-edit. The eye is at the middle of the West Wing's ground as the Courtyard's fabric draws it (Courtyard frame [-9.1, 1.6, 0.25]): a 5.8 x 5.7 m floor, the Courtyard's west breach (2.8 m) to the east.",
+    "The game: 'This was once the west wing of the castle, but the walls are now mostly rubble, allowing a view of the cliff and ocean below. Rubble blocks all exits save one, eastward to the courtyard.' So the west barrier is waist-high (1.0 m; the Courtyard's fabric had 2 m, which would hide the ocean), with rubble along it and across the open south edge."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "sea",
+      "level": -33
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.1,
+        -25.5,
+        -17.45
+      ],
+      "size": [
+        100,
+        50,
+        40.8
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.1,
+        -0.25,
+        -1.2
+      ],
+      "size": [
+        11,
+        0.5,
+        8.5
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.3,
+        -25,
+        4.9
+      ],
+      "size": [
+        49.2,
+        50,
+        3.7
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        34.5,
+        -25,
+        4.9
+      ],
+      "size": [
+        49.2,
+        50,
+        3.7
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "stair",
+      "from": [
+        9.1,
+        -0.25,
+        3.1
+      ],
+      "to": [
+        9.1,
+        -3,
+        6.75
+      ],
+      "width": 1.6,
+      "tread": "rock",
+      "rail": null,
+      "solid": 3
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.5,
+        -3.2,
+        7.35
+      ],
+      "size": [
+        2.4,
+        0.4,
+        2
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "stair",
+      "from": [
+        9.9,
+        -3,
+        7.55
+      ],
+      "to": [
+        18.1,
+        -7,
+        7.55
+      ],
+      "width": 1.6,
+      "tread": "rock",
+      "rail": null,
+      "solid": 5
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.1,
+        -29,
+        7.55
+      ],
+      "size": [
+        10,
+        42,
+        1.6
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.2,
+        4.35,
+        -5.8
+      ],
+      "size": [
+        2.2,
+        3.3,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.9,
+        3,
+        -5.8
+      ],
+      "size": [
+        2,
+        6,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.8,
+        2.15,
+        -5.8
+      ],
+      "size": [
+        1.8,
+        4.3,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.9,
+        3.7,
+        -5.8
+      ],
+      "size": [
+        2.4,
+        7.4,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.5,
+        3,
+        -5.8
+      ],
+      "size": [
+        2.4,
+        6,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.5,
+        2.4,
+        -5.8
+      ],
+      "size": [
+        1.6,
+        4.8,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.95,
+        2.75,
+        -4.9
+      ],
+      "size": [
+        0.7,
+        5.5,
+        2.5
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.95,
+        1.6,
+        -2.55
+      ],
+      "size": [
+        0.7,
+        3.2,
+        2.2
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.95,
+        2.6,
+        -0.15
+      ],
+      "size": [
+        0.7,
+        5.2,
+        2.6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.95,
+        2,
+        2.1
+      ],
+      "size": [
+        0.7,
+        4,
+        1.9
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "rock",
+      "at": [
+        14,
+        0.35,
+        -2.55
+      ],
+      "size": [
+        1.3,
+        0.7,
+        1.4
+      ],
+      "seed": 74
+    },
+    {
+      "part": "rock",
+      "at": [
+        13.4,
+        0.2,
+        -1.75
+      ],
+      "size": [
+        0.8,
+        0.4,
+        0.9
+      ],
+      "seed": 75
+    },
+    {
+      "part": "rock",
+      "at": [
+        5.7,
+        0.25,
+        -4.85
+      ],
+      "size": [
+        1.1,
+        0.5,
+        0.8
+      ],
+      "seed": 76
+    },
+    {
+      "part": "bay",
+      "at": [
+        10.2,
+        0,
+        -10.8
+      ],
+      "size": [
+        2.2,
+        2.7,
+        9.3
+      ],
+      "open": "SOUTH"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.25,
+        2.5,
+        -3.85
+      ],
+      "size": [
+        0.7,
+        5,
+        4.6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.25,
+        1.5,
+        2.15
+      ],
+      "size": [
+        0.7,
+        3,
+        1.8
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "rock",
+      "at": [
+        2.8,
+        0.3,
+        -1.85
+      ],
+      "size": [
+        1.2,
+        0.6,
+        1
+      ],
+      "seed": 71
+    },
+    {
+      "part": "rock",
+      "at": [
+        2.5,
+        0.25,
+        1.65
+      ],
+      "size": [
+        1,
+        0.5,
+        0.9
+      ],
+      "seed": 72
+    },
+    {
+      "part": "rock",
+      "at": [
+        3.9,
+        0.2,
+        -2.15
+      ],
+      "size": [
+        0.8,
+        0.4,
+        0.7
+      ],
+      "seed": 73
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.4,
+        -0.25,
+        -0.15
+      ],
+      "size": [
+        6,
+        0.5,
+        6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.2,
+        0.5,
+        -0.15
+      ],
+      "size": [
+        0.6,
+        1,
+        6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.4,
+        0.75,
+        -3.15
+      ],
+      "size": [
+        6,
+        1.5,
+        0.6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.6,
+        0.5,
+        3.3
+      ],
+      "size": [
+        5.4,
+        1,
+        0.5
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.6,
+        0.5,
+        3.3
+      ],
+      "size": [
+        5.4,
+        1,
+        0.5
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -2.5,
+        0.3,
+        -2.05
+      ],
+      "size": [
+        1.1,
+        0.6,
+        0.9
+      ],
+      "seed": 81
+    },
+    {
+      "part": "rock",
+      "at": [
+        -2.6,
+        0.25,
+        1.05
+      ],
+      "size": [
+        0.9,
+        0.5,
+        1.1
+      ],
+      "seed": 82
+    },
+    {
+      "part": "rock",
+      "at": [
+        -3.1,
+        1.15,
+        -0.85
+      ],
+      "size": [
+        0.8,
+        0.4,
+        0.9
+      ],
+      "seed": 83
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.5,
+        0.35,
+        2.75
+      ],
+      "size": [
+        1.4,
+        0.7,
+        0.8
+      ],
+      "seed": 84
+    },
+    {
+      "part": "rock",
+      "at": [
+        0.2,
+        0.3,
+        2.85
+      ],
+      "size": [
+        1.2,
+        0.6,
+        0.7
+      ],
+      "seed": 85
+    },
+    {
+      "part": "rock",
+      "at": [
+        1.7,
+        0.4,
+        2.65
+      ],
+      "size": [
+        1.3,
+        0.8,
+        0.8
+      ],
+      "seed": 86
+    }
+  ]
+}

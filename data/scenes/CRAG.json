@@ -1,0 +1,394 @@
+{
+  "note": [
+    "The Crag's fabric (DR-109), built by dev from CRAG.metadata.json v5. The game: 'a cleft in the cliff wall where the island rises from the water. The edge of the cleft displays recently exposed rock where it collapsed under the weight of the escape pod. About two meters below, turbulent waters swirl against sharp rocks. A small structure clings to the face of the cliff about eight meters above you.'",
+    "The Balcony's cliff (DR-106): the face to the north, the sea open to the south. The cleft is a notch in the face, 6 m across; its sides are low broken rock, the edge that 'collapsed under the weight of the escape pod', not walls. The climb mouth is footholds up the north face.",
+    "Heights from the shared datum (day-one sea zero): the Crag's floor +2, so the water is 2 m below; the Balcony's floor 8 m above the Crag's, its roof 12. It stands 12 m west along the face -- 'about eight meters above you' is its height; that far off it shows at the top of the west view as well as in the ceiling cap, where directly overhead it would be in no level view at all.",
+    "The climb (DR-109, 2026-09-13): the design agent answered that the route up must show past the three starter blocks (README 45, 109, 129, 204). Dev set it as eight worn footholds rising west along the face, about 0.66 m apart in height and 0.9 m along, from the top starter block to a landing ledge at the Balcony east flank, floor height (8 m up, 7.7 m west); there the Balcony stair bay route enters the rock (BALCONY exits DOWN, CLIFF-STAIR). Difficult but feasible without equipment."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        28,
+        -33
+      ],
+      "size": [
+        400,
+        100,
+        60
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.5,
+        0
+      ],
+      "size": [
+        6,
+        1,
+        6
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -3.9,
+        0.7,
+        0.2
+      ],
+      "size": [
+        2.4,
+        2.4,
+        5.2
+      ],
+      "seed": 41
+    },
+    {
+      "part": "rock",
+      "at": [
+        -5.2,
+        0.2,
+        2.4
+      ],
+      "size": [
+        2.2,
+        1.4,
+        2.4
+      ],
+      "seed": 51
+    },
+    {
+      "part": "rock",
+      "at": [
+        3.9,
+        0.9,
+        -0.2
+      ],
+      "size": [
+        2.4,
+        2.8,
+        5.4
+      ],
+      "seed": 42
+    },
+    {
+      "part": "rock",
+      "at": [
+        5.4,
+        0.3,
+        2.2
+      ],
+      "size": [
+        2.4,
+        1.6,
+        2.6
+      ],
+      "seed": 52
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -12,
+        -1
+      ],
+      "size": [
+        400,
+        20,
+        4
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -0.4,
+        0.4,
+        -2.7
+      ],
+      "size": [
+        0.9,
+        0.35,
+        0.5
+      ],
+      "seed": 43
+    },
+    {
+      "part": "rock",
+      "at": [
+        0.3,
+        1.2,
+        -2.8
+      ],
+      "size": [
+        0.8,
+        0.3,
+        0.45
+      ],
+      "seed": 44
+    },
+    {
+      "part": "rock",
+      "at": [
+        -0.2,
+        2,
+        -2.9
+      ],
+      "size": [
+        0.8,
+        0.3,
+        0.45
+      ],
+      "seed": 45
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.1,
+        2.7,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 60
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.52,
+        3.36,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 61
+    },
+    {
+      "part": "rock",
+      "at": [
+        -2.84,
+        4.01,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 62
+    },
+    {
+      "part": "rock",
+      "at": [
+        -3.26,
+        4.67,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 63
+    },
+    {
+      "part": "rock",
+      "at": [
+        -4.59,
+        5.33,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 64
+    },
+    {
+      "part": "rock",
+      "at": [
+        -5.01,
+        5.99,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 65
+    },
+    {
+      "part": "rock",
+      "at": [
+        -6.33,
+        6.64,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 66
+    },
+    {
+      "part": "rock",
+      "at": [
+        -6.75,
+        7.3,
+        -2.75
+      ],
+      "size": [
+        0.85,
+        0.3,
+        0.5
+      ],
+      "seed": 67
+    },
+    {
+      "part": "rock",
+      "at": [
+        -7.7,
+        7.7,
+        -2.5
+      ],
+      "size": [
+        1.4,
+        0.35,
+        1
+      ],
+      "seed": 68
+    },
+    {
+      "part": "rock",
+      "at": [
+        1.5,
+        -0.2,
+        3.1
+      ],
+      "size": [
+        2.2,
+        0.9,
+        1.2
+      ],
+      "seed": 46
+    },
+    {
+      "part": "rock",
+      "at": [
+        -3,
+        -2,
+        6
+      ],
+      "size": [
+        2.4,
+        1.4,
+        1.8
+      ],
+      "seed": 47
+    },
+    {
+      "part": "rock",
+      "at": [
+        2.5,
+        -2.1,
+        8.5
+      ],
+      "size": [
+        3,
+        1.2,
+        2.2
+      ],
+      "seed": 48
+    },
+    {
+      "part": "rock",
+      "at": [
+        -7,
+        -2.2,
+        11
+      ],
+      "size": [
+        2.6,
+        1.3,
+        2
+      ],
+      "seed": 49
+    },
+    {
+      "part": "prism",
+      "at": [
+        -12,
+        8,
+        -3
+      ],
+      "sides": 8,
+      "apothem": 3.94,
+      "height": 4,
+      "first": 0,
+      "floor": "masonry",
+      "ceiling": "masonry",
+      "wall": "masonry",
+      "openings": {
+        "0": [
+          0,
+          1.5,
+          1.4,
+          3
+        ],
+        "135": [
+          0,
+          2.35,
+          2.8,
+          2.1
+        ],
+        "180": [
+          0,
+          2.35,
+          2.8,
+          2.1
+        ],
+        "225": [
+          0,
+          2.35,
+          2.8,
+          2.1
+        ]
+      }
+    },
+    {
+      "part": "rock",
+      "at": [
+        -12,
+        7.1,
+        -1.8
+      ],
+      "size": [
+        7,
+        2,
+        4.4
+      ],
+      "seed": 11
+    },
+    {
+      "part": "sea",
+      "level": -2
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "_comment": [
+    "Cutouts: one flat picture per actor, and per thing that has one (the padlock), hung by the graybox where the room puts it.",
+    "Dev-owned, not part of a design package. Each entry points at a PNG under wwwroot/assets/characters and",
+    "states the figure's real height in metres. Width is NOT stated: it follows the image's own aspect, so the",
+    "two can never disagree. `depth` is footprint only -- it keeps a figure clear of exit lanes and never changes",
+    "what is drawn, and it is deliberately independent of the displayed width, because an oversized held prop",
+    "widens the silhouette without widening the man (design agent, DR-095, 2026-09-12).",
+    "`provisional` marks a cutout taken from a concept sheet rather than delivered as a production asset."
+  ],
+  "BLATHER": {
+    "image": "assets/characters/BLATHER.png",
+    "height": 1.95,
+    "depth": 0.45,
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/FEINSTEIN/BLATHER-Clipboard-Alpha.png, delivered as PNG-32 with real alpha (DR-104); already tightly cropped, so nothing was trimmed",
+    "note": "Height 1.95 m and depth 0.45 m are the design agent's proposed numbers (DR-095, 2026-09-12); the source gives no measurement. The clipboard widens the silhouette without widening the man, which is why depth is authored and width is not.",
+    "aspect": 0.4685,
+    "pixels": [
+      707,
+      1509
+    ]
+  },
+  "AMBASSADOR": {
+    "image": "assets/characters/AMBASSADOR.png",
+    "height": 1.9,
+    "depth": 1.3,
+    "aspect": 0.7508,
+    "pixels": [
+      744,
+      991
+    ],
+    "provisional": true,
+    "source": "RoomPolishInstructions/characters/FEINSTEIN/BLATHER-AMBASSADOR_Concept-01.png, right figure, background flooded away and cropped to the figure",
+    "note": "Height 1.9 m and depth 1.3 m are DEV's proposals and want the design agent's numbers. The source gives no measurement, and the concept sheet's relative heights are compositional by its own README, so they cannot be read off it. Depth is large on purpose: he stands on a splayed tripod, so his footprint is much wider than a person's and the ring solver has to keep exit lanes clear of it."
+  },
+  "FLOYD": {
+    "image": "assets/characters/FLOYD.png",
+    "height": 1.22,
+    "depth": 0.5,
+    "aspect": 0.4611,
+    "pixels": [
+      598,
+      1297
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/FLOYD/FLOYD_STANDING_MAGENTA.png (DR-096, mail 20260913-175735-design-0001), cut by scripts/cutout.mjs --tol 60: magenta key from the border, rim unmixed",
+    "note": "Concept 01, approved by the user on 2026-09-13, painted by the design agent on flat magenta for extraction. Height 1.22 m is the source's four feet (compone.zil); depth 0.5 m, inside the rooms' 0.6 m clearanceRadius, both confirmed by the design agent. The variant is Floyd switched off: RLANDBIT is his switched-on state (floyd.js), so without it he stands inert -- dark optics, limp arms, the same height.",
+    "variants": [
+      {
+        "when": "FLOYD without RLANDBIT",
+        "image": "assets/characters/FLOYD-OFF.png",
+        "aspect": 0.4194,
+        "pixels": [
+          544,
+          1297
+        ],
+        "source": "RoomPolishInstructions/characters/FLOYD/FLOYD_OFF_MAGENTA.png (DR-096, same mail), cut the same way"
+      }
+    ]
+  },
+  "PADLOCK": {
+    "image": "assets/items/PADLOCK.png",
+    "height": 0.1,
+    "depth": 0.035,
+    "aspect": 0.6406,
+    "pixels": [
+      164,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/MESS-CORRIDOR_Visual-Design-Handoff/.../reference/DR-106_PADLOCK-CLOSED.png (mail 20260914-115733-design-0058), real alpha from the design agent, downsampled to 256 px tall with the colour unblended from the alpha",
+    "note": "The Mess Corridor padlock, closed through the hasp (MESS-CORRIDOR metadata v7: size [0.07, 0.10, 0.035], on the hasp at [1.35, 1.15, -3.82] until first taken). Height is the closed lock; a variant keeps the same foot.",
+    "variants": [
+      {
+        "when": "PADLOCK has MUNGEDBIT",
+        "image": "assets/items/PADLOCK-FUSED.png",
+        "aspect": 0.6445,
+        "pixels": [
+          165,
+          256
+        ]
+      },
+      {
+        "when": "PADLOCK has OPENBIT",
+        "image": "assets/items/PADLOCK-OPEN.png",
+        "aspect": 0.6654,
+        "pixels": [
+          175,
+          263
+        ],
+        "height": 0.1027
+      }
+    ]
+  },
+  "CANTEEN": {
+    "image": "assets/items/CANTEEN.png",
+    "height": 0.25,
+    "depth": 0.1,
+    "aspect": 0.7278,
+    "pixels": [
+      262,
+      360
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/KITCHEN_Visual-Design-Handoff/.../reference (mail 20260914-162616-design-0085), real alpha from the design agent via scripts/cutout.mjs, padded so the body is centred",
+    "note": "The canteen: on its Mess Hall bench until first taken (MESS-HALL objects.CANTEEN), and in the Kitchen dispenser's niche while it is there (KITCHEN objects.DISPENSER.contentsAt). Open, it is drawn lidless -- with the brown liquid when the dispenser has filled it; a variant keeps the same foot.",
+    "variants": [
+      {
+        "when": "CANTEEN has OPENBIT and HIGH-PROTEIN in CANTEEN",
+        "image": "assets/items/CANTEEN-OPEN-FULL.png",
+        "aspect": 1.0578,
+        "pixels": [
+          348,
+          329
+        ],
+        "height": 0.2287
+      },
+      {
+        "when": "CANTEEN has OPENBIT",
+        "image": "assets/items/CANTEEN-OPEN.png",
+        "aspect": 1.0578,
+        "pixels": [
+          348,
+          329
+        ],
+        "height": 0.2287
+      }
+    ]
+  },
+  "CAN": {
+    "image": "assets/items/CAN.png",
+    "height": 0.16,
+    "depth": 0.12,
+    "aspect": 0.7389,
+    "pixels": [
+      266,
+      360
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/CAN.png (the design agent's item set, ITEM-MANIFEST CAN), cut from its white backdrop by Norm via scripts/cutout.mjs, downsampled to 360 px tall with the colour unblended from the alpha",
+    "note": "The large tin can labelled \"Spam and Egz\": on the Storage West shelf until first taken (STORAGE-WEST objects.CAN at [0.8, 1.35, -1.88]). Never painted into the room; it is drawn wherever the engine has it."
+  },
+  "LADDER": {
+    "image": "assets/items/LADDER.png",
+    "height": 2.5,
+    "depth": 0.15,
+    "aspect": 0.2803,
+    "pixels": [
+      287,
+      1024
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/LADDER.png (the design agent's item set, ITEM-MANIFEST LADDER), cut from its white backdrop by Norm via scripts/cutout.mjs (a seed in each enclosed gap between the rungs), downsampled to 1024 px tall with the colour unblended from the alpha",
+    "note": "The collapsed aluminum ladder: leaning against the Storage West north wall until first taken (STORAGE-WEST objects.LADDER at [-0.35, 1.25, -1.88]; largeObjects.LADDER, about 2.5 m collapsed, source/compone.zil), then carried or dropped as the engine has it. The extended ladder across the rift is painted into the Admin Corridor rooms (their largeObjects), not drawn from this. Extended (LADDER-EXTENDED) it has no picture: the variant with a null image draws its box.",
+    "variants": [
+      {
+        "when": "LADDER-EXTENDED == true",
+        "image": null
+      }
+    ]
+  },
+  "DISPENSER": {
+    "depth": 0.24,
+    "facing": 180,
+    "provisional": false,
+    "source": "RoomPolishInstructions/KITCHEN_Visual-Design-Handoff/.../reference/DR-106_DISPENSER-DAMAGE_R2.png (mail 20260915-033732-design-0136), the accepted damage art of 0086 re-registered to the face: the button ring and the spout collar on the painted button and spout, real alpha, 600 px/m from Norm's guide (mail 20260914-164652-dev-0083)",
+    "note": "The Kitchen dispenser is part of the painting; only its damage is a picture, so the entry has no base image and draws only when the dispenser is broken. It lies flat on the front face of the dispenser's box (KITCHEN objects.DISPENSER position and this depth), facing south into the room, and covers the face exactly: 0.8 x 1.7 m. The label, the button, the spout and the niche are transparent in it, so the live canteen still shows.",
+    "variants": [
+      {
+        "when": "DISPENSER has MUNGEDBIT",
+        "image": "assets/items/DISPENSER-DAMAGE.png",
+        "height": 1.7,
+        "aspect": 0.4706,
+        "pixels": [
+          480,
+          1020
+        ]
+      }
+    ]
+  }
+}

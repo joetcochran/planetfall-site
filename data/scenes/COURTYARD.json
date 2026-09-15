@@ -1,0 +1,473 @@
+{
+  "note": [
+    "The Courtyard's fabric (DR-106), built by dev from COURTYARD.metadata.json v5 and its README (2026-09-14). The game: 'the courtyard of an ancient stone edifice ... decayed to the point where it can probably be termed a ruin. Openings lead north and west, and a stairway downward is visible to the south.'",
+    "The platform is the README's nominal 11 m by 8.5 m (x -5.5..5.5, z -5.2..3.3); the eye stands at [0, 1.6, 2.6], just inside the stair's top landing. Walls survive 5.5 to 6 m high, the west one collapsed to a 3 m breach onto the West Wing's broken floor; the south side is a low parapet on the cliff edge, so the sea shows over it.",
+    "North: the heavy ancient wall is pierced by the later, angular opening to the Plain Hall (x 0..2.2, 2.7 m high), and the hall itself runs north beyond it as a plain modern bay.",
+    "South and down (one route): the first tread is below the platform; the first leg descends south through a 1.6 m cut in the cliff edge to a turn 3 m down, and the second turns left -- east -- along the face and on out of sight, as the README has it. The widths agree with the Winding Stair's UP opening (1.6 m).",
+    "Heights on the shared datum (day-one sea zero): this platform stands about 43 m up (the Winding Stair's landing +21, the stair 'about 22 m higher'). The sea here is set at -33 below the platform (+10, about day 3) for the base state, which covers days 1 to 5; the painted states for days 6-7 and 8 raise it.",
+    "Ruin (2026-09-14): the walls were first built with level tops, and the north seed read as an intact walled yard. The game calls this a ruin and the README asks for 5-8 m of surviving wall with broken silhouettes extending higher locally, so the north wall now has a broken dip west of the Plain Hall opening and a 7.4 m stub beside it, and steps down at its east corner; the east wall has collapsed to 3.2 m near its middle and falls away towards the sea; fallen blocks lie under both breaks."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "sea",
+      "level": -33
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -25.5,
+        -17.2
+      ],
+      "size": [
+        100,
+        50,
+        40.8
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.25,
+        -0.95
+      ],
+      "size": [
+        11,
+        0.5,
+        8.5
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.4,
+        -25,
+        5.15
+      ],
+      "size": [
+        49.2,
+        50,
+        3.7
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        25.4,
+        -25,
+        5.15
+      ],
+      "size": [
+        49.2,
+        50,
+        3.7
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "stair",
+      "from": [
+        0,
+        -0.25,
+        3.35
+      ],
+      "to": [
+        0,
+        -3,
+        7
+      ],
+      "width": 1.6,
+      "tread": "rock",
+      "rail": null,
+      "solid": 3
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.4,
+        -3.2,
+        7.6
+      ],
+      "size": [
+        2.4,
+        0.4,
+        2
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "stair",
+      "from": [
+        0.8,
+        -3,
+        7.8
+      ],
+      "to": [
+        9,
+        -7,
+        7.8
+      ],
+      "width": 1.6,
+      "tread": "rock",
+      "rail": null,
+      "solid": 5
+    },
+    {
+      "part": "prop",
+      "at": [
+        5,
+        -29,
+        7.8
+      ],
+      "size": [
+        10,
+        42,
+        1.6
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.1,
+        4.35,
+        -5.55
+      ],
+      "size": [
+        2.2,
+        3.3,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.2,
+        3,
+        -5.55
+      ],
+      "size": [
+        2,
+        6,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.3,
+        2.15,
+        -5.55
+      ],
+      "size": [
+        1.8,
+        4.3,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.2,
+        3.7,
+        -5.55
+      ],
+      "size": [
+        2.4,
+        7.4,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.4,
+        3,
+        -5.55
+      ],
+      "size": [
+        2.4,
+        6,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.4,
+        2.4,
+        -5.55
+      ],
+      "size": [
+        1.6,
+        4.8,
+        0.7
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.85,
+        2.75,
+        -4.65
+      ],
+      "size": [
+        0.7,
+        5.5,
+        2.5
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.85,
+        1.6,
+        -2.3
+      ],
+      "size": [
+        0.7,
+        3.2,
+        2.2
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.85,
+        2.6,
+        0.1
+      ],
+      "size": [
+        0.7,
+        5.2,
+        2.6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.85,
+        2,
+        2.35
+      ],
+      "size": [
+        0.7,
+        4,
+        1.9
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "rock",
+      "at": [
+        4.9,
+        0.35,
+        -2.3
+      ],
+      "size": [
+        1.3,
+        0.7,
+        1.4
+      ],
+      "seed": 74
+    },
+    {
+      "part": "rock",
+      "at": [
+        4.3,
+        0.2,
+        -1.5
+      ],
+      "size": [
+        0.8,
+        0.4,
+        0.9
+      ],
+      "seed": 75
+    },
+    {
+      "part": "rock",
+      "at": [
+        -3.4,
+        0.25,
+        -4.6
+      ],
+      "size": [
+        1.1,
+        0.5,
+        0.8
+      ],
+      "seed": 76
+    },
+    {
+      "part": "bay",
+      "at": [
+        1.1,
+        0,
+        -10.55
+      ],
+      "size": [
+        2.2,
+        2.7,
+        9.3
+      ],
+      "open": "SOUTH"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.85,
+        2.5,
+        -3.6
+      ],
+      "size": [
+        0.7,
+        5,
+        4.6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.85,
+        1.5,
+        2.4
+      ],
+      "size": [
+        0.7,
+        3,
+        1.8
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -6.3,
+        0.3,
+        -1.6
+      ],
+      "size": [
+        1.2,
+        0.6,
+        1
+      ],
+      "seed": 71
+    },
+    {
+      "part": "rock",
+      "at": [
+        -6.6,
+        0.25,
+        1.9
+      ],
+      "size": [
+        1,
+        0.5,
+        0.9
+      ],
+      "seed": 72
+    },
+    {
+      "part": "rock",
+      "at": [
+        -5.2,
+        0.2,
+        -1.9
+      ],
+      "size": [
+        0.8,
+        0.4,
+        0.7
+      ],
+      "seed": 73
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.5,
+        -0.25,
+        0.1
+      ],
+      "size": [
+        6,
+        0.5,
+        6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.3,
+        1,
+        0.1
+      ],
+      "size": [
+        0.6,
+        2,
+        6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.5,
+        0.75,
+        -2.9
+      ],
+      "size": [
+        6,
+        1.5,
+        0.6
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.5,
+        0.5,
+        3.55
+      ],
+      "size": [
+        5.4,
+        1,
+        0.5
+      ],
+      "material": "masonry"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.5,
+        0.5,
+        3.55
+      ],
+      "size": [
+        5.4,
+        1,
+        0.5
+      ],
+      "material": "masonry"
+    }
+  ]
+}

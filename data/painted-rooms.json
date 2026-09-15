@@ -1,0 +1,26 @@
+{
+  "note": "Rooms whose paintings the game hangs: the ones accepted on the design dashboard.",
+  "rooms": [
+    "BALCONY",
+    "BOOTH-1",
+    "BRIG",
+    "COURTYARD",
+    "CRAG",
+    "DECK-NINE",
+    "DORM-A",
+    "DORM-B",
+    "DORM-C",
+    "DORM-CORRIDOR",
+    "DORM-D",
+    "KITCHEN",
+    "LAWANDA-PLATFORM",
+    "MESS-CORRIDOR",
+    "MESS-HALL",
+    "SANFAC-A",
+    "SANFAC-B",
+    "SANFAC-C",
+    "SANFAC-D",
+    "STORAGE-WEST",
+    "WINDING-STAIR"
+  ]
+}

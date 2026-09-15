@@ -1,0 +1,3842 @@
+{
+  "note": [
+    "The Reactor Lobby's fabric (DR-109), cut from the one Feinstein layout in scripts/fabric-feinstein.mjs -- regenerate from there, do not hand-edit. REACTOR-LOBBY v1: 8 x 2.8 x 5, the eye at the middle, 30.36 m east and 10.23 m aft of Deck Nine's eye on the same deck.",
+    "West, the 2.2 x 2.1 m mouth and the corridor back to Deck Nine: 2.2 x 2.3, straight for 3 m, then curving right (north) out of sight on a 12 m radius -- the same S of two 55-degree bends whose other end Deck Nine's TURN-090 paints. The wide bulkhead is at Deck Nine's end, 26 m back round both bends and out of sight, so nothing here changes when it shuts. The deck line runs in through the mouth 0.45 m aft of the axis and across to the reactor passage. East, a 2.2 x 2.1 m mouth onto a passage that turns south toward the Ion Reactor; south, a 1.5 x 2.1 m doorway onto a vestibule that turns west toward Auxiliary Control. Neither room is in sight."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        8,
+        2.8,
+        5
+      ],
+      "thickness": 0.1,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.05,
+          2.2,
+          2.1
+        ],
+        "EAST": [
+          0,
+          1.05,
+          2.2,
+          2.1
+        ],
+        "SOUTH": [
+          0,
+          1.05,
+          1.5,
+          2.1
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.05,
+        -0.05,
+        0
+      ],
+      "size": [
+        0.1,
+        0.1,
+        2.2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.05,
+        -0.05,
+        0
+      ],
+      "size": [
+        0.1,
+        0.1,
+        2.2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.05,
+        2.55
+      ],
+      "size": [
+        1.5,
+        0.1,
+        0.1
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.95,
+        1.13,
+        -1.18
+      ],
+      "size": [
+        0.1,
+        2.26,
+        0.16
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.95,
+        1.13,
+        1.18
+      ],
+      "size": [
+        0.1,
+        2.26,
+        0.16
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.95,
+        2.18,
+        0
+      ],
+      "size": [
+        0.1,
+        0.16,
+        2.52
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.95,
+        1.13,
+        -1.18
+      ],
+      "size": [
+        0.1,
+        2.26,
+        0.16
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.95,
+        1.13,
+        1.18
+      ],
+      "size": [
+        0.1,
+        2.26,
+        0.16
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.95,
+        2.18,
+        0
+      ],
+      "size": [
+        0.1,
+        0.16,
+        2.52
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.81,
+        1.11,
+        2.45
+      ],
+      "size": [
+        0.12,
+        2.22,
+        0.1
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.81,
+        1.11,
+        2.45
+      ],
+      "size": [
+        0.12,
+        2.22,
+        0.1
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        2.16,
+        2.45
+      ],
+      "size": [
+        1.74,
+        0.12,
+        0.1
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.006,
+        0.45
+      ],
+      "size": [
+        8,
+        0.012,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "pipe",
+      "material": "pipe",
+      "radius": 0.08,
+      "path": [
+        [
+          -4,
+          2.5,
+          -2.36
+        ],
+        [
+          4,
+          2.5,
+          -2.36
+        ]
+      ]
+    },
+    {
+      "part": "pipe",
+      "material": "conduit",
+      "radius": 0.05,
+      "path": [
+        [
+          -4,
+          2.3,
+          -2.42
+        ],
+        [
+          4,
+          2.3,
+          -2.42
+        ]
+      ]
+    },
+    {
+      "part": "bay",
+      "at": [
+        5.7,
+        0,
+        0
+      ],
+      "size": [
+        3.2,
+        2.6,
+        2.2
+      ],
+      "open": "WEST",
+      "thickness": 0.08,
+      "openings": {
+        "SOUTH": [
+          -0.5,
+          1.25,
+          2,
+          2.5
+        ]
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        6.2,
+        0,
+        3.18
+      ],
+      "size": [
+        2,
+        2.6,
+        4
+      ],
+      "open": "NORTH",
+      "thickness": 0.08
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        3.6
+      ],
+      "size": [
+        3,
+        2.6,
+        2
+      ],
+      "open": "NORTH",
+      "thickness": 0.08,
+      "openings": {
+        "WEST": [
+          -0.3,
+          1.1,
+          1.4,
+          2.2
+        ]
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -3.58,
+        0,
+        3.9
+      ],
+      "size": [
+        4,
+        2.6,
+        1.4
+      ],
+      "open": "EAST",
+      "thickness": 0.08
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.2,
+        -0.04,
+        1.14
+      ],
+      "size": [
+        2,
+        0.08,
+        0.08
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.54,
+        -0.04,
+        3.9
+      ],
+      "size": [
+        0.08,
+        0.08,
+        1.4
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.3,
+        0.006,
+        0.45
+      ],
+      "size": [
+        2.4,
+        0.012,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "light",
+      "at": [
+        5.7,
+        2.56,
+        0
+      ],
+      "size": [
+        0.7,
+        0.05,
+        0.2
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 8,
+        "distance": 6
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        2.56,
+        3.6
+      ],
+      "size": [
+        0.7,
+        0.05,
+        0.2
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 8,
+        "distance": 6
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.5,
+        2.76,
+        -1
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 14,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        2.5,
+        2.76,
+        -1
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 14,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        2.76,
+        1.2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 14,
+        "distance": 8
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        -26.457,
+        -0.051,
+        -10.226
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -26.457,
+        2.351,
+        -10.226
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -26.428,
+        1.15,
+        -11.376
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -26.486,
+        1.15,
+        -9.077
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -26.468,
+        0.006,
+        -9.777
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.852,
+        -0.05,
+        -10.196
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.852,
+        2.35,
+        -10.196
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.765,
+        1.15,
+        -11.342
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.939,
+        1.15,
+        -9.049
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.886,
+        0.006,
+        -9.747
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.249,
+        -0.051,
+        -10.135
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.249,
+        2.351,
+        -10.135
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.104,
+        1.15,
+        -11.275
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.394,
+        1.15,
+        -8.994
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -25.305,
+        0.006,
+        -9.688
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.65,
+        -0.05,
+        -10.043
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.65,
+        2.35,
+        -10.043
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.448,
+        1.15,
+        -11.175
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.852,
+        1.15,
+        -8.911
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.729,
+        0.006,
+        -9.6
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.056,
+        -0.051,
+        -9.921
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.056,
+        2.351,
+        -9.921
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.797,
+        1.15,
+        -11.042
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.315,
+        1.15,
+        -8.801
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.157,
+        0.006,
+        -9.483
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.469,
+        -0.05,
+        -9.77
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.469,
+        2.35,
+        -9.77
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.154,
+        1.15,
+        -10.876
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.785,
+        1.15,
+        -8.664
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.593,
+        0.006,
+        -9.337
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.891,
+        -0.051,
+        -9.589
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.891,
+        2.351,
+        -9.589
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.52,
+        1.15,
+        -10.677
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.262,
+        1.15,
+        -8.501
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.036,
+        0.006,
+        -9.163
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.322,
+        -0.05,
+        -9.379
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.322,
+        2.35,
+        -9.379
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.897,
+        1.15,
+        -10.447
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.748,
+        1.15,
+        -8.311
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.489,
+        0.006,
+        -8.961
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.765,
+        -0.051,
+        -9.141
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.765,
+        2.351,
+        -9.141
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.287,
+        1.15,
+        -10.186
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.244,
+        1.15,
+        -8.096
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.953,
+        0.006,
+        -8.732
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.221,
+        -0.05,
+        -8.875
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.221,
+        2.35,
+        -8.875
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.69,
+        1.15,
+        -9.894
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.752,
+        1.15,
+        -7.855
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.429,
+        0.006,
+        -8.476
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.69,
+        -0.051,
+        -8.581
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.69,
+        2.351,
+        -8.581
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.109,
+        1.15,
+        -9.573
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.272,
+        1.15,
+        -7.59
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.918,
+        0.006,
+        -8.193
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.176,
+        -0.05,
+        -8.262
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.176,
+        2.35,
+        -8.262
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.545,
+        1.15,
+        -9.223
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.807,
+        1.15,
+        -7.301
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.423,
+        0.006,
+        -7.886
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.678,
+        -0.051,
+        -7.916
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.678,
+        2.351,
+        -7.916
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.999,
+        1.15,
+        -8.844
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.356,
+        1.15,
+        -6.988
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.943,
+        0.006,
+        -7.553
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.198,
+        -0.05,
+        -7.546
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.198,
+        2.35,
+        -7.546
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.473,
+        1.15,
+        -8.439
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.922,
+        1.15,
+        -6.654
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.481,
+        0.006,
+        -7.197
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.737,
+        -0.051,
+        -7.153
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.737,
+        2.351,
+        -7.153
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.968,
+        1.15,
+        -8.007
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.506,
+        1.15,
+        -6.298
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.038,
+        0.006,
+        -6.818
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.297,
+        -0.05,
+        -6.736
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.297,
+        2.35,
+        -6.736
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.486,
+        1.15,
+        -7.551
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.108,
+        1.15,
+        -5.921
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.614,
+        0.006,
+        -6.417
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.878,
+        -0.051,
+        -6.298
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.878,
+        2.351,
+        -6.298
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.027,
+        1.15,
+        -7.071
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.73,
+        1.15,
+        -5.525
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.211,
+        0.006,
+        -5.995
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.482,
+        -0.05,
+        -5.839
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.482,
+        2.35,
+        -5.839
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.593,
+        1.15,
+        -6.568
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.372,
+        1.15,
+        -5.11
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.83,
+        0.006,
+        -5.554
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.11,
+        -0.051,
+        -5.361
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.11,
+        2.351,
+        -5.361
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.185,
+        1.15,
+        -6.044
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -18.035,
+        1.15,
+        -4.678
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.472,
+        0.006,
+        -5.093
+      ],
+      "size": [
+        0.593,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.75,
+        -0.05,
+        -4.873
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.75,
+        2.35,
+        -4.873
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.825,
+        1.15,
+        -5.556
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.675,
+        1.15,
+        -4.19
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.112,
+        0.006,
+        -4.606
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.93467
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.378,
+        -0.051,
+        -4.395
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.378,
+        2.351,
+        -4.395
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.489,
+        1.15,
+        -5.124
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.267,
+        1.15,
+        -3.666
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.726,
+        0.006,
+        -4.11
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.884147
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.982,
+        -0.05,
+        -3.936
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.982,
+        2.35,
+        -3.936
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.131,
+        1.15,
+        -4.709
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.833,
+        1.15,
+        -3.163
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.315,
+        0.006,
+        -3.634
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.833624
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.563,
+        -0.051,
+        -3.498
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.563,
+        2.351,
+        -3.498
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.752,
+        1.15,
+        -4.313
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.374,
+        1.15,
+        -2.683
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.881,
+        0.006,
+        -3.179
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.783102
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.123,
+        -0.05,
+        -3.081
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.123,
+        2.35,
+        -3.081
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.354,
+        1.15,
+        -3.936
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.892,
+        1.15,
+        -2.227
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.424,
+        0.006,
+        -2.747
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.732579
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.663,
+        -0.051,
+        -2.687
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.663,
+        2.351,
+        -2.687
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.938,
+        1.15,
+        -3.58
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.387,
+        1.15,
+        -1.795
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.946,
+        0.006,
+        -2.338
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.682056
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.183,
+        -0.05,
+        -2.317
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.183,
+        2.35,
+        -2.317
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.504,
+        1.15,
+        -3.245
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.861,
+        1.15,
+        -1.39
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.448,
+        0.006,
+        -1.954
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.631534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.685,
+        -0.051,
+        -1.972
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.685,
+        2.351,
+        -1.972
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.054,
+        1.15,
+        -2.933
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.316,
+        1.15,
+        -1.011
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.932,
+        0.006,
+        -1.596
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.581011
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.17,
+        -0.05,
+        -1.652
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.17,
+        2.35,
+        -1.652
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.588,
+        1.15,
+        -2.644
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.752,
+        1.15,
+        -0.661
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.397,
+        0.006,
+        -1.264
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.530488
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.64,
+        -0.051,
+        -1.359
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.64,
+        2.351,
+        -1.359
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.109,
+        1.15,
+        -2.379
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.17,
+        1.15,
+        -0.339
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.847,
+        0.006,
+        -0.96
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.479966
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.095,
+        -0.05,
+        -1.093
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.095,
+        2.35,
+        -1.093
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.616,
+        1.15,
+        -2.138
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.574,
+        1.15,
+        -0.048
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.282,
+        0.006,
+        -0.684
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.429443
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.538,
+        -0.051,
+        -0.855
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.538,
+        2.351,
+        -0.855
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.113,
+        1.15,
+        -1.923
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.963,
+        1.15,
+        0.213
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.704,
+        0.006,
+        -0.437
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.37892
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.969,
+        -0.05,
+        -0.645
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.969,
+        2.35,
+        -0.645
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.599,
+        1.15,
+        -1.733
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.34,
+        1.15,
+        0.443
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.115,
+        0.006,
+        -0.219
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.328397
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.391,
+        -0.051,
+        -0.464
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.391,
+        2.351,
+        -0.464
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.076,
+        1.15,
+        -1.569
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.706,
+        1.15,
+        0.642
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.514,
+        0.006,
+        -0.031
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.277875
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.804,
+        -0.05,
+        -0.312
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.804,
+        2.35,
+        -0.312
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.545,
+        1.15,
+        -1.432
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.063,
+        1.15,
+        0.808
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.906,
+        0.006,
+        0.126
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.227352
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.211,
+        -0.051,
+        -0.191
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.211,
+        2.351,
+        -0.191
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.008,
+        1.15,
+        -1.322
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.413,
+        1.15,
+        0.941
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.29,
+        0.006,
+        0.252
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.176829
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.612,
+        -0.05,
+        -0.099
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.612,
+        2.35,
+        -0.099
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.467,
+        1.15,
+        -1.24
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.756,
+        1.15,
+        1.041
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.668,
+        0.006,
+        0.347
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.126307
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.009,
+        -0.051,
+        -0.038
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.009,
+        2.351,
+        -0.038
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.922,
+        1.15,
+        -1.184
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.096,
+        1.15,
+        1.108
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.043,
+        0.006,
+        0.41
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.075784
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.403,
+        -0.05,
+        -0.007
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.403,
+        2.35,
+        -0.007
+      ],
+      "size": [
+        0.687,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.374,
+        1.15,
+        -1.157
+      ],
+      "size": [
+        0.568,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.432,
+        1.15,
+        1.142
+      ],
+      "size": [
+        0.684,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.415,
+        0.006,
+        0.442
+      ],
+      "size": [
+        0.639,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": -0.025261
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.35,
+        -0.051,
+        0
+      ],
+      "size": [
+        1.52,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.35,
+        2.351,
+        0
+      ],
+      "size": [
+        1.52,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.35,
+        1.15,
+        -1.15
+      ],
+      "size": [
+        1.52,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.35,
+        1.15,
+        1.15
+      ],
+      "size": [
+        1.52,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.35,
+        0.006,
+        0.45
+      ],
+      "size": [
+        1.51,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.85,
+        -0.05,
+        0
+      ],
+      "size": [
+        1.52,
+        0.1,
+        2.4
+      ],
+      "material": "deck-plate",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.85,
+        2.35,
+        0
+      ],
+      "size": [
+        1.52,
+        0.1,
+        2.4
+      ],
+      "material": "ceiling",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.85,
+        1.15,
+        -1.15
+      ],
+      "size": [
+        1.52,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.85,
+        1.15,
+        1.15
+      ],
+      "size": [
+        1.52,
+        2.3,
+        0.1
+      ],
+      "material": "wall-panel",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.85,
+        0.006,
+        0.45
+      ],
+      "size": [
+        1.51,
+        0.012,
+        0.08
+      ],
+      "material": "handrail",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.527,
+        1.15,
+        -10.897
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.25
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.056,
+        1.15,
+        -8.823
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.25
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.495,
+        1.15,
+        -9.703
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.5
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.521,
+        1.15,
+        -7.825
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.5
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.852,
+        1.15,
+        -7.796
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.75
+    },
+    {
+      "part": "prop",
+      "at": [
+        -19.311,
+        1.15,
+        -6.23
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.75
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.793,
+        1.15,
+        -5.379
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.919862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.496,
+        1.15,
+        -4.082
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.919862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.885,
+        1.15,
+        -3.434
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.669862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.213,
+        1.15,
+        -1.756
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.669862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.554,
+        1.15,
+        -2.022
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.419862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.427,
+        1.15,
+        -0.068
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.419862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.947,
+        1.15,
+        -1.231
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.169862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.309,
+        1.15,
+        0.879
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": -0.169862
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.139,
+        1.15,
+        -1.07
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.139,
+        1.15,
+        1.07
+      ],
+      "size": [
+        0.14,
+        2.3,
+        0.06
+      ],
+      "material": "structural-rib",
+      "rot": 0
+    },
+    {
+      "part": "light",
+      "at": [
+        -24.77,
+        2.26,
+        -10.065
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "rot": -0.166667,
+      "cast": {
+        "intensity": 12,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -21.008,
+        2.26,
+        -8.764
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "rot": -0.5,
+      "cast": {
+        "intensity": 12,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -17.881,
+        2.26,
+        -6.3
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "rot": -0.833333,
+      "cast": {
+        "intensity": 12,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -15.307,
+        2.26,
+        -3.247
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "rot": -0.753196,
+      "cast": {
+        "intensity": 12,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -11.991,
+        2.26,
+        -1.045
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "rot": -0.419862,
+      "cast": {
+        "intensity": 12,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -8.137,
+        2.26,
+        -0.048
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "rot": -0.086529,
+      "cast": {
+        "intensity": 12,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -4.139,
+        2.26,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "rot": 0,
+      "cast": {
+        "intensity": 12,
+        "distance": 8
+      }
+    }
+  ]
+}

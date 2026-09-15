@@ -1,0 +1,3765 @@
+{
+  "note": [
+    "The Admin Corridor's fabric (DR-106), cut from the one Kalamontee layout in scripts/fabric-kalamontee.mjs -- regenerate from there, do not hand-edit. ADMIN-CORRIDOR.metadata.json: 4.4 x 3.4 x 10, the eye at the middle, 5 m from the rift's lip; built from parts (its roof stops 2 m short of the lip, while the south block's roof beside it runs on to the face), so it draws its own ('open'). A sky room (SHARED-ROOM-METADATA).",
+    "The game: \"rent apart ... You can see the sky through the severed roof above, and the ground is thick with rubble. To the north is a gaping rift, at least eight meters across and thirty meters deep\" (compone.zil 1013-1017). North, the lip and the 8 m rift, 31 m deep, open to the sky; across it Admin Corridor North's severed end in the north block's 4.8 m face, its three portals and their signs. With LADDER-FLAG the ladder lies across on both lips. West, 1.5 m south of the eye, the 2.4 x 2.8 doorway labelled \"Sistumz Moniturz\" onto the Systems Monitors; south, the 3.4 x 2.9 mouth onto Admin Corridor South, the Junction and the Mech corridors beyond it down the one line."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.04,
+        0
+      ],
+      "size": [
+        4.56,
+        0.08,
+        10
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.99,
+        1.7,
+        5.04
+      ],
+      "size": [
+        0.58,
+        3.4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.99,
+        1.7,
+        5.04
+      ],
+      "size": [
+        0.58,
+        3.4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        3.15,
+        5.04
+      ],
+      "size": [
+        3.4,
+        0.5,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.24,
+        1.7,
+        3.85
+      ],
+      "size": [
+        0.08,
+        3.4,
+        2.3
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.24,
+        1.7,
+        -2.35
+      ],
+      "size": [
+        0.08,
+        3.4,
+        5.3
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.24,
+        3.1,
+        1.5
+      ],
+      "size": [
+        0.08,
+        0.6,
+        2.4
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.18,
+        3.1,
+        1.5
+      ],
+      "size": [
+        0.02,
+        0.3,
+        1.8
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.24,
+        1.7,
+        0
+      ],
+      "size": [
+        0.08,
+        3.4,
+        10
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        3.44,
+        1
+      ],
+      "size": [
+        4.56,
+        0.08,
+        8
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        4.14,
+        1.04
+      ],
+      "size": [
+        4.56,
+        1.32,
+        8.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.4,
+        3.75,
+        -3.45
+      ],
+      "size": [
+        1.76,
+        0.7,
+        0.9
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.65,
+        4.2,
+        -3.3
+      ],
+      "size": [
+        1.26,
+        1.2,
+        0.6
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.6,
+        0.25,
+        -1.2
+      ],
+      "size": [
+        0.9,
+        0.5,
+        1.1
+      ],
+      "seed": 3,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.75,
+        0.35,
+        -2.8
+      ],
+      "size": [
+        0.8,
+        0.7,
+        1.4
+      ],
+      "seed": 7,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.35,
+        0.15,
+        -4.3
+      ],
+      "size": [
+        0.9,
+        0.3,
+        0.8
+      ],
+      "seed": 11,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        1.6,
+        0.3,
+        -3.6
+      ],
+      "size": [
+        0.9,
+        0.6,
+        1.4
+      ],
+      "seed": 5,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        1.7,
+        0.2,
+        -1.4
+      ],
+      "size": [
+        0.8,
+        0.4,
+        1
+      ],
+      "seed": 9,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        1.65,
+        0.12,
+        1.2
+      ],
+      "size": [
+        0.6,
+        0.24,
+        0.7
+      ],
+      "seed": 13,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        1.75,
+        0.25,
+        3.4
+      ],
+      "size": [
+        0.7,
+        0.5,
+        1
+      ],
+      "seed": 17,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.8,
+        0.2,
+        4.2
+      ],
+      "size": [
+        0.6,
+        0.4,
+        0.9
+      ],
+      "seed": 31,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        0.95,
+        0.08,
+        -2.2
+      ],
+      "size": [
+        0.3,
+        0.16,
+        0.3
+      ],
+      "seed": 19,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -0.8,
+        0.07,
+        3
+      ],
+      "size": [
+        0.35,
+        0.14,
+        0.25
+      ],
+      "seed": 23,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -1.1,
+        0.1,
+        -4.6
+      ],
+      "size": [
+        0.5,
+        0.2,
+        0.4
+      ],
+      "seed": 29,
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.2,
+        0.09,
+        -4.3
+      ],
+      "size": [
+        0.9,
+        0.12,
+        1.3
+      ],
+      "material": "concrete",
+      "rot": 0.5
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        2.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        11.16
+      ],
+      "size": [
+        4.4,
+        3.4,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          -1,
+          1.15,
+          1.5,
+          2.3
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.5,
+        0.006,
+        13.16
+      ],
+      "size": [
+        0.12,
+        0.012,
+        1.523
+      ],
+      "material": "structural-rib",
+      "rot": 1.976
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.1,
+        0.006,
+        13.235
+      ],
+      "size": [
+        0.12,
+        0.012,
+        1.588
+      ],
+      "material": "structural-rib",
+      "rot": 1.079
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.4,
+        0.006,
+        13.335
+      ],
+      "size": [
+        0.12,
+        0.012,
+        1.692
+      ],
+      "material": "structural-rib",
+      "rot": 1.902
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        8.16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        14.16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        4.86,
+        0,
+        10.16
+      ],
+      "size": [
+        5,
+        3.2,
+        5
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.15,
+          1.5,
+          2.3
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.66,
+        1.1,
+        8.66
+      ],
+      "size": [
+        1.4,
+        1.9,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.66,
+        1.1,
+        9.66
+      ],
+      "size": [
+        1.4,
+        1.9,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.66,
+        1.1,
+        10.66
+      ],
+      "size": [
+        1.4,
+        1.9,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.06,
+        0.21,
+        8.16
+      ],
+      "size": [
+        0.4,
+        0.42,
+        0.4
+      ],
+      "material": "stencil",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.25,
+        0.7,
+        8.16
+      ],
+      "size": [
+        0.2,
+        0.42,
+        0.45
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.06,
+        0.21,
+        9.16
+      ],
+      "size": [
+        0.4,
+        0.42,
+        0.4
+      ],
+      "material": "stencil",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.25,
+        0.7,
+        9.16
+      ],
+      "size": [
+        0.2,
+        0.42,
+        0.45
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.06,
+        0.21,
+        10.16
+      ],
+      "size": [
+        0.4,
+        0.42,
+        0.4
+      ],
+      "material": "stencil",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.25,
+        0.7,
+        10.16
+      ],
+      "size": [
+        0.2,
+        0.42,
+        0.45
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.06,
+        0.84,
+        12.38
+      ],
+      "size": [
+        2.7,
+        0.06,
+        0.55
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.16,
+        0.875,
+        12.36
+      ],
+      "size": [
+        0.42,
+        0.02,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.06,
+        0.875,
+        12.36
+      ],
+      "size": [
+        0.42,
+        0.02,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.96,
+        0.875,
+        12.36
+      ],
+      "size": [
+        0.42,
+        0.02,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.06,
+        1.65,
+        12.65
+      ],
+      "size": [
+        2.7,
+        0.8,
+        0.02
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "light",
+      "at": [
+        4.86,
+        3.16,
+        10.16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        23.32
+      ],
+      "size": [
+        12,
+        3.6,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "WEST": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3,
+        3.56,
+        20.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        3,
+        3.56,
+        20.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -3,
+        3.56,
+        26.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        3,
+        3.56,
+        26.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        35.48
+      ],
+      "size": [
+        4.4,
+        3.4,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          1,
+          1.125,
+          1.2,
+          2.25
+        ],
+        "WEST": [
+          2,
+          1.4,
+          2.4,
+          2.8
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        32.48
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        38.48
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        4.36,
+        0,
+        36.48
+      ],
+      "size": [
+        4,
+        3,
+        4
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.125,
+          1.2,
+          2.25
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        4.36,
+        2.96,
+        36.48
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -10.36,
+        0,
+        39.98
+      ],
+      "size": [
+        16,
+        8,
+        16
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          -6.5,
+          1.4,
+          2.4,
+          2.8
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -14.36,
+        7.96,
+        43.98
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -6.36,
+        7.96,
+        35.98
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -8.36,
+        0,
+        1.5
+      ],
+      "size": [
+        12,
+        3.6,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          0,
+          1.4,
+          2.4,
+          2.8
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.3,
+        2,
+        5.4
+      ],
+      "size": [
+        0.12,
+        0.8,
+        1.1
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.33,
+        2.52,
+        5.4
+      ],
+      "size": [
+        0.06,
+        0.12,
+        1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        5.4
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-live",
+      "when": "DEFENSE-FIXED == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        5.4
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-fault",
+      "when": "DEFENSE-FIXED != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.3,
+        2,
+        4.1
+      ],
+      "size": [
+        0.12,
+        0.8,
+        1.1
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.33,
+        2.52,
+        4.1
+      ],
+      "size": [
+        0.06,
+        0.12,
+        1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        4.1
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-live",
+      "when": "COURSE-CONTROL-FIXED == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        4.1
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-fault",
+      "when": "COURSE-CONTROL-FIXED != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.3,
+        2,
+        2.8
+      ],
+      "size": [
+        0.12,
+        0.8,
+        1.1
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.33,
+        2.52,
+        2.8
+      ],
+      "size": [
+        0.06,
+        0.12,
+        1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        2.8
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-live",
+      "when": "COMM-FIXED == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        2.8
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-fault",
+      "when": "COMM-FIXED != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.3,
+        2,
+        1.5
+      ],
+      "size": [
+        0.12,
+        0.8,
+        1.1
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.33,
+        2.52,
+        1.5
+      ],
+      "size": [
+        0.06,
+        0.12,
+        1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        1.5
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.3,
+        2,
+        0.2
+      ],
+      "size": [
+        0.12,
+        0.8,
+        1.1
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.33,
+        2.52,
+        0.2
+      ],
+      "size": [
+        0.06,
+        0.12,
+        1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        0.2
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.3,
+        2,
+        -1.1
+      ],
+      "size": [
+        0.12,
+        0.8,
+        1.1
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.33,
+        2.52,
+        -1.1
+      ],
+      "size": [
+        0.06,
+        0.12,
+        1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        -1.1
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.3,
+        2,
+        -2.4
+      ],
+      "size": [
+        0.12,
+        0.8,
+        1.1
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.33,
+        2.52,
+        -2.4
+      ],
+      "size": [
+        0.06,
+        0.12,
+        1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.23,
+        1.52,
+        -2.4
+      ],
+      "size": [
+        0.03,
+        0.08,
+        0.9
+      ],
+      "material": "indicator-fault"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.91,
+        0.45,
+        1.5
+      ],
+      "size": [
+        0.8,
+        0.9,
+        9.4
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.36,
+        0.73,
+        -1
+      ],
+      "size": [
+        1,
+        0.04,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.36,
+        0.355,
+        -2.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.36,
+        0.355,
+        0.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.46,
+        0.95,
+        -0.2
+      ],
+      "size": [
+        0.5,
+        0.4,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.21,
+        0.9,
+        -1.2
+      ],
+      "size": [
+        0.4,
+        0.3,
+        0.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.46,
+        1,
+        -2.05
+      ],
+      "size": [
+        0.3,
+        0.5,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.36,
+        0.73,
+        4
+      ],
+      "size": [
+        1,
+        0.04,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.36,
+        0.355,
+        2.7
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.36,
+        0.355,
+        5.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.46,
+        0.95,
+        3.2
+      ],
+      "size": [
+        0.5,
+        0.4,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.21,
+        0.9,
+        4.2
+      ],
+      "size": [
+        0.4,
+        0.3,
+        0.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.46,
+        1,
+        5.05
+      ],
+      "size": [
+        0.3,
+        0.5,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.56,
+        0.73,
+        -1
+      ],
+      "size": [
+        1,
+        0.04,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.56,
+        0.355,
+        -2.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.56,
+        0.355,
+        0.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.66,
+        0.95,
+        -0.2
+      ],
+      "size": [
+        0.5,
+        0.4,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.41,
+        0.9,
+        -1.2
+      ],
+      "size": [
+        0.4,
+        0.3,
+        0.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.66,
+        1,
+        -2.05
+      ],
+      "size": [
+        0.3,
+        0.5,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.56,
+        0.73,
+        4
+      ],
+      "size": [
+        1,
+        0.04,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.56,
+        0.355,
+        2.7
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.56,
+        0.355,
+        5.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.66,
+        0.95,
+        3.2
+      ],
+      "size": [
+        0.5,
+        0.4,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.41,
+        0.9,
+        4.2
+      ],
+      "size": [
+        0.4,
+        0.3,
+        0.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.66,
+        1,
+        5.05
+      ],
+      "size": [
+        0.3,
+        0.5,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.16,
+        0.73,
+        -1
+      ],
+      "size": [
+        1,
+        0.04,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.16,
+        0.355,
+        -2.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.16,
+        0.355,
+        0.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.26,
+        0.95,
+        -0.2
+      ],
+      "size": [
+        0.5,
+        0.4,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.01,
+        0.9,
+        -1.2
+      ],
+      "size": [
+        0.4,
+        0.3,
+        0.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.26,
+        1,
+        -2.05
+      ],
+      "size": [
+        0.3,
+        0.5,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.16,
+        0.73,
+        4
+      ],
+      "size": [
+        1,
+        0.04,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.16,
+        0.355,
+        2.7
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.16,
+        0.355,
+        5.3
+      ],
+      "size": [
+        0.9,
+        0.71,
+        0.06
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.26,
+        0.95,
+        3.2
+      ],
+      "size": [
+        0.5,
+        0.4,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.01,
+        0.9,
+        4.2
+      ],
+      "size": [
+        0.4,
+        0.3,
+        0.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.26,
+        1,
+        5.05
+      ],
+      "size": [
+        0.3,
+        0.5,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "light",
+      "at": [
+        -11.36,
+        3.56,
+        -1
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.36,
+        3.56,
+        -1
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -11.36,
+        3.56,
+        4
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.36,
+        3.56,
+        4
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -16
+      ],
+      "size": [
+        4.4,
+        3.4,
+        6
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.7,
+          4.4,
+          3.4
+        ],
+        "NORTH": [
+          0,
+          1.2,
+          1.6,
+          2.4
+        ],
+        "EAST": [
+          0,
+          1.2,
+          1.6,
+          2.4
+        ],
+        "WEST": [
+          0,
+          1.2,
+          1.6,
+          2.4
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.18,
+        2.75,
+        -16
+      ],
+      "size": [
+        0.02,
+        0.3,
+        1.8
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        2.75,
+        -18.98
+      ],
+      "size": [
+        1.8,
+        0.3,
+        0.02
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.18,
+        2.75,
+        -16
+      ],
+      "size": [
+        0.02,
+        0.3,
+        1.8
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        -16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -21.66
+      ],
+      "size": [
+        5,
+        3.2,
+        5
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.2,
+          1.6,
+          2.4
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -4.56,
+        0,
+        -16
+      ],
+      "size": [
+        4.4,
+        3.2,
+        4.4
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          0,
+          1.2,
+          1.6,
+          2.4
+        ],
+        "WEST": [
+          1,
+          1.2,
+          1.2,
+          2.4
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.26,
+        0.74,
+        -15.6
+      ],
+      "size": [
+        0.75,
+        0.04,
+        1.4
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.26,
+        0.36,
+        -15.15
+      ],
+      "size": [
+        0.7,
+        0.72,
+        0.45
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.92,
+        0.42,
+        -15.6
+      ],
+      "size": [
+        0.03,
+        0.56,
+        1.36
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.06,
+        0.45,
+        -15.6
+      ],
+      "size": [
+        0.45,
+        0.05,
+        0.45
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.28,
+        0.7,
+        -15.6
+      ],
+      "size": [
+        0.05,
+        0.45,
+        0.45
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.06,
+        0.22,
+        -15.6
+      ],
+      "size": [
+        0.08,
+        0.42,
+        0.08
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4.56,
+        3.16,
+        -16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        4.86,
+        0,
+        -16
+      ],
+      "size": [
+        5,
+        3.2,
+        4
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.2,
+          1.6,
+          2.4
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.16,
+        1.35,
+        -16
+      ],
+      "size": [
+        0.4,
+        2.3,
+        3.6
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.21,
+        0.1,
+        -16
+      ],
+      "size": [
+        0.3,
+        0.2,
+        3.4
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        0.2,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        0.529,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        0.857,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.186,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.514,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.843,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        2.171,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        2.5,
+        -16
+      ],
+      "size": [
+        0.03,
+        0.03,
+        3.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -17.8
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -17.5
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -17.2
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -16.9
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -16.6
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -16.3
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -16
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -15.7
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -15.4
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -15.1
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -14.8
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -14.5
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.95,
+        1.35,
+        -14.2
+      ],
+      "size": [
+        0.03,
+        2.3,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.66,
+        1.6,
+        -17.99
+      ],
+      "size": [
+        4.2,
+        2,
+        0.02
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.06,
+        2.3,
+        -17.975
+      ],
+      "size": [
+        0.18,
+        0.18,
+        0.01
+      ],
+      "material": "emergency-band"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.66,
+        1.6,
+        -14.01
+      ],
+      "size": [
+        4.2,
+        2,
+        0.02
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "light",
+      "at": [
+        4.86,
+        3.16,
+        -16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -81.08,
+        0,
+        23.32
+      ],
+      "size": [
+        150,
+        3.4,
+        4.4
+      ],
+      "open": "EAST"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -78.94,
+        0.02,
+        23.32
+      ],
+      "size": [
+        154.28,
+        0.04,
+        3
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "light",
+      "at": [
+        -12.08,
+        3.36,
+        23.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -24.08,
+        3.36,
+        23.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -36.08,
+        3.36,
+        23.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -48.08,
+        3.36,
+        23.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -60.08,
+        3.36,
+        23.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -72.08,
+        3.36,
+        23.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        49.64
+      ],
+      "size": [
+        4.4,
+        3.4,
+        16
+      ],
+      "open": "NORTH"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        49.64
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.15,
+        1.1,
+        36.48
+      ],
+      "size": [
+        0.42,
+        2.2,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.36,
+        2.5,
+        37.98
+      ],
+      "size": [
+        5,
+        5,
+        3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.36,
+        1.75,
+        42.48
+      ],
+      "size": [
+        3.5,
+        3.5,
+        4
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.36,
+        4,
+        33.48
+      ],
+      "size": [
+        16,
+        0.08,
+        1.2
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16,
+        -22.6,
+        -9
+      ],
+      "size": [
+        4,
+        44.8,
+        16
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        19.6,
+        -22.6,
+        -9
+      ],
+      "size": [
+        4,
+        44.8,
+        16
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        -22.6,
+        -15
+      ],
+      "size": [
+        31.6,
+        44.8,
+        4
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        -22.6,
+        -3
+      ],
+      "size": [
+        31.6,
+        44.8,
+        4
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        -31.5,
+        -9
+      ],
+      "size": [
+        31.6,
+        1,
+        8
+      ],
+      "material": "rock"
+    },
+    {
+      "part": "rock",
+      "at": [
+        -11.4,
+        -30.22,
+        -7.88
+      ],
+      "size": [
+        2.6,
+        2.08,
+        2.3400000000000003
+      ],
+      "seed": 41
+    },
+    {
+      "part": "rock",
+      "at": [
+        -6.9,
+        -30.07,
+        -10.08
+      ],
+      "size": [
+        3.1,
+        2.4800000000000004,
+        2.79
+      ],
+      "seed": 42
+    },
+    {
+      "part": "rock",
+      "at": [
+        -3.4,
+        -30.34,
+        -6.78
+      ],
+      "size": [
+        2.2,
+        1.7600000000000002,
+        1.9800000000000002
+      ],
+      "seed": 43
+    },
+    {
+      "part": "rock",
+      "at": [
+        0,
+        -30.16,
+        -9.28
+      ],
+      "size": [
+        2.8,
+        2.2399999999999998,
+        2.52
+      ],
+      "seed": 44
+    },
+    {
+      "part": "rock",
+      "at": [
+        3.8,
+        -30.28,
+        -6.28
+      ],
+      "size": [
+        2.4,
+        1.92,
+        2.16
+      ],
+      "seed": 45
+    },
+    {
+      "part": "rock",
+      "at": [
+        7.6,
+        -30.1,
+        -10.78
+      ],
+      "size": [
+        3,
+        2.4000000000000004,
+        2.7
+      ],
+      "seed": 46
+    },
+    {
+      "part": "rock",
+      "at": [
+        12.1,
+        -30.25,
+        -8.18
+      ],
+      "size": [
+        2.5,
+        2,
+        2.25
+      ],
+      "seed": 47
+    },
+    {
+      "part": "rock",
+      "at": [
+        15.6,
+        -30.34,
+        -9.68
+      ],
+      "size": [
+        2.2,
+        1.7600000000000002,
+        1.9800000000000002
+      ],
+      "seed": 48
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.14,
+        2.3,
+        -4.75
+      ],
+      "size": [
+        11.72,
+        5,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.94,
+        2.3,
+        -4.75
+      ],
+      "size": [
+        15.32,
+        5,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.14,
+        -4.75
+      ],
+      "size": [
+        4.56,
+        0.12,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.14,
+        2.3,
+        -13.25
+      ],
+      "size": [
+        11.72,
+        5,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.94,
+        2.3,
+        -13.25
+      ],
+      "size": [
+        15.32,
+        5,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.14,
+        -13.25
+      ],
+      "size": [
+        4.56,
+        0.12,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        4.14,
+        -13.25
+      ],
+      "size": [
+        4.56,
+        1.32,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.24,
+        3.44,
+        -13.25
+      ],
+      "size": [
+        0.08,
+        0.08,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.24,
+        3.44,
+        -13.25
+      ],
+      "size": [
+        0.08,
+        0.08,
+        0.5
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.14,
+        4.1,
+        -4.04
+      ],
+      "size": [
+        11.72,
+        1.4,
+        0.92
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.14,
+        4.24,
+        1.5
+      ],
+      "size": [
+        11.72,
+        1.12,
+        10.16
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.94,
+        4.1,
+        0.29
+      ],
+      "size": [
+        15.32,
+        1.4,
+        9.58
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.24,
+        0.05,
+        -9
+      ],
+      "size": [
+        0.05,
+        0.1,
+        8.6
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.24,
+        0.05,
+        -9
+      ],
+      "size": [
+        0.05,
+        0.1,
+        8.6
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -13.15
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -12.85
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -12.55
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -12.25
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -11.95
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -11.65
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -11.35
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -11.05
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -10.75
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -10.45
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -10.15
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -9.85
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -9.55
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -9.25
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -8.95
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -8.65
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -8.35
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -8.05
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -7.75
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -7.45
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -7.15
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -6.85
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -6.55
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -6.25
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -5.95
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -5.65
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -5.35
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -5.05
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.05,
+        -4.75
+      ],
+      "size": [
+        0.48,
+        0.03,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "LADDER-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.28,
+        -0.04,
+        10.16
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.5
+      ],
+      "material": "deck-plate"
+    }
+  ]
+}
