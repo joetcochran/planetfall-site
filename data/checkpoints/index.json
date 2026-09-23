@@ -3,6 +3,10 @@
   {
    "id": "comm-room",
    "label": "Tower Core, before the Comm Room: flask in hand, Floyd following"
+  },
+  {
+   "id": "comm-fixed",
+   "label": "Comm Room, help message sent: laser, pliers, good bedistor and the three cards (day 2)"
   }
  ]
 }

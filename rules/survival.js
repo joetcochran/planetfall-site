@@ -330,20 +330,37 @@ function wakingUp(g) {
   }
 }
 
+// How long the player can stay awake after waking on each day (RESET-TIME's QUEUE values); day 1's is the start
+// of the game's (ship.js). Shared with the checkpoint refresh below.
+const AWAKE_FOR = { 1: 3600, 2: 5800, 3: 5550, 4: 5200, 5: 4800, 6: 4300, 7: 3700, 8: 3000 };
+
 // RESET-TIME: a new morning sets INTERNAL-MOVES, re-arms the sleep clock and lets the sea's new level be described afresh.
 function resetTime(g) {
   const untouch = room => { g.state.rooms[room].touched = false; };
-  switch (g.getg('DAY')) {
-    case 2: untouch('BALCONY'); g.state.time = 1600 + g.random(80); g.queue('I-SLEEP-WARNINGS', 5800); break;
-    case 3: untouch('BALCONY'); g.state.time = 1750 + g.random(80); g.queue('I-SLEEP-WARNINGS', 5550); break;
-    case 4: untouch('WINDING-STAIR'); g.state.time = 1950 + g.random(80); g.queue('I-SLEEP-WARNINGS', 5200); break;
-    case 5: untouch('WINDING-STAIR'); g.state.time = 2150 + g.random(80); g.queue('I-SLEEP-WARNINGS', 4800); break;
-    case 6: untouch('COURTYARD'); g.state.time = 2450 + g.random(80); g.queue('I-SLEEP-WARNINGS', 4300); break;
-    case 7: untouch('COURTYARD'); g.state.time = 2800 + g.random(80); g.queue('I-SLEEP-WARNINGS', 3700); break;
-    case 8: g.state.time = 3200 + g.random(80); g.queue('I-SLEEP-WARNINGS', 3000); break;
+  const day = g.getg('DAY');
+  switch (day) {
+    case 2: untouch('BALCONY'); g.state.time = 1600 + g.random(80); break;
+    case 3: untouch('BALCONY'); g.state.time = 1750 + g.random(80); break;
+    case 4: untouch('WINDING-STAIR'); g.state.time = 1950 + g.random(80); break;
+    case 5: untouch('WINDING-STAIR'); g.state.time = 2150 + g.random(80); break;
+    case 6: untouch('COURTYARD'); g.state.time = 2450 + g.random(80); break;
+    case 7: untouch('COURTYARD'); g.state.time = 2800 + g.random(80); break;
+    case 8: g.state.time = 3200 + g.random(80); break;
     case 9: g.jigsUp("Unfortunately, you don't seem to have survived the night."); break;
   }
+  if (day >= 2 && AWAKE_FOR[day]) g.queue('I-SLEEP-WARNINGS', AWAKE_FOR[day]);
 }
+
+// Not in the source: a playtest checkpoint starts the player fed, rested and well (the user, 2026-09-23: "every
+// checkpoint should start me off with full health and sleep"). Fed as by the high-protein liquid (its 3600), rested
+// as on waking this day, and the disease back to nothing with the carrying strength it took. The day and the clock are
+// left alone -- they drive the sea, the lights and the rest of the plot.
+function checkpointRefresh(g) {
+  g.setg('HUNGER-LEVEL', 0); g.queue('I-HUNGER-WARNINGS', 3600);
+  g.setg('SLEEPY-LEVEL', 0); g.disable('I-FALL-ASLEEP'); g.queue('I-SLEEP-WARNINGS', AWAKE_FOR[g.getg('DAY')] ?? 3000);
+  g.setg('LOAD-ALLOWED', 100); g.setg('SICKNESS-LEVEL', 0);
+}
+export const helpers = { 'CHECKPOINT-REFRESH': checkpointRefresh };
 
 export const verbs = {
   // V-EAT (replaces the engine placeholder; the goo and the liquid handle their own eating)

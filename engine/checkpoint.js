@@ -7,9 +7,13 @@
 // random draws to make afresh on each load. 'chemicals' is COMM-SETUP's order of lamps (RANDOMIZE-ORDER, STEPS-TO-GO,
 // CHEMICAL-REQUIRED; compone.zil), which a real game rolls on its first turn: the user asked for a different colour
 // each load, as a real game would give. The laser's shot counts come from the same routine and are kept as played.
+//
+// Every checkpoint starts the player fed, rested and well (the user, 2026-09-23: "every checkpoint should start me
+// off with full health and sleep"): rules/survival.js CHECKPOINT-REFRESH.
 export function applyCheckpoint(g, checkpoint, seed) {
   g.load(checkpoint.state);
   g.state.rng = seed | 0;                         // the rest of the game is not the walkthrough's either
+  g.rules.helpers['CHECKPOINT-REFRESH'](g);
   if ((checkpoint.reroll ?? []).includes('chemicals')) {
     const shots = { old: g.getg('OLD-SHOTS'), fresh: g.getg('NEW-SHOTS') };
     g.rules.helpers['COMM-SETUP'](g);

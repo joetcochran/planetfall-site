@@ -49,7 +49,6 @@ export class UI {
     for (const r of [...g.world.rooms].sort((a, b) => a.name.localeCompare(b.name))) { const o = el('option', null, `${r.name} · ${r.id}`); o.value = r.id; jump.appendChild(o); }
     jump.onchange = () => { if (jump.value) onJump(jump.value); jump.value = ''; };
     root.querySelector('#toggle-debug').onclick = () => root.querySelector('#debug').classList.toggle('open');
-    this.flags = root.querySelector('#flags');
     document.addEventListener('pointerdown', e => { if (!this.menu.contains(e.target)) this.hideMenu(); }, true);
   }
   // One button per quickButtons entry, in its order; the rest of the row hidden (see the constructor).
@@ -200,9 +199,6 @@ export class UI {
       this.deathOverlay.classList.toggle('won', won);
       this.restore2.hidden = won || !g.state.saveSlot;   // FINISH offers RESTORE: the saved game, when there is one
     }
-    // Debug flags
-    const s = g.state; const q = s.queue.filter(x => x.enabled).map(x => `${x.name}:${x.tick}`).join(' ');
-    this.flags.textContent = `here=${s.here} time=${s.time} elapsed=${s.elapsed}\nglobals ${JSON.stringify(s.globals)}\nqueue ${q}\nnotes ${[...g.notes].join(', ') || 'none'}`;
   }
   // Deliberate deviation (user decision, 2026-09-11, round six): points are announced by a green notice over the view;
   // the original only changed the status line, and every click playtester missed their score going up.
