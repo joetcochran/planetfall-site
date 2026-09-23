@@ -25,6 +25,22 @@
    "label": "Auxiliary Booth, out of the computer: the Lab Office, the gas mask and the run to the cryo-elevator"
   },
   {
+   "id": "ladder",
+   "label": "Admin Corridor, the ladder just opened on the floor: next, put it across the rift"
+  },
+  {
+   "id": "machine-shop",
+   "label": "Machine Shop, the empty flask in hand: the pink button, the flask under the spout"
+  },
+  {
+   "id": "lower-elevator",
+   "label": "Lower Elevator, the lower card not yet slid: the elevator sign, the Waiting Area, the shuttle sign"
+  },
+  {
+   "id": "course-control",
+   "label": "Course Control, the cube shut and the course not yet fixed: open, take, fix, drop"
+  },
+  {
    "id": "final-chase",
    "label": "The Bio Lab, the fungicide released and the mutants stunned: the final chase to the cryo-elevator"
   }
