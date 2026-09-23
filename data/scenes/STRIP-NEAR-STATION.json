@@ -1,0 +1,81 @@
+{
+  "note": [
+    "Strip Near Station's fabric (DR-106), cut from the one computer layout in scripts/fabric-computer.mjs -- regenerate from there, do not hand-edit. STRIP-NEAR-STATION v1: the south section of the silicon strip, a bare 8.0 m deck 1.0 m thick with sheer sides, the eye on its centre line. No lane line, kerb, rail, lamp or lettering. No shell, walls, lamps or sky: the black void is the package's own lighting.fog (black, 8 to 16 m), which the engine makes the fog and the background, and the fill is its sourceless lighting.fill. Past 16 m everything is black. The microbe and the speck are overlays and are not in the fabric.",
+    "South, 5.0 m off, the deck ends in a straight edge where the filament turns through a right angle and drops into the void. West, Station 384's two plates, the lower flush with the deck from 4.0 to 10.0 m out, the upper's underside 3.2 m up, and the void through the sandwich past their open sides. North, the strip running on into Middle of Strip's section and into the black. East, the edge and the void."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.5,
+        -2.5
+      ],
+      "size": [
+        8,
+        1,
+        15
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -20.5,
+        4.5
+      ],
+      "size": [
+        8,
+        39,
+        1
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7,
+        -0.3,
+        0
+      ],
+      "size": [
+        6,
+        0.6,
+        6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7,
+        3.5,
+        0
+      ],
+      "size": [
+        6,
+        0.6,
+        6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.5,
+        -20
+      ],
+      "size": [
+        8,
+        1,
+        20
+      ],
+      "material": "plate-steel"
+    }
+  ]
+}

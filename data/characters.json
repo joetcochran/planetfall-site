@@ -1,0 +1,951 @@
+{
+  "_comment": [
+    "Cutouts: one flat picture per actor, and per thing that has one (the padlock), hung by the graybox where the room puts it.",
+    "Dev-owned, not part of a design package. Each entry points at a PNG under wwwroot/assets/characters and",
+    "states the figure's real height in metres. Width is NOT stated: it follows the image's own aspect, so the",
+    "two can never disagree. `depth` is footprint only -- it keeps a figure clear of exit lanes and never changes",
+    "what is drawn, and it is deliberately independent of the displayed width, because an oversized held prop",
+    "widens the silhouette without widening the man (design agent, DR-095, 2026-09-12).",
+    "`provisional` marks a cutout taken from a concept sheet rather than delivered as a production asset."
+  ],
+  "BLATHER": {
+    "image": "assets/characters/BLATHER.png",
+    "height": 1.95,
+    "depth": 0.45,
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/FEINSTEIN/BLATHER-Clipboard-Alpha.png, delivered as PNG-32 with real alpha (DR-104); already tightly cropped, so nothing was trimmed",
+    "note": "Height 1.95 m and depth 0.45 m are the design agent's proposed numbers (DR-095, 2026-09-12); the source gives no measurement. The clipboard widens the silhouette without widening the man, which is why depth is authored and width is not.",
+    "aspect": 0.4685,
+    "pixels": [
+      707,
+      1509
+    ]
+  },
+  "AMBASSADOR": {
+    "image": "assets/characters/AMBASSADOR.png",
+    "height": 1.9,
+    "depth": 1.3,
+    "aspect": 0.7508,
+    "pixels": [
+      744,
+      991
+    ],
+    "provisional": true,
+    "source": "RoomPolishInstructions/characters/FEINSTEIN/BLATHER-AMBASSADOR_Concept-01.png, right figure, background flooded away and cropped to the figure",
+    "note": "Height 1.9 m and depth 1.3 m are DEV's proposals and want the design agent's numbers. The source gives no measurement, and the concept sheet's relative heights are compositional by its own README, so they cannot be read off it. Depth is large on purpose: he stands on a splayed tripod, so his footprint is much wider than a person's and the ring solver has to keep exit lanes clear of it."
+  },
+  "FLOYD": {
+    "image": "assets/characters/FLOYD.png",
+    "height": 1.22,
+    "depth": 0.5,
+    "aspect": 0.4611,
+    "pixels": [
+      598,
+      1297
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/FLOYD/FLOYD_STANDING_MAGENTA.png (DR-096, mail 20260913-175735-design-0001), cut by scripts/cutout.mjs --tol 60: magenta key from the border, rim unmixed",
+    "note": "Concept 01, approved by the user on 2026-09-13, painted by the design agent on flat magenta for extraction. Height 1.22 m is the source's four feet (compone.zil); depth 0.5 m, inside the rooms' 0.6 m clearanceRadius, both confirmed by the design agent. The variant is Floyd switched off: RLANDBIT is his switched-on state (floyd.js), so without it he stands inert -- dark optics, limp arms, the same height.",
+    "variants": [
+      {
+        "when": "FLOYD without RLANDBIT",
+        "image": "assets/characters/FLOYD-OFF.png",
+        "aspect": 0.4194,
+        "pixels": [
+          544,
+          1297
+        ],
+        "source": "RoomPolishInstructions/characters/FLOYD/FLOYD_OFF_MAGENTA.png (DR-096, same mail), cut the same way"
+      }
+    ]
+  },
+  "RAT-ANT": {
+    "image": "assets/characters/RAT-ANT.png",
+    "height": 1.8,
+    "depth": 0.55,
+    "aspect": 0.7486,
+    "pixels": [
+      911,
+      1217
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/RAT-ANT/RAT-ANT_STANDING_MAGENTA.png (DR-096, mail 20260919-015149-design-0587), cut by scripts/cutout.mjs --tol 60 as FLOYD was; then the magenta held in the hair and fur wisps beyond the 2 px rim was unmixed: within 12 px of the edge, a pixel with b > g and r > g was read as figure mixed with the key, the key share t = (b - g)/255 taken into alpha (Norm, 2026-09-19)",
+    "note": "\"Rat-like, ant-like man-sized monster\". A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius. The tail and claws spread the silhouette; the body is a man's width. A few of the finest whiskers were lost as specks."
+  },
+  "TROLL": {
+    "image": "assets/characters/TROLL.png",
+    "height": 2.1,
+    "depth": 0.6,
+    "aspect": 0.7339,
+    "pixels": [
+      891,
+      1214
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/TROLL/TROLL_STANDING_MAGENTA.png (DR-096, mail 20260919-015712-design-0588), cut by scripts/cutout.mjs --tol 60 as FLOYD was; then the magenta held in the hair and fur wisps beyond the 2 px rim was unmixed: within 12 px of the edge, a pixel with b > g and r > g was read as figure mixed with the key, the key share t = (b - g)/255 taken into alpha (Norm, 2026-09-19)",
+    "note": "\"Hairy growling biped\". A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius."
+  },
+  "GRUE": {
+    "image": "assets/characters/GRUE.png",
+    "height": 1.4,
+    "depth": 0.55,
+    "aspect": 0.8134,
+    "pixels": [
+      981,
+      1206
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/GRUE/GRUE_STANDING_MAGENTA.png (DR-096, mail 20260919-020213-design-0589), cut by scripts/cutout.mjs --tol 60 as FLOYD was",
+    "note": "\"Lurking fanged creature\", crouched and mostly dark, as a grue must be. A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius."
+  },
+  "TRIFFID": {
+    "image": "assets/characters/TRIFFID.png",
+    "height": 2.2,
+    "depth": 0.6,
+    "aspect": 0.7938,
+    "pixels": [
+      970,
+      1222
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/TRIFFID/TRIFFID_STANDING_MAGENTA.png (DR-096, mail 20260919-020916-design-0590), cut by scripts/cutout.mjs --tol 60 as FLOYD was; then the magenta held in the hair and fur wisps beyond the 2 px rim was unmixed: within 12 px of the edge, a pixel with b > g and r > g was read as figure mixed with the key, the key share t = (b - g)/255 taken into alpha (Norm, 2026-09-19)",
+    "note": "\"Mobile man-eating plant\", on its root-feet. A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius. The lashes spread the silhouette wider than the stem."
+  },
+  "PADLOCK": {
+    "image": "assets/items/PADLOCK.png",
+    "height": 0.3,
+    "depth": 0.105,
+    "aspect": 0.6406,
+    "pixels": [
+      164,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/MESS-CORRIDOR_Visual-Design-Handoff/.../reference/DR-106_PADLOCK-CLOSED.png (mail 20260914-115733-design-0058), real alpha from the design agent, downsampled to 256 px tall with the colour unblended from the alpha",
+    "note": "The Mess Corridor padlock, closed through the hasp (MESS-CORRIDOR metadata v7: size [0.07, 0.10, 0.035], on the hasp at [1.35, 1.15, -3.82] until first taken). Height is the closed lock; a variant keeps the same foot. DRAWN AT 3x ITS CANON SIZE (0.1 m -> 0.3 m), a deliberate legibility deviation and not a reading of canon: at 0.1 m it stood 16 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). It hangs through the hasp rather than standing on anything, so the TOP is what is held: the hasp at 1.14, centre 0.99. The open-shackle variant is scaled with it and keeps the same foot.",
+    "variants": [
+      {
+        "when": "PADLOCK has MUNGEDBIT",
+        "image": "assets/items/PADLOCK-FUSED.png",
+        "aspect": 0.6445,
+        "pixels": [
+          165,
+          256
+        ]
+      },
+      {
+        "when": "PADLOCK has OPENBIT",
+        "image": "assets/items/PADLOCK-OPEN.png",
+        "aspect": 0.6654,
+        "pixels": [
+          175,
+          263
+        ],
+        "height": 0.308
+      }
+    ]
+  },
+  "CANTEEN": {
+    "image": "assets/items/CANTEEN.png",
+    "height": 0.25,
+    "depth": 0.1,
+    "aspect": 0.7278,
+    "pixels": [
+      262,
+      360
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/KITCHEN_Visual-Design-Handoff/.../reference (mail 20260914-162616-design-0085), real alpha from the design agent via scripts/cutout.mjs, padded so the body is centred",
+    "note": "The canteen: on its Mess Hall bench until first taken (MESS-HALL objects.CANTEEN), and in the Kitchen dispenser's niche while it is there (KITCHEN objects.DISPENSER.contentsAt). Open, it is drawn lidless -- with the brown liquid when the dispenser has filled it; a variant keeps the same foot. RETURNED TO CANON 0.25 m, 2026-09-21: it lives in the Kitchen dispenser's PAINTED octagonal niche, which the art sized for the canon canteen (KITCHEN objects.DISPENSER.contentsAt [1.65, 0.86, -3.68], \"puts its foot on the niche floor\"). At 3x it was 0.75 m tall and 0.30 m deep against a dispenser body 1.7 m tall and 0.24 m DEEP, so it overflowed the niche it stands in and read with its left side cut away (the user, with a screenshot). Same reasoning as the fromitz boards: where canon paints the container, canon sizes the thing inside it.",
+    "variants": [
+      {
+        "when": "CANTEEN has OPENBIT and HIGH-PROTEIN in CANTEEN",
+        "image": "assets/items/CANTEEN-OPEN-FULL.png",
+        "aspect": 1.0578,
+        "pixels": [
+          348,
+          329
+        ],
+        "height": 0.229
+      },
+      {
+        "when": "CANTEEN has OPENBIT",
+        "image": "assets/items/CANTEEN-OPEN.png",
+        "aspect": 1.0578,
+        "pixels": [
+          348,
+          329
+        ],
+        "height": 0.229
+      }
+    ]
+  },
+  "CAN": {
+    "image": "assets/items/CAN.png",
+    "height": 0.48,
+    "depth": 0.36,
+    "aspect": 0.7389,
+    "pixels": [
+      266,
+      360
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/CAN.png (the design agent's item set, ITEM-MANIFEST CAN), cut from its white backdrop by Norm via scripts/cutout.mjs, downsampled to 360 px tall with the colour unblended from the alpha",
+    "note": "The large tin can labelled \"Spam and Egz\": on the Storage West shelf until first taken (STORAGE-WEST objects.CAN at [0.8, 1.35, -1.88]). Never painted into the room; it is drawn wherever the engine has it. DRAWN AT 3x ITS CANON SIZE (0.16 m -> 0.48 m), a deliberate legibility deviation and not a reading of canon: at 0.16 m it stood 26 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). On STORAGE-WEST's middle shelf, top 1.32 (fabric-kalamontee.mjs storageShelves: boards at 0.45, 1.3, 2.05, each 0.04 thick), re-seated to centre 1.56; the board above has its underside at 2.03, so 0.71 m of headroom for 0.48 m -- 0.23 m clear."
+  },
+  "LADDER": {
+    "image": "assets/items/LADDER.png",
+    "height": 2.5,
+    "depth": 0.15,
+    "aspect": 0.2803,
+    "pixels": [
+      287,
+      1024
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/LADDER.png (the design agent's item set, ITEM-MANIFEST LADDER), cut from its white backdrop by Norm via scripts/cutout.mjs (a seed in each enclosed gap between the rungs), downsampled to 1024 px tall with the colour unblended from the alpha",
+    "note": "The collapsed aluminum ladder: leaning against the Storage West north wall until first taken (STORAGE-WEST objects.LADDER at [-0.35, 1.25, -1.88]; largeObjects.LADDER, about 2.5 m collapsed, source/compone.zil), then carried or dropped as the engine has it. The extended ladder across the rift is painted into the Admin Corridor rooms (their largeObjects), not drawn from this. Extended (LADDER-EXTENDED) it has no picture: the variant with a null image draws its box.",
+    "variants": [
+      {
+        "when": "LADDER-EXTENDED == true",
+        "image": null
+      }
+    ]
+  },
+  "DISPENSER": {
+    "depth": 0.24,
+    "facing": 180,
+    "provisional": false,
+    "source": "RoomPolishInstructions/KITCHEN_Visual-Design-Handoff/.../reference/DR-106_DISPENSER-DAMAGE_R2.png (mail 20260915-033732-design-0136), the accepted damage art of 0086 re-registered to the face: the button ring and the spout collar on the painted button and spout, real alpha, 600 px/m from Norm's guide (mail 20260914-164652-dev-0083)",
+    "note": "The Kitchen dispenser is part of the painting; only its damage is a picture, so the entry has no base image and draws only when the dispenser is broken. It lies flat on the front face of the dispenser's box (KITCHEN objects.DISPENSER position and this depth), facing south into the room, and covers the face exactly: 0.8 x 1.7 m. The label, the button, the spout and the niche are transparent in it, so the live canteen still shows.",
+    "variants": [
+      {
+        "when": "DISPENSER has MUNGEDBIT",
+        "image": "assets/items/DISPENSER-DAMAGE.png",
+        "height": 1.7,
+        "aspect": 0.4706,
+        "pixels": [
+          480,
+          1020
+        ]
+      }
+    ]
+  },
+  "SEND-CONSOLE": {
+    "depth": 0.05,
+    "facing": 315,
+    "height": 0.3583,
+    "provisional": false,
+    "source": "RoomPolishInstructions/COMM-ROOM_Visual-Design-Handoff/COMM-ROOM/reference/COMM-SIGN-MALFUNCTION_GREG.png, COMM-SIGN-TRANSMISSION_GREG.png and COMM-SIGN-SHUTDOWN_GREG.png (mail 20260922-164252-design-0792, answering 20260922-162314-dev-0852): Greg's three alpha cutouts of the one sign face, cropped by Norm to their own alpha bounding box (1813x331, 1818x337, 1818x363 of a 1942x809 canvas) and box-filtered down to 720 px wide on premultiplied alpha. R2 (mail 20260922-202601-design-0800, answering 20260922-194954-dev-0876): redrawn at 2.4:1 with the text over 2-3 lines, because at 5.4:1 all 38 characters sat on one line and the capitals came out about 4 px at the size the console has room for.",
+    "note": "The Comm Room's SEND CONSOLE is part of the painting; only the flashing sign beside the screen is a picture, so this entry has no base image and draws only over the painted room -- the same rule as the Kitchen DISPENSER's damage. Canon: \"Next to the screen is a flashing sign which says\" one of three things, chosen COMM-SHUTDOWN first, then COMM-FIXED, else the malfunction (source/compone.zil 2833-2840 and the SHUTDOWN routine at 3117-3119), so the three variants below are exhaustive and exactly one always hangs. It lies flat on the send console's own face, facing 315 (out of the south-east wall into the room), on the clear wall panel to the LEFT of the painted screen plate: COMM-ROOM objects.SEND-CONSOLE is authored at that anchor ([2.599, 1.5, 1.58] = 2.955 m out on bearing 135, 0.721 m across it, the same plane and the same height as COMM-SCREEN and the enunciator). 0.86 m wide, which is the free band between the console's left end and the screen plate (0.958 m in the painting's own pixels, 190 px of DR-113_COMM-ROOM-135_SEED_R2_GREG.png at x 598-788) less a 5 cm margin either side. The three heights differ by a centimetre because the two-line shutdown face is drawn deeper than the one-line faces; `height` above is the malfunction one, so all three keep the same foot and grow upward.",
+    "variants": [
+      {
+        "when": "COMM-SHUTDOWN == true",
+        "image": "assets/items/COMM-SIGN-SHUTDOWN-R2.png",
+        "height": 0.3583,
+        "aspect": 2.4,
+        "pixels": [
+          720,
+          300
+        ]
+      },
+      {
+        "when": "COMM-FIXED == true",
+        "image": "assets/items/COMM-SIGN-TRANSMISSION-R2.png",
+        "height": 0.3583,
+        "aspect": 2.4,
+        "pixels": [
+          720,
+          300
+        ]
+      },
+      {
+        "when": "COMM-FIXED != true and COMM-SHUTDOWN != true",
+        "image": "assets/items/COMM-SIGN-MALFUNCTION-R2.png",
+        "height": 0.3583,
+        "aspect": 2.4,
+        "pixels": [
+          720,
+          300
+        ]
+      }
+    ]
+  },
+  "FOOD-KIT": {
+    "image": "assets/items/FOOD-KIT.png",
+    "height": 1.02,
+    "depth": 0.72,
+    "aspect": 0.6836,
+    "pixels": [
+      175,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/ESCAPE-POD_Visual-Design-Handoff_v1/ESCAPE-POD/reference/DR-109_FOOD-KIT-SPRITE.png (mail 20260916-171936-design-0199), delivered with real alpha on a 1254 square; trimmed to its own 816x1192 figure and downsampled to 256 px tall by scripts/sprite.mjs.",
+    "note": "The survival kit (globals.zil 1013, DESC \"survival kit\"), a hard case with the orange stripe and a SURVIVAL KIT plate. It is PORTABLE, which is why it cannot live in the pod’s painting and needs an asset: the user saw it as a yellow block. The pod authors its place, upright on the deck in front of the service column (ESCAPE-POD metadata objects.FOOD-KIT, [-1.58, 0.17, 1.06], anchorUntilHandled) -- 0.17 is half this height, so the cutout’s foot sits on the deck. The authored size [0.14, 0.34, 0.24] stays the footprint the room keeps clear; the drawn width comes from the picture. Drawn by the PAINTING in the Escape Pod, not as a cutout (ESCAPE-POD objects.FOOD-KIT.painted), so this height is the pick target's, matched to what Greg painted at about 3x canon (0.34 -> 1.02 m) rather than a picture anyone sees."
+  },
+  "TOWEL": {
+    "image": "assets/items/TOWEL.png",
+    "height": 0.63,
+    "depth": 0.6,
+    "aspect": 1.4323,
+    "pixels": [
+      275,
+      192
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/ESCAPE-POD_Visual-Design-Handoff_v1/ESCAPE-POD/reference/DR-109_TOWEL-SPRITE.png (mail 20260916-171936-design-0199), delivered with real alpha on a 1254 square; trimmed to its own 1202x840 figure and downsampled to 192 px tall by scripts/sprite.mjs.",
+    "note": "The towel (globals.zil 997), folded, lying on the deck 8 cm north of the kit (ESCAPE-POD metadata objects.TOWEL). PORTABLE, so it cannot be painted in -- the user saw it as a yellow block. It is READBIT, and the embroidery is the object’s own TEXT verbatim, three lines: \"S.P.S. FEINSTEIN / Escape Pod #42 / Don’t Panic!\" (globals.zil 1003-1005), so the picture agrees with what EXAMINE prints. Height is the folded towel’s drawn extent in three-quarter view, not its 4 cm thickness; the authored size [0.24, 0.04, 0.2] stays the footprint. Drawn by the PAINTING in the Escape Pod, not as a cutout (ESCAPE-POD objects.TOWEL.painted), so this height is the pick target's, matched to what Greg painted at about 3x canon (0.21 -> 0.63 m) rather than a picture anyone sees."
+  },
+  "RED-SPOOL": {
+    "image": "assets/items/RED-SPOOL.png",
+    "height": 0.3,
+    "depth": 0.3,
+    "aspect": 0.9883,
+    "pixels": [
+      253,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/INFIRMARY_Visual-Design-Handoff/INFIRMARY/reference/DR-109_RED-SPOOL-SPRITE.png (mail design-0314), real alpha on a 1254 square; trimmed to its own 763x771 figure and downsampled to 256 px tall by scripts/sprite.mjs.",
+    "note": "The red spool (comptwo.zil 124-134): \"a small red spool\", SIZE 3, labelled \"Simptumz uv Xe Dizeez.\" PORTABLE, so an asset and not painted -- the user saw it as a block (their change note on the Infirmary, 2026-09-16). 0.1 m tall as drawn; the Infirmary anchors it on the west bed at y 0.85, half this height above the 0.8 m mattress, so its foot sits on the bed. DRAWN AT 3x ITS CANON SIZE (0.1 m -> 0.3 m), a deliberate legibility deviation and not a reading of canon: at 0.1 m it stood 16 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). On the INFIRMARY's west bed, mattress top 0.8 (fabric-lawanda.mjs infirmary: frame 0.6 plus mattress 0.14), centre 0.95; open above."
+  },
+  "MEDICINE-BOTTLE": {
+    "image": "assets/items/MEDICINE-BOTTLE.png",
+    "height": 0.3,
+    "depth": 0.12,
+    "aspect": 0.4609,
+    "pixels": [
+      118,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/INFIRMARY_Visual-Design-Handoff/INFIRMARY/reference/DR-109_MEDICINE-BOTTLE-SPRITE.png (mail design-0315), real alpha on a 1254 square; trimmed to its own 405x877 figure and downsampled to 256 px tall by scripts/sprite.mjs.",
+    "note": "The medicine bottle (comptwo.zil 146-158): \"a translucent bottle with a small white label\", reading \"Dizeez supreshun medisin -- eksperimentul\", drawn with the small quantity of medicine at the bottom. PORTABLE, so an asset. 0.2 m tall; anchored on the low north shelf (top 0.42 m) at y 0.52, so its foot sits on the shelf. The picture keeps the medicine after it is drunk; an empty variant is not painted. HELD AT 0.3 m AND NOT TRIPLED: 3x would be 0.6 m and the shelf above its own is only 0.51 m clear (fabric-lawanda.mjs infirmary shelves: plates at 0.4, 0.95, 1.5, 2.05, each 0.04 thick, so a top at 0.42 and an underside at 0.93), so a 0.6 m bottle would stand through it. Reported to Norm rather than forced or quietly shrunk; it keeps the 0.3 m it was given on 2026-09-21, which is the largest round size that clears the shelf. The call it needs is the user's: accept it at 0.3, take it to the 0.5 m the gap allows, or move the bottle onto the open counter (fabric-lawanda.mjs infirmary: the work counter at [-4.8, 0.93, 1.8]) where 0.6 m fits. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself).",
+    "showsContents": true
+  },
+  "SCRUB-BRUSH": {
+    "image": "assets/items/SCRUB-BRUSH.png",
+    "height": 0.42,
+    "depth": 0.24,
+    "aspect": 1.2461,
+    "pixels": [
+      319,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/SCRUB-BRUSH.png (mail design-0316), real alpha on a 1254 square; trimmed to its own 1163x932 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The scrub brush (globals.zil), the player's Deck Nine chore. Upright, three-quarter view, 0.14 m tall as drawn. DRAWN AT 3x ITS CANON SIZE (0.14 m -> 0.42 m), a deliberate legibility deviation and not a reading of canon: at 0.14 m it stood 22 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Carried by the player from the start, so there is nothing to re-seat."
+  },
+  "CHRONOMETER": {
+    "image": "assets/items/CHRONOMETER.png",
+    "height": 0.66,
+    "aspect": 0.8477,
+    "flat": true,
+    "pixels": [
+      217,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/CHRONOMETER.png (mail design-0317), real alpha on a 1254 square; trimmed to its own 912x1078 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The chronometer, a wrist watch. Drawn from above, so it lies flat as a decal (flat: true); 0.22 m is its length with the strap. Its face shows a fixed time: the picture cannot follow the clock, and the game prints the time on EXAMINE. DRAWN AT 3x ITS CANON SIZE (0.22 m -> 0.66 m), a deliberate legibility deviation and not a reading of canon: at 0.22 m it stood 21 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). KNOWINGLY OUT OF LIFE SCALE, with the user's consent: 0.66 m is a wrist chronometer's length with its strap, tripled. The game never states its size, so no printed line is contradicted -- but no wrist would wear it. Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat."
+  },
+  "ID-CARD": {
+    "image": "assets/items/ID-CARD.png",
+    "height": 0.162,
+    "aspect": 1.0938,
+    "pixels": [
+      280,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/ID-CARD-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The Stellar Patrol ID card. Drawn UPRIGHT in three-quarter view (DR-117, 2026-09-21), standing on its lower edge; 0.054 m is a card's short side, 0.087 m long. DRAWN AT 3x ITS CANON SIZE (0.054 m -> 0.162 m), a deliberate legibility deviation and not a reading of canon: at 0.054 m it stood 5 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.162 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.6172 to 1.0938 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "PATROL-UNIFORM": {
+    "image": "assets/items/PATROL-UNIFORM.png",
+    "height": 1.5,
+    "aspect": 0.6055,
+    "flat": true,
+    "pixels": [
+      155,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/PATROL-UNIFORM.png (mail design-0319), real alpha on a 1254 square; trimmed to its own 697x1154 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The patrol uniform, drawn laid out flat, so it lies on the floor as a decal (flat: true), 1.5 m head to foot."
+  },
+  "BROCHURE": {
+    "image": "assets/items/BROCHURE.png",
+    "height": 0.6,
+    "aspect": 1.0078,
+    "flat": true,
+    "pixels": [
+      258,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/BROCHURE.png (mail design-0320), real alpha on a 1254 square; trimmed to its own 853x845 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The Blow'k-bibben-Gordo brochure (globals.zil 836-848), its TEXT lettered verbatim, *** PLANETFALL *** and all. Drawn top-down, so it lies flat (flat: true), 0.2 m square. DRAWN AT 3x ITS CANON SIZE (0.2 m -> 0.6 m), a deliberate legibility deviation and not a reading of canon: at 0.2 m it stood 19 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat."
+  },
+  "KITCHEN-CARD": {
+    "image": "assets/items/KITCHEN-CARD.png",
+    "height": 0.162,
+    "aspect": 1.0938,
+    "pixels": [
+      280,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/KITCHEN-CARD-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The kitchen access card (compone.zil 1220-1227), embossed \"kitcin akses kard.\" verbatim. Drawn UPRIGHT in three-quarter view (DR-117, 2026-09-21), standing on its lower edge; 0.054 m, a card's short side. DRAWN AT 3x ITS CANON SIZE (0.054 m -> 0.162 m), a deliberate legibility deviation and not a reading of canon: at 0.054 m it stood 5 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.162 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.6992 to 1.0938 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "UPPER-ELEVATOR-CARD": {
+    "image": "assets/items/UPPER-ELEVATOR-CARD.png",
+    "height": 0.162,
+    "aspect": 1.0938,
+    "pixels": [
+      280,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/UPPER-ELEVATOR-CARD-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The upper elevator access card (compone.zil 1230-1237), embossed \"upur elivaatur akses kard.\" verbatim, blue like the door it opens. Drawn UPRIGHT in three-quarter view (DR-117, 2026-09-21), standing on its lower edge; 0.054 m, a card's short side. DRAWN AT 3x ITS CANON SIZE (0.054 m -> 0.162 m), a deliberate legibility deviation and not a reading of canon: at 0.054 m it stood 5 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.162 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.6016 to 1.0938 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "SHUTTLE-CARD": {
+    "image": "assets/items/SHUTTLE-CARD.png",
+    "height": 0.162,
+    "aspect": 1.207,
+    "pixels": [
+      309,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/SHUTTLE-CARD-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The shuttle access card (compone.zil 1240-1248), embossed \"shutul akses kard.\" verbatim. Drawn UPRIGHT in three-quarter view (DR-117, 2026-09-21), standing on its lower edge; 0.054 m, a card’s short side. DRAWN AT 3x ITS CANON SIZE (0.054 m -> 0.162 m), a deliberate legibility deviation and not a reading of canon: at 0.054 m it stood 5 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.162 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.8281 to 1.207 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "LOWER-ELEVATOR-CARD": {
+    "image": "assets/items/LOWER-ELEVATOR-CARD.png",
+    "height": 0.162,
+    "aspect": 1.168,
+    "pixels": [
+      299,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/LOWER-ELEVATOR-CARD-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The lower elevator access card (compone.zil 1250-1257), embossed \"loowur elivaatur akses kard.\" verbatim, red like the door it opens. Drawn UPRIGHT in three-quarter view (DR-117, 2026-09-21), standing on its lower edge; 0.054 m, a card’s short side. DRAWN AT 3x ITS CANON SIZE (0.054 m -> 0.162 m), a deliberate legibility deviation and not a reading of canon: at 0.054 m it stood 5 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.162 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.8789 to 1.168 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "OIL-CAN": {
+    "image": "assets/items/OIL-CAN.png",
+    "height": 0.45,
+    "depth": 0.3,
+    "aspect": 1.207,
+    "pixels": [
+      309,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/OIL-CAN.png (mail design-0325), real alpha on a 1254 square; trimmed to its own 1110x921 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The oil can (compone.zil 1347-1356), \"a small oil can\" on a dusty shelf; no lettering. Drawn standing in three-quarter view, so upright; 0.15 m to the tip of the spout, 0.1 m deep. DRAWN AT 3x ITS CANON SIZE (0.15 m -> 0.45 m), at the user's instruction: \"oil can needs to be 3x bigger\" (2026-09-21). A deliberate legibility deviation, not a reading of canon -- at true scale it stood about 34 px tall from the room's eye and read as a speck. On the north unit's middle board, top at 1.32 (fabric-kalamontee.mjs storageEast: boards at 0.45, 1.3, 2.05, each 0.04 thick); the board above has its underside at 2.03, so 0.71 m of headroom."
+  },
+  "CARTON": {
+    "image": "assets/items/CARTON.png",
+    "height": 0.9,
+    "depth": 0.9,
+    "aspect": 1.1016,
+    "pixels": [
+      282,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/CARTON.png (mail design-0332, the upright redraw), real alpha on a 1254 square; trimmed to its own 1143x1038 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The cardboard box (compone.zil 1368-1378), \"a small cardboard box\". Upright: an open box standing on its base in three-quarter view (Greg's redraw, design-0332, asked in dev-0413 after the first drawing looked straight down into it and could only have lain flat), 0.3 m tall. HELD AT 0.3 m AND NOT TRIPLED: 3x would be 0.9 m and the carton stands on the floor under STORAGE-EAST's lowest board, whose underside is 0.43 m up (fabric-kalamontee.mjs storageEast: boards at 0.45, 1.3, 2.05, each 0.04 thick, spanning z -2.0 to -1.58, and the carton is at z -1.76). A 0.9 m carton would stand through two of them. Reported rather than forced or quietly shrunk. It is also the one small prop with a JOB: graybox.js draws its four contents on its lid, 0.35 m apart, and the lid is where its height puts it. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT 3x ITS CANON SIZE (0.3 -> 0.9 m), 2026-09-21: the rule held it at canon only because it stood under the shelf, where 3x would have put it through two boards. The user moved it out -- \"cardboard box looks tiny. perhaps it can be on the floor NEXT TO the shelf\" -- and on the open floor nothing is above it. Canon calls it \"a small cardboard box\" (compone.zil 1368-1378), so this is a knowing scale liberty like the others."
+  },
+  "CRACKED-BOARD": {
+    "image": "assets/items/CRACKED-BOARD.png",
+    "height": 0.17,
+    "aspect": 1.0234,
+    "flat": true,
+    "pixels": [
+      262,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/CRACKED-BOARD.png (mail design-0327), real alpha on a 1254 square; trimmed to its own 1111x1085 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The cracked seventeen-centimeter fromitz board (compone.zil 1385-1397), \"looks as though it’s been dropped\"; no lettering. Drawn top-down, so it lies flat (flat: true); 0.17 m, its canon size. RETURNED TO CANON 0.17 m, 2026-09-21 (the user): the flat-3x rule drew it at 0.51 m, and this is the one object class where 3x makes a physical impossibility rather than just a scale liberty. Its own DESC calls it a \"seventeen-centimeter fromitz board\", and four of the seven live inside containers canon fixes the size of -- Storage East's carton is 0.330 m wide and held a 0.522 m board, 1.58x its own container, while the carton itself could not be tripled with them because 3x would stand it through two shelf boards. So the boards alone come back to life size; every other small prop stays at 3x."
+  },
+  "MEGAFUSE-B": {
+    "image": "assets/items/MEGAFUSE-B.png",
+    "height": 0.18,
+    "depth": 0.09,
+    "aspect": 1.0039,
+    "pixels": [
+      257,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/MEGAFUSE-B.png (mail design-0328), real alpha on a 1254 square; trimmed to its own 1235x1228 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The B-series megafuse (compone.zil 1399-1405); the object has no TEXT, and its only lettering is the B of its DESC. Drawn in three-quarter view lying on the diagonal, not top-down, so upright; 0.06 m of drawn height for a fuse about 0.08 m long. DRAWN AT 3x ITS CANON SIZE (0.06 m -> 0.18 m), a deliberate legibility deviation and not a reading of canon: at 0.06 m it stood 10 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "MEGAFUSE-K": {
+    "image": "assets/items/MEGAFUSE-K.png",
+    "height": 0.15,
+    "depth": 0.09,
+    "aspect": 1.5664,
+    "pixels": [
+      401,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/MEGAFUSE-K.png (mail design-0329), real alpha on a 1254 square; trimmed to its own 1222x781 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The K-series megafuse (compone.zil 1407-1413); the object has no TEXT, and its only lettering is the K of its DESC. Drawn in three-quarter view lying on its side, not top-down, so upright; 0.05 m of drawn height for a fuse about 0.08 m long. DRAWN AT 3x ITS CANON SIZE (0.05 m -> 0.15 m), a deliberate legibility deviation and not a reading of canon: at 0.05 m it stood 8 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "GOOD-BEDISTOR": {
+    "image": "assets/items/GOOD-BEDISTOR.png",
+    "height": 0.12,
+    "depth": 0.045,
+    "aspect": 1.5313,
+    "pixels": [
+      392,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/GOOD-BEDISTOR.png (mail design-0330), real alpha on a 1254 square; trimmed to its own 1201x784 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The good ninety-ohm bedistor (compone.zil 1415-1428); the object has no TEXT, and its only lettering is the 90 of its DESC. Drawn in three-quarter view lying on the diagonal, not top-down, so upright; 0.04 m of drawn height, about 0.06 m tip to tip with its leads. DRAWN AT 3x ITS CANON SIZE (0.04 m -> 0.12 m), a deliberate legibility deviation and not a reading of canon: at 0.04 m it stood 6 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "FLASK": {
+    "image": "assets/items/FLASK.png",
+    "height": 0.3,
+    "depth": 0.33,
+    "aspect": 0.957,
+    "pixels": [
+      245,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/FLASK.png (mail design-0331), real alpha on a 1254 square; trimmed to its own 1026x1072 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The glass flask (compone.zil 1531-1541), \"a large glass flask\" on the floor below the lowest shelf; no lettering. Drawn standing in three-quarter view, so upright; 0.2 m tall, 0.22 m across. HELD AT 0.3 m AND NOT TRIPLED: 3x would be 0.6 m and canon stands it on the floor UNDER the lowest shelf board -- \"Sitting on the floor below the lowest shelf is a large glass flask.\" (compone.zil 1534-1535) -- whose underside is 0.43 m up, so a 0.6 m flask would stand through the board. Reported rather than forced or quietly shrunk; 0.3 m is also exactly what the view geometry allows (the board's front edge hides everything above 0.40 m at the 0.02 m the flask stands behind it), so it is still seen whole in the DOWN cap. Moving it out from under the shelf would contradict the FDESC, so this one wants the user. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "MAGNET": {
+    "image": "assets/items/MAGNET.png",
+    "height": 0.3,
+    "depth": 0.12,
+    "aspect": 1.082,
+    "pixels": [
+      277,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/MAGNET.png (mail design-0333), real alpha on a 1254 square; trimmed to its own 968x896 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The curved metal bar (compone.zil 1560-1568), \"a metal bar, curved into a U-shape\", the horseshoe magnet; no lettering. Drawn in three-quarter view lying on its side, not top-down, so upright; 0.1 m of drawn height for a bar about 0.12 m across. DRAWN AT 3x ITS CANON SIZE (0.1 m -> 0.3 m), at the user's instruction: \"magnet needs to be about 3x bigger\" (2026-09-21). A deliberate legibility deviation, not a reading of canon -- at true scale it stood about 52 px tall from the room's eye and read as a speck. On the 1.85 m board, top at 1.87; the next board up is at 2.57, so 0.70 m of headroom."
+  },
+  "PLIERS": {
+    "image": "assets/items/PLIERS.png",
+    "height": 0.36,
+    "aspect": 1.707,
+    "flat": true,
+    "pixels": [
+      437,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/PLIERS.png (mail design-0334), real alpha on a 1254 square; trimmed to its own 1184x693 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The pair of wide-nosed pliers (compone.zil 1615-1621); no lettering. Drawn in plan, as they lie on a surface, with no foreshortening, so flat (flat: true); 0.12 m along the picture’s vertical, about 0.2 m jaw to grip. DRAWN AT 3x ITS CANON SIZE (0.12 m -> 0.36 m), a deliberate legibility deviation and not a reading of canon: at 0.12 m it stood 11 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat."
+  },
+  "LAZARUS-PART": {
+    "image": "assets/items/LAZARUS-PART.png",
+    "height": 1.2,
+    "depth": 0.6,
+    "aspect": 1.0313,
+    "pixels": [
+      264,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/LAZARUS-PART.png (mail design-0352, the canonical redraw asked in dev-0420), real alpha on a 1254 square; trimmed to its own 1192x1155 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The medical robot breastplate (comptwo.zil 97, 117-123): bent and rusting, inner circuitry still attached, the name \"Lazarus\" engraved on its face -- how Floyd knows his friend. Upright, 0.4 m. DRAWN AT 3x ITS CANON SIZE (0.4 m -> 1.2 m), a deliberate legibility deviation and not a reading of canon: at 0.4 m it stood 64 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). The game never states its size, so no printed line is contradicted; at 1.2 m the breastplate is as tall as Floyd (1.22 m), which is the largest thing this rule produces. It starts nowhere (the robot's bench in the Repair Room is painted, not placed), so there is nothing to re-seat: it is drawn where the runtime has it, on a drop anchor with its foot on the floor."
+  },
+  "SECOND-BOARD": {
+    "image": "assets/items/SECOND-BOARD.png",
+    "height": 0.17,
+    "aspect": 1.0273,
+    "flat": true,
+    "pixels": [
+      263,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/SECOND-BOARD.png (mail design-0336), real alpha on a 1254 square; trimmed to its own 1058x1031 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The second seventeen-centimeter fromitz board (comptwo.zil 454-460), intact; no lettering. Drawn top-down like CRACKED-BOARD, so it lies flat (flat: true); 0.17 m, its canon size. RETURNED TO CANON 0.17 m, 2026-09-21 (the user): the flat-3x rule drew it at 0.51 m, and this is the one object class where 3x makes a physical impossibility rather than just a scale liberty. Its own DESC calls it a \"seventeen-centimeter fromitz board\", and four of the seven live inside containers canon fixes the size of -- Storage East's carton is 0.330 m wide and held a 0.522 m board, 1.58x its own container, while the carton itself could not be tripled with them because 3x would stand it through two shelf boards. So the boards alone come back to life size; every other small prop stays at 3x."
+  },
+  "FRIED-BOARD": {
+    "image": "assets/items/FRIED-BOARD.png",
+    "height": 0.17,
+    "aspect": 1.0234,
+    "flat": true,
+    "pixels": [
+      262,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/FRIED-BOARD.png (mail design-0337), real alpha on a 1254 square; trimmed to its own 1058x1035 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The fried seventeen-centimeter fromitz board (comptwo.zil 462-474), \"a bit blackened around the edges\"; no lettering. Drawn top-down like CRACKED-BOARD, so it lies flat (flat: true); 0.17 m, its canon size. RETURNED TO CANON 0.17 m, 2026-09-21 (the user): the flat-3x rule drew it at 0.51 m, and this is the one object class where 3x makes a physical impossibility rather than just a scale liberty. Its own DESC calls it a \"seventeen-centimeter fromitz board\", and four of the seven live inside containers canon fixes the size of -- Storage East's carton is 0.330 m wide and held a 0.522 m board, 1.58x its own container, while the carton itself could not be tripled with them because 3x would stand it through two shelf boards. So the boards alone come back to life size; every other small prop stays at 3x."
+  },
+  "BAD-BEDISTOR": {
+    "image": "assets/items/BAD-BEDISTOR.png",
+    "height": 0.12,
+    "depth": 0.045,
+    "aspect": 1.5234,
+    "pixels": [
+      390,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/BAD-BEDISTOR.png (mail design-0338), real alpha on a 1254 square; trimmed to its own 1205x791 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The fused ninety-ohm bedistor (comptwo.zil 586-593), drawn scorched; the object has no TEXT, and its only lettering is the 90 of its DESC. Drawn in three-quarter view lying on the diagonal like GOOD-BEDISTOR, so upright and the same size: 0.04 m of drawn height. DRAWN AT 3x ITS CANON SIZE (0.04 m -> 0.12 m), a deliberate legibility deviation and not a reading of canon: at 0.04 m it stood 6 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "GREEN-SPOOL": {
+    "image": "assets/items/GREEN-SPOOL.png",
+    "height": 0.3,
+    "depth": 0.3,
+    "aspect": 0.9922,
+    "pixels": [
+      254,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/GREEN-SPOOL.png (mail design-0339), real alpha on a 1254 square; trimmed to its own 933x941 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The green spool (comptwo.zil 631-642), \"a small object\", SIZE 3, its label lettered \"Helikoptur Opuraateeng Manyuuwul.\" verbatim to its TEXT. Drawn face-on like RED-SPOOL, and sized to match it: upright, 0.1 m tall and deep. DRAWN AT 3x ITS CANON SIZE (0.1 m -> 0.3 m), a deliberate legibility deviation and not a reading of canon: at 0.1 m it stood 16 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). On the LIBRARY-LOBBY floor among the dust, centre 0.15, half the drawn height; open above."
+  },
+  "PRINT-OUT": {
+    "image": "assets/items/PRINT-OUT.png",
+    "height": 0.6,
+    "depth": 0.84,
+    "aspect": 0.9609,
+    "pixels": [
+      246,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/PRINT-OUT.png (mail design-0340), real alpha on a 1254 square; trimmed to its own 1073x1117 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The pile of computer output (comptwo.zil 1526-1553), \"hundreds of pages long\", continuous fanfold; its lines are unreadable marks, so nothing contradicts the Daalee Statis Reeport TEXT. Drawn as a stack in three-quarter view, so upright; 0.6 m tall, 0.84 m deep -- three times the first 0.2 m, at the user's review (2026-09-18: \"could be bigger, visually, say 3x\"), standing on the floor at the same spot."
+  },
+  "LAB-UNIFORM": {
+    "image": "assets/items/LAB-UNIFORM.png",
+    "height": 1,
+    "aspect": 1.0078,
+    "flat": true,
+    "pixels": [
+      258,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/LAB-UNIFORM.png (mail design-0341), real alpha on a 1254 square; trimmed to its own 1186x1176 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The pale blue lab uniform (comptwo.zil 1618-1637), with the one pocket and above it the logo of \"a flame burning above some kind of sleep chamber\"; no lettering. Drawn laid out flat like PATROL-UNIFORM, so it lies as a decal (flat: true); 1.0 m collar to hem. On its rack in LAB-STORAGE it hangs rather than lies, so the variant below stands it up; everywhere else -- carried, worn, dropped -- the flat picture is the right one.",
+    "variants": [
+      {
+        "when": "LAB-UNIFORM in LAB-STORAGE",
+        "image": "assets/items/LAB-UNIFORM-HANGING.png",
+        "flat": false,
+        "height": 1.4,
+        "aspect": 0.3719,
+        "pixels": [
+          228,
+          613
+        ],
+        "source": "Cut by compute from RoomPolishInstructions/LAB-STORAGE_Visual-Design-Handoff/LAB-STORAGE/reference/DR-106_LAB-STORAGE-180_SEED.png against the registered TURN-180 (DR-106_LAB-STORAGE-180_R4_NORM.png) as a clean plate -- the seed paints this uniform on its rack and the registered view is the same wall with it taken off, so the background behind every pixel of the coat is known. Alpha from the coat's blue shift over the plate ((B-R) 20-30 above the wall's own, where brightness alone cannot separate them in this dim room) with a darker branch for the hanger, the rim unmixed against the plate's colour, then scripts/sprite.mjs trimmed it to the figure: 228 x 613.",
+        "note": "The uniform as the room actually shows it: \"Hanging on a rack is a pale blue lab uniform\" (comptwo.zil 1618), on its hanger, with the pocket logo. 1.4 m stands the hanger's hook at the rail (2.25 m in the fabric) with the hem at the foot the base picture fixes, which is where the seed paints it. Only while it is still in LAB-STORAGE, i.e. on the rack."
+      }
+    ]
+  },
+  "TELEPORTATION-CARD": {
+    "image": "assets/items/TELEPORTATION-CARD.png",
+    "height": 0.162,
+    "aspect": 1.1641,
+    "pixels": [
+      298,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/TELEPORTATION-CARD-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The teleportation access card (comptwo.zil 1663-1670), embossed \"teliportaashun akses kard.\" verbatim. Drawn UPRIGHT in three-quarter view (DR-117, 2026-09-21), standing on its lower edge; 0.054 m, a card’s short side. DRAWN AT 3x ITS CANON SIZE (0.054 m -> 0.162 m), a deliberate legibility deviation and not a reading of canon: at 0.054 m it stood 5 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.162 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.9258 to 1.1641 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "COMBINATION-PAPER": {
+    "image": "assets/items/COMBINATION-PAPER.png",
+    "height": 0.162,
+    "aspect": 0.6847,
+    "pixels": [
+      684,
+      999
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/COMBINATION-PAPER-FOLDED-R2-GREG.png (design-0766)",
+    "note": "The piece of paper (comptwo.zil 1672-1684), SIZE 2. Canon reads \"Week uv 14-Juun--2882. Kombinaashun tuu Konfurins Ruum: \" and then the number NUMBER-NEEDED, which is drawn at random each game, so Greg leaves the sheet blank for the runtime to letter; nothing drawn contradicts the TEXT. Drawn top-down, so it lies flat (flat: true); 0.1 m along the picture’s vertical, about 0.15 m wide. DRAWN AT 3x ITS CANON SIZE (0.1 m -> 0.3 m), a deliberate legibility deviation and not a reading of canon: at 0.1 m it stood 9 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. STANDS UPRIGHT, 2026-09-21: `flat` dropped. It lay as a horizontal decal, which is right on a bench and wrong in the lab uniform's pocket -- once the pocket was given as contentsAt the sheet jutted out of the coat like a shelf. The same fault and the same fix as the eight keycards; no re-cut was needed, the picture is already face-on. FOLDED PICTURE, 2026-09-21 (design-0766): the landscape sheet was repainted as a folded portrait one. Unfolded it was 1.55:1, so at the 0.162 m every readable document carries it spanned 0.25 m and blanketed the 0.15 m breast pocket, hiding the teleportation card behind it. Folded it is 0.6847:1 -> 0.111 m wide, inside the pocket. Cutout checked: 22 px of 656736 off-hue (0.003%), and those are warm age spots on the stock, not key residue."
+  },
+  "BROWN-SPOOL": {
+    "image": "assets/items/BROWN-SPOOL.png",
+    "height": 0.3,
+    "depth": 0.3,
+    "aspect": 1.0586,
+    "pixels": [
+      271,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/BROWN-SPOOL.png (mail design-0344), real alpha on a 1254 square; trimmed to its own 1137x1074 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The brown spool (comptwo.zil 2174-2184), \"a small brown spool\", SIZE 3, its label lettered \"Instrukshunz foor Reepaareeng Reepaar Roobots.\" verbatim to its TEXT. Drawn tilted in three-quarter view, not straight down, so upright, sized to match RED-SPOOL and GREEN-SPOOL: 0.1 m tall and deep. DRAWN AT 3x ITS CANON SIZE (0.1 m -> 0.3 m), a deliberate legibility deviation and not a reading of canon: at 0.1 m it stood 16 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). On the RADIATION-LAB table, top 0.80 (fabric-lawanda.mjs radLab: the table plate at y 0.78, 0.04 thick), centre 0.95; open above."
+  },
+  "LAMP": {
+    "image": "assets/items/LAMP.png",
+    "height": 0.9,
+    "depth": 0.6,
+    "aspect": 0.6836,
+    "pixels": [
+      175,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/LAMP.png (mail design-0345), real alpha on a 1254 square; trimmed to its own 805x1176 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The portable lamp (comptwo.zil 2186-2195), \"a powerful portable lamp here, currently off\", drawn off (its light is the runtime’s); no lettering. Drawn standing in three-quarter view, so upright; 0.3 m tall with its handle, 0.2 m deep. DRAWN AT 3x ITS CANON SIZE (0.3 m -> 0.9 m), a deliberate legibility deviation and not a reading of canon: at 0.3 m it stood 48 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). The game never states its size, so no printed line is contradicted; \"a powerful portable lamp\" (comptwo.zil 2186-2195) at 0.9 m is a floor lamp. On the RADIATION-LAB floor, re-seated to centre 0.45, half the drawn height; open above and clear of the table, which spans x -1.5 to 1.5 while the lamp stands at x -2.4."
+  },
+  "GAS-MASK": {
+    "image": "assets/items/GAS-MASK.png",
+    "height": 0.9,
+    "depth": 0.45,
+    "aspect": 0.957,
+    "pixels": [
+      245,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/GAS-MASK.png (mail design-0346), real alpha on a 1254 square; trimmed to its own 1177x1231 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The gas mask (comptwo.zil 2287-2293); no lettering. Drawn face-on in three-quarter view, not top-down, so upright; 0.3 m with its straps, 0.15 m deep. DRAWN AT 3x ITS CANON SIZE (0.3 m -> 0.9 m), a deliberate legibility deviation and not a reading of canon: at 0.3 m it stood 48 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). The game never states its size, so no printed line is contradicted; 0.9 m is a gas mask as tall as a chair back. It starts in LAB-DESK and has no authored place of its own, so graybox.js stands it on the desk lid with the desk's other contents: nothing to re-seat here, but at 0.9 m it now stands nearly a metre over that lid and wants a look in the Lab room review."
+  },
+  "MEMO": {
+    "image": "assets/items/MEMO.png",
+    "height": 0.42,
+    "aspect": 1.6133,
+    "flat": true,
+    "pixels": [
+      413,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/MEMO.png (mail design-0347), real alpha on a 1254 square; trimmed to its own 1172x726 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The memo (comptwo.zil 2295-2303), its TEXT lettered verbatim from \"Memoo tuu awl lab pursunel:\" to \"iz evur yuuzd.\" (the paragraph breaks are layout; the surrounding quote marks are the game quoting it). Drawn top-down, so it lies flat (flat: true); 0.14 m along the picture’s vertical, about 0.23 m wide. DRAWN AT 3x ITS CANON SIZE (0.14 m -> 0.42 m), a deliberate legibility deviation and not a reading of canon: at 0.14 m it stood 13 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat."
+  },
+  "LASER": {
+    "image": "assets/items/LASER.png",
+    "height": 0.54,
+    "depth": 0.18,
+    "aspect": 1.6367,
+    "pixels": [
+      419,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/LASER.png (mail design-0348), real alpha on a 1254 square; trimmed to its own 1221x746 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The laser (comptwo.zil 2573-2584), \"a small device, labelled \\\"Akmee Portabul Laazur\\\"\", its plate lettered verbatim; the six-setting dial and the empty battery socket are drawn, the battery is the runtime’s. Drawn standing on its grip in side three-quarter view, so upright; 0.18 m tall, about 0.3 m long, 0.06 m deep. showsContents: the dial is IN the laser as an object (LASER-DIAL, NDESCBIT) and this picture already draws it, so the room must not stand a second one beside the laser -- which is what it did, as a 0.3 m tan box, the same fault as the medicine over the bottle. The dial stays clickable. DRAWN AT 3x ITS CANON SIZE (0.18 m -> 0.54 m), a deliberate legibility deviation and not a reading of canon: at 0.18 m it stood 29 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). On TOOL-ROOM's 1.15 m board, top 1.17, re-seated to centre 1.44; the board above has its underside at 1.83, so 0.66 m of headroom for 0.54 m -- 0.12 m clear, the thinnest margin in this pass. At 3x it is also 1.35 m long along a 2.15 m bay, which still fits between the uprights at z -4.3 and -2.15.",
+    "showsContents": true
+  },
+  "OLD-BATTERY": {
+    "image": "assets/items/OLD-BATTERY.png",
+    "height": 0.174,
+    "depth": 0.21,
+    "aspect": 1.2031,
+    "pixels": [
+      308,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/OLD-BATTERY.png (mail design-0349), real alpha on a 1254 square; trimmed to its own 1122x933 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The old battery (comptwo.zil 2611-2618), \"a worn-out laser battery\"; no lettering. A round puck drawn in three-quarter view, so upright; 0.058 m of drawn height, so its 0.07 m diameter matches NEW-BATTERY’s. DRAWN AT 3x ITS CANON SIZE (0.058 m -> 0.174 m), a deliberate legibility deviation and not a reading of canon: at 0.058 m it stood 9 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). In the depression on the laser's top, which its own tripling raises to 1.71, so the centre goes to 1.797. NOTE: 1.71 + 0.174 puts the top of the stack 0.054 m into the 1.85 board above. The laser has showsContents, so at runtime this battery is a pick proxy over the laser and not a second picture -- nothing is drawn through the board -- but the record position is the stack, and it is reported rather than nudged."
+  },
+  "NEW-BATTERY": {
+    "image": "assets/items/NEW-BATTERY.png",
+    "height": 0.159,
+    "depth": 0.21,
+    "aspect": 1.3242,
+    "pixels": [
+      339,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/NEW-BATTERY.png (mail design-0350), real alpha on a 1254 square; trimmed to its own 1115x842 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The new battery (comptwo.zil 2620-2629), \"a small round object ... a fresh laser battery\"; no lettering. A round puck drawn in three-quarter view, so upright; 0.053 m of drawn height, so its 0.07 m diameter matches OLD-BATTERY’s. DRAWN AT 3x ITS CANON SIZE (0.053 m -> 0.159 m), a deliberate legibility deviation and not a reading of canon: at 0.053 m it stood 8 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). On LAB-STORAGE's second shelf, top 0.97 (fabric-lawanda.mjs labStorage: plates at 0.35, 0.95, 1.55, 2.15, 2.7, each 0.04 thick), centre 1.05; the shelf above has its underside at 1.53, so 0.56 m of headroom for 0.159 m."
+  },
+  "RATION-PACK": {
+    "image": "assets/items/RATION-PACK.png",
+    "height": 0.54,
+    "depth": 0.09,
+    "aspect": 0.5977,
+    "pixels": [
+      153,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/RATION-PACK.png (mail design-0351), real alpha on a 1254 square; trimmed to its own 686x1145 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The emergency ration, a deliberate deviation with no ZIL (wwwroot/rules/lawanda.js 207-217 and 625-641): \"a flat foil pack the size of a paperback, sealed and stamped with a red cross\". Drawn standing in three-quarter view, so upright; 0.18 m, a paperback’s height, 0.03 m deep. The red cross is drawn, but the words the examine text adds (\"Emurjinsee Raashun -- Wun Meel.\") are not. DRAWN AT 3x ITS CANON SIZE (0.18 m -> 0.54 m), a deliberate legibility deviation and not a reading of canon: at 0.18 m it stood 29 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). THIS CONTRADICTS THE EXAMINE TEXT, knowingly and with the user's consent: wwwroot/rules/lawanda.js 207-217 calls it \"a flat foil pack the size of a paperback\", and 0.54 m is three paperbacks tall. It has no world entry and no authored place, so there is nothing to re-seat."
+  },
+  "KEY": {
+    "image": "assets/items/KEY.png",
+    "height": 0.105,
+    "aspect": 0.4063,
+    "pixels": [
+      104,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/KEY-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The key (compone.zil 964-972), \"a shiny object\" at the bottom of a crevice, a small steel key; no lettering. Drawn top-down on the diagonal, so it lies flat (flat: true); 0.035 m along the picture’s vertical, about 0.055 m bow to tip. DRAWN AT 3x ITS CANON SIZE (0.035 m -> 0.105 m), a deliberate legibility deviation and not a reading of canon: at 0.035 m it stood 3 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.105 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.2305 to 0.4063 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "MINI-CARD": {
+    "image": "assets/items/MINI-CARD.png",
+    "height": 0.162,
+    "aspect": 1.1016,
+    "pixels": [
+      282,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/MINI-CARD-UPRIGHT-R2-GREG.png (mail 20260921-150010-design-0765), real alpha on a 1254 square; trimmed to its own figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The miniaturization access card (comptwo.zil 1571-1580), embossed \"minitcurizaashun akses kard.\" verbatim, canon’s own spelling. Drawn UPRIGHT in three-quarter view (DR-117, 2026-09-21), standing on its lower edge; 0.054 m, a card’s short side. DRAWN AT 3x ITS CANON SIZE (0.054 m -> 0.162 m), a deliberate legibility deviation and not a reading of canon: at 0.054 m it stood 5 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself). Flat, so graybox.js lays it on its surface as a decal 0.02 m thick (size[1]) and the change is footprint, not height: nothing to re-seat. REDRAWN UPRIGHT, 2026-09-21: it was drawn top-down and lay flat, which cost it 40 per cent of its drawn height to foreshortening -- measured over all 476 drop anchors, a flat thing comes out at 95 px per metre against 160 for one that stands. Height is unchanged at 0.162 m, which is the card's short side and the extent that is NOT foreshortened once it stands; the aspect moves from 1.8008 to 1.1016 because three-quarter perspective turns the long side away from the eye. Size was deliberately NOT changed -- more size on a thing lying flat just makes a place mat."
+  },
+  "RED-GOO": {
+    "image": "assets/items/RED-GOO.png",
+    "height": 0.15,
+    "depth": 0.18,
+    "aspect": 1.0469,
+    "pixels": [
+      268,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/RED-GOO.png (mail design-0363), real alpha on a 1254 square; trimmed to its own 843x804 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The blob of red goo (globals.zil 1031-1037), in the survival kit (RED CHERRY, \"pie\"); no lettering. Drawn standing in three-quarter view, so upright; 0.05 m tall, 0.06 m deep, the same size as the other two goos. DRAWN AT 3x ITS CANON SIZE (0.05 m -> 0.15 m), a deliberate legibility deviation and not a reading of canon: at 0.05 m it stood 8 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "BROWN-GOO": {
+    "image": "assets/items/BROWN-GOO.png",
+    "height": 0.15,
+    "depth": 0.18,
+    "aspect": 1.3242,
+    "pixels": [
+      339,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/BROWN-GOO.png (mail design-0361), real alpha on a 1254 square; trimmed to its own 1176x887 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The blob of brown goo (globals.zil 1039-1045), in the survival kit (BROWN BEEF, \"stew\"); no lettering. Drawn standing in three-quarter view, so upright; 0.05 m tall, 0.06 m deep, the same size as the other two goos. DRAWN AT 3x ITS CANON SIZE (0.05 m -> 0.15 m), a deliberate legibility deviation and not a reading of canon: at 0.05 m it stood 8 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "GREEN-GOO": {
+    "image": "assets/items/GREEN-GOO.png",
+    "height": 0.15,
+    "depth": 0.18,
+    "aspect": 1.3672,
+    "pixels": [
+      350,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/GREEN-GOO.png (mail design-0360), real alpha on a 1254 square; trimmed to its own 1210x884 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The blob of green goo (globals.zil 1047-1053), in the survival kit (GREEN LIMA, \"beans\"); no lettering. Drawn standing in three-quarter view, so upright; 0.05 m tall, 0.06 m deep, the same size as the other two goos. DRAWN AT 3x ITS CANON SIZE (0.05 m -> 0.15 m), a deliberate legibility deviation and not a reading of canon: at 0.05 m it stood 8 px tall at the median drop anchor (scripts/drop-sweep.mjs), and the user has said three times over that things that small cannot be seen. Under the DR-117 rule as the user settled it on 2026-09-21: EVERY SMALL PROP IS DRAWN AT THREE TIMES ITS CANON SIZE -- no floor, no cap, the multiplier is the rule. It is the sixth time they have asked for 3x (the oil can, the magnet, the pile of computer output, the towel, the survival kit, and then the rule itself)."
+  },
+  "GOOD-BOARD": {
+    "image": "assets/items/GOOD-BOARD.png",
+    "height": 0.17,
+    "aspect": 1.0273,
+    "flat": true,
+    "pixels": [
+      263,
+      256
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/GOOD-BOARD.png (mail design-0362), real alpha on a 1254 square; trimmed to its own 1112x1083 figure and downsampled to 256 px by scripts/sprite.mjs.",
+    "note": "The shiny seventeen-centimeter fromitz board (comptwo.zil 273-280), intact; no lettering. Drawn top-down like CRACKED-BOARD, SECOND-BOARD and FRIED-BOARD, so it lies flat (flat: true); 0.17 m, its canon size. RETURNED TO CANON 0.17 m, 2026-09-21 (the user): the flat-3x rule drew it at 0.51 m, and this is the one object class where 3x makes a physical impossibility rather than just a scale liberty. Its own DESC calls it a \"seventeen-centimeter fromitz board\", and four of the seven live inside containers canon fixes the size of -- Storage East's carton is 0.330 m wide and held a 0.522 m board, 1.58x its own container, while the carton itself could not be tripled with them because 3x would stand it through two shelf boards. So the boards alone come back to life size; every other small prop stays at 3x."
+  },
+  "FIRST-BOARD": {
+    "image": "assets/items/SECOND-BOARD.png",
+    "height": 0.17,
+    "aspect": 1.0273,
+    "flat": true,
+    "pixels": [
+      263,
+      256
+    ],
+    "provisional": false,
+    "source": "Shares SECOND-BOARD's picture (assets/items/SECOND-BOARD.png). The four boards in the access panel are one object drawn four times, not four pictures.",
+    "note": "The first seventeen-centimeter fromitz board (comptwo.zil 435), intact; no lettering. Canon gives all four boards in ACCESS-PANEL the same description bar the ordinal -- \"seventeen-centimeter fromitz board\" -- and the ordinal is their position in the panel, not anything you can see, so they share one picture rather than costing four. Drawn top-down like SECOND-BOARD and CRACKED-BOARD, so it lies flat (flat: true); 0.17 m, its canon size. The two boards that DO look different have their own art: CRACKED-BOARD (\"looks as though it's been dropped\") and, when it is painted, SHINY-BOARD (\"shiny\", comptwo.zil 275). RETURNED TO CANON 0.17 m, 2026-09-21 (the user): the flat-3x rule drew it at 0.51 m, and this is the one object class where 3x makes a physical impossibility rather than just a scale liberty. Its own DESC calls it a \"seventeen-centimeter fromitz board\", and four of the seven live inside containers canon fixes the size of -- Storage East's carton is 0.330 m wide and held a 0.522 m board, 1.58x its own container, while the carton itself could not be tripled with them because 3x would stand it through two shelf boards. So the boards alone come back to life size; every other small prop stays at 3x."
+  },
+  "THIRD-BOARD": {
+    "image": "assets/items/SECOND-BOARD.png",
+    "height": 0.17,
+    "aspect": 1.0273,
+    "flat": true,
+    "pixels": [
+      263,
+      256
+    ],
+    "provisional": false,
+    "source": "Shares SECOND-BOARD's picture (assets/items/SECOND-BOARD.png). The four boards in the access panel are one object drawn four times, not four pictures.",
+    "note": "The third seventeen-centimeter fromitz board (comptwo.zil 449), intact; no lettering. Canon gives all four boards in ACCESS-PANEL the same description bar the ordinal -- \"seventeen-centimeter fromitz board\" -- and the ordinal is their position in the panel, not anything you can see, so they share one picture rather than costing four. Drawn top-down like SECOND-BOARD and CRACKED-BOARD, so it lies flat (flat: true); 0.17 m, its canon size. The two boards that DO look different have their own art: CRACKED-BOARD (\"looks as though it's been dropped\") and, when it is painted, SHINY-BOARD (\"shiny\", comptwo.zil 275). RETURNED TO CANON 0.17 m, 2026-09-21 (the user): the flat-3x rule drew it at 0.51 m, and this is the one object class where 3x makes a physical impossibility rather than just a scale liberty. Its own DESC calls it a \"seventeen-centimeter fromitz board\", and four of the seven live inside containers canon fixes the size of -- Storage East's carton is 0.330 m wide and held a 0.522 m board, 1.58x its own container, while the carton itself could not be tripled with them because 3x would stand it through two shelf boards. So the boards alone come back to life size; every other small prop stays at 3x."
+  },
+  "FOURTH-BOARD": {
+    "image": "assets/items/SECOND-BOARD.png",
+    "height": 0.17,
+    "aspect": 1.0273,
+    "flat": true,
+    "pixels": [
+      263,
+      256
+    ],
+    "provisional": false,
+    "source": "Shares SECOND-BOARD's picture (assets/items/SECOND-BOARD.png). The four boards in the access panel are one object drawn four times, not four pictures.",
+    "note": "The fourth seventeen-centimeter fromitz board (comptwo.zil 442), intact; no lettering. Canon gives all four boards in ACCESS-PANEL the same description bar the ordinal -- \"seventeen-centimeter fromitz board\" -- and the ordinal is their position in the panel, not anything you can see, so they share one picture rather than costing four. Drawn top-down like SECOND-BOARD and CRACKED-BOARD, so it lies flat (flat: true); 0.17 m, its canon size. The two boards that DO look different have their own art: CRACKED-BOARD (\"looks as though it's been dropped\") and, when it is painted, SHINY-BOARD (\"shiny\", comptwo.zil 275). RETURNED TO CANON 0.17 m, 2026-09-21 (the user): the flat-3x rule drew it at 0.51 m, and this is the one object class where 3x makes a physical impossibility rather than just a scale liberty. Its own DESC calls it a \"seventeen-centimeter fromitz board\", and four of the seven live inside containers canon fixes the size of -- Storage East's carton is 0.330 m wide and held a 0.522 m board, 1.58x its own container, while the carton itself could not be tripled with them because 3x would stand it through two shelf boards. So the boards alone come back to life size; every other small prop stays at 3x."
+  },
+  "MICROBE": {
+    "image": "assets/characters/MICROBE.png",
+    "height": 3.5,
+    "depth": 4,
+    "aspect": 1.041,
+    "pixels": [
+      1066,
+      1024
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/characters/MICROBE/MICROBE_CUTOUT_GREG.png (mail 20260922-120042-design-0778, answering dev-0814), real alpha on a 1254 square; trimmed to its own 1228x1180 figure and downsampled to 1024 px by scripts/sprite.mjs (Norm, 2026-09-22)",
+    "note": "\"a giant elephant-sized monster ... amorphously shaped, its skin a slimy translucent red membrane\", \"slimy pseudopods thick with waving cilia\" (comptwo.zil 2478-2496, 2895-2902). Height 3.5 m and footprint 4 m are the MIDDLE-OF-STRIP package's actors.MICROBE size (\"elephant-sized\", \"towering\"). The user saw a purple box before this entry existed (MIDDLE-OF-STRIP, 2026-09-21)."
+  },
+  "SPECK": {
+    "image": "assets/items/SPECK.png",
+    "height": 0.6,
+    "depth": 0.9,
+    "aspect": 1.6016,
+    "pixels": [
+      820,
+      512
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/SPECK-CUTOUT_GREG.png (mail 20260922-131640-design-0785, answering dev-0822#1), real alpha on a 1254 square; trimmed to its own 1095x684 figure and downsampled to 512 px by scripts/sprite.mjs (Norm, 2026-09-22)",
+    "note": "\"some sort of speck or impurity has wedged itself into the contact point of the relay ... resembles a blue boulder to you in your current state\" (comptwo.zil 2556-2558). Drawn at 0.6 m tall, which makes it 0.96 m wide from the picture's own aspect -- the STRIP-NEAR-RELAY package proposes 0.9 m from \"boulder\". Placed by that package's objects.SPECK, in the contact gap; it goes when the speck is vaporised or the relay cut."
+  },
+  "COMBINATION-DIAL": {
+    "depth": 0.02,
+    "facing": 180,
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/COMBINATION-DIAL-FUSED-CUTOUT_GREG.png (mail 20260922-131640-design-0785, answering dev-0822#2), real alpha on a 1254 square; trimmed to its own 222x215 figure by scripts/sprite.mjs (Norm, 2026-09-22)",
+    "note": "The dial is part of the REC-AREA painting (TURN-017, on the conference door); only its fused state is a picture, so like the Kitchen DISPENSER the entry has no base image and draws only in its variant. It lies flat on the shut door leaf at REC-AREA objects.COMBINATION-DIAL, facing south into the room, 0.22 m square (the painted housing is 32 px at 4.06 m). Canon: the dial \"seems to undergo some damage\" from the acid (compone.zil 3083-3087) and afterwards \"has somehow become fused and won't move\" (276). The package's FUSED-DIAL state also requires the door shut: with the door open the leaf and its dial swing away.",
+    "variants": [
+      {
+        "when": "COMBINATION-DIAL has MUNGEDBIT and CONFERENCE-DOOR without OPENBIT",
+        "image": "assets/items/COMBINATION-DIAL-FUSED.png",
+        "height": 0.22,
+        "aspect": 1.035,
+        "pixels": [
+          207,
+          200
+        ]
+      }
+    ]
+  }
+}

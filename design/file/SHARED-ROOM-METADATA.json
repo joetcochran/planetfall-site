@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "metadataVersion": 5,
+  "reason": "Define corrections shared by all effective room specifications, the user-authorized sky-room inventory, and the approved procedural day-phase lighting defaults. Version 5 (DR-106 fix pass, development correction under contract 6b, 14 Sep): the admin wing's rooms that see the sky added to sky.rooms (contract 6a.12) -- ADMIN-CORRIDOR-N over the rift (TURN-180, TURN-UP) and through the Large Office's picture window (TURN-270); TRANSPORTATION-SUPPLY through its portal, over the rift (TURN-194); SMALL-OFFICE (TURN-283) and PLAN-ROOM (TURN-288) through the Large Office's picture window. Each already carries states.DAY-PHASE and lighting.sun.",
+  "metadata": {
+    "doorRendering": {
+      "singleExitPanelHotspot": true,
+      "closedDoorsRemainClickable": true,
+      "requireMotionHingeAndSwing": true
+    },
+    "actors": {
+      "FLOYD": {
+        "presence": "conditional",
+        "condition": "sceneObjects contains FLOYD",
+        "neverBakeIntoStaticGeometry": true,
+        "minimumClearanceRadius": 0.6,
+        "avoidDroppedItemAnchors": true
+      }
+    },
+    "droppedItems": {
+      "avoidEyeToExitLanes": true,
+      "arraysReplaceCompletely": true,
+      "laneClearance": 0.5
+    },
+    "authoredPositions": {
+      "firstSightOnlyUsesAnchorUntilHandled": true
+    },
+    "timing": {
+      "units": "time units"
+    },
+    "labels": {
+      "quoteOnlyLettering": true
+    },
+    "pseudos": {
+      "oneTagPerRoutine": true
+    },
+    "hotspots": {
+      "requireHeight": true,
+      "oneCenterHeightPerExit": true
+    },
+    "interiorStyle": {
+      "description": "Weathered modular modern-complex architecture with corroded gray metal, repeated structural bays, warm aging service lights, long sightlines, and consistent adjacent-room topology."
+    },
+    "sky": {
+      "dayPhaseDefaults": {
+        "light": {
+          "sky": { "zenith": "#79A6C8", "horizon": "#D6C8A1" },
+          "ambient": { "color": "#B7CAD4", "intensity": 0.72 },
+          "keyLight": { "kind": "sun", "direction": [-0.55, 0.72, 0.42], "color": "#FFE3B0", "intensity": 1.05 },
+          "seaTone": "#496C72",
+          "fogTone": "#AAB8B5",
+          "interiorLightsOn": false,
+          "intent": "Clear later-morning or afternoon light with readable weathered surfaces and a cool ocean horizon."
+        },
+        "crepuscular": {
+          "sky": { "zenith": "#334A68", "horizon": "#C77E61" },
+          "ambient": { "color": "#7C879A", "intensity": 0.48 },
+          "keyLight": { "kind": "low-sun", "direction": [-0.72, 0.25, 0.32], "color": "#FF9B63", "intensity": 0.82 },
+          "seaTone": "#344F5C",
+          "fogTone": "#7E6F6A",
+          "interiorLightsOn": true,
+          "intent": "Day-one dusk: warm low sun at the horizon, cool structure shadows, and practical lights beginning to read."
+        },
+        "dark": {
+          "sky": { "zenith": "#07111F", "horizon": "#1B2D3F" },
+          "ambient": { "color": "#526175", "intensity": 0.25 },
+          "keyLight": { "kind": "moon", "direction": [-0.35, 0.66, -0.55], "color": "#AFC8E8", "intensity": 0.42 },
+          "seaTone": "#152A36",
+          "fogTone": "#263746",
+          "interiorLightsOn": true,
+          "intent": "Moonlit silhouette with navigable edges and strong warm practical-light contrast."
+        }
+      },
+      "rooms": [
+        "CRAG",
+        "BALCONY",
+        "WINDING-STAIR",
+        "COURTYARD",
+        "WEST-WING",
+        "ADMIN-CORRIDOR",
+        "ADMIN-CORRIDOR-N",
+        "TRANSPORTATION-SUPPLY",
+        "SMALL-OFFICE",
+        "PLAN-ROOM",
+        "PLAIN-HALL",
+        "LARGE-OFFICE",
+        "HELIPAD",
+        "HELICOPTER",
+        "OBSERVATION-DECK"
+      ]
+    }
+  }
+}

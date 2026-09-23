@@ -1,0 +1,65 @@
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:#07121c;color:#dcecf6;font:15px/1.5 system-ui,sans-serif;height:100dvh;display:grid;grid-template-columns:1fr 400px;grid-template-rows:1fr auto}
+#view{position:relative;min-width:0;overflow:hidden;cursor:grab}
+#view canvas{display:block}
+#hud{position:absolute;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;pointer-events:none;font-size:13px;color:#a8c1d0}
+#hover{background:rgba(8,14,20,.7);padding:4px 10px;border-radius:5px;min-height:1.6em}
+#toast{position:absolute;top:56px;left:50%;transform:translateX(-50%);z-index:5;background:#1f7a45;color:#f1fff6;border:1px solid #5fd38a;border-radius:6px;padding:8px 16px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.45);pointer-events:none}
+#toast.show{animation:toast-in .25s ease-out}
+@keyframes toast-in{from{opacity:0;transform:translate(-50%,-8px)}to{opacity:1;transform:translate(-50%,0)}}
+/* The compass is a ROSE with fixed slots, not a strip: every direction keeps one place for the whole game, and
+   a direction with no exit leaves its slot empty instead of letting the others slide along. A strip put UP
+   first underwater and DOWN first on the crag, so the click that got you out of the sea put you back in. */
+#compass{position:absolute;bottom:16px;left:16px;display:flex;gap:10px;align-items:flex-start}
+#compass .rose{display:grid;grid-template-columns:repeat(3,auto);gap:4px}
+#compass .vert{display:grid;grid-template-columns:auto;gap:4px}
+#compass .dir,#compass .slot{min-width:3.4em;height:2.1em;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
+#compass .dir{font:inherit;background:#132e42;color:#e7f3fa;border:1px solid #3d6379;border-radius:5px;padding:0 8px;cursor:pointer}
+#compass .dir:hover{background:#24485d}
+#compass .dir.blocked{opacity:.5}
+#compass .dir.open{border-color:#5fd38a}
+#compass .dir.closed{border-color:#e0655a}
+#compass .dir.routine{border-style:dashed}
+/* The quick row is quickButtons, whole (round thirteen), so it can be long: it wraps upward and never reaches the compass. */
+#quick{position:absolute;bottom:16px;right:16px;left:calc(32px + 17em);display:flex;flex-wrap:wrap;justify-content:flex-end;align-content:flex-end;gap:6px;pointer-events:none}
+#quick button{pointer-events:auto}
+#quick button,#debug button,#restart2{font:inherit;background:#132e42;color:#e7f3fa;border:1px solid #3d6379;border-radius:5px;padding:6px 10px;cursor:pointer}
+aside{display:flex;flex-direction:column;min-height:0;background:#102130;border-left:1px solid #274556}
+#status{padding:8px 14px;font-size:13px;color:#94c3d5;border-bottom:1px solid #274556}
+#transcript{flex:1;overflow:auto;padding:10px 14px}
+#transcript p{margin:0 0 6px}
+#transcript .turn{padding:6px 8px;border-radius:6px;margin-bottom:6px;opacity:.72}
+#transcript .turn.latest,#transcript .note.latest{opacity:1;background:#15304a;border-left:3px solid #6fdaea}
+#transcript .echo{color:#79bdce;font-size:13px}
+#transcript .room{font-weight:700;color:#e7f3fa}
+#transcript .event{color:#efbd69}
+/* hunger, sleep, sickness and darkness warnings: the same words, set apart from Floyd's asides (round eight) */
+#transcript .warning{color:#ffc2b3;font-weight:600;border-left:3px solid #f08a7d;padding-left:8px}
+#transcript .death{color:#f08a7d;font-weight:600}
+#transcript .note{color:#a8bac7;font-size:13px;padding:6px 8px;border-radius:6px}
+#inventory{padding:8px 14px;border-top:1px solid #274556;max-height:32%;overflow:auto}
+#inventory h3{margin:0 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#94c3d5}
+#inventory .item{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;color:#dcecf6;padding:4px 6px;cursor:pointer;border-radius:4px}
+#inventory .item:hover{background:#1c3a52}
+.muted{color:#7f95a3;font-size:13px;margin:0}
+#command-row{grid-column:1/-1;display:flex;gap:8px;padding:8px 14px;background:#0c1a26;border-top:1px solid #274556}
+#command{flex:1;font:inherit;background:#07121c;color:#e7f3fa;border:1px solid #3d6379;border-radius:5px;padding:8px 10px}
+#menu{position:fixed;z-index:20;background:#132e42;border:1px solid #3d6379;border-radius:6px;padding:6px;min-width:180px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+#menu .title{font-size:12px;color:#94c3d5;padding:4px 8px;text-transform:uppercase;letter-spacing:.06em}
+#menu button{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;color:#e7f3fa;padding:7px 10px;border-radius:4px;cursor:pointer}
+#menu button:hover{background:#24485d}
+#menu .number{display:flex;gap:6px;align-items:center;padding:4px 8px}
+#menu .number input{width:84px;font:inherit;background:#0e2434;color:#e7f3fa;border:1px solid #3d6379;border-radius:4px;padding:4px 6px}
+#menu .number button{width:auto;padding:5px 8px;border:1px solid #3d6379}
+#death{position:absolute;inset:0;display:grid;place-items:center;background:rgba(7,18,28,.85);z-index:10}
+#death div{text-align:center}
+#death h2{color:#f08a7d;margin:0 0 12px}
+#death.won h2{color:#8fd19a}
+#death p{color:#e7f3fa;margin:0 0 14px}
+#debug{position:absolute;top:44px;left:16px;background:rgba(8,14,20,.92);border:1px solid #274556;border-radius:6px;padding:10px;max-width:520px;font-size:12px;display:none}
+#debug.open{display:block}
+#debug pre{white-space:pre-wrap;word-break:break-all;margin:8px 0 0;color:#a8bac7;max-height:240px;overflow:auto}
+#debug select{font:inherit;background:#07121c;color:#e7f3fa;border:1px solid #3d6379;border-radius:5px;padding:4px}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid #fff}
+@media(max-width:900px){body{grid-template-columns:1fr;grid-template-rows:55dvh 1fr auto}aside{border-left:0;border-top:1px solid #274556}}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "notes": [
+    "Hand-authored rendering layout for the map viewer. It never changes exits; see wwwroot/layout.js for how cells are derived from world.json.",
+    "Grid cells are [east, north, up]. Region anchors give the seed room's cell; every other room in the region follows from its declared exits.",
+    "Regions are groups of rooms connected only by routine exits (elevators, shuttle, long hall, ladder, escape pod, water level). Their relative positions are NOT derived from the game; they are spaced out so nothing overlaps. Adjust anchors as the routine exits get reviewed.",
+    "overrides maps a room id to an absolute cell and is applied last. Use it sparingly for rooms whose declared exits do not fit a grid; scripts/check_layout.mjs lists those as misfits.",
+    "parking is where rooms unreachable from any seed are lined up."
+  ],
+  "spacing": { "east": 12, "north": 12, "up": 9 },
+  "parking": [0, -22, 0],
+  "regions": [
+    { "id": "feinstein-deck", "seed": "DECK-NINE", "anchor": [0, 0, 0], "note": "SPS Feinstein deck nine/eight and the escape pod." },
+    { "id": "kalamontee-shore", "seed": "CRAG", "anchor": [7, 0, 0], "note": "Crag, balcony, winding stair, courtyard and the upper complex reached from them." },
+    { "id": "kalamontee-lower", "seed": "CORRIDOR-JUNCTION", "anchor": [18, 0, 0], "note": "Corridor junction, mech/admin corridors, elevator lobby, reactor." },
+    { "id": "admin-north", "seed": "ADMIN-CORRIDOR-N", "anchor": [27, 0, 0], "note": "Reached from the admin corridor only by the ladder routine." },
+    { "id": "tower", "seed": "TOWER-CORE", "anchor": [34, 0, 0], "note": "Tower core, upper elevator, helipad, observation deck, comm room." },
+    { "id": "shuttle-alfie", "seed": "SHUTTLE-CAR-ALFIE", "anchor": [1, -12, 0], "note": "Shuttle car Alfie and its control cabins." },
+    { "id": "shuttle-betty", "seed": "SHUTTLE-CAR-BETTY", "anchor": [1, -15, 0], "note": "Shuttle car Betty and its control cabins." },
+    { "id": "kalamontee-platform", "seed": "WAITING-AREA", "anchor": [6, -12, 0], "note": "Waiting area and Kalamontee shuttle platform." },
+    { "id": "lawanda", "seed": "LAWANDA-PLATFORM", "anchor": [11, -12, 0], "note": "Lawanda platform, escalator, fork, systems/project/lab corridors, library, cryo." },
+    { "id": "strip", "seed": "STATION-384", "anchor": [26, -12, 0], "note": "Station 384 and the strip." },
+    { "id": "brig", "seed": "BRIG", "anchor": [30, -12, 0], "note": "Only a blocked exit; no placement information in the source." },
+    { "id": "lower-elevator", "seed": "LOWER-ELEVATOR", "anchor": [32, -12, 0], "note": "Reached only through elevator routines." },
+    { "id": "cryo-anteroom", "seed": "CRYO-ANTEROOM", "anchor": [34, -12, 0], "note": "No declared exits at all." }
+  ],
+  "overrides": {}
+}

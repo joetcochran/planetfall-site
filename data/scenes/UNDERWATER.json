@@ -1,0 +1,83 @@
+{
+  "note": [
+    "UNDERWATER's fabric (DR-109), built by dev from UNDERWATER.metadata.json v1, which dev also wrote when design handed the room over on 2026-09-15. The game: 'You are momentarily disoriented as you enter the turbulent waters. Currents buffet you against the sharp rocks of an underwater cliff. A dim light filters down from above.' (compone.zil 10-13.)",
+    "Heights are the shared datum: day-one sea level is zero at the Crag and the Balcony, and in this room's own coordinates that surface is y 6.2, the seabed y 0 and the eye 1.6. The Crag's floor is 2 m over the surface, so y 8.2 here.",
+    "The cliff is north and the open sea south, as at the Crag. The face front stands at z -6.0, NOT against the eye: the first cut put it at -3.2 and the whole of TURN-000 came out a flat black wall with the cleft unreadable inside it. The rocks the player is 'buffeted against' are the loose ones at z -2.4 to -3.6, close enough to be near foreground; the face they stand off is far enough back to be a face.",
+    "The cleft is a CHIMNEY in that face, 3 m across, open above y 2.0 and closed at the back at z -9.4 -- below that a plug of rock closes it, so the player cannot simply swim north through it at eye height. It is a way UP, not a way through: cut open to the north it became a hole clean through the island with open sea beyond, which is wrong -- the island is north. Closed at the back and open above, it reads as a shaft of lit water in a dark face, brightening upward, which is what makes the way out legible at a level gaze and is what Greg painted in the accepted TURN-000 seed. At 5.6 m out a level view at lens 110 reaches y 6.1, so the whole funnel up to the waterline is IN the level ring at bearing 0 and not only in the UP cap. That is the package's 'the upward escape route is visually obvious' acceptance criterion, met by geometry rather than by a label.",
+    "The two long masses behind the face are the island; they run 200 m each way because the fog takes everything past 26 m and a shorter mass would show its end.",
+    "The surface takes the room's fog (parts.js sea, `fog: true`, added for this room). Unfogged it read as a hard-edged sky over a horizon line, which is exactly what a room 4.6 m under water must not have.",
+    "The seabed is a rubble field, not a floor with boulders on it: the accepted TURN-000 and TURN-180 seeds paint it that way and the fabric was brought to them, so the DOWN cap cannot be built against a bare floor the ring does not have. The scatter is a golden-angle spiral -- even, with no grid and no clumping -- and every rock is seeded, so the blockout is the same every render.",
+    "Three sides are open water on purpose. There is no surface east, west or south -- nothing but the rocks at the face's foot and then the fog, which is authored in the metadata (2 to 26 m) and is also the background. A wall out there would be a wall the room does not have: four of its five exits lead straight back to it.",
+    "No pod. By the time the player is in the water it has sunk, which is what the Crag's approved metadata already tells the Crag to draw (wallOpenings.WATER-DESCENT.beyond). Nothing here moves: bubbles, caustics and current streaks are the painter's, in the views.",
+    "THIS SCENE IS DEPTH 3, the seabed (DR-115). The climb's other three depths are ART ROOMS, second eyes on this room as the safety web is on the escape pod: `altViews` below picks UNDERWATER-D2, -D1 or -D0 on DEPTH, each built by scripts/fabric-underwater.mjs from one water column whose surface is at y 16.2 (the user's decision of 2026-09-18) rather than this file's 6.2. The game takes an alternative eye only once that room is accepted, so until then every depth shows this room. This file's parts are the accepted fabric, and its sea plane stays at 6.2 so that its six accepted views do not move."
+  ],
+  "altViews": [
+    { "when": "DEPTH == 2", "room": "UNDERWATER-D2" },
+    { "when": "DEPTH == 1", "room": "UNDERWATER-D1" },
+    { "when": "DEPTH == 0", "room": "UNDERWATER-D0" }
+  ],
+  "parts": [
+    { "part": "open" },
+
+    { "part": "sea", "level": 6.2, "material": "sea", "fog": true },
+
+    { "part": "prop", "at": [0, -0.6, 0], "size": [400, 1.2, 400], "material": "seabed" },
+
+    { "part": "prop", "at": [-101.5, 12, -11], "size": [200, 44, 10], "material": "rock" },
+    { "part": "prop", "at": [101.5, 12, -11], "size": [200, 44, 10], "material": "rock" },
+    { "part": "prop", "at": [0, 0.5, -7.5], "size": [3.0, 3.0, 3.0], "material": "rock" },
+    { "part": "prop", "at": [0, 12, -13.4], "size": [3.0, 44, 8.0], "material": "rock" },
+
+    { "part": "rock", "at": [-2.7, 4.2, -5.7], "size": [1.7, 3.6, 1.1], "seed": 61 },
+    { "part": "rock", "at": [2.7, 4.5, -5.7], "size": [1.7, 3.8, 1.1], "seed": 62 },
+    { "part": "rock", "at": [-1.8, 6.6, -6.1], "size": [1.2, 1.8, 1.0], "seed": 63 },
+    { "part": "rock", "at": [1.8, 6.9, -6.1], "size": [1.2, 2.0, 1.0], "seed": 64 },
+    { "part": "rock", "at": [-1.4, 4.6, -7.2], "size": [0.8, 1.6, 0.8], "seed": 65 },
+    { "part": "rock", "at": [1.4, 5.0, -7.2], "size": [0.8, 1.7, 0.8], "seed": 66 },
+    { "part": "rock", "at": [-1.5, 2.3, -6.6], "size": [0.9, 1.1, 0.9], "seed": 67 },
+    { "part": "rock", "at": [1.5, 2.5, -6.6], "size": [0.9, 1.2, 0.9], "seed": 68 },
+
+    { "part": "rock", "at": [-1.1, 1.5, -5.4], "size": [1.3, 2.0, 1.0], "seed": 71 },
+    { "part": "rock", "at": [1.2, 1.3, -5.3], "size": [1.4, 1.7, 1.1], "seed": 72 },
+    { "part": "rock", "at": [-3.4, 1.2, -5.2], "size": [1.8, 1.6, 1.3], "seed": 73 },
+    { "part": "rock", "at": [3.6, 1.4, -5.1], "size": [1.7, 1.9, 1.3], "seed": 74 },
+    { "part": "rock", "at": [-6.2, 1.0, -5.3], "size": [2.2, 1.4, 1.5], "seed": 75 },
+    { "part": "rock", "at": [6.4, 1.1, -5.4], "size": [2.1, 1.6, 1.4], "seed": 76 },
+    { "part": "rock", "at": [-10.2, 0.9, -5.5], "size": [2.8, 1.3, 1.7], "seed": 77 },
+    { "part": "rock", "at": [10.4, 0.8, -5.5], "size": [2.6, 1.2, 1.7], "seed": 78 },
+
+    { "part": "rock", "at": [-1.9, 1.1, -3.0], "size": [1.2, 2.2, 1.0], "seed": 91, "rot": 18 },
+    { "part": "rock", "at": [2.1, 0.9, -3.4], "size": [1.1, 1.8, 0.9], "seed": 92, "rot": -24 },
+    { "part": "rock", "at": [-3.8, 0.7, -2.4], "size": [1.0, 1.4, 0.9], "seed": 93, "rot": 40 },
+    { "part": "rock", "at": [4.0, 0.6, -2.6], "size": [0.9, 1.2, 0.8], "seed": 94, "rot": -12 },
+
+    { "part": "rock", "at": [2.2, 0.2, 0.0], "size": [0.9, 0.4, 0.8], "seed": 200, "rot": 0 },
+    { "part": "rock", "at": [-2.8, 0.5, 2.5], "size": [1.2, 0.9, 1.1], "seed": 201, "rot": 53 },
+    { "part": "rock", "at": [3.0, 0.3, 3.9], "size": [1.1, 0.6, 0.8], "seed": 203, "rot": 159 },
+    { "part": "rock", "at": [-5.2, 0.2, -0.9], "size": [1.4, 0.4, 1.1], "seed": 204, "rot": 212 },
+    { "part": "rock", "at": [4.8, 0.5, -3.0], "size": [0.9, 0.9, 1.5], "seed": 205, "rot": 265 },
+    { "part": "rock", "at": [-1.6, 0.3, 5.8], "size": [1.2, 0.7, 0.8], "seed": 206, "rot": 318 },
+    { "part": "rock", "at": [6.2, 0.2, 2.3], "size": [1.1, 0.4, 1.5], "seed": 208, "rot": 64 },
+    { "part": "rock", "at": [-6.3, 0.5, 2.6], "size": [1.4, 0.9, 0.8], "seed": 209, "rot": 117 },
+    { "part": "rock", "at": [2.2, 0.3, 7.0], "size": [1.2, 0.6, 1.5], "seed": 211, "rot": 223 },
+    { "part": "rock", "at": [-6.6, 0.2, -3.8], "size": [1.6, 0.4, 0.8], "seed": 212, "rot": 276 },
+    { "part": "rock", "at": [7.6, 0.5, -1.7], "size": [1.1, 0.9, 1.1], "seed": 213, "rot": 329 },
+    { "part": "rock", "at": [-4.6, 0.3, 6.5], "size": [1.4, 0.7, 1.5], "seed": 214, "rot": 22 },
+    { "part": "rock", "at": [6.4, 0.2, 5.4], "size": [1.2, 0.4, 1.1], "seed": 216, "rot": 128 },
+    { "part": "rock", "at": [-8.6, 0.5, 0.4], "size": [1.6, 0.9, 1.5], "seed": 217, "rot": 181 },
+    { "part": "rock", "at": [-0.4, 0.3, 9.0], "size": [1.4, 0.6, 1.1], "seed": 219, "rot": 287 },
+    { "part": "rock", "at": [9.2, 0.5, 1.2], "size": [1.2, 0.9, 0.8], "seed": 221, "rot": 33 },
+    { "part": "rock", "at": [-7.8, 0.3, 5.4], "size": [1.6, 0.7, 1.1], "seed": 222, "rot": 86 },
+    { "part": "rock", "at": [4.9, 0.2, 8.5], "size": [1.4, 0.4, 0.8], "seed": 224, "rot": 192 },
+    { "part": "rock", "at": [-9.5, 0.5, -3.0], "size": [0.9, 0.9, 1.1], "seed": 225, "rot": 245 },
+    { "part": "rock", "at": [-4.0, 0.3, 9.5], "size": [1.6, 0.6, 0.8], "seed": 227, "rot": 351 },
+
+    { "part": "rock", "at": [-2.4, 0.5, 1.6], "size": [1.5, 0.9, 1.3], "seed": 81 },
+    { "part": "rock", "at": [2.6, 0.4, 2.1], "size": [1.3, 0.8, 1.2], "seed": 82 },
+    { "part": "rock", "at": [-4.9, 0.4, 3.8], "size": [1.7, 0.7, 1.5], "seed": 83 },
+    { "part": "rock", "at": [5.2, 0.5, 4.4], "size": [1.6, 0.9, 1.4], "seed": 84 },
+    { "part": "rock", "at": [0.6, 0.3, 6.0], "size": [1.4, 0.6, 1.3], "seed": 85 },
+    { "part": "rock", "at": [-8.0, 0.4, 7.6], "size": [1.9, 0.7, 1.7], "seed": 86 },
+    { "part": "rock", "at": [7.4, 0.3, 8.4], "size": [1.8, 0.6, 1.6], "seed": 87 }
+  ]
+}

@@ -1,0 +1,2514 @@
+{
+  "note": [
+    "Bio Lock East's fabric, cut from the one Lawanda layout in scripts/fabric-lawanda.mjs -- regenerate from there, do not hand-edit. BIO-LOCK-EAST v1: 4.0 x 3.6 x 4.8, the eye at the middle. Its package's light (lighting.fixtures) is the room's. MINI-CARD and DEAD-FLOYD are overlays.",
+    "East, BIO-DOOR-EAST 2.4 x 3.0, two leaves with the 0.5 x 0.4 WINDOW at 1.65 on their meeting line, drawn shut while the door lacks OPENBIT; through the window, and through the door when open, the dim Bio Lab (its lights off: LAB-LIGHTS-ON is the review page's switch) and 24 m off its east wall with the office door, shut while OFFICE-DOOR lacks OPENBIT. West, no wall: the chamber runs back through Bio Lock West to its raked end and BIO-DOOR-WEST."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        4,
+        3.6,
+        4.8
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.8,
+          4.8,
+          3.6
+        ],
+        "EAST": [
+          0,
+          1.5,
+          2.4,
+          3
+        ]
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        1.95,
+        1.5,
+        0
+      ],
+      "facing": "EAST",
+      "size": [
+        2.4,
+        3
+      ],
+      "band": 0.2,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        1.5,
+        -0.725
+      ],
+      "size": [
+        0.16,
+        3,
+        0.95
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        0.725,
+        -0.127
+      ],
+      "size": [
+        0.16,
+        1.45,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        2.425,
+        -0.127
+      ],
+      "size": [
+        0.16,
+        1.15,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        1.5,
+        0.725
+      ],
+      "size": [
+        0.16,
+        3,
+        0.95
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        0.725,
+        0.128
+      ],
+      "size": [
+        0.16,
+        1.45,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        2.425,
+        0.128
+      ],
+      "size": [
+        0.16,
+        1.15,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "light",
+      "at": [
+        -0.4,
+        3.56,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 10,
+        "distance": 7,
+        "color": 15134451
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.5,
+        1.8,
+        -2.44
+      ],
+      "size": [
+        5,
+        3.6,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.9,
+        1.8,
+        2.44
+      ],
+      "size": [
+        9.8,
+        3.6,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.804,
+        1.8,
+        -1.653
+      ],
+      "size": [
+        2.194,
+        3.6,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.428,
+        3.3,
+        -0.028
+      ],
+      "size": [
+        2.4,
+        0.6,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.053,
+        1.8,
+        1.596
+      ],
+      "size": [
+        2.194,
+        3.6,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.5,
+        -0.04,
+        0
+      ],
+      "size": [
+        5,
+        0.08,
+        4.8
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.2,
+        -0.041,
+        1.2
+      ],
+      "size": [
+        6.788,
+        0.08,
+        3.394
+      ],
+      "material": "deck-plate",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.5,
+        3.64,
+        0
+      ],
+      "size": [
+        5,
+        0.08,
+        4.8
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.2,
+        3.641,
+        1.2
+      ],
+      "size": [
+        6.788,
+        0.08,
+        3.394
+      ],
+      "material": "ceiling",
+      "rot": 0.785398
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.7,
+        3.56,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 9,
+        "color": 15134451
+      },
+      "room": "BIO-LOCK-WEST"
+    },
+    {
+      "part": "bay",
+      "at": [
+        13.16,
+        0,
+        2.287
+      ],
+      "size": [
+        22,
+        5,
+        14
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          2.287,
+          1.5,
+          2.4,
+          3
+        ],
+        "EAST": [
+          0,
+          1.4,
+          2.2,
+          2.8
+        ],
+        "NORTH": [
+          -8.4,
+          1.5,
+          0.35,
+          1.8
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.16,
+        0.45,
+        -2.213
+      ],
+      "size": [
+        10,
+        0.9,
+        1.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.96,
+        1.4,
+        -2.213
+      ],
+      "size": [
+        1.4,
+        1,
+        0.9
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.36,
+        1.25,
+        -2.213
+      ],
+      "size": [
+        1.4,
+        0.7,
+        0.9
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.76,
+        1.4,
+        -2.213
+      ],
+      "size": [
+        1.4,
+        1,
+        0.9
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.16,
+        1.25,
+        -2.213
+      ],
+      "size": [
+        1.4,
+        0.7,
+        0.9
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.16,
+        0.45,
+        6.787
+      ],
+      "size": [
+        10,
+        0.9,
+        1.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.96,
+        1.4,
+        6.787
+      ],
+      "size": [
+        1.4,
+        1,
+        0.9
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.36,
+        1.25,
+        6.787
+      ],
+      "size": [
+        1.4,
+        0.7,
+        0.9
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.76,
+        1.4,
+        6.787
+      ],
+      "size": [
+        1.4,
+        1,
+        0.9
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.16,
+        1.25,
+        6.787
+      ],
+      "size": [
+        1.4,
+        0.7,
+        0.9
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.16,
+        0.45,
+        8.787
+      ],
+      "size": [
+        16,
+        0.9,
+        0.9
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.16,
+        1.3,
+        8.837
+      ],
+      "size": [
+        1.6,
+        0.8,
+        0.7
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.16,
+        1.3,
+        8.837
+      ],
+      "size": [
+        1.6,
+        0.8,
+        0.7
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.16,
+        1.3,
+        8.837
+      ],
+      "size": [
+        1.6,
+        0.8,
+        0.7
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.16,
+        1.3,
+        8.837
+      ],
+      "size": [
+        1.6,
+        0.8,
+        0.7
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        23.66,
+        0.45,
+        -1.913
+      ],
+      "size": [
+        0.9,
+        0.9,
+        3.8
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        23.66,
+        0.45,
+        6.487
+      ],
+      "size": [
+        0.9,
+        0.9,
+        3.8
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.66,
+        4.9,
+        -1.213
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "trim",
+      "when": "LAB-LIGHTS-ON != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        7.66,
+        4.9,
+        -1.213
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "lamp-cool",
+      "when": "LAB-LIGHTS-ON == true",
+      "cast": {
+        "intensity": 24,
+        "distance": 16,
+        "color": 15922672
+      },
+      "room": "BIO-LAB"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.66,
+        4.9,
+        -1.213
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "trim",
+      "when": "LAB-LIGHTS-ON != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        18.66,
+        4.9,
+        -1.213
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "lamp-cool",
+      "when": "LAB-LIGHTS-ON == true",
+      "cast": {
+        "intensity": 24,
+        "distance": 16,
+        "color": 15922672
+      },
+      "room": "BIO-LAB"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.66,
+        4.9,
+        5.787
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "trim",
+      "when": "LAB-LIGHTS-ON != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        7.66,
+        4.9,
+        5.787
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "lamp-cool",
+      "when": "LAB-LIGHTS-ON == true",
+      "cast": {
+        "intensity": 24,
+        "distance": 16,
+        "color": 15922672
+      },
+      "room": "BIO-LAB"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.66,
+        4.9,
+        5.787
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "trim",
+      "when": "LAB-LIGHTS-ON != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        18.66,
+        4.9,
+        5.787
+      ],
+      "size": [
+        2.4,
+        0.07,
+        0.4
+      ],
+      "material": "lamp-cool",
+      "when": "LAB-LIGHTS-ON == true",
+      "cast": {
+        "intensity": 24,
+        "distance": 16,
+        "color": 15922672
+      },
+      "room": "BIO-LAB"
+    },
+    {
+      "part": "light",
+      "at": [
+        4.76,
+        1.5,
+        -4.413
+      ],
+      "size": [
+        0.3,
+        0.3,
+        0.1
+      ],
+      "housing": false,
+      "cast": {
+        "intensity": 5,
+        "distance": 9,
+        "color": 9422079
+      },
+      "room": "BIO-LAB"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        1.5,
+        -0.725
+      ],
+      "size": [
+        0.16,
+        3,
+        0.95
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        0.725,
+        -0.127
+      ],
+      "size": [
+        0.16,
+        1.45,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        2.425,
+        -0.127
+      ],
+      "size": [
+        0.16,
+        1.15,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        1.5,
+        0.725
+      ],
+      "size": [
+        0.16,
+        3,
+        0.95
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        0.725,
+        0.128
+      ],
+      "size": [
+        0.16,
+        1.45,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.08,
+        2.425,
+        0.128
+      ],
+      "size": [
+        0.16,
+        1.15,
+        0.245
+      ],
+      "material": "plate-steel",
+      "when": "BIO-DOOR-EAST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        24.24,
+        1.4,
+        1.735
+      ],
+      "size": [
+        0.16,
+        2.8,
+        1.095
+      ],
+      "material": "trim",
+      "when": "OFFICE-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        24.24,
+        1.4,
+        2.839
+      ],
+      "size": [
+        0.16,
+        2.8,
+        1.095
+      ],
+      "material": "trim",
+      "when": "OFFICE-DOOR without OPENBIT"
+    },
+    {
+      "part": "bay",
+      "at": [
+        29.32,
+        0,
+        2.287
+      ],
+      "size": [
+        10,
+        3.8,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.4,
+          2.2,
+          2.8
+        ],
+        "SOUTH": [
+          0,
+          1.25,
+          1.5,
+          2.5
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        30.32,
+        0.76,
+        3.487
+      ],
+      "size": [
+        2.8,
+        0.04,
+        1.35
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        30.32,
+        0.37,
+        3.487
+      ],
+      "size": [
+        2.6,
+        0.74,
+        1.2
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        29.62,
+        0.785,
+        3.237
+      ],
+      "size": [
+        0.3,
+        0.01,
+        0.22
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        30.52,
+        0.785,
+        3.637
+      ],
+      "size": [
+        0.3,
+        0.01,
+        0.22
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        31.22,
+        0.785,
+        3.337
+      ],
+      "size": [
+        0.3,
+        0.01,
+        0.22
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        32.77,
+        1.55,
+        -1.703
+      ],
+      "size": [
+        1.5,
+        0.4,
+        0.02
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        32.22,
+        1.55,
+        -1.683
+      ],
+      "size": [
+        0.16,
+        0.16,
+        0.04
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        32.77,
+        1.55,
+        -1.683
+      ],
+      "size": [
+        0.16,
+        0.16,
+        0.04
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        33.32,
+        1.55,
+        -1.683
+      ],
+      "size": [
+        0.16,
+        0.16,
+        0.04
+      ],
+      "material": "indicator-fault"
+    },
+    {
+      "part": "prop",
+      "at": [
+        34.04,
+        0.9,
+        2.287
+      ],
+      "size": [
+        0.55,
+        1.8,
+        6.8
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        28.02,
+        0.9,
+        -1.433
+      ],
+      "size": [
+        5.2,
+        1.8,
+        0.55
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        24.34,
+        3.15,
+        2.287
+      ],
+      "size": [
+        0.02,
+        0.3,
+        1.2
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        24.24,
+        1.4,
+        1.735
+      ],
+      "size": [
+        0.16,
+        2.8,
+        1.095
+      ],
+      "material": "trim",
+      "when": "OFFICE-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        24.24,
+        1.4,
+        2.839
+      ],
+      "size": [
+        0.16,
+        2.8,
+        1.095
+      ],
+      "material": "trim",
+      "when": "OFFICE-DOOR without OPENBIT"
+    },
+    {
+      "part": "light",
+      "at": [
+        26.82,
+        3.76,
+        0.787
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 10,
+        "distance": 8,
+        "color": 16054008
+      },
+      "room": "LAB-OFFICE"
+    },
+    {
+      "part": "light",
+      "at": [
+        31.82,
+        3.76,
+        0.787
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 10,
+        "distance": 8,
+        "color": 16054008
+      },
+      "room": "LAB-OFFICE"
+    },
+    {
+      "part": "light",
+      "at": [
+        26.82,
+        3.76,
+        3.787
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 10,
+        "distance": 8,
+        "color": 16054008
+      },
+      "room": "LAB-OFFICE"
+    },
+    {
+      "part": "light",
+      "at": [
+        31.82,
+        3.76,
+        3.787
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 10,
+        "distance": 8,
+        "color": 16054008
+      },
+      "room": "LAB-OFFICE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.513,
+        2.1,
+        -12.153
+      ],
+      "size": [
+        12,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.909,
+        2.1,
+        -11.566
+      ],
+      "size": [
+        1.628,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.485,
+        3.6,
+        -10.141
+      ],
+      "size": [
+        2.4,
+        1.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.06,
+        2.1,
+        -8.717
+      ],
+      "size": [
+        1.628,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.473,
+        2.1,
+        -5.113
+      ],
+      "size": [
+        6,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.06,
+        2.1,
+        -1.509
+      ],
+      "size": [
+        1.628,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.485,
+        3.6,
+        -0.085
+      ],
+      "size": [
+        2.4,
+        1.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.909,
+        2.1,
+        1.34
+      ],
+      "size": [
+        1.628,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.138,
+        2.1,
+        1.927
+      ],
+      "size": [
+        3.25,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.513,
+        3.3,
+        1.927
+      ],
+      "size": [
+        1.5,
+        1.8,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.888,
+        2.1,
+        1.927
+      ],
+      "size": [
+        3.25,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.152,
+        2.1,
+        1.304
+      ],
+      "size": [
+        1.728,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.541,
+        3.4,
+        -0.085
+      ],
+      "size": [
+        2.2,
+        1.6,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.93,
+        2.1,
+        -1.474
+      ],
+      "size": [
+        1.728,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.553,
+        2.1,
+        -3.063
+      ],
+      "size": [
+        1.9,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.553,
+        3.4,
+        -5.113
+      ],
+      "size": [
+        2.2,
+        1.6,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -23.553,
+        2.1,
+        -9.163
+      ],
+      "size": [
+        5.9,
+        4.2,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.485,
+        1.5,
+        -10.141
+      ],
+      "size": [
+        2.4,
+        3,
+        0.06
+      ],
+      "material": "plate-steel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.485,
+        1.5,
+        -0.085
+      ],
+      "size": [
+        2.4,
+        3,
+        0.06
+      ],
+      "material": "plate-steel",
+      "rot": -2.356194,
+      "when": "BIO-DOOR-WEST without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.513,
+        -0.044,
+        -5.113
+      ],
+      "size": [
+        16,
+        0.08,
+        14
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.513,
+        4.24,
+        -5.113
+      ],
+      "size": [
+        16,
+        0.08,
+        14
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "light",
+      "at": [
+        -19.513,
+        4.16,
+        -8.113
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "MAIN-LAB"
+    },
+    {
+      "part": "light",
+      "at": [
+        -11.513,
+        4.16,
+        -8.113
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "MAIN-LAB"
+    },
+    {
+      "part": "light",
+      "at": [
+        -19.513,
+        4.16,
+        -2.113
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "MAIN-LAB"
+    },
+    {
+      "part": "light",
+      "at": [
+        -11.513,
+        4.16,
+        -2.113
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "MAIN-LAB"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -15.513,
+        0,
+        4.447
+      ],
+      "size": [
+        4.4,
+        3.2,
+        4.8
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.2,
+          1.5,
+          2.4
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        0.35,
+        4.447
+      ],
+      "size": [
+        0.45,
+        0.04,
+        3.8
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        0.95,
+        4.447
+      ],
+      "size": [
+        0.45,
+        0.04,
+        3.8
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        1.55,
+        4.447
+      ],
+      "size": [
+        0.45,
+        0.04,
+        3.8
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        2.15,
+        4.447
+      ],
+      "size": [
+        0.45,
+        0.04,
+        3.8
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        2.7,
+        4.447
+      ],
+      "size": [
+        0.45,
+        0.04,
+        3.8
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        1.4,
+        2.547
+      ],
+      "size": [
+        0.45,
+        2.8,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        1.4,
+        4.447
+      ],
+      "size": [
+        0.45,
+        2.8,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.538,
+        1.4,
+        6.347
+      ],
+      "size": [
+        0.45,
+        2.8,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        0.47,
+        3.247
+      ],
+      "size": [
+        0.3,
+        0.2,
+        0.5
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        0.47,
+        5.447
+      ],
+      "size": [
+        0.3,
+        0.2,
+        0.4
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        1.07,
+        3.347
+      ],
+      "size": [
+        0.25,
+        0.2,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        1.07,
+        5.747
+      ],
+      "size": [
+        0.3,
+        0.2,
+        0.35
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        1.67,
+        3.947
+      ],
+      "size": [
+        0.3,
+        0.2,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        1.67,
+        5.647
+      ],
+      "size": [
+        0.25,
+        0.2,
+        0.3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        2.27,
+        3.147
+      ],
+      "size": [
+        0.3,
+        0.2,
+        0.4
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.563,
+        2.27,
+        5.047
+      ],
+      "size": [
+        0.3,
+        0.2,
+        0.5
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.963,
+        2.25,
+        5.097
+      ],
+      "size": [
+        0.04,
+        0.04,
+        1.3
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.338,
+        2.25,
+        4.497
+      ],
+      "size": [
+        0.75,
+        0.04,
+        0.04
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -17.338,
+        2.25,
+        5.697
+      ],
+      "size": [
+        0.75,
+        0.04,
+        0.04
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "light",
+      "at": [
+        -15.513,
+        3.16,
+        4.447
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 9,
+        "distance": 6,
+        "color": 15791359
+      },
+      "room": "LAB-STORAGE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -35.873,
+        2,
+        -0.993
+      ],
+      "size": [
+        3.6,
+        4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -33.173,
+        3.3,
+        -0.993
+      ],
+      "size": [
+        1.8,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -27.426,
+        2,
+        -0.993
+      ],
+      "size": [
+        9.694,
+        4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.463,
+        2,
+        -0.894
+      ],
+      "size": [
+        0.248,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.598,
+        3.3,
+        -0.028
+      ],
+      "size": [
+        2.2,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.732,
+        2,
+        0.837
+      ],
+      "size": [
+        0.248,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.633,
+        2,
+        6
+      ],
+      "size": [
+        10.094,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.498,
+        2,
+        11.087
+      ],
+      "size": [
+        7.65,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -29.173,
+        3.25,
+        11.087
+      ],
+      "size": [
+        1.7,
+        1.5,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -33.848,
+        2,
+        11.087
+      ],
+      "size": [
+        7.65,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -37.713,
+        2,
+        6.597
+      ],
+      "size": [
+        8.9,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -37.713,
+        3.3,
+        1.047
+      ],
+      "size": [
+        2.2,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -37.713,
+        2,
+        -0.503
+      ],
+      "size": [
+        0.9,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -30.126,
+        -0.04,
+        0
+      ],
+      "size": [
+        15.094,
+        0.08,
+        1.906
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -30.126,
+        -0.04,
+        6
+      ],
+      "size": [
+        15.094,
+        0.08,
+        10.094
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.626,
+        -0.04,
+        6
+      ],
+      "size": [
+        1.906,
+        0.08,
+        10.094
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.579,
+        -0.041,
+        0.953
+      ],
+      "size": [
+        2.695,
+        0.08,
+        2.695
+      ],
+      "material": "deck-plate",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -30.126,
+        4.04,
+        0
+      ],
+      "size": [
+        15.094,
+        0.08,
+        1.906
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -30.126,
+        4.04,
+        6
+      ],
+      "size": [
+        15.094,
+        0.08,
+        10.094
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -21.626,
+        4.04,
+        6
+      ],
+      "size": [
+        1.906,
+        0.08,
+        10.094
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -22.579,
+        4.041,
+        0.953
+      ],
+      "size": [
+        2.695,
+        0.08,
+        2.695
+      ],
+      "material": "ceiling",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -26.073,
+        1.8,
+        -0.913
+      ],
+      "size": [
+        0.28,
+        0.28,
+        0.08
+      ],
+      "material": "indicator-fault"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -29.273,
+        1.1,
+        -0.653
+      ],
+      "size": [
+        4.6,
+        2.2,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -24.073,
+        1.1,
+        -0.653
+      ],
+      "size": [
+        2.4,
+        2.2,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -20.973,
+        1.1,
+        5.547
+      ],
+      "size": [
+        0.6,
+        2.2,
+        6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "light",
+      "at": [
+        -33.673,
+        3.96,
+        2.547
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        -29.173,
+        3.96,
+        2.547
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        -24.673,
+        3.96,
+        2.547
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        -33.673,
+        3.96,
+        7.547
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        -29.173,
+        3.96,
+        7.547
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        -24.673,
+        3.96,
+        7.547
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -29.673,
+        0,
+        -5.113
+      ],
+      "size": [
+        12,
+        3.6,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "SOUTH": [
+          3.5,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "EAST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -29.673,
+        3.56,
+        -5.113
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJECT-CORRIDOR-EAST"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -42.833,
+        0,
+        -5.113
+      ],
+      "size": [
+        14,
+        3.6,
+        6
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "SOUTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -46.333,
+        3.56,
+        -5.113
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJECT-CORRIDOR"
+    },
+    {
+      "part": "light",
+      "at": [
+        -39.333,
+        3.56,
+        -5.113
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJECT-CORRIDOR"
+    }
+  ]
+}

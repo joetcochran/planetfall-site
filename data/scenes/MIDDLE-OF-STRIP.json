@@ -1,0 +1,53 @@
+{
+  "note": [
+    "Middle of Strip's fabric (DR-106), cut from the one computer layout in scripts/fabric-computer.mjs -- regenerate from there, do not hand-edit. MIDDLE-OF-STRIP v1: the middle section of the strip, a bare 8.0 m deck 1.0 m thick, void east and west, the eye on the centre line 20 m north of Strip Near Station's and 20 m south of Strip Near Relay's. No shell, walls, lamps or sky: the black void is the package's own lighting.fog (black, 8 to 16 m), which the engine makes the fog and the background, and the fill is its sourceless lighting.fill. Past 16 m everything is black. The microbe and the speck are overlays and are not in the fabric.",
+    "North and south the same deck runs straight on into the black, no join. Neither end is in sight: Station 384's plates and the micro-relay are each 17.5 m off at their nearest corners and the strip's south end 25 m, all past the fog, so none of them is in this scene and the relay's looks need no variant here. The microbe, when here, is an overlay across the way south."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.5,
+        0
+      ],
+      "size": [
+        8,
+        1,
+        20
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.5,
+        17.5
+      ],
+      "size": [
+        8,
+        1,
+        15
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.5,
+        -18
+      ],
+      "size": [
+        8,
+        1,
+        16
+      ],
+      "material": "plate-steel"
+    }
+  ]
+}

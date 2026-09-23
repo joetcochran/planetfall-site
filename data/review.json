@@ -1,0 +1,640 @@
+{
+  "routineExits": [
+    {
+      "room": "ESCAPE-POD",
+      "direction": "EAST",
+      "kind": "routine",
+      "target": null,
+      "routine": "POD-EXIT-F",
+      "expression": [
+        "PER",
+        "POD-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "DECK-NINE",
+        "UNDERWATER"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 929
+      }
+    },
+    {
+      "room": "ESCAPE-POD",
+      "direction": "OUT",
+      "kind": "routine",
+      "target": null,
+      "routine": "POD-EXIT-F",
+      "expression": [
+        "PER",
+        "POD-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "DECK-NINE",
+        "UNDERWATER"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 929
+      }
+    },
+    {
+      "room": "ESCAPE-POD",
+      "direction": "UP",
+      "kind": "routine",
+      "target": null,
+      "routine": "POD-EXIT-F",
+      "expression": [
+        "PER",
+        "POD-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "DECK-NINE",
+        "UNDERWATER"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 929
+      }
+    },
+    {
+      "room": "SHUTTLE-CAR-ALFIE",
+      "direction": "NORTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "SHUTTLE-EXIT-F",
+      "expression": [
+        "PER",
+        "SHUTTLE-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "KALAMONTEE-PLATFORM",
+        "LAWANDA-PLATFORM",
+        "SHUTTLE-CAR-ALFIE",
+        "SHUTTLE-CAR-BETTY"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 1758
+      }
+    },
+    {
+      "room": "SHUTTLE-CAR-BETTY",
+      "direction": "SOUTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "SHUTTLE-EXIT-F",
+      "expression": [
+        "PER",
+        "SHUTTLE-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "KALAMONTEE-PLATFORM",
+        "LAWANDA-PLATFORM",
+        "SHUTTLE-CAR-ALFIE",
+        "SHUTTLE-CAR-BETTY"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 1758
+      }
+    },
+    {
+      "room": "BALCONY",
+      "direction": "DOWN",
+      "kind": "routine",
+      "target": null,
+      "routine": "WATER-LEVEL-F",
+      "expression": [
+        "PER",
+        "WATER-LEVEL-F"
+      ],
+      "candidateRoomReferences": [
+        "BALCONY",
+        "COURTYARD",
+        "CRAG",
+        "UNDERWATER",
+        "WINDING-STAIR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 151
+      }
+    },
+    {
+      "room": "WINDING-STAIR",
+      "direction": "DOWN",
+      "kind": "routine",
+      "target": null,
+      "routine": "WATER-LEVEL-F",
+      "expression": [
+        "PER",
+        "WATER-LEVEL-F"
+      ],
+      "candidateRoomReferences": [
+        "BALCONY",
+        "COURTYARD",
+        "CRAG",
+        "UNDERWATER",
+        "WINDING-STAIR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 151
+      }
+    },
+    {
+      "room": "DORM-CORRIDOR",
+      "direction": "EAST",
+      "kind": "routine",
+      "target": null,
+      "routine": "LONG-HALL-F",
+      "expression": [
+        "PER",
+        "LONG-HALL-F"
+      ],
+      "candidateRoomReferences": [
+        "CORRIDOR-JUNCTION",
+        "DORM-CORRIDOR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 907
+      }
+    },
+    {
+      "room": "CORRIDOR-JUNCTION",
+      "direction": "WEST",
+      "kind": "routine",
+      "target": null,
+      "routine": "LONG-HALL-F",
+      "expression": [
+        "PER",
+        "LONG-HALL-F"
+      ],
+      "candidateRoomReferences": [
+        "CORRIDOR-JUNCTION",
+        "DORM-CORRIDOR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 907
+      }
+    },
+    {
+      "room": "ADMIN-CORRIDOR",
+      "direction": "NORTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "LADDER-EXIT-F",
+      "expression": [
+        "PER",
+        "LADDER-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "ADMIN-CORRIDOR",
+        "ADMIN-CORRIDOR-N"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 1053
+      }
+    },
+    {
+      "room": "ADMIN-CORRIDOR-N",
+      "direction": "SOUTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "LADDER-EXIT-F",
+      "expression": [
+        "PER",
+        "LADDER-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "ADMIN-CORRIDOR",
+        "ADMIN-CORRIDOR-N"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 1053
+      }
+    },
+    {
+      "room": "ELEVATOR-LOBBY",
+      "direction": "NORTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "ELEVATOR-ENTER-F",
+      "expression": [
+        "PER",
+        "ELEVATOR-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "LOWER-ELEVATOR",
+        "UPPER-ELEVATOR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 2441
+      }
+    },
+    {
+      "room": "ELEVATOR-LOBBY",
+      "direction": "SOUTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "ELEVATOR-ENTER-F",
+      "expression": [
+        "PER",
+        "ELEVATOR-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "LOWER-ELEVATOR",
+        "UPPER-ELEVATOR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 2441
+      }
+    },
+    {
+      "room": "UPPER-ELEVATOR",
+      "direction": "OUT",
+      "kind": "routine",
+      "target": null,
+      "routine": "ELEVATOR-EXIT-F",
+      "expression": [
+        "PER",
+        "ELEVATOR-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "ELEVATOR-LOBBY",
+        "LOWER-ELEVATOR",
+        "TOWER-CORE",
+        "UPPER-ELEVATOR",
+        "WAITING-AREA"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 2457
+      }
+    },
+    {
+      "room": "UPPER-ELEVATOR",
+      "direction": "SOUTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "ELEVATOR-EXIT-F",
+      "expression": [
+        "PER",
+        "ELEVATOR-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "ELEVATOR-LOBBY",
+        "LOWER-ELEVATOR",
+        "TOWER-CORE",
+        "UPPER-ELEVATOR",
+        "WAITING-AREA"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 2457
+      }
+    },
+    {
+      "room": "LOWER-ELEVATOR",
+      "direction": "NORTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "ELEVATOR-EXIT-F",
+      "expression": [
+        "PER",
+        "ELEVATOR-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "ELEVATOR-LOBBY",
+        "LOWER-ELEVATOR",
+        "TOWER-CORE",
+        "UPPER-ELEVATOR",
+        "WAITING-AREA"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 2457
+      }
+    },
+    {
+      "room": "LOWER-ELEVATOR",
+      "direction": "OUT",
+      "kind": "routine",
+      "target": null,
+      "routine": "ELEVATOR-EXIT-F",
+      "expression": [
+        "PER",
+        "ELEVATOR-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "ELEVATOR-LOBBY",
+        "LOWER-ELEVATOR",
+        "TOWER-CORE",
+        "UPPER-ELEVATOR",
+        "WAITING-AREA"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 2457
+      }
+    },
+    {
+      "room": "WAITING-AREA",
+      "direction": "IN",
+      "kind": "routine",
+      "target": null,
+      "routine": "OTHER-ELEVATOR-ENTER-F",
+      "expression": [
+        "PER",
+        "OTHER-ELEVATOR-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "LOWER-ELEVATOR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 3169
+      }
+    },
+    {
+      "room": "WAITING-AREA",
+      "direction": "SOUTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "OTHER-ELEVATOR-ENTER-F",
+      "expression": [
+        "PER",
+        "OTHER-ELEVATOR-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "LOWER-ELEVATOR"
+      ],
+      "routineSource": {
+        "file": "compone.zil",
+        "line": 3169
+      }
+    },
+    {
+      "room": "KALAMONTEE-PLATFORM",
+      "direction": "SOUTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "SHUTTLE-ENTER-F",
+      "expression": [
+        "PER",
+        "SHUTTLE-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "KALAMONTEE-PLATFORM",
+        "LAWANDA-PLATFORM",
+        "SHUTTLE-CAR-ALFIE",
+        "SHUTTLE-CAR-BETTY"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 1728
+      }
+    },
+    {
+      "room": "KALAMONTEE-PLATFORM",
+      "direction": "NORTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "SHUTTLE-ENTER-F",
+      "expression": [
+        "PER",
+        "SHUTTLE-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "KALAMONTEE-PLATFORM",
+        "LAWANDA-PLATFORM",
+        "SHUTTLE-CAR-ALFIE",
+        "SHUTTLE-CAR-BETTY"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 1728
+      }
+    },
+    {
+      "room": "LAWANDA-PLATFORM",
+      "direction": "NORTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "SHUTTLE-ENTER-F",
+      "expression": [
+        "PER",
+        "SHUTTLE-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "KALAMONTEE-PLATFORM",
+        "LAWANDA-PLATFORM",
+        "SHUTTLE-CAR-ALFIE",
+        "SHUTTLE-CAR-BETTY"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 1728
+      }
+    },
+    {
+      "room": "LAWANDA-PLATFORM",
+      "direction": "SOUTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "SHUTTLE-ENTER-F",
+      "expression": [
+        "PER",
+        "SHUTTLE-ENTER-F"
+      ],
+      "candidateRoomReferences": [
+        "KALAMONTEE-PLATFORM",
+        "LAWANDA-PLATFORM",
+        "SHUTTLE-CAR-ALFIE",
+        "SHUTTLE-CAR-BETTY"
+      ],
+      "routineSource": {
+        "file": "globals.zil",
+        "line": 1728
+      }
+    },
+    {
+      "room": "CRYO-ELEVATOR",
+      "direction": "NORTH",
+      "kind": "routine",
+      "target": null,
+      "routine": "CRYO-EXIT-F",
+      "expression": [
+        "PER",
+        "CRYO-EXIT-F"
+      ],
+      "candidateRoomReferences": [
+        "CRYO-ANTEROOM",
+        "PROJCON-OFFICE"
+      ],
+      "routineSource": {
+        "file": "comptwo.zil",
+        "line": 1370
+      }
+    },
+    {
+      "room": "STRIP-NEAR-RELAY",
+      "direction": "EAST",
+      "kind": "routine",
+      "target": null,
+      "routine": "RELAY-EXIT-F",
+      "expression": [
+        "PER",
+        "RELAY-EXIT-F"
+      ],
+      "candidateRoomReferences": [],
+      "routineSource": {
+        "file": "comptwo.zil",
+        "line": 2531
+      }
+    }
+  ],
+  "roomChangingCalls": [
+    {
+      "routine": "GO",
+      "file": "misc.zil",
+      "line": 73,
+      "expression": [
+        "SETG",
+        "HERE",
+        ",DECK-NINE"
+      ]
+    },
+    {
+      "routine": "GO",
+      "file": "misc.zil",
+      "line": 73,
+      "expression": [
+        "SETG",
+        "P-IT-LOC",
+        ",DECK-NINE"
+      ]
+    },
+    {
+      "routine": "I-BLATHER",
+      "file": "globals.zil",
+      "line": 680,
+      "expression": [
+        "GOTO",
+        ",BRIG"
+      ]
+    },
+    {
+      "routine": "V-TYPE",
+      "file": "verbs.zil",
+      "line": 1628,
+      "expression": [
+        "GOTO",
+        ",STATION-384"
+      ]
+    },
+    {
+      "routine": "HELICOPTER-OBJECT-F",
+      "file": "compone.zil",
+      "line": 2775,
+      "expression": [
+        "GOTO",
+        ",HELICOPTER"
+      ]
+    },
+    {
+      "routine": "HELICOPTER-OBJECT-F",
+      "file": "compone.zil",
+      "line": 2775,
+      "expression": [
+        "GOTO",
+        ",HELIPAD"
+      ]
+    },
+    {
+      "routine": "INFIRMARY-F",
+      "file": "comptwo.zil",
+      "line": 105,
+      "expression": [
+        "MOVE",
+        ",FLOYD",
+        ",FORK"
+      ]
+    },
+    {
+      "routine": "BIO-LOCK-EAST-F",
+      "file": "comptwo.zil",
+      "line": 1717,
+      "expression": [
+        "MOVE",
+        ",FLOYD",
+        ",BIO-LOCK-WEST"
+      ]
+    },
+    {
+      "routine": "I-FLOYD-FORAY",
+      "file": "comptwo.zil",
+      "line": 1949,
+      "expression": [
+        "MOVE",
+        ",MINI-CARD",
+        ",BIO-LOCK-EAST"
+      ]
+    },
+    {
+      "routine": "STATION-384-F",
+      "file": "comptwo.zil",
+      "line": 2410,
+      "expression": [
+        "GOTO",
+        ",AUXILIARY-BOOTH"
+      ]
+    },
+    {
+      "routine": "STATION-384-F",
+      "file": "comptwo.zil",
+      "line": 2410,
+      "expression": [
+        "GOTO",
+        ",MINI-BOOTH",
+        []
+      ]
+    }
+  ],
+  "descriptionCalls": [
+    {
+      "room": "ALFIE-CONTROL-EAST",
+      "expression": "<DESCRIBE-VIEW>"
+    },
+    {
+      "room": "ALFIE-CONTROL-WEST",
+      "expression": "<DESCRIBE-VIEW>"
+    },
+    {
+      "room": "BETTY-CONTROL-EAST",
+      "expression": "<DESCRIBE-VIEW>"
+    },
+    {
+      "room": "BETTY-CONTROL-WEST",
+      "expression": "<DESCRIBE-VIEW>"
+    },
+    {
+      "room": "SYSTEMS-MONITORS",
+      "expression": "<DESCRIBE-MONITORS>"
+    },
+    {
+      "room": "COMM-ROOM",
+      "expression": "<SHUTDOWN>"
+    }
+  ],
+  "truncatedDefinitions": [
+    "TRIFFID"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "decades": {
+    "seeds": 100,
+    "views": 100,
+    "reviewed": 100
+  },
+  "counts": {
+    "metadata": 105,
+    "blockout": 105,
+    "seeds": 105,
+    "views": 105,
+    "reviewed": 105,
+    "accepted": 103
+  },
+  "total": 105,
+  "at": "2026-09-23T10:59:12.674Z"
+}

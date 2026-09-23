@@ -1,0 +1,1513 @@
+{
+  "note": [
+    "Physical Plant Two's fabric, cut from the one Lawanda layout in scripts/fabric-lawanda.mjs -- regenerate from there, do not hand-edit. PHYSICAL-PLANT-TWO v3 with the 2026-09-17 geometry pass: 20 x 10 x 24, the eye at the middle -- deliberately much larger than the Kalamontee plant. A clear aisle runs east from the mouth, air handlers stand either side of it and along the walls, ducts and pipe runs cross overhead, and the ceiling is 10 m up.",
+    "One opening, west, and it is THE BIG MOUTH: 4.5 x 3.6 against the 1.8 x 2.6 of the small doorways, which is the room description's point about this plant. The eye is 10 m from it and Systems Corridor East beyond is 3.8 m high and 12 m long, so its whole section stands inside the opening -- deck-plate floor, worn concrete walls, its ceiling from 11 m out.",
+    "This is the east end of the 45 m line the whole cluster is built around, read backwards. At 22.16 m the corridor's own 2.2 x 2.6 west mouth, through it SYSTEMS-CORRIDOR, then that corridor's west mouth at 34.32 m, and at last a strip of SYSTEMS-CORRIDOR-WEST's west wall 44.48 m from the eye: about 2.9 m of wall, floor to 2.90 m up, 1.43 m each side of the axis. WHAT IS NOT IN IT, and a reader will expect them: the corridor's north and south doorways to Course Control and the Library Lobby are 5 m off this axis 16.16 m out where the cone reaches 3.64 m, SO NEITHER SHOWS, and neither room is in the scene; the Infirmary's mouth and the walk to the Fork are round the bend past the far end and never show; and Systems Corridor's CEILING does not show either -- past the second mouth the up-slope is 0.045, which reaches 3.15 m at 34.32 m against a 3.6 m ceiling. The hallway is warm-lit from its own strips and reads dimmer, lower and much smaller than this hall. No door leaf anywhere along it."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        20,
+        10,
+        24
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.8,
+          4.5,
+          3.6
+        ]
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        -9.95,
+        1.8,
+        0
+      ],
+      "facing": "WEST",
+      "size": [
+        4.5,
+        3.6
+      ],
+      "band": 0.25,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.26,
+        1.68,
+        10.19
+      ],
+      "size": [
+        3.64,
+        3.36,
+        3.78
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        2.75,
+        -11.1
+      ],
+      "size": [
+        6,
+        5.5,
+        1.8
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.6,
+        3,
+        -7.5
+      ],
+      "size": [
+        2.6,
+        6,
+        5
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.6,
+        3,
+        0
+      ],
+      "size": [
+        2.6,
+        6,
+        5
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.6,
+        3,
+        7.5
+      ],
+      "size": [
+        2.6,
+        6,
+        5
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4,
+        1.6,
+        -4.6
+      ],
+      "size": [
+        4,
+        3.2,
+        3.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        1.6,
+        -4.6
+      ],
+      "size": [
+        4,
+        3.2,
+        3.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1,
+        1.6,
+        -9.5
+      ],
+      "size": [
+        12,
+        3.2,
+        3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "pipe",
+      "path": [
+        [
+          -9.8,
+          6.5,
+          -2.2
+        ],
+        [
+          7,
+          6.5,
+          -2.2
+        ],
+        [
+          7,
+          3,
+          -2.2
+        ]
+      ],
+      "radius": 0.35
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4,
+        1.6,
+        4.6
+      ],
+      "size": [
+        4,
+        3.2,
+        3.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2,
+        1.6,
+        4.6
+      ],
+      "size": [
+        4,
+        3.2,
+        3.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.71,
+        1.6,
+        9.5
+      ],
+      "size": [
+        11.42,
+        3.2,
+        3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "pipe",
+      "path": [
+        [
+          -9.8,
+          6.5,
+          2.2
+        ],
+        [
+          7,
+          6.5,
+          2.2
+        ],
+        [
+          7,
+          3,
+          2.2
+        ]
+      ],
+      "radius": 0.35
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        8.2,
+        0
+      ],
+      "size": [
+        19,
+        1.4,
+        2.4
+      ],
+      "material": "conduit"
+    },
+    {
+      "part": "pipe",
+      "path": [
+        [
+          -9.8,
+          8.8,
+          -6
+        ],
+        [
+          9.8,
+          8.8,
+          -6
+        ]
+      ],
+      "radius": 0.25
+    },
+    {
+      "part": "pipe",
+      "path": [
+        [
+          -9.8,
+          8.8,
+          6
+        ],
+        [
+          9.8,
+          8.8,
+          6
+        ]
+      ],
+      "radius": 0.25
+    },
+    {
+      "part": "light",
+      "at": [
+        -5,
+        9.96,
+        -6
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 30,
+        "distance": 22,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        5,
+        9.96,
+        -6
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 30,
+        "distance": 22,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -5,
+        9.96,
+        6
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 30,
+        "distance": 22,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        5,
+        9.96,
+        6
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 30,
+        "distance": 22,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        9.96,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 30,
+        "distance": 22,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -16.16,
+        0,
+        0
+      ],
+      "size": [
+        12,
+        3.8,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "SOUTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "EAST": [
+          0,
+          1.8,
+          4.5,
+          3.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16.16,
+        2.95,
+        -4.98
+      ],
+      "size": [
+        2.6,
+        0.35,
+        0.02
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "light",
+      "at": [
+        -19.16,
+        3.76,
+        -2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -13.16,
+        3.76,
+        -2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -19.16,
+        3.76,
+        2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -13.16,
+        3.76,
+        2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -28.32,
+        0,
+        0
+      ],
+      "size": [
+        12,
+        3.6,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "EAST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -28.32,
+        2.95,
+        -3.98
+      ],
+      "size": [
+        2.2,
+        0.35,
+        0.02
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "light",
+      "at": [
+        -31.32,
+        3.56,
+        -2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR"
+    },
+    {
+      "part": "light",
+      "at": [
+        -25.32,
+        3.56,
+        -2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR"
+    },
+    {
+      "part": "light",
+      "at": [
+        -31.32,
+        3.56,
+        2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR"
+    },
+    {
+      "part": "light",
+      "at": [
+        -25.32,
+        3.56,
+        2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -41.105,
+        1.8,
+        -4.54
+      ],
+      "size": [
+        1.75,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        2.8,
+        -4.54
+      ],
+      "size": [
+        1.5,
+        1.6,
+        0.08
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -36.605,
+        1.8,
+        -4.54
+      ],
+      "size": [
+        4.25,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -34.44,
+        1.8,
+        -2.8
+      ],
+      "size": [
+        3.4,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": -1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -34.44,
+        3.1,
+        0
+      ],
+      "size": [
+        2.2,
+        1,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": -1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -34.44,
+        1.8,
+        2.8
+      ],
+      "size": [
+        3.4,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": -1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.48,
+        1.8,
+        4.54
+      ],
+      "size": [
+        8,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -44.52,
+        1.8,
+        0.25
+      ],
+      "size": [
+        4.5,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -44.201,
+        1.8,
+        -2.335
+      ],
+      "size": [
+        0.868,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -43.258,
+        3.1,
+        -3.278
+      ],
+      "size": [
+        1.8,
+        1,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -42.315,
+        1.8,
+        -4.221
+      ],
+      "size": [
+        0.868,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -42.619,
+        1.8,
+        4.417
+      ],
+      "size": [
+        0.314,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": 2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -43.508,
+        3.1,
+        3.528
+      ],
+      "size": [
+        2.2,
+        1,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": 2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -44.397,
+        1.8,
+        2.639
+      ],
+      "size": [
+        0.314,
+        3.6,
+        0.08
+      ],
+      "material": "concrete-worn",
+      "rot": 2.356194
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        -0.044,
+        0.675
+      ],
+      "size": [
+        10,
+        0.08,
+        7.65
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -42.355,
+        -0.044,
+        -3.825
+      ],
+      "size": [
+        4.25,
+        0.08,
+        1.35
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -36.605,
+        -0.044,
+        -3.825
+      ],
+      "size": [
+        4.25,
+        0.08,
+        1.35
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -43.48,
+        3.64,
+        0.25
+      ],
+      "size": [
+        2,
+        0.08,
+        4.5
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -42.23,
+        3.64,
+        0.25
+      ],
+      "size": [
+        0.5,
+        0.08,
+        4.5
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -42.23,
+        3.64,
+        3.5
+      ],
+      "size": [
+        0.5,
+        0.08,
+        2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.23,
+        3.64,
+        -3.25
+      ],
+      "size": [
+        7.5,
+        0.08,
+        2.5
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.23,
+        3.64,
+        0.25
+      ],
+      "size": [
+        7.5,
+        0.08,
+        4.5
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.23,
+        3.64,
+        3.5
+      ],
+      "size": [
+        7.5,
+        0.08,
+        2
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -41.98,
+        3.641,
+        -2
+      ],
+      "size": [
+        3.536,
+        0.08,
+        3.536
+      ],
+      "material": "ceiling",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -42.48,
+        3.641,
+        2.5
+      ],
+      "size": [
+        2.828,
+        0.08,
+        2.828
+      ],
+      "material": "ceiling",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -40.28,
+        0.5,
+        -3.2
+      ],
+      "size": [
+        0.05,
+        1,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -40.28,
+        0.5,
+        -3.85
+      ],
+      "size": [
+        0.05,
+        1,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -40.28,
+        0.5,
+        -4.45
+      ],
+      "size": [
+        0.05,
+        1,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -40.28,
+        1,
+        -3.825
+      ],
+      "size": [
+        0.06,
+        0.05,
+        1.35
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -40.28,
+        0.5,
+        -3.825
+      ],
+      "size": [
+        0.04,
+        0.04,
+        1.35
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.68,
+        0.5,
+        -3.2
+      ],
+      "size": [
+        0.05,
+        1,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.68,
+        0.5,
+        -3.85
+      ],
+      "size": [
+        0.05,
+        1,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.68,
+        0.5,
+        -4.45
+      ],
+      "size": [
+        0.05,
+        1,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.68,
+        1,
+        -3.825
+      ],
+      "size": [
+        0.06,
+        0.05,
+        1.35
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.68,
+        0.5,
+        -3.825
+      ],
+      "size": [
+        0.04,
+        0.04,
+        1.35
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "stair",
+      "from": [
+        -39.48,
+        0,
+        -3.15
+      ],
+      "to": [
+        -39.48,
+        -4,
+        -8.483
+      ],
+      "width": 1.3,
+      "treads": 22,
+      "rail": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -40.27,
+        -0.7,
+        -3.825
+      ],
+      "size": [
+        0.08,
+        1.4,
+        1.35
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -40.27,
+        -1.2,
+        -5.441
+      ],
+      "size": [
+        0.08,
+        6.4,
+        1.723
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.69,
+        -0.7,
+        -3.825
+      ],
+      "size": [
+        0.08,
+        1.4,
+        1.35
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -38.69,
+        -1.2,
+        -5.441
+      ],
+      "size": [
+        0.08,
+        6.4,
+        1.723
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        -0.6,
+        -3.11
+      ],
+      "size": [
+        1.66,
+        1.2,
+        0.08
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        2.208,
+        -4.652
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        2.025,
+        -4.795
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        1.842,
+        -4.939
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        1.658,
+        -5.083
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        1.475,
+        -5.226
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        1.292,
+        -5.37
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        1.108,
+        -5.513
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        0.925,
+        -5.657
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        0.742,
+        -5.8
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        0.558,
+        -5.944
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        0.375,
+        -6.088
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -39.48,
+        0.192,
+        -6.231
+      ],
+      "size": [
+        1.66,
+        0.6,
+        0.144
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "light",
+      "at": [
+        -39.48,
+        0.4,
+        -5.3
+      ],
+      "size": [
+        0.5,
+        0.06,
+        0.2
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 2.8,
+        "color": 16769200
+      },
+      "room": "SYSTEMS-CORRIDOR-WEST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -41.48,
+        3.56,
+        -1.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-WEST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -37.48,
+        3.56,
+        -1.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-WEST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -40.98,
+        3.56,
+        2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-WEST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -36.98,
+        3.56,
+        2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-WEST"
+    }
+  ]
+}

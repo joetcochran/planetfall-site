@@ -1,0 +1,2682 @@
+{
+  "note": [
+    "The Helipad's fabric (DR-113), cut from the one tower layout in scripts/fabric-tower.mjs -- regenerate from there, do not hand-edit. HELIPAD.metadata.json v3. The fence is what sizes the room: from 500 m the horizon is 0.72 degrees BELOW level, so \"your view is limited to cloud-filled sky\" (compone.zil 2745-2746) is a measurable claim, and a fence 2.5 m tall on a ring of radius 16 blocks everything under 3.2 degrees above a 1.6 m eye. Solid panels to 1.2 m, heavy mesh over them, one continuous run, no gate. The deck is drawn as a 32 m plate rather than a disc because the stairhead has to be a hole and the kit's drum lays a solid floor; the fence hides the plate's corners from every eye that can see it.",
+    "The stairhead is a 3 m hole in the deck 4.4 m due west of the eye, with a kerb and a rail round it, and under it the shaft: 25.68 m of concrete and plate round a spiral that turns eight times down to the Tower Core's ceiling, which is where the core's own stair takes over. UP costs 30 time units and DOWN 15 (compone.zil 2731, 2749), which is what says the shaft is tall; nothing of the core is really in sight down it, and the warm glow at the bottom is the core's lamps, painted, not a fixture here. The pad's centre stands 2.2 m east of the tower's axis: the core puts its stair at x -2.2 and this room puts its stairhead 4.4 m west of its own eye, and both of those are settled.",
+    "East, the craft: the cabin is HELICOPTER's own shell and its 0.4 m flank is the fuselage's skin, 5.6 m across and 14.4 m nose to tail with the nose north, standing on gear that holds the cabin floor 1.6 m over the deck. Four blades set fore, aft, port and starboard with tips at [10,-7], [16,-1], [10,5] and [4,-1], which keeps every one of them between bearings 55 and 117 and clear of the seams at 45 and 135. The side doors stand open on the west flank and the cargo bay shows through them. No sea, no island, no tower below, no pad lighting, no marking and no second craft: outside the fence nothing exists."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.12,
+        -8.75
+      ],
+      "size": [
+        32,
+        0.24,
+        14.5
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.12,
+        8.75
+      ],
+      "size": [
+        32,
+        0.24,
+        14.5
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.55,
+        -0.12,
+        0
+      ],
+      "size": [
+        18.9,
+        0.24,
+        3
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.95,
+        -0.12,
+        0
+      ],
+      "size": [
+        10.1,
+        0.24,
+        3
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.4,
+        0.06,
+        -1.5
+      ],
+      "size": [
+        3.2,
+        0.12,
+        0.1
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.4,
+        1,
+        -1.5
+      ],
+      "size": [
+        3.2,
+        0.06,
+        0.1
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.4,
+        0.06,
+        1.5
+      ],
+      "size": [
+        3.2,
+        0.12,
+        0.1
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.4,
+        1,
+        1.5
+      ],
+      "size": [
+        3.2,
+        0.06,
+        0.1
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.9,
+        0.06,
+        0
+      ],
+      "size": [
+        0.1,
+        0.12,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.9,
+        1,
+        0
+      ],
+      "size": [
+        0.1,
+        0.06,
+        3
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.9,
+        0.06,
+        0
+      ],
+      "size": [
+        0.1,
+        0.12,
+        3
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.9,
+        1,
+        0
+      ],
+      "size": [
+        0.1,
+        0.06,
+        3
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.9,
+        0.5,
+        -1.5
+      ],
+      "size": [
+        0.08,
+        1,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.9,
+        0.5,
+        1.5
+      ],
+      "size": [
+        0.08,
+        1,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.9,
+        0.5,
+        -1.5
+      ],
+      "size": [
+        0.08,
+        1,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.9,
+        0.5,
+        1.5
+      ],
+      "size": [
+        0.08,
+        1,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.6,
+        -16
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.85,
+        -16
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.088,
+        0.6,
+        -15.863
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -0.131
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.088,
+        1.85,
+        -15.863
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -0.131
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.141,
+        0.6,
+        -15.455
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -0.262
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.141,
+        1.85,
+        -15.455
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -0.262
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.123,
+        0.6,
+        -14.782
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -0.393
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.123,
+        1.85,
+        -14.782
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -0.393
+    },
+    {
+      "part": "prop",
+      "at": [
+        8,
+        0.6,
+        -13.856
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -0.524
+    },
+    {
+      "part": "prop",
+      "at": [
+        8,
+        1.85,
+        -13.856
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -0.524
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.74,
+        0.6,
+        -12.694
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -0.654
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.74,
+        1.85,
+        -12.694
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -0.654
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.314,
+        0.6,
+        -11.314
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.314,
+        1.85,
+        -11.314
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.694,
+        0.6,
+        -9.74
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -0.916
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.694,
+        1.85,
+        -9.74
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -0.916
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.856,
+        0.6,
+        -8
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.047
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.856,
+        1.85,
+        -8
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.047
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.782,
+        0.6,
+        -6.123
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.178
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.782,
+        1.85,
+        -6.123
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.178
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.455,
+        0.6,
+        -4.141
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.309
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.455,
+        1.85,
+        -4.141
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.309
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.863,
+        0.6,
+        -2.088
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.44
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.863,
+        1.85,
+        -2.088
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.44
+    },
+    {
+      "part": "prop",
+      "at": [
+        16,
+        0.6,
+        0
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.571
+    },
+    {
+      "part": "prop",
+      "at": [
+        16,
+        1.85,
+        0
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.571
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.863,
+        0.6,
+        2.088
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.702
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.863,
+        1.85,
+        2.088
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.702
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.455,
+        0.6,
+        4.141
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.833
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.455,
+        1.85,
+        4.141
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.833
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.782,
+        0.6,
+        6.123
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.963
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.782,
+        1.85,
+        6.123
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -1.963
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.856,
+        0.6,
+        8
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -2.094
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.856,
+        1.85,
+        8
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -2.094
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.694,
+        0.6,
+        9.74
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -2.225
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.694,
+        1.85,
+        9.74
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -2.225
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.314,
+        0.6,
+        11.314
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -2.356
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.314,
+        1.85,
+        11.314
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -2.356
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.74,
+        0.6,
+        12.694
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -2.487
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.74,
+        1.85,
+        12.694
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -2.487
+    },
+    {
+      "part": "prop",
+      "at": [
+        8,
+        0.6,
+        13.856
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -2.618
+    },
+    {
+      "part": "prop",
+      "at": [
+        8,
+        1.85,
+        13.856
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -2.618
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.123,
+        0.6,
+        14.782
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -2.749
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.123,
+        1.85,
+        14.782
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -2.749
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.141,
+        0.6,
+        15.455
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -2.88
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.141,
+        1.85,
+        15.455
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -2.88
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.088,
+        0.6,
+        15.863
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.011
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.088,
+        1.85,
+        15.863
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.011
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.6,
+        16
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.142
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.85,
+        16
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.142
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.088,
+        0.6,
+        15.863
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.272
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.088,
+        1.85,
+        15.863
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.272
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.141,
+        0.6,
+        15.455
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.403
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.141,
+        1.85,
+        15.455
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.403
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.123,
+        0.6,
+        14.782
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.123,
+        1.85,
+        14.782
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.534
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8,
+        0.6,
+        13.856
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.665
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8,
+        1.85,
+        13.856
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.665
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.74,
+        0.6,
+        12.694
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.74,
+        1.85,
+        12.694
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.314,
+        0.6,
+        11.314
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.927
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.314,
+        1.85,
+        11.314
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -3.927
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.694,
+        0.6,
+        9.74
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.058
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.694,
+        1.85,
+        9.74
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.058
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.856,
+        0.6,
+        8
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.189
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.856,
+        1.85,
+        8
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.189
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.782,
+        0.6,
+        6.123
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.32
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.782,
+        1.85,
+        6.123
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.32
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.455,
+        0.6,
+        4.141
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.451
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.455,
+        1.85,
+        4.141
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.451
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.863,
+        0.6,
+        2.088
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.581
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.863,
+        1.85,
+        2.088
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.581
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16,
+        0.6,
+        0
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.712
+    },
+    {
+      "part": "prop",
+      "at": [
+        -16,
+        1.85,
+        0
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.712
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.863,
+        0.6,
+        -2.088
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.843
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.863,
+        1.85,
+        -2.088
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.843
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.455,
+        0.6,
+        -4.141
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -4.974
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.455,
+        1.85,
+        -4.141
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -4.974
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.782,
+        0.6,
+        -6.123
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -5.105
+    },
+    {
+      "part": "prop",
+      "at": [
+        -14.782,
+        1.85,
+        -6.123
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -5.105
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.856,
+        0.6,
+        -8
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -5.236
+    },
+    {
+      "part": "prop",
+      "at": [
+        -13.856,
+        1.85,
+        -8
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -5.236
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.694,
+        0.6,
+        -9.74
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -5.367
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.694,
+        1.85,
+        -9.74
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -5.367
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.314,
+        0.6,
+        -11.314
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -5.498
+    },
+    {
+      "part": "prop",
+      "at": [
+        -11.314,
+        1.85,
+        -11.314
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -5.498
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.74,
+        0.6,
+        -12.694
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -5.629
+    },
+    {
+      "part": "prop",
+      "at": [
+        -9.74,
+        1.85,
+        -12.694
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -5.629
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8,
+        0.6,
+        -13.856
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -5.76
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8,
+        1.85,
+        -13.856
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -5.76
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.123,
+        0.6,
+        -14.782
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -5.89
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.123,
+        1.85,
+        -14.782
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -5.89
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.141,
+        0.6,
+        -15.455
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -6.021
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.141,
+        1.85,
+        -15.455
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -6.021
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.088,
+        0.6,
+        -15.863
+      ],
+      "size": [
+        2.117,
+        1.2,
+        0.06
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -6.152
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.088,
+        1.85,
+        -15.863
+      ],
+      "size": [
+        2.117,
+        1.3,
+        0.04
+      ],
+      "material": "trim",
+      "rot": -6.152
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.4,
+        -12.96,
+        -1.6
+      ],
+      "size": [
+        3.4,
+        25.44,
+        0.2
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.4,
+        -12.96,
+        1.6
+      ],
+      "size": [
+        3.4,
+        25.44,
+        0.2
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6,
+        -12.96,
+        0
+      ],
+      "size": [
+        0.2,
+        25.44,
+        3
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.8,
+        -12.96,
+        0
+      ],
+      "size": [
+        0.2,
+        25.44,
+        3
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "spiral",
+      "at": [
+        -4.4,
+        -25.68,
+        0
+      ],
+      "radius": 1.4,
+      "column": 0.17,
+      "rise": 25.44,
+      "turns": 8,
+      "treads": 128,
+      "from": 0,
+      "clockwise": true,
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        2.05,
+        -5.925
+      ],
+      "size": [
+        5.2,
+        1.7,
+        2.55
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.3,
+        -5.3
+      ],
+      "size": [
+        5.2,
+        1,
+        1.3
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        3.4,
+        5.925
+      ],
+      "size": [
+        2.4,
+        1.8,
+        2.55
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        5.2,
+        6.9
+      ],
+      "size": [
+        0.3,
+        2.6,
+        1.6
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.4,
+        0.6,
+        -2.6
+      ],
+      "size": [
+        0.3,
+        1.2,
+        0.3
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.4,
+        0.2,
+        -2.6
+      ],
+      "size": [
+        0.7,
+        0.4,
+        0.5
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.4,
+        0.6,
+        2.6
+      ],
+      "size": [
+        0.3,
+        1.2,
+        0.3
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.4,
+        0.2,
+        2.6
+      ],
+      "size": [
+        0.7,
+        0.4,
+        0.5
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.6,
+        0.6,
+        -2.6
+      ],
+      "size": [
+        0.3,
+        1.2,
+        0.3
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.6,
+        0.2,
+        -2.6
+      ],
+      "size": [
+        0.7,
+        0.4,
+        0.5
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.6,
+        0.6,
+        2.6
+      ],
+      "size": [
+        0.3,
+        1.2,
+        0.3
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.6,
+        0.2,
+        2.6
+      ],
+      "size": [
+        0.7,
+        0.4,
+        0.5
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        5.2,
+        -1
+      ],
+      "size": [
+        0.5,
+        0.8,
+        0.5
+      ],
+      "material": "machinery",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        5.62,
+        -1
+      ],
+      "size": [
+        1,
+        0.24,
+        1
+      ],
+      "material": "machinery",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        5.62,
+        -4
+      ],
+      "size": [
+        6,
+        0.08,
+        0.5
+      ],
+      "material": "plate-steel-corroded",
+      "rot": 1.571
+    },
+    {
+      "part": "prop",
+      "at": [
+        13,
+        5.62,
+        -1
+      ],
+      "size": [
+        6,
+        0.08,
+        0.5
+      ],
+      "material": "plate-steel-corroded",
+      "rot": 0
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        5.62,
+        2
+      ],
+      "size": [
+        6,
+        0.08,
+        0.5
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -1.571
+    },
+    {
+      "part": "prop",
+      "at": [
+        7,
+        5.62,
+        -1
+      ],
+      "size": [
+        6,
+        0.08,
+        0.5
+      ],
+      "material": "plate-steel-corroded",
+      "rot": -3.142
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.15,
+        2.7,
+        2.35
+      ],
+      "size": [
+        0.08,
+        2.2,
+        1.2
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.15,
+        2.7,
+        3.6
+      ],
+      "size": [
+        0.08,
+        2.2,
+        1.2
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "bay",
+      "at": [
+        10,
+        1.6,
+        0
+      ],
+      "size": [
+        4.8,
+        2.8,
+        8.5
+      ],
+      "thickness": 0.4,
+      "wall": "plate-steel-corroded",
+      "floor": "plate-steel-corroded",
+      "ceiling": "plate-steel-corroded",
+      "open": "NONE",
+      "openings": {
+        "WEST": [
+          0,
+          1.1,
+          3.2,
+          2.2
+        ],
+        "EAST": [
+          0,
+          1.1,
+          2,
+          2.2
+        ],
+        "NORTH": [
+          0,
+          1.75,
+          2.4,
+          0.9
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        -3.6
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        -2.7
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        -1.8
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        -0.9
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        0
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        0.9
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        1.8
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        2.7
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        1.615,
+        3.6
+      ],
+      "size": [
+        4.7,
+        0.03,
+        0.12
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.37,
+        -3.45
+      ],
+      "size": [
+        4.7,
+        0.1,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.68,
+        3,
+        -3.45
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.32,
+        3,
+        -3.45
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.37,
+        -2.3
+      ],
+      "size": [
+        4.7,
+        0.1,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.68,
+        3,
+        -2.3
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.32,
+        3,
+        -2.3
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.37,
+        -1.15
+      ],
+      "size": [
+        4.7,
+        0.1,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.37,
+        0
+      ],
+      "size": [
+        4.7,
+        0.1,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.37,
+        1.15
+      ],
+      "size": [
+        4.7,
+        0.1,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.37,
+        2.3
+      ],
+      "size": [
+        4.7,
+        0.1,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.68,
+        3,
+        2.3
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.32,
+        3,
+        2.3
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10,
+        4.37,
+        3.45
+      ],
+      "size": [
+        4.7,
+        0.1,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.68,
+        3,
+        3.45
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.32,
+        3,
+        3.45
+      ],
+      "size": [
+        0.12,
+        2.8,
+        0.14
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.45,
+        2.5,
+        -4.05
+      ],
+      "size": [
+        1.2,
+        0.55,
+        0.18
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.45,
+        2.5,
+        -4.14
+      ],
+      "size": [
+        1.1,
+        0.45,
+        0.03
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.65,
+        2.5,
+        -4
+      ],
+      "size": [
+        0.16,
+        0.16,
+        0.08
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "frame",
+      "at": [
+        10,
+        3.35,
+        -4.18
+      ],
+      "facing": "NORTH",
+      "size": [
+        2.4,
+        0.9
+      ],
+      "band": 0.1,
+      "depth": 0.08,
+      "material": "trim"
+    },
+    {
+      "part": "drum",
+      "at": [
+        -2.2,
+        -30,
+        0
+      ],
+      "radius": 3.4,
+      "height": 4.2,
+      "segments": 56,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "gaps": [
+        {
+          "from": -19,
+          "to": 19,
+          "head": 2.5
+        },
+        {
+          "from": 32,
+          "to": 58,
+          "head": 2.5
+        },
+        {
+          "from": 212,
+          "to": 238,
+          "head": 2.5
+        }
+      ],
+      "ceilingHole": {
+        "at": [
+          -2.2,
+          0
+        ],
+        "width": 1.2,
+        "depth": 2.4
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        -2.2,
+        -28.75,
+        -3.34
+      ],
+      "facing": "NORTH",
+      "size": [
+        2.2,
+        2.5
+      ],
+      "band": 0.16,
+      "depth": 0.12,
+      "material": "trim"
+    },
+    {
+      "part": "stair",
+      "from": [
+        -4.4,
+        -29.94,
+        1.05
+      ],
+      "to": [
+        -4.4,
+        -25.9,
+        -1.05
+      ],
+      "width": 1.1,
+      "treads": 16,
+      "tread": "plate-steel",
+      "rail": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.4,
+        -29.5,
+        0
+      ],
+      "size": [
+        0.34,
+        1,
+        0.34
+      ],
+      "material": "trim",
+      "shape": "cylinder"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.2,
+        -25.95,
+        0
+      ],
+      "size": [
+        1.4,
+        0.07,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 30,
+        "distance": 14,
+        "decay": 1.8
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -0.3,
+        -27.5,
+        -1.9
+      ],
+      "size": [
+        0.3,
+        0.05,
+        0.18
+      ],
+      "material": "lamp-warm",
+      "rot": 0.7853981633974483,
+      "cast": {
+        "intensity": 8,
+        "distance": 6,
+        "decay": 1.8,
+        "color": 14198368
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.2,
+        -27.05,
+        -3
+      ],
+      "size": [
+        1.1,
+        0.08,
+        0.22
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 6,
+        "decay": 1.8,
+        "color": 16765088
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4.3,
+        -27.15,
+        2.1
+      ],
+      "size": [
+        1.1,
+        0.08,
+        0.22
+      ],
+      "material": "lamp-warm",
+      "rot": -0.7853981633974483,
+      "cast": {
+        "intensity": 14,
+        "distance": 6,
+        "decay": 1.8,
+        "color": 16765088
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.25,
+        -28.2,
+        0
+      ],
+      "size": [
+        0.18,
+        0.06,
+        0.12
+      ],
+      "material": "lamp-warm",
+      "rot": 1.5707963267948966,
+      "cast": {
+        "intensity": 4,
+        "distance": 3.5,
+        "decay": 1.8,
+        "color": 16766380
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5,
+        -26.65,
+        -0.55
+      ],
+      "size": [
+        0.18,
+        0.06,
+        0.12
+      ],
+      "material": "lamp-warm",
+      "rot": 1.5707963267948966,
+      "cast": {
+        "intensity": 4,
+        "distance": 3.5,
+        "decay": 1.8,
+        "color": 16766380
+      },
+      "room": "TOWER-CORE"
+    }
+  ]
+}

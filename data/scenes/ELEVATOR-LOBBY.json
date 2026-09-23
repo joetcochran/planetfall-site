@@ -1,0 +1,974 @@
+{
+  "note": [
+    "The Elevator Lobby's fabric (DR-106), cut from the one Kalamontee layout in scripts/fabric-kalamontee.mjs -- regenerate from there, do not hand-edit. ELEVATOR-LOBBY.metadata.json v4: 12 x 3.8 x 10, the eye at the middle; \"a wide, brightly lit lobby\" (compone.zil 2364) under six warm lamps. North the blue door, 2.2 x 2.5, with its call button 1.55 m east of it; south the larger red door, 3.4 x 3, its button 2.1 m east; west the 3.4 x 2.9 mouth onto the Corridor Junction; east Booth 2's 1.5 x 2.5 mouth.",
+    "The doors, each drawn shut unless its state holds, word for word the package's: BLUE-DOOR-OPEN (UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true) and RED-DOOR-OPEN (LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true); both start shut, since neither car starts here (compone.zil 2597-2599), and shut and car-elsewhere are one look. Open, the car stands in the hole, floors level: north the upper car (scripts/fabric-tower.mjs's room, registered here from that file's numbers part for part, as that file registers this lobby), 3.8 x 3.1 x 3.4, its back wall 8.56 m out with the handrail across it -- its side walls, panel and ceiling fitting outside the door's cone; south the lower car lifted to the top of its shaft, 4.8 x 3.6 x 4.2, its back wall 9.36 m out, both side walls, the control panel with the Up and Down buttons and the slot on its east wall (the slot's light an engine part on LOWER-ELEVATOR-ON), the handrail, and the ceiling fitting's light.",
+    "West, on the one axis: the Junction's floor with the dead walkway's flush end on it, its far pair of lamps, its west wall and the Long Hall mouth in the middle of it, and the hall running 150 m off into the dark, shut at its far end, as the Junction's scene draws it; its north and south mouths are outside the cone. East, Booth 2's floor and its back wall with the large painted 2 on it, framed in the mouth; its panel on the north wall and its lamp are out of sight (BOOTH-2 v6)."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        12,
+        3.8,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "NORTH": [
+          0,
+          1.25,
+          2.2,
+          2.5
+        ],
+        "SOUTH": [
+          0,
+          1.5,
+          3.4,
+          3
+        ],
+        "EAST": [
+          0,
+          1.25,
+          1.5,
+          2.5
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.25,
+        -5.08
+      ],
+      "size": [
+        2.2,
+        2.5,
+        0.05
+      ],
+      "material": "structural-rib",
+      "when": "not (UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true)"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.55,
+        1.2,
+        -4.97
+      ],
+      "size": [
+        0.14,
+        0.2,
+        0.04
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.85,
+        1.5,
+        5.08
+      ],
+      "size": [
+        1.7,
+        3,
+        0.05
+      ],
+      "material": "emergency-band",
+      "when": "not (LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true)"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.85,
+        1.5,
+        5.08
+      ],
+      "size": [
+        1.7,
+        3,
+        0.05
+      ],
+      "material": "emergency-band",
+      "when": "not (LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true)"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.1,
+        1.2,
+        4.97
+      ],
+      "size": [
+        0.14,
+        0.2,
+        0.04
+      ],
+      "material": "emergency-band"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.04,
+        -5.08
+      ],
+      "size": [
+        2.2,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.04,
+        5.08
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3.5,
+        3.76,
+        -2.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.76,
+        -2.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        3.5,
+        3.76,
+        -2.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -3.5,
+        3.76,
+        2.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.76,
+        2.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        3.5,
+        3.76,
+        2.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -12.16,
+        0,
+        0
+      ],
+      "size": [
+        12,
+        3.6,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "WEST": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -15.16,
+        3.56,
+        -3
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "CORRIDOR-JUNCTION"
+    },
+    {
+      "part": "light",
+      "at": [
+        -9.16,
+        3.56,
+        -3
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "CORRIDOR-JUNCTION"
+    },
+    {
+      "part": "light",
+      "at": [
+        -15.16,
+        3.56,
+        3
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "CORRIDOR-JUNCTION"
+    },
+    {
+      "part": "light",
+      "at": [
+        -9.16,
+        3.56,
+        3
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "CORRIDOR-JUNCTION"
+    },
+    {
+      "part": "bay",
+      "at": [
+        8.26,
+        0,
+        0
+      ],
+      "size": [
+        4.2,
+        3.2,
+        3.4
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.25,
+          1.5,
+          2.5
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.35,
+        2.25,
+        0
+      ],
+      "size": [
+        0.02,
+        0.1,
+        0.7
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.35,
+        1.97,
+        0.3
+      ],
+      "size": [
+        0.02,
+        0.55,
+        0.1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.35,
+        1.7,
+        0
+      ],
+      "size": [
+        0.02,
+        0.1,
+        0.7
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.35,
+        1.43,
+        -0.3
+      ],
+      "size": [
+        0.02,
+        0.55,
+        0.1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.35,
+        1.15,
+        0
+      ],
+      "size": [
+        0.02,
+        0.1,
+        0.7
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.16,
+        1.2,
+        -1.66
+      ],
+      "size": [
+        0.5,
+        0.45,
+        0.06
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "light",
+      "at": [
+        8.26,
+        3.16,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "BOOTH-2"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -6.86
+      ],
+      "size": [
+        3.8,
+        3.1,
+        3.4
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.25,
+          2.2,
+          2.5
+        ]
+      },
+      "open": "NONE",
+      "when": "UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.06,
+        -6.86
+      ],
+      "size": [
+        0.9,
+        0.04,
+        0.6
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 7,
+        "color": 16771272
+      },
+      "room": "UPPER-ELEVATOR",
+      "when": "UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.88,
+        1.35,
+        -6.24
+      ],
+      "size": [
+        0.04,
+        0.74,
+        0.28
+      ],
+      "material": "control-face",
+      "when": "UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.84,
+        1.55,
+        -6.24
+      ],
+      "size": [
+        0.04,
+        0.12,
+        0.12
+      ],
+      "material": "trim",
+      "when": "UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.84,
+        1.41,
+        -6.24
+      ],
+      "size": [
+        0.04,
+        0.12,
+        0.12
+      ],
+      "material": "trim",
+      "when": "UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.84,
+        1.05,
+        -6.24
+      ],
+      "size": [
+        0.04,
+        0.06,
+        0.14
+      ],
+      "material": "machinery",
+      "when": "UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.95,
+        -8.5
+      ],
+      "size": [
+        2.4,
+        0.05,
+        0.05
+      ],
+      "material": "handrail",
+      "when": "UPPER-ELEVATOR-DOOR has OPENBIT and UPPER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        7.26
+      ],
+      "size": [
+        4.8,
+        3.6,
+        4.2
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.5,
+          3.4,
+          3
+        ]
+      },
+      "open": "NONE",
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.5,
+        5.21
+      ],
+      "facing": "NORTH",
+      "size": [
+        3.4,
+        3
+      ],
+      "band": 0.15,
+      "depth": 0.1,
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.35,
+        1.35,
+        7.81
+      ],
+      "size": [
+        0.06,
+        0.74,
+        0.28
+      ],
+      "material": "control-face",
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.31,
+        1.61,
+        7.81
+      ],
+      "size": [
+        0.04,
+        0.12,
+        0.12
+      ],
+      "material": "machinery",
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.31,
+        1.35,
+        7.81
+      ],
+      "size": [
+        0.04,
+        0.12,
+        0.12
+      ],
+      "material": "machinery",
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.31,
+        1.05,
+        7.81
+      ],
+      "size": [
+        0.04,
+        0.06,
+        0.14
+      ],
+      "material": "machinery",
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.3,
+        1.05,
+        7.81
+      ],
+      "size": [
+        0.03,
+        0.04,
+        0.12
+      ],
+      "material": "indicator-live",
+      "when": "(LOWER-ELEVATOR-ON == true) and LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.95,
+        9.31
+      ],
+      "size": [
+        3.2,
+        0.05,
+        0.05
+      ],
+      "material": "handrail",
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.56,
+        7.26
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "LOWER-ELEVATOR",
+      "when": "LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -93.24,
+        0,
+        0
+      ],
+      "size": [
+        150,
+        3.4,
+        4.4
+      ],
+      "open": "EAST"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -91.1,
+        0.02,
+        0
+      ],
+      "size": [
+        154.28,
+        0.04,
+        3
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "light",
+      "at": [
+        -24.24,
+        3.36,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      },
+      "room": "LONG-HALL"
+    },
+    {
+      "part": "light",
+      "at": [
+        -36.24,
+        3.36,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      },
+      "room": "LONG-HALL"
+    },
+    {
+      "part": "light",
+      "at": [
+        -48.24,
+        3.36,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      },
+      "room": "LONG-HALL"
+    },
+    {
+      "part": "light",
+      "at": [
+        -60.24,
+        3.36,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      },
+      "room": "LONG-HALL"
+    },
+    {
+      "part": "light",
+      "at": [
+        -72.24,
+        3.36,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      },
+      "room": "LONG-HALL"
+    },
+    {
+      "part": "light",
+      "at": [
+        -84.24,
+        3.36,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      },
+      "room": "LONG-HALL"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.08,
+        -0.04,
+        0
+      ],
+      "size": [
+        0.16,
+        0.08,
+        3.4
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.08,
+        -0.04,
+        0
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.5
+      ],
+      "material": "deck-plate"
+    }
+  ]
+}

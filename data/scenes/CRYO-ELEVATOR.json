@@ -1,0 +1,11164 @@
+{
+  "note": [
+    "The Cryo Elevator's fabric, cut from the one Lawanda layout in scripts/fabric-lawanda.mjs -- regenerate from there, do not hand-edit. CRYO-ELEVATOR v2: 6 x 3.6 x 6, the eye at the middle, plain and cool-lit, the one button on the east wall at z -1.1.",
+    "North, the one 3.2 x 3.0 door. Shut (CRYO-ELEVATOR-DOOR without OPENBIT: DESCENDING) the door fills it. Open with CRYO-SCORE-FLAG unset (UPPER-OPEN) it opens on the PROJCON OFFICE -- the mural is gone by then, so it is not drawn here -- and through the office's north and east mouths, Project Corridor and the Computer Room. Open with the flag set (LOWER-OPEN) it opens on the CRYO ANTEROOM, 60 m down the shaft, drawn here where the office stands: its cold floor, the solitary unit and its panel right of the axis, and the 6 x 3.8 arch into the revival halls. The review page's switches show all three."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        6,
+        3.6,
+        6
+      ],
+      "thickness": 0.08,
+      "wall": "plate-steel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.5,
+          3.2,
+          3
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.975,
+        1.2,
+        -1.1
+      ],
+      "size": [
+        0.05,
+        0.32,
+        0.32
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.945,
+        1.2,
+        -1.1
+      ],
+      "size": [
+        0.02,
+        0.1,
+        0.1
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.802,
+        1.5,
+        -3.08
+      ],
+      "size": [
+        1.595,
+        3,
+        0.16
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-ELEVATOR-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.803,
+        1.5,
+        -3.08
+      ],
+      "size": [
+        1.595,
+        3,
+        0.16
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-ELEVATOR-DOOR without OPENBIT"
+    },
+    {
+      "part": "light",
+      "at": [
+        -1.2,
+        3.56,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 9,
+        "distance": 7,
+        "color": 15791359
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        1.2,
+        3.56,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 9,
+        "distance": 7,
+        "color": 15791359
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -7.16
+      ],
+      "size": [
+        10,
+        3.8,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "EAST": [
+          -1,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "SOUTH": [
+          0,
+          1.5,
+          3.2,
+          3
+        ]
+      },
+      "open": "NONE",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.97,
+        1.8,
+        -7.16
+      ],
+      "size": [
+        0.04,
+        2.2,
+        3.2
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.945,
+        2.25,
+        -7.16
+      ],
+      "size": [
+        0.01,
+        0.9,
+        0.5
+      ],
+      "material": "emergency-band",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.945,
+        1.45,
+        -7.16
+      ],
+      "size": [
+        0.01,
+        0.35,
+        1.6
+      ],
+      "material": "trim",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.75,
+        1.25,
+        -3.22
+      ],
+      "size": [
+        0.3,
+        0.8,
+        0.04
+      ],
+      "material": "plate-steel",
+      "when": "(COMPUTER-FIXED == true) and CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.76,
+        -7.16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJCON-OFFICE",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -14.32
+      ],
+      "size": [
+        14,
+        3.6,
+        6
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "SOUTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ]
+      },
+      "open": "NONE",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3.5,
+        3.56,
+        -14.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJECT-CORRIDOR",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        3.5,
+        3.56,
+        -14.32
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJECT-CORRIDOR",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.96,
+        2,
+        -10.2
+      ],
+      "size": [
+        3.6,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9.66,
+        3.3,
+        -10.2
+      ],
+      "size": [
+        1.8,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        15.407,
+        2,
+        -10.2
+      ],
+      "size": [
+        9.694,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        20.37,
+        2,
+        -10.101
+      ],
+      "size": [
+        0.248,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        21.235,
+        3.3,
+        -9.235
+      ],
+      "size": [
+        2.2,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        22.101,
+        2,
+        -8.37
+      ],
+      "size": [
+        0.248,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        22.2,
+        2,
+        -3.207
+      ],
+      "size": [
+        10.094,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -1.570796,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.335,
+        2,
+        1.88
+      ],
+      "size": [
+        7.65,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.66,
+        3.25,
+        1.88
+      ],
+      "size": [
+        1.7,
+        1.5,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.985,
+        2,
+        1.88
+      ],
+      "size": [
+        7.65,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.12,
+        2,
+        -2.61
+      ],
+      "size": [
+        8.9,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.12,
+        3.3,
+        -8.16
+      ],
+      "size": [
+        2.2,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.12,
+        2,
+        -9.71
+      ],
+      "size": [
+        0.9,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.707,
+        -0.04,
+        -9.207
+      ],
+      "size": [
+        15.094,
+        0.08,
+        1.906
+      ],
+      "material": "deck-plate",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.707,
+        -0.04,
+        -3.207
+      ],
+      "size": [
+        15.094,
+        0.08,
+        10.094
+      ],
+      "material": "deck-plate",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        21.207,
+        -0.04,
+        -3.207
+      ],
+      "size": [
+        1.906,
+        0.08,
+        10.094
+      ],
+      "material": "deck-plate",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        20.254,
+        -0.041,
+        -8.254
+      ],
+      "size": [
+        2.695,
+        0.08,
+        2.695
+      ],
+      "material": "deck-plate",
+      "rot": 0.785398,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.707,
+        4.04,
+        -9.207
+      ],
+      "size": [
+        15.094,
+        0.08,
+        1.906
+      ],
+      "material": "ceiling",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.707,
+        4.04,
+        -3.207
+      ],
+      "size": [
+        15.094,
+        0.08,
+        10.094
+      ],
+      "material": "ceiling",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        21.207,
+        4.04,
+        -3.207
+      ],
+      "size": [
+        1.906,
+        0.08,
+        10.094
+      ],
+      "material": "ceiling",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        20.254,
+        4.041,
+        -8.254
+      ],
+      "size": [
+        2.695,
+        0.08,
+        2.695
+      ],
+      "material": "ceiling",
+      "rot": 0.785398,
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        16.76,
+        1.8,
+        -10.12
+      ],
+      "size": [
+        0.28,
+        0.28,
+        0.08
+      ],
+      "material": "indicator-fault",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.56,
+        1.1,
+        -9.86
+      ],
+      "size": [
+        4.6,
+        2.2,
+        0.6
+      ],
+      "material": "machinery",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.76,
+        1.1,
+        -9.86
+      ],
+      "size": [
+        2.4,
+        2.2,
+        0.6
+      ],
+      "material": "machinery",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        21.86,
+        1.1,
+        -3.66
+      ],
+      "size": [
+        0.6,
+        2.2,
+        6
+      ],
+      "material": "machinery",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        9.16,
+        3.96,
+        -6.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        13.66,
+        3.96,
+        -6.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        18.16,
+        3.96,
+        -6.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        9.16,
+        3.96,
+        -1.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        13.66,
+        3.96,
+        -1.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        18.16,
+        3.96,
+        -1.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM",
+      "when": "CRYO-SCORE-FLAG != true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -7.16
+      ],
+      "size": [
+        10,
+        4.2,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "plate-steel",
+      "floor": "deck-plate-scrubbed",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.5,
+          3.2,
+          3
+        ],
+        "NORTH": [
+          0,
+          1.9,
+          6,
+          3.8
+        ]
+      },
+      "open": "NONE",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.802,
+        61.5,
+        -3.08
+      ],
+      "size": [
+        1.595,
+        3,
+        0.16
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.803,
+        61.5,
+        -3.08
+      ],
+      "size": [
+        1.595,
+        3,
+        0.16
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.9,
+        0.62,
+        -5.8
+      ],
+      "size": [
+        2.6,
+        1.24,
+        1
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.9,
+        1.27,
+        -5.8
+      ],
+      "size": [
+        2.5,
+        0.06,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.3,
+        0.75,
+        -5.8
+      ],
+      "size": [
+        0.5,
+        1.5,
+        0.6
+      ],
+      "material": "control-face",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.3,
+        1.3,
+        -5.8
+      ],
+      "size": [
+        0.52,
+        0.3,
+        0.3
+      ],
+      "material": "indicator-live",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -21.32
+      ],
+      "size": [
+        16,
+        7,
+        20
+      ],
+      "open": "NONE",
+      "wall": "plate-steel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.9,
+          6,
+          3.8
+        ],
+        "NORTH": [
+          0,
+          1.9,
+          6,
+          3.8
+        ]
+      },
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.7,
+        3.5,
+        -21.32
+      ],
+      "size": [
+        0.6,
+        7,
+        20
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.8,
+        3.2,
+        -21.82
+      ],
+      "size": [
+        1.2,
+        6.4,
+        17
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.7,
+        3.5,
+        -21.32
+      ],
+      "size": [
+        0.6,
+        7,
+        20
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.8,
+        3.2,
+        -21.82
+      ],
+      "size": [
+        1.2,
+        6.4,
+        17
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -12.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -13.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -14.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -15.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -16.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -17.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -18.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -19.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -20.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -21.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -22.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -23.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -24.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -25.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -26.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -27.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -28.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -29.32
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.6,
+        6.9,
+        -27.32
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.6,
+        6.9,
+        -18.32
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        6.9,
+        -27.32
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        6.9,
+        -18.32
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        5.6,
+        6.9,
+        -27.32
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        5.6,
+        6.9,
+        -18.32
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -41.48
+      ],
+      "size": [
+        16,
+        7,
+        20
+      ],
+      "open": "NONE",
+      "wall": "plate-steel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.9,
+          6,
+          3.8
+        ],
+        "NORTH": [
+          0,
+          1.9,
+          6,
+          3.8
+        ]
+      },
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.7,
+        3.5,
+        -41.48
+      ],
+      "size": [
+        0.6,
+        7,
+        20
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        1.1,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        3.2,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.38,
+        5.3,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.8,
+        3.2,
+        -41.98
+      ],
+      "size": [
+        1.2,
+        6.4,
+        17
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        1.1,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        3.2,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.42,
+        5.3,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        1.1,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        3.2,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.18,
+        5.3,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.7,
+        3.5,
+        -41.48
+      ],
+      "size": [
+        0.6,
+        7,
+        20
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        1.1,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        3.2,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.38,
+        5.3,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.8,
+        3.2,
+        -41.98
+      ],
+      "size": [
+        1.2,
+        6.4,
+        17
+      ],
+      "material": "plate-steel",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        1.1,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        3.2,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.42,
+        5.3,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -32.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -33.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -34.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -35.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -36.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -37.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -38.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -39.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -40.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -41.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -42.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -43.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -44.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -45.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -46.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -47.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -48.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        1.1,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        3.2,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.18,
+        5.3,
+        -49.48
+      ],
+      "size": [
+        0.04,
+        1.8,
+        0.9
+      ],
+      "material": "stencil",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.6,
+        6.9,
+        -47.48
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.6,
+        6.9,
+        -38.48
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        6.9,
+        -47.48
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        6.9,
+        -38.48
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        5.6,
+        6.9,
+        -47.48
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        5.6,
+        6.9,
+        -38.48
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 12,
+        "color": 15266559
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.5,
+        4.16,
+        -7.16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 9,
+        "color": 14740735
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        2.5,
+        4.16,
+        -7.16
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 12,
+        "distance": 9,
+        "color": 14740735
+      },
+      "room": "CRYO-ANTEROOM",
+      "when": "CRYO-SCORE-FLAG == true"
+    }
+  ]
+}

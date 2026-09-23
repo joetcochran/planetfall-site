@@ -1,0 +1,388 @@
+{
+  "note": [
+    "SanFac E's fabric (DR-106), cut from the one Kalamontee layout in scripts/fabric-kalamontee.mjs -- regenerate from there, do not hand-edit. SANFAC-E.metadata.json: 5 x 3.2 x 5, concrete like the other wash rooms, the eye at the middle; one 1.5 x 2.3 opening west onto Admin Corridor South. The game: \"another sanitary facility. Like the others, it is dusty and non-functional\" (compone.zil 1100-1101).",
+    "Three stalls along the east wall facing the opening, the wash counter with three basins and a mirror along the south wall; the north-west corner bare (it is what the Corridor Junction sees). Out through the opening, Admin Corridor South's solid west wall."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        5,
+        3.2,
+        5
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.15,
+          1.5,
+          2.3
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        1.1,
+        -1.5
+      ],
+      "size": [
+        1.4,
+        1.9,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        1.1,
+        -0.5
+      ],
+      "size": [
+        1.4,
+        1.9,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        1.1,
+        0.5
+      ],
+      "size": [
+        1.4,
+        1.9,
+        0.04
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.2,
+        0.21,
+        -2
+      ],
+      "size": [
+        0.4,
+        0.42,
+        0.4
+      ],
+      "material": "stencil",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.39,
+        0.7,
+        -2
+      ],
+      "size": [
+        0.2,
+        0.42,
+        0.45
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.2,
+        0.21,
+        -1
+      ],
+      "size": [
+        0.4,
+        0.42,
+        0.4
+      ],
+      "material": "stencil",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.39,
+        0.7,
+        -1
+      ],
+      "size": [
+        0.2,
+        0.42,
+        0.45
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.2,
+        0.21,
+        0
+      ],
+      "size": [
+        0.4,
+        0.42,
+        0.4
+      ],
+      "material": "stencil",
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.39,
+        0.7,
+        0
+      ],
+      "size": [
+        0.2,
+        0.42,
+        0.45
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.8,
+        0.84,
+        2.22
+      ],
+      "size": [
+        2.7,
+        0.06,
+        0.55
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.7,
+        0.875,
+        2.2
+      ],
+      "size": [
+        0.42,
+        0.02,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.8,
+        0.875,
+        2.2
+      ],
+      "size": [
+        0.42,
+        0.02,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.1,
+        0.875,
+        2.2
+      ],
+      "size": [
+        0.42,
+        0.02,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.8,
+        1.65,
+        2.49
+      ],
+      "size": [
+        2.7,
+        0.8,
+        0.02
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.16,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        -4.86,
+        0,
+        1
+      ],
+      "size": [
+        4.4,
+        3.4,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          -1,
+          1.15,
+          1.5,
+          2.3
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.36,
+        0.006,
+        3
+      ],
+      "size": [
+        0.12,
+        0.012,
+        1.523
+      ],
+      "material": "structural-rib",
+      "rot": 1.976
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.96,
+        0.006,
+        3.075
+      ],
+      "size": [
+        0.12,
+        0.012,
+        1.588
+      ],
+      "material": "structural-rib",
+      "rot": 1.079
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.46,
+        0.006,
+        3.175
+      ],
+      "size": [
+        0.12,
+        0.012,
+        1.692
+      ],
+      "material": "structural-rib",
+      "rot": 1.902
+    },
+    {
+      "part": "light",
+      "at": [
+        -4.86,
+        3.36,
+        -2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "ADMIN-CORRIDOR-S"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4.86,
+        3.36,
+        4
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "ADMIN-CORRIDOR-S"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.58,
+        -0.04,
+        0
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.5
+      ],
+      "material": "deck-plate"
+    }
+  ]
+}

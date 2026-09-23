@@ -1,0 +1,1607 @@
+{
+  "note": [
+    "Shuttle Car Alfie's fabric (DR-106), cut from the one vehicle layout in scripts/fabric-shuttle.mjs, where the car and both its control cabins are placed once in the passenger cabin's frame -- regenerate from there, do not hand-edit. SHUTTLE-CAR-ALFIE.metadata.json v2: 12 x 3.4 x 4.8, the eye at the middle.",
+    "Three openings: the 2.6 x 2.5 platform doorway north, with no leaf of its own, and the 1.5 x 2.4 end doorways east and west, both of them SHUTTLE-DOOR -- open and invisible at a station, a closed sliding leaf in each while the car moves. Benches along the long walls over the west half (18 seats at 0.55 m of pitch), the freight deck clear east of them with its three tie-down rails, as LAWANDA-PLATFORM's accepted painting shows it through the open door. The view plan's seams at 135 and 225 fall midway along the benches, on a repeating run, which is the least awkward place a seam can land on a furnished wall.",
+    "North, one hole and two destinations, by ALFIE-AT-KALAMONTEE: across a 6 x 4.2 berth whose centre is 0.5 m east of this door, Kalamontee Platform or Lawanda Platform -- the same 16 x 6 x 10 concrete shell, deck flush with this one, the far wall 12.7 m off with Betty's berth in it (empty unless she is standing at this station too). Neither station's own ends are in the cone: no Waiting Area portal, no escalator, no station sign. East and west, each control cabin end-on -- the panel with its slot, lever and display under the forward window, and through the window the tunnel at the live end or a concrete buffer close to at the dead one. While SHUTTLE-MOVING the north doorway is shut, both end leaves are closed and the bore runs on past the door."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        12,
+        3.4,
+        4.8
+      ],
+      "thickness": 0.1,
+      "wall": "plate-steel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.25,
+          2.6,
+          2.5
+        ],
+        "EAST": [
+          0,
+          1.2,
+          1.5,
+          2.4
+        ],
+        "WEST": [
+          0,
+          1.2,
+          1.5,
+          2.4
+        ]
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.25,
+        -2.35
+      ],
+      "facing": "NORTH",
+      "size": [
+        2.6,
+        2.5
+      ],
+      "band": 0.1,
+      "depth": 0.1
+    },
+    {
+      "part": "frame",
+      "at": [
+        5.95,
+        1.2,
+        0
+      ],
+      "facing": "EAST",
+      "size": [
+        1.5,
+        2.4
+      ],
+      "band": 0.08,
+      "depth": 0.1
+    },
+    {
+      "part": "frame",
+      "at": [
+        -5.95,
+        1.2,
+        0
+      ],
+      "facing": "WEST",
+      "size": [
+        1.5,
+        2.4
+      ],
+      "band": 0.08,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.2,
+        0.25,
+        2.1
+      ],
+      "size": [
+        5.4,
+        0.5,
+        0.55
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.2,
+        0.75,
+        2.34
+      ],
+      "size": [
+        5.4,
+        0.6,
+        0.1
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.65,
+        0.25,
+        -2.1
+      ],
+      "size": [
+        4.5,
+        0.5,
+        0.55
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.65,
+        0.75,
+        -2.34
+      ],
+      "size": [
+        4.5,
+        0.6,
+        0.1
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.2,
+        0.02,
+        0
+      ],
+      "size": [
+        0.06,
+        0.03,
+        4.4
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3,
+        0.02,
+        0
+      ],
+      "size": [
+        0.06,
+        0.03,
+        4.4
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.8,
+        0.02,
+        0
+      ],
+      "size": [
+        0.06,
+        0.03,
+        4.4
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.55,
+        0
+      ],
+      "size": [
+        18.2,
+        0.9,
+        4.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3.5,
+        3.36,
+        0
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 7,
+        "distance": 7,
+        "color": 16769720
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.36,
+        0
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 7,
+        "distance": 7,
+        "color": 16769720
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        3.5,
+        3.36,
+        0
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 7,
+        "distance": 7,
+        "color": 16769720
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        7.6,
+        0,
+        0
+      ],
+      "size": [
+        2.8,
+        3,
+        4.8
+      ],
+      "thickness": 0.1,
+      "wall": "plate-steel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.2,
+          1.5,
+          2.4
+        ],
+        "EAST": [
+          0,
+          1.8,
+          2.45,
+          0.9
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "frame",
+      "at": [
+        6.25,
+        1.2,
+        0
+      ],
+      "facing": "WEST",
+      "size": [
+        1.5,
+        2.4
+      ],
+      "band": 0.08,
+      "depth": 0.1
+    },
+    {
+      "part": "frame",
+      "at": [
+        8.95,
+        1.8,
+        0
+      ],
+      "facing": "EAST",
+      "size": [
+        2.45,
+        0.9
+      ],
+      "band": 0.1,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.94,
+        0.63,
+        0
+      ],
+      "size": [
+        0.12,
+        1.26,
+        2.6
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.9,
+        1.28,
+        0
+      ],
+      "size": [
+        0.2,
+        0.04,
+        2.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.87,
+        1,
+        -0.72
+      ],
+      "size": [
+        0.02,
+        0.1,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.875,
+        0.92,
+        -0.72
+      ],
+      "size": [
+        0.03,
+        0.03,
+        0.34
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.875,
+        1.08,
+        -0.72
+      ],
+      "size": [
+        0.03,
+        0.03,
+        0.34
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.84,
+        0.98,
+        0
+      ],
+      "size": [
+        0.09,
+        0.18,
+        0.18
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.68,
+        0.98,
+        0
+      ],
+      "size": [
+        0.32,
+        0.05,
+        0.05
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.53,
+        0.98,
+        0
+      ],
+      "size": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.875,
+        1.19,
+        0
+      ],
+      "size": [
+        0.015,
+        0.05,
+        0.08
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.875,
+        0.77,
+        0
+      ],
+      "size": [
+        0.015,
+        0.05,
+        0.08
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.87,
+        1.03,
+        0.72
+      ],
+      "size": [
+        0.02,
+        0.16,
+        0.32
+      ],
+      "material": "lamp-cool"
+    },
+    {
+      "part": "light",
+      "at": [
+        7.6,
+        2.96,
+        0
+      ],
+      "size": [
+        1,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 5,
+        "color": 16769720
+      },
+      "room": "ALFIE-CONTROL-EAST"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -7.6,
+        0,
+        0
+      ],
+      "size": [
+        2.8,
+        3,
+        4.8
+      ],
+      "thickness": 0.1,
+      "wall": "plate-steel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          0,
+          1.2,
+          1.5,
+          2.4
+        ],
+        "WEST": [
+          0,
+          1.8,
+          2.45,
+          0.9
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "frame",
+      "at": [
+        -6.25,
+        1.2,
+        0
+      ],
+      "facing": "EAST",
+      "size": [
+        1.5,
+        2.4
+      ],
+      "band": 0.08,
+      "depth": 0.1
+    },
+    {
+      "part": "frame",
+      "at": [
+        -8.95,
+        1.8,
+        0
+      ],
+      "facing": "WEST",
+      "size": [
+        2.45,
+        0.9
+      ],
+      "band": 0.1,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.94,
+        0.63,
+        0
+      ],
+      "size": [
+        0.12,
+        1.26,
+        2.6
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.9,
+        1.28,
+        0
+      ],
+      "size": [
+        0.2,
+        0.04,
+        2.6
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.87,
+        1,
+        0.72
+      ],
+      "size": [
+        0.02,
+        0.1,
+        0.32
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.875,
+        0.92,
+        0.72
+      ],
+      "size": [
+        0.03,
+        0.03,
+        0.34
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.875,
+        1.08,
+        0.72
+      ],
+      "size": [
+        0.03,
+        0.03,
+        0.34
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.84,
+        0.98,
+        0
+      ],
+      "size": [
+        0.09,
+        0.18,
+        0.18
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.68,
+        0.98,
+        0
+      ],
+      "size": [
+        0.32,
+        0.05,
+        0.05
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.53,
+        0.98,
+        0
+      ],
+      "size": [
+        0.08,
+        0.08,
+        0.08
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.875,
+        1.19,
+        0
+      ],
+      "size": [
+        0.015,
+        0.05,
+        0.08
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.875,
+        0.77,
+        0
+      ],
+      "size": [
+        0.015,
+        0.05,
+        0.08
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.87,
+        1.03,
+        -0.72
+      ],
+      "size": [
+        0.02,
+        0.16,
+        0.32
+      ],
+      "material": "lamp-cool"
+    },
+    {
+      "part": "light",
+      "at": [
+        -7.6,
+        2.96,
+        0
+      ],
+      "size": [
+        1,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 5,
+        "color": 16769720
+      },
+      "room": "ALFIE-CONTROL-WEST"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -2.5,
+        0,
+        -7.68
+      ],
+      "size": [
+        16,
+        6,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          -3,
+          2.1,
+          6,
+          4.2
+        ],
+        "NORTH": [
+          -3,
+          2.1,
+          6,
+          4.2
+        ],
+        "WEST": [
+          0,
+          1.3,
+          4,
+          2.6
+        ]
+      },
+      "open": "NONE",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "frame",
+      "at": [
+        -5.5,
+        2.1,
+        -12.63
+      ],
+      "facing": "NORTH",
+      "size": [
+        6,
+        4.2
+      ],
+      "band": 0.25,
+      "depth": 0.1,
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "frame",
+      "at": [
+        0.5,
+        2.1,
+        -2.73
+      ],
+      "facing": "SOUTH",
+      "size": [
+        6,
+        4.2
+      ],
+      "band": 0.25,
+      "depth": 0.1,
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.5,
+        -0.5,
+        -2.64
+      ],
+      "size": [
+        16.16,
+        1,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.5,
+        -0.5,
+        -12.72
+      ],
+      "size": [
+        16.16,
+        1,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -7.5,
+        5.96,
+        -10.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.5,
+        5.96,
+        -10.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        2.5,
+        5.96,
+        -10.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -7.5,
+        5.96,
+        -5.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.5,
+        5.96,
+        -5.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        2.5,
+        5.96,
+        -5.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -2.5,
+        0,
+        -7.68
+      ],
+      "size": [
+        16,
+        6,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          -3,
+          2.1,
+          6,
+          4.2
+        ],
+        "NORTH": [
+          -3,
+          2.1,
+          6,
+          4.2
+        ],
+        "EAST": [
+          0,
+          2.15,
+          3,
+          4.3
+        ]
+      },
+      "open": "NONE",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "frame",
+      "at": [
+        -5.5,
+        2.1,
+        -12.63
+      ],
+      "facing": "NORTH",
+      "size": [
+        6,
+        4.2
+      ],
+      "band": 0.25,
+      "depth": 0.1,
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "frame",
+      "at": [
+        0.5,
+        2.1,
+        -2.73
+      ],
+      "facing": "SOUTH",
+      "size": [
+        6,
+        4.2
+      ],
+      "band": 0.25,
+      "depth": 0.1,
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.5,
+        -0.5,
+        -2.64
+      ],
+      "size": [
+        16.16,
+        1,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.5,
+        -0.5,
+        -12.72
+      ],
+      "size": [
+        16.16,
+        1,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "bay",
+      "at": [
+        8.58,
+        0,
+        -7.68
+      ],
+      "size": [
+        6,
+        4.3,
+        3
+      ],
+      "open": "WEST",
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -7.5,
+        5.96,
+        -10.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "LAWANDA-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.5,
+        5.96,
+        -10.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "LAWANDA-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        2.5,
+        5.96,
+        -10.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "LAWANDA-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -7.5,
+        5.96,
+        -5.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "LAWANDA-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.5,
+        5.96,
+        -5.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "LAWANDA-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "light",
+      "at": [
+        2.5,
+        5.96,
+        -5.18
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 18,
+        "distance": 14,
+        "color": 16769208
+      },
+      "room": "LAWANDA-PLATFORM",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.1,
+        1.2,
+        0
+      ],
+      "size": [
+        0.05,
+        2.4,
+        1.5
+      ],
+      "material": "plate-steel",
+      "when": "SHUTTLE-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.1,
+        1.2,
+        0
+      ],
+      "size": [
+        0.05,
+        2.4,
+        1.5
+      ],
+      "material": "plate-steel",
+      "when": "SHUTTLE-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.25,
+        -2.45
+      ],
+      "size": [
+        2.6,
+        2.5,
+        0.05
+      ],
+      "material": "plate-steel",
+      "when": "SHUTTLE-MOVING == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.05,
+        -2.54
+      ],
+      "size": [
+        2.6,
+        0.1,
+        0.28
+      ],
+      "material": "deck-plate",
+      "when": "SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        -1,
+        0.16
+      ],
+      "size": [
+        120,
+        5.4,
+        5.52
+      ],
+      "open": "NORTH",
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.93,
+        -0.59
+      ],
+      "size": [
+        119.8,
+        0.14,
+        0.08
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.93,
+        0.91
+      ],
+      "size": [
+        119.8,
+        0.14,
+        0.08
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -35.25,
+        1.7,
+        -2.64
+      ],
+      "size": [
+        49.5,
+        5.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        32.75,
+        1.7,
+        -2.64
+      ],
+      "size": [
+        54.5,
+        5.4,
+        0.08
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.5,
+        1.7,
+        -2.64
+      ],
+      "size": [
+        16,
+        5.4,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "SHUTTLE-MOVING == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -10.88,
+        1.7,
+        0.16
+      ],
+      "size": [
+        0.16,
+        5.4,
+        5.52
+      ],
+      "material": "concrete",
+      "when": "ALFIE-AT-KALAMONTEE == true and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.88,
+        1.7,
+        0.16
+      ],
+      "size": [
+        0.16,
+        5.4,
+        5.52
+      ],
+      "material": "concrete",
+      "when": "ALFIE-AT-KALAMONTEE == false and SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -5.5,
+        -1,
+        -15.52
+      ],
+      "size": [
+        30,
+        5.4,
+        5.52
+      ],
+      "open": "SOUTH",
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "when": "SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.5,
+        -0.93,
+        -16.27
+      ],
+      "size": [
+        29.8,
+        0.14,
+        0.08
+      ],
+      "material": "trim",
+      "when": "SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.5,
+        -0.93,
+        -14.77
+      ],
+      "size": [
+        29.8,
+        0.14,
+        0.08
+      ],
+      "material": "trim",
+      "when": "SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -15.5,
+        1.7,
+        -12.72
+      ],
+      "size": [
+        10,
+        5.4,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.5,
+        1.7,
+        -12.72
+      ],
+      "size": [
+        4,
+        5.4,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "SHUTTLE-MOVING == false"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -5,
+        0,
+        -15.36
+      ],
+      "size": [
+        12,
+        3.4,
+        4.8
+      ],
+      "thickness": 0.1,
+      "open": "NONE",
+      "wall": "plate-steel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.25,
+          2.6,
+          2.5
+        ]
+      },
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5,
+        -0.55,
+        -15.36
+      ],
+      "size": [
+        18.2,
+        0.9,
+        4.2
+      ],
+      "material": "machinery",
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.2,
+        0.25,
+        -17.46
+      ],
+      "size": [
+        5.4,
+        0.5,
+        0.55
+      ],
+      "material": "trim",
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.2,
+        0.75,
+        -17.7
+      ],
+      "size": [
+        5.4,
+        0.6,
+        0.1
+      ],
+      "material": "trim",
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5,
+        -0.05,
+        -12.82
+      ],
+      "size": [
+        2.6,
+        0.1,
+        0.28
+      ],
+      "material": "deck-plate",
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    },
+    {
+      "part": "light",
+      "at": [
+        -8.5,
+        3.36,
+        -15.36
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 7,
+        "distance": 7,
+        "color": 16769720
+      },
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5,
+        3.36,
+        -15.36
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 7,
+        "distance": 7,
+        "color": 16769720
+      },
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    },
+    {
+      "part": "light",
+      "at": [
+        -1.5,
+        3.36,
+        -15.36
+      ],
+      "size": [
+        1.4,
+        0.06,
+        0.3
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 7,
+        "distance": 7,
+        "color": 16769720
+      },
+      "when": "SHUTTLE-MOVING == false and ((ALFIE-AT-KALAMONTEE == true and BETTY-AT-KALAMONTEE == true) or (ALFIE-AT-KALAMONTEE == false and BETTY-AT-KALAMONTEE == false))"
+    }
+  ]
+}

@@ -1,0 +1,808 @@
+{
+  "note": [
+    "The Mini Booth's fabric, cut from the one Lawanda layout in scripts/fabric-lawanda.mjs -- regenerate from there, do not hand-edit. MINI-BOOTH v2: 3.4 x 3.2 x 4.2, the eye at the middle, barely large enough for one person, lit by one soft warm fixture. On the back (south) wall the small ridged slot at x -0.55 and the ten-key numeric keyboard at x 0.45. No screen, no ready lamp: activation is spoken, and the 'sign flashes' messages are text only.",
+    "North, the one 1.7 x 2.5 mouth (NORTH and OUT are one threshold) and the Computer Room straight up its axis: its dormant floor to its north wall 14.3 to 15.2 m out, x -5.2 to +5.2, floor to ceiling -- the dark banks and, facing the booth at that room's x 3.1, the single red light. Left of it the Computer Room's north mouth and through it Project Corridor East: its floor, its plain west wall north of its west mouth and the west end of its north wall; that corridor's west and north mouths are out of view (COMPUTER-ROOM-MOUTH). The PRINT-OUT, Floyd and dropped items are overlays."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        3.4,
+        3.2,
+        4.2
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.25,
+          1.7,
+          2.5
+        ]
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.25,
+        -2.05
+      ],
+      "facing": "NORTH",
+      "size": [
+        1.7,
+        2.5
+      ],
+      "band": 0.1,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.55,
+        1.25,
+        2.085
+      ],
+      "size": [
+        0.3,
+        0.14,
+        0.03
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.55,
+        1.25,
+        2.068
+      ],
+      "size": [
+        0.12,
+        0.02,
+        0.01
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.45,
+        1.25,
+        2.085
+      ],
+      "size": [
+        0.3,
+        0.4,
+        0.03
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.37,
+        1.37,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.45,
+        1.37,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.53,
+        1.37,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.37,
+        1.29,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.45,
+        1.29,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.53,
+        1.29,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.37,
+        1.21,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.45,
+        1.21,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.53,
+        1.21,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.37,
+        1.13,
+        2.066
+      ],
+      "size": [
+        0.05,
+        0.05,
+        0.01
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.16,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 7,
+        "distance": 5,
+        "color": 16773340
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.7,
+        2,
+        -14.3
+      ],
+      "size": [
+        3.6,
+        4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4,
+        3.3,
+        -14.3
+      ],
+      "size": [
+        1.8,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.747,
+        2,
+        -14.3
+      ],
+      "size": [
+        9.694,
+        4,
+        0.08
+      ],
+      "material": "wall-panel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.71,
+        2,
+        -14.201
+      ],
+      "size": [
+        0.248,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.575,
+        3.3,
+        -13.335
+      ],
+      "size": [
+        2.2,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.441,
+        2,
+        -12.47
+      ],
+      "size": [
+        0.248,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.54,
+        2,
+        -7.307
+      ],
+      "size": [
+        10.094,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.675,
+        2,
+        -2.22
+      ],
+      "size": [
+        7.65,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        3.25,
+        -2.22
+      ],
+      "size": [
+        1.7,
+        1.5,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.675,
+        2,
+        -2.22
+      ],
+      "size": [
+        7.65,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": -3.141593
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.54,
+        2,
+        -6.71
+      ],
+      "size": [
+        8.9,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.54,
+        3.3,
+        -12.26
+      ],
+      "size": [
+        2.2,
+        1.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -8.54,
+        2,
+        -13.81
+      ],
+      "size": [
+        0.9,
+        4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 1.570796
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.953,
+        -0.04,
+        -13.307
+      ],
+      "size": [
+        15.094,
+        0.08,
+        1.906
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.953,
+        -0.04,
+        -7.307
+      ],
+      "size": [
+        15.094,
+        0.08,
+        10.094
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.547,
+        -0.04,
+        -7.307
+      ],
+      "size": [
+        1.906,
+        0.08,
+        10.094
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.594,
+        -0.041,
+        -12.354
+      ],
+      "size": [
+        2.695,
+        0.08,
+        2.695
+      ],
+      "material": "deck-plate",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.953,
+        4.04,
+        -13.307
+      ],
+      "size": [
+        15.094,
+        0.08,
+        1.906
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.953,
+        4.04,
+        -7.307
+      ],
+      "size": [
+        15.094,
+        0.08,
+        10.094
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7.547,
+        4.04,
+        -7.307
+      ],
+      "size": [
+        1.906,
+        0.08,
+        10.094
+      ],
+      "material": "ceiling"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.594,
+        4.041,
+        -12.354
+      ],
+      "size": [
+        2.695,
+        0.08,
+        2.695
+      ],
+      "material": "ceiling",
+      "rot": 0.785398
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.1,
+        1.8,
+        -14.22
+      ],
+      "size": [
+        0.28,
+        0.28,
+        0.08
+      ],
+      "material": "indicator-fault"
+    },
+    {
+      "part": "cutout",
+      "image": "assets/overlays/COMPUTER-LIGHT-OFF-MB000.png",
+      "at": [
+        3.1,
+        1.2,
+        -14.17
+      ],
+      "height": 1.2,
+      "aspect": 1.3333,
+      "facing": 180,
+      "when": "COMPUTER-FIXED == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.1,
+        1.1,
+        -13.96
+      ],
+      "size": [
+        4.6,
+        2.2,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.1,
+        1.1,
+        -13.96
+      ],
+      "size": [
+        2.4,
+        2.2,
+        0.6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.2,
+        1.1,
+        -7.76
+      ],
+      "size": [
+        0.6,
+        2.2,
+        6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4.5,
+        3.96,
+        -10.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.96,
+        -10.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        4.5,
+        3.96,
+        -10.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4.5,
+        3.96,
+        -5.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.96,
+        -5.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "light",
+      "at": [
+        4.5,
+        3.96,
+        -5.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 9,
+        "color": 16773340
+      },
+      "room": "COMPUTER-ROOM"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -0.5,
+        0,
+        -18.42
+      ],
+      "size": [
+        12,
+        3.6,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "SOUTH": [
+          3.5,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "EAST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -0.5,
+        3.56,
+        -18.42
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJECT-CORRIDOR-EAST"
+    }
+  ]
+}

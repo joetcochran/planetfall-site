@@ -1,0 +1,665 @@
+{
+  "note": [
+    "Course Control's fabric, cut from the one Lawanda layout in scripts/fabric-lawanda.mjs -- regenerate from there, do not hand-edit. PLANETARY-COURSE-CONTROL v2 with the 2026-09-17 geometry pass: 10 x 4 x 15, the eye at the middle. Banks down both long walls (CONTROLS, LIGHTS) and a low one on the north wall; the metal cube in the NE corner, its lid raised while CUBE has OPENBIT -- TURN-000@CUBE-OPEN. The east wall's indicators follow COURSE-CONTROL-FIXED.",
+    "One opening, south, and THE DEEPEST VIEW IN THE CLUSTER BEHIND IT: four 1.8 m doorways stand on one line -- this one at 7.5 m, the corridor's south mouth at 17.66, the Library Lobby's north and south mouths at 17.66 and 27.82 -- and the view runs about 36 m. First Systems Corridor East: its deck-plate floor, its far south wall 17.66 m out across 4.24 m of a 12 m room, and the last 1.2 m of its 3.8 m ceiling, which enters the cone 16.5 m out. Its big 4.5 x 3.6 mouth into Physical Plant Two is 6 m off this axis where the cone is 1.52 m wide, SO THE PLANT IS NOT IN SIGHT, and neither is the corridor's west end nor the bend beyond it.",
+    "Then, through the Library mouth in the middle of that far wall, a slot 2.8 m wide of the LIBRARY LOBBY: dusty carpet from 17.7 to 27.8 m and NOTHING STANDING ON IT -- the wide table and the terminal are 2.2 m off the axis at 20.2 m, where the slot is 1.03 m wide. Then, through the Lobby's south mouth 27.8 m out, PROJECT-CORRIDOR-EAST: a 2.3 m slot of floor and far wall 36 m from the eye, 1.16 m each side and floor to 2.89 m up. THAT ROOM HAS NO PACKAGE -- it is a plain placeholder box with only that one mouth cut in it, so paint it as a dim receding hallway and INVENT NOTHING IN IT. The subject of this doorway is the recession itself: four lit thresholds one behind the other, each dimmer and smaller than the last, against a room whose own walls are dense with controls. No door leaf anywhere in the chain, and the Planateree Kors Kontrool sign is on the corridor's face of this wall, not readable from in here."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        10,
+        4,
+        15
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ]
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.3,
+        7.45
+      ],
+      "facing": "SOUTH",
+      "size": [
+        1.8,
+        2.6
+      ],
+      "band": 0.15,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.7,
+        1.35,
+        -1
+      ],
+      "size": [
+        0.6,
+        2.4,
+        7.5
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.7,
+        1.1,
+        -1
+      ],
+      "size": [
+        0.6,
+        2,
+        7
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.96,
+        2.45,
+        -2
+      ],
+      "size": [
+        0.06,
+        0.4,
+        1.4
+      ],
+      "material": "indicator-fault",
+      "when": "COURSE-CONTROL-FIXED == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.96,
+        2.45,
+        -2
+      ],
+      "size": [
+        0.06,
+        0.4,
+        1.4
+      ],
+      "material": "control-face",
+      "when": "COURSE-CONTROL-FIXED == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.96,
+        2.45,
+        0
+      ],
+      "size": [
+        0.06,
+        0.4,
+        1.4
+      ],
+      "material": "indicator-fault",
+      "when": "COURSE-CONTROL-FIXED == false"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.96,
+        2.45,
+        0
+      ],
+      "size": [
+        0.06,
+        0.4,
+        1.4
+      ],
+      "material": "control-face",
+      "when": "COURSE-CONTROL-FIXED == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.96,
+        2.45,
+        1.5
+      ],
+      "size": [
+        0.06,
+        0.4,
+        0.8
+      ],
+      "material": "indicator-live",
+      "when": "COURSE-CONTROL-FIXED == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1,
+        0.6,
+        -7.2
+      ],
+      "size": [
+        5,
+        1.2,
+        0.6
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1,
+        1.9,
+        -7.44
+      ],
+      "size": [
+        5,
+        1.4,
+        0.12
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.65,
+        0.71,
+        -5.5
+      ],
+      "size": [
+        1.8,
+        1.42,
+        1.8
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.65,
+        1.46,
+        -5.5
+      ],
+      "size": [
+        1.8,
+        0.08,
+        1.8
+      ],
+      "material": "plate-steel",
+      "when": "CUBE without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.65,
+        2.36,
+        -6.44
+      ],
+      "size": [
+        1.8,
+        1.8,
+        0.08
+      ],
+      "material": "plate-steel",
+      "when": "CUBE has OPENBIT"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.96,
+        -4
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.96,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.96,
+        4
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        12.66
+      ],
+      "size": [
+        12,
+        3.8,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "SOUTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "EAST": [
+          0,
+          1.8,
+          4.5,
+          3.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        2.95,
+        7.68
+      ],
+      "size": [
+        2.6,
+        0.35,
+        0.02
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3,
+        3.76,
+        10.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "light",
+      "at": [
+        3,
+        3.76,
+        10.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3,
+        3.76,
+        14.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "light",
+      "at": [
+        3,
+        3.76,
+        14.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "SYSTEMS-CORRIDOR-EAST"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        22.82
+      ],
+      "size": [
+        12,
+        3.8,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "SOUTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "WEST": [
+          0,
+          1.65,
+          4,
+          3
+        ],
+        "EAST": [
+          0,
+          1.3,
+          1.7,
+          2.5
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.01,
+        22.82
+      ],
+      "size": [
+        11.6,
+        0.02,
+        9.6
+      ],
+      "material": "plate-steel-corroded"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.2,
+        0.72,
+        20.22
+      ],
+      "size": [
+        3,
+        0.06,
+        1
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.2,
+        0.36,
+        20.22
+      ],
+      "size": [
+        2.6,
+        0.7,
+        0.6
+      ],
+      "material": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.2,
+        1.15,
+        20.22
+      ],
+      "size": [
+        0.6,
+        0.45,
+        0.4
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.45,
+        0.1,
+        22.82
+      ],
+      "size": [
+        0.45,
+        0.2,
+        4.2
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.9,
+        0.2,
+        22.82
+      ],
+      "size": [
+        0.45,
+        0.4,
+        4.2
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -5.35,
+        0.3,
+        22.82
+      ],
+      "size": [
+        0.45,
+        0.6,
+        4.2
+      ],
+      "material": "concrete-worn"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2.5,
+        3.76,
+        22.82
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "LIBRARY-LOBBY"
+    },
+    {
+      "part": "light",
+      "at": [
+        2.5,
+        3.76,
+        22.82
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "LIBRARY-LOBBY"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        31.98
+      ],
+      "size": [
+        12,
+        3.6,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "concrete-worn",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "SOUTH": [
+          3.5,
+          1.3,
+          1.8,
+          2.6
+        ],
+        "WEST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ],
+        "EAST": [
+          0,
+          1.3,
+          2.2,
+          2.6
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.56,
+        31.98
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 12,
+        "distance": 10,
+        "color": 16769208
+      },
+      "room": "PROJECT-CORRIDOR-EAST"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 460" width="980" height="460" font-family="system-ui, -apple-system, Segoe UI, sans-serif">
+<rect width="980" height="460" fill="#12171d"/>
+<text x="58" y="18" fill="#e6edf3" font-size="14">Planetfall: rework as a share of each day’s asks</text>
+<line x1="58" y1="414.0" x2="768" y2="414.0" stroke="#263039"/>
+<text x="50" y="418.0" fill="#7d8b99" font-size="11" text-anchor="end">0%</text>
+<line x1="58" y1="317.5" x2="768" y2="317.5" stroke="#263039"/>
+<text x="50" y="321.5" fill="#7d8b99" font-size="11" text-anchor="end">25%</text>
+<line x1="58" y1="221.0" x2="768" y2="221.0" stroke="#263039"/>
+<text x="50" y="225.0" fill="#7d8b99" font-size="11" text-anchor="end">50%</text>
+<line x1="58" y1="124.5" x2="768" y2="124.5" stroke="#263039"/>
+<text x="50" y="128.5" fill="#7d8b99" font-size="11" text-anchor="end">75%</text>
+<line x1="58" y1="28.0" x2="768" y2="28.0" stroke="#263039"/>
+<text x="50" y="32.0" fill="#7d8b99" font-size="11" text-anchor="end">100%</text>
+<text x="85.3" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/10</text>
+<text x="139.9" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/11</text>
+<text x="194.5" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/12</text>
+<text x="249.2" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/13</text>
+<text x="303.8" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/14</text>
+<text x="358.4" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/15</text>
+<text x="413.0" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/16</text>
+<text x="467.6" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/17</text>
+<text x="522.2" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/18</text>
+<text x="576.8" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/19</text>
+<text x="631.5" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/20</text>
+<text x="686.1" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/21</text>
+<text x="740.7" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/22</text>
+<polyline points="249.2,317.5 303.8,241.9 358.4,291.6 413.0,164.1 467.6,327.7 522.2,273.3 576.8,182.4 631.5,319.9 686.1,151.5 740.7,196.9" fill="none" stroke="#e5534b" stroke-width="2.5"/>
+<circle cx="249.2" cy="317.5" r="4" fill="#e5534b"/>
+<text x="249.2" y="307.5" fill="#e6edf3" font-size="11" text-anchor="middle">25%</text>
+<text x="249.2" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">11 of 44</text>
+<circle cx="303.8" cy="241.9" r="4" fill="#e5534b"/>
+<text x="303.8" y="231.9" fill="#e6edf3" font-size="11" text-anchor="middle">45%</text>
+<text x="303.8" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">70 of 157</text>
+<circle cx="358.4" cy="291.6" r="4" fill="#e5534b"/>
+<text x="358.4" y="281.6" fill="#e6edf3" font-size="11" text-anchor="middle">32%</text>
+<text x="358.4" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">13 of 41</text>
+<circle cx="413.0" cy="164.1" r="4" fill="#e5534b"/>
+<text x="413.0" y="154.1" fill="#e6edf3" font-size="11" text-anchor="middle">65%</text>
+<text x="413.0" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">101 of 156</text>
+<circle cx="467.6" cy="327.7" r="4" fill="#e5534b"/>
+<text x="467.6" y="317.7" fill="#e6edf3" font-size="11" text-anchor="middle">22%</text>
+<text x="467.6" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">34 of 152</text>
+<circle cx="522.2" cy="273.3" r="4" fill="#e5534b"/>
+<text x="522.2" y="263.3" fill="#e6edf3" font-size="11" text-anchor="middle">36%</text>
+<text x="522.2" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">109 of 299</text>
+<circle cx="576.8" cy="182.4" r="4" fill="#e5534b"/>
+<text x="576.8" y="172.4" fill="#e6edf3" font-size="11" text-anchor="middle">60%</text>
+<text x="576.8" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">90 of 150</text>
+<circle cx="631.5" cy="319.9" r="4" fill="#e5534b"/>
+<text x="631.5" y="309.9" fill="#e6edf3" font-size="11" text-anchor="middle">24%</text>
+<text x="631.5" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">20 of 82</text>
+<circle cx="686.1" cy="151.5" r="4" fill="#e5534b"/>
+<text x="686.1" y="141.5" fill="#e6edf3" font-size="11" text-anchor="middle">68%</text>
+<text x="686.1" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">17 of 25</text>
+<circle cx="740.7" cy="196.9" r="4" fill="#e5534b"/>
+<text x="740.7" y="186.9" fill="#e6edf3" font-size="11" text-anchor="middle">56%</text>
+<text x="740.7" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">9 of 16</text>
+<rect x="784" y="31" width="12" height="12" fill="#e5534b"/>
+<text x="802" y="41" fill="#cbd5e0" font-size="12">rework</text>
+<text x="784" y="68" fill="#7d8b99" font-size="11">the mailbox opened on 13/09,</text>
+<text x="784" y="83" fill="#7d8b99" font-size="11">so there are no asks before it</text>
+<text x="784" y="98" fill="#7d8b99" font-size="11"></text>
+<text x="784" y="113" fill="#7d8b99" font-size="11">whole period: 474 of 1122</text>
+<text x="784" y="128" fill="#7d8b99" font-size="11">asks, 42%</text>
+<text x="784" y="143" fill="#7d8b99" font-size="11"></text>
+<text x="784" y="158" fill="#7d8b99" font-size="11">rework: a re-delivered view,</text>
+<text x="784" y="173" fill="#7d8b99" font-size="11">an R2 or later, work sent</text>
+<text x="784" y="188" fill="#7d8b99" font-size="11">back or withdrawn, or a</text>
+<text x="784" y="203" fill="#7d8b99" font-size="11">change from the user</text>
+<rect x="58" y="28" width="710" height="386" fill="none" stroke="#3a4a5a"/>
+</svg>

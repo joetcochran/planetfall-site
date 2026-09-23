@@ -1,0 +1,1418 @@
+{
+  "note": [
+    "The Lower Elevator's fabric (DR-106), cut from the one Kalamontee layout in scripts/fabric-kalamontee.mjs -- regenerate from there, do not hand-edit. LOWER-ELEVATOR.metadata.json v4: 4.8 x 3.6 x 4.2, the eye at the middle; one 3.4 x 3.0 hole in the north wall, which is NORTH and OUT both (compone.zil 2421-2423).",
+    "\"A control panel contains an Up button, a Down button, and a narrow slot\" (compone.zil 2439-2441) on the east wall at the metadata's anchors, the slot lit while LOWER-ELEVATOR-ON; a handrail on the back wall; one ceiling fitting. The red door is two leaves meeting in the middle of the reveal, shut without OPENBIT and pocketed when open.",
+    "Two landings through the one hole, by LOWER-ELEVATOR-UP (compone.zil 2467-2476), and the car never turns, so both are straight out of the north wall. The frame holds the car at the foot of its shaft, where the game starts it (2597); with LOWER-ELEVATOR-UP == true the Elevator Lobby is registered into this room's own frame, lowered by the shaft's 30 m drop, its blue door drawn shut. With it false the Waiting Area is 2.18 m off, north of the car as the lobby is: its benches along the far wall 10.2 m out, and hard against the east edge of the frame a sliver of its Kalamontee mouth, 0.46 m of that mouth's 4.0 m at bearings 36.4 to 37.9 where the jamb cuts it off. (The package reckons that sliver 1.12 m; on the cut wall planes it is 0.46.)",
+    "The blue door's own open state (LOBBY-BLUE-OPEN) is not cut: what is behind it is the upper elevator car, which is scripts/fabric-tower.mjs's, and the Elevator Lobby has had no geometry pass. The drop is inferred and invisible: no eye sees both ends of the shaft."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        4.8,
+        3.6,
+        4.2
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.5,
+          3.4,
+          3
+        ]
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.5,
+        -2.05
+      ],
+      "facing": "NORTH",
+      "size": [
+        3.4,
+        3
+      ],
+      "band": 0.15,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.35,
+        1.35,
+        0.55
+      ],
+      "size": [
+        0.06,
+        0.74,
+        0.28
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.31,
+        1.61,
+        0.55
+      ],
+      "size": [
+        0.04,
+        0.12,
+        0.12
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.31,
+        1.35,
+        0.55
+      ],
+      "size": [
+        0.04,
+        0.12,
+        0.12
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.31,
+        1.05,
+        0.55
+      ],
+      "size": [
+        0.04,
+        0.06,
+        0.14
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.3,
+        1.05,
+        0.55
+      ],
+      "size": [
+        0.03,
+        0.04,
+        0.12
+      ],
+      "material": "indicator-live",
+      "when": "LOWER-ELEVATOR-ON == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.95,
+        2.05
+      ],
+      "size": [
+        3.2,
+        0.05,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.56,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -6.26
+      ],
+      "size": [
+        12,
+        4,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "openings": {
+        "SOUTH": [
+          0,
+          1.5,
+          3.4,
+          3
+        ],
+        "EAST": [
+          0,
+          1.3,
+          4,
+          2.6
+        ]
+      },
+      "open": "NONE",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.5,
+        -2.31
+      ],
+      "facing": "SOUTH",
+      "size": [
+        3.4,
+        3
+      ],
+      "band": 0.2,
+      "depth": 0.1,
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "frame",
+      "at": [
+        5.95,
+        1.3,
+        -6.26
+      ],
+      "facing": "EAST",
+      "size": [
+        4,
+        2.6
+      ],
+      "band": 0.2,
+      "depth": 0.1,
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.8,
+        0.45,
+        -8.96
+      ],
+      "size": [
+        2.2,
+        0.06,
+        0.55
+      ],
+      "material": "plate-steel",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.7,
+        0.22,
+        -8.96
+      ],
+      "size": [
+        0.06,
+        0.44,
+        0.45
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.9,
+        0.22,
+        -8.96
+      ],
+      "size": [
+        0.06,
+        0.44,
+        0.45
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.45,
+        -8.96
+      ],
+      "size": [
+        2.2,
+        0.06,
+        0.55
+      ],
+      "material": "plate-steel",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.9,
+        0.22,
+        -8.96
+      ],
+      "size": [
+        0.06,
+        0.44,
+        0.45
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.9,
+        0.22,
+        -8.96
+      ],
+      "size": [
+        0.06,
+        0.44,
+        0.45
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.8,
+        0.45,
+        -8.96
+      ],
+      "size": [
+        2.2,
+        0.06,
+        0.55
+      ],
+      "material": "plate-steel",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.9,
+        0.22,
+        -8.96
+      ],
+      "size": [
+        0.06,
+        0.44,
+        0.45
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.7,
+        0.22,
+        -8.96
+      ],
+      "size": [
+        0.06,
+        0.44,
+        0.45
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4,
+        3.96,
+        -8.26
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "WAITING-AREA",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.96,
+        -8.26
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "WAITING-AREA",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        4,
+        3.96,
+        -8.26
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "WAITING-AREA",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4,
+        3.96,
+        -4.26
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "WAITING-AREA",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.96,
+        -4.26
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "WAITING-AREA",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        4,
+        3.96,
+        -4.26
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "WAITING-AREA",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        14.16,
+        0,
+        -6.26
+      ],
+      "size": [
+        16,
+        6,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.3,
+          4,
+          2.6
+        ],
+        "SOUTH": [
+          -3,
+          2.1,
+          6,
+          4.2
+        ],
+        "NORTH": [
+          -3,
+          2.1,
+          6,
+          4.2
+        ]
+      },
+      "open": "NONE",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "frame",
+      "at": [
+        6.21,
+        1.3,
+        -6.26
+      ],
+      "facing": "WEST",
+      "size": [
+        4,
+        2.6
+      ],
+      "band": 0.2,
+      "depth": 0.1,
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "frame",
+      "at": [
+        11.16,
+        2.1,
+        -11.21
+      ],
+      "facing": "NORTH",
+      "size": [
+        6,
+        4.2
+      ],
+      "band": 0.25,
+      "depth": 0.1,
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "frame",
+      "at": [
+        17.16,
+        2.1,
+        -1.31
+      ],
+      "facing": "SOUTH",
+      "size": [
+        6,
+        4.2
+      ],
+      "band": 0.25,
+      "depth": 0.1,
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        27.51,
+        -1,
+        -14.1
+      ],
+      "size": [
+        53.3,
+        5.4,
+        5.52
+      ],
+      "open": "SOUTH",
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.16,
+        -0.5,
+        -11.3
+      ],
+      "size": [
+        16.16,
+        1,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        38.2,
+        1.7,
+        -11.3
+      ],
+      "size": [
+        31.92,
+        5.4,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.47,
+        1.7,
+        -11.3
+      ],
+      "size": [
+        5.22,
+        5.4,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.82,
+        1.7,
+        -14.1
+      ],
+      "size": [
+        0.08,
+        5.4,
+        5.52
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        27.51,
+        -0.93,
+        -13.35
+      ],
+      "size": [
+        53.1,
+        0.14,
+        0.08
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        27.51,
+        -0.93,
+        -14.85
+      ],
+      "size": [
+        53.1,
+        0.14,
+        0.08
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        32.16,
+        3,
+        -16.8
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        26.16,
+        3,
+        -16.8
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        20.16,
+        3,
+        -16.8
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        14.16,
+        3,
+        -16.8
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        8.16,
+        3,
+        -16.8
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        30.01,
+        -1,
+        1.58
+      ],
+      "size": [
+        48.3,
+        5.4,
+        5.52
+      ],
+      "open": "NORTH",
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        14.16,
+        -0.5,
+        -1.22
+      ],
+      "size": [
+        16.16,
+        1,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        38.2,
+        1.7,
+        -1.22
+      ],
+      "size": [
+        31.92,
+        5.4,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.97,
+        1.7,
+        -1.22
+      ],
+      "size": [
+        0.22,
+        5.4,
+        0.08
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.82,
+        1.7,
+        1.58
+      ],
+      "size": [
+        0.08,
+        5.4,
+        5.52
+      ],
+      "material": "concrete",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        30.01,
+        -0.93,
+        0.83
+      ],
+      "size": [
+        48.1,
+        0.14,
+        0.08
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        30.01,
+        -0.93,
+        2.33
+      ],
+      "size": [
+        48.1,
+        0.14,
+        0.08
+      ],
+      "material": "trim",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        32.16,
+        3,
+        4.28
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        26.16,
+        3,
+        4.28
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        20.16,
+        3,
+        4.28
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        14.16,
+        3,
+        4.28
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        8.16,
+        3,
+        4.28
+      ],
+      "size": [
+        0.9,
+        0.2,
+        0.06
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 6,
+        "distance": 7,
+        "color": 16767136
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        11.16,
+        0.005,
+        -11.08
+      ],
+      "size": [
+        6,
+        0.01,
+        0.3
+      ],
+      "material": "handrail",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        17.16,
+        0.005,
+        -1.44
+      ],
+      "size": [
+        6,
+        0.01,
+        0.3
+      ],
+      "material": "handrail",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.17,
+        1.85,
+        -9.56
+      ],
+      "size": [
+        0.02,
+        1.05,
+        2.8
+      ],
+      "material": "stencil",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        9.16,
+        5.96,
+        -8.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        14.16,
+        5.96,
+        -8.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        19.16,
+        5.96,
+        -8.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        9.16,
+        5.96,
+        -3.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        14.16,
+        5.96,
+        -3.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "light",
+      "at": [
+        19.16,
+        5.96,
+        -3.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "KALAMONTEE-PLATFORM",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.08,
+        -0.04,
+        -6.26
+      ],
+      "size": [
+        0.16,
+        0.08,
+        4
+      ],
+      "material": "concrete-worn",
+      "when": "LOWER-ELEVATOR-UP != true"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -7.26
+      ],
+      "size": [
+        12,
+        3.8,
+        10
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "NORTH": [
+          0,
+          1.25,
+          2.2,
+          2.5
+        ],
+        "SOUTH": [
+          0,
+          1.5,
+          3.4,
+          3
+        ],
+        "EAST": [
+          0,
+          1.25,
+          1.5,
+          2.5
+        ]
+      },
+      "open": "NONE",
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.25,
+        -12.34
+      ],
+      "size": [
+        2.2,
+        2.5,
+        0.05
+      ],
+      "material": "structural-rib",
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.55,
+        1.2,
+        -12.23
+      ],
+      "size": [
+        0.14,
+        0.2,
+        0.04
+      ],
+      "material": "structural-rib",
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3.5,
+        3.76,
+        -9.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.76,
+        -9.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        3.5,
+        3.76,
+        -9.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3.5,
+        3.76,
+        -4.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.76,
+        -4.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "light",
+      "at": [
+        3.5,
+        3.76,
+        -4.76
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "when": "LOWER-ELEVATOR-UP == true"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.85,
+        1.5,
+        -2.18
+      ],
+      "size": [
+        1.7,
+        3,
+        0.05
+      ],
+      "material": "emergency-band",
+      "when": "LOWER-ELEVATOR-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.85,
+        1.5,
+        -2.18
+      ],
+      "size": [
+        1.7,
+        3,
+        0.05
+      ],
+      "material": "emergency-band",
+      "when": "LOWER-ELEVATOR-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.04,
+        -2.18
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    }
+  ]
+}

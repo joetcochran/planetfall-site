@@ -1,0 +1,926 @@
+{
+  "note": [
+    "The Physical Plant's fabric (DR-106, the mech wing), cut from the one Kalamontee layout in scripts/fabric-kalamontee.mjs -- regenerate from there, do not hand-edit. 16 x 8 x 16 as the Junction's glimpse placed it, concrete. The eye is at [3, 1.6, -4], on the open floor inside the north-east exit: from the middle the glimpse's 5 m machine stands 0.5 m to the north, and further south-east the eye would see up Mech Corridor North and through the Junction's east mouth to the Elevator Lobby's blue door.",
+    "The game: \"a huge, dim room with exits in the northeast and southeast corners. The room is criss-crossed with catwalks and is filled with heavy equipment presumably intended to heat and ventilate this complex. Hardly any of the equipment is still operating\" (compone.zil 1434-1437); the catwalks \"are too high for you to access\" (globals.zil 2437-2439). Kept from the glimpse: the two machines and the catwalk over the north-east exit's line. Added: two air handlers on the west wall with ducts into the roof, a main duct along the north wall, two boilers with flues in the south-west, a north-south catwalk at 4 m and an east-west one at 6 m, railed and hung from the roof, no stair to either; a pump; one panel with its lamp lit. The glimpse's two dim roof lamps.",
+    "Two 2.4 x 2.8 exits in the east wall, 6.5 m north and 5.66 m south of the middle (the wall cut once and the pier between them put back): north-east, Mech Corridor North's east wall; south-east, down the Mech Corridor to Mech Corridor South's east wall, 25 m out."
+  ],
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "size": [
+        16,
+        8,
+        16
+      ],
+      "thickness": 0.08,
+      "wall": "concrete",
+      "floor": "concrete",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          -0.42,
+          1.4,
+          14.56,
+          2.8
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.04,
+        1.4,
+        -0.42
+      ],
+      "size": [
+        0.08,
+        2.8,
+        9.76
+      ],
+      "material": "concrete"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2,
+        2.5,
+        -2
+      ],
+      "size": [
+        5,
+        5,
+        3
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3,
+        1.75,
+        2.5
+      ],
+      "size": [
+        3.5,
+        3.5,
+        4
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        4,
+        -6.5
+      ],
+      "size": [
+        16,
+        0.08,
+        1.2
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.9,
+        2,
+        -4.5
+      ],
+      "size": [
+        2,
+        4,
+        3.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.9,
+        6,
+        -4.5
+      ],
+      "size": [
+        1.2,
+        4,
+        1.2
+      ],
+      "material": "conduit"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.9,
+        2,
+        0.5
+      ],
+      "size": [
+        2,
+        4,
+        3.2
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.9,
+        6,
+        0.5
+      ],
+      "size": [
+        1.2,
+        4,
+        1.2
+      ],
+      "material": "conduit"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2,
+        6.8,
+        -7.2
+      ],
+      "size": [
+        12,
+        1.2,
+        1.2
+      ],
+      "material": "conduit"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.2,
+        2.6,
+        5.4
+      ],
+      "size": [
+        2.6,
+        5.2,
+        2.6
+      ],
+      "material": "plate-steel-corroded",
+      "shape": "cylinder"
+    },
+    {
+      "part": "pipe",
+      "path": [
+        [
+          -4.2,
+          5.2,
+          5.4
+        ],
+        [
+          -4.2,
+          8,
+          5.4
+        ]
+      ],
+      "radius": 0.37142857142857144
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.8,
+        2.2,
+        5.9
+      ],
+      "size": [
+        2.2,
+        4.4,
+        2.2
+      ],
+      "material": "plate-steel-corroded",
+      "shape": "cylinder"
+    },
+    {
+      "part": "pipe",
+      "path": [
+        [
+          -0.8,
+          4.4,
+          5.9
+        ],
+        [
+          -0.8,
+          8,
+          5.9
+        ]
+      ],
+      "radius": 0.31428571428571433
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.2,
+        4,
+        0.85
+      ],
+      "size": [
+        1.2,
+        0.08,
+        13.5
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.6,
+        5,
+        0.85
+      ],
+      "size": [
+        0.05,
+        0.05,
+        13.5
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.6,
+        6,
+        -3.2
+      ],
+      "size": [
+        0.05,
+        4,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.6,
+        6,
+        4.9
+      ],
+      "size": [
+        0.05,
+        4,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        5,
+        0.85
+      ],
+      "size": [
+        0.05,
+        0.05,
+        13.5
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        6,
+        -3.2
+      ],
+      "size": [
+        0.05,
+        4,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.8,
+        6,
+        4.9
+      ],
+      "size": [
+        0.05,
+        4,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.7,
+        6,
+        2.5
+      ],
+      "size": [
+        8.6,
+        0.08,
+        1.2
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.7,
+        7,
+        1.9
+      ],
+      "size": [
+        8.6,
+        0.05,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.28,
+        7,
+        1.9
+      ],
+      "size": [
+        0.05,
+        2,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.12,
+        7,
+        1.9
+      ],
+      "size": [
+        0.05,
+        2,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.7,
+        7,
+        3.1
+      ],
+      "size": [
+        8.6,
+        0.05,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -6.28,
+        7,
+        3.1
+      ],
+      "size": [
+        0.05,
+        2,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.12,
+        7,
+        3.1
+      ],
+      "size": [
+        0.05,
+        2,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3,
+        0.5,
+        0.6
+      ],
+      "size": [
+        1.2,
+        1,
+        0.8
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.22,
+        1.4,
+        2.5
+      ],
+      "size": [
+        0.06,
+        0.6,
+        0.8
+      ],
+      "material": "control-face"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.18,
+        1.6,
+        2.3
+      ],
+      "size": [
+        0.02,
+        0.06,
+        0.06
+      ],
+      "material": "indicator-live"
+    },
+    {
+      "part": "light",
+      "at": [
+        -4,
+        7.96,
+        4
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        4,
+        7.96,
+        -4
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        10.36,
+        0,
+        -4.5
+      ],
+      "size": [
+        4.4,
+        3.4,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          1,
+          1.125,
+          1.2,
+          2.25
+        ],
+        "WEST": [
+          2,
+          1.4,
+          2.4,
+          2.8
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        10.36,
+        3.36,
+        -7.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "MECH-CORRIDOR-N"
+    },
+    {
+      "part": "light",
+      "at": [
+        10.36,
+        3.36,
+        -1.5
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "MECH-CORRIDOR-N"
+    },
+    {
+      "part": "bay",
+      "at": [
+        10.36,
+        0,
+        7.66
+      ],
+      "size": [
+        4.4,
+        3.4,
+        12
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "SOUTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "EAST": [
+          1,
+          1.125,
+          1.2,
+          2.25
+        ],
+        "WEST": [
+          2,
+          1.4,
+          2.4,
+          2.8
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        10.36,
+        3.36,
+        9.66
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 12,
+        "color": 16771272
+      },
+      "room": "MECH-CORRIDOR"
+    },
+    {
+      "part": "bay",
+      "at": [
+        10.36,
+        0,
+        17.82
+      ],
+      "size": [
+        7,
+        3.4,
+        8
+      ],
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "NORTH": [
+          0,
+          1.45,
+          3.4,
+          2.9
+        ],
+        "SOUTH": [
+          0,
+          1.4,
+          2.4,
+          2.8
+        ],
+        "WEST": [
+          -2.9,
+          1.2,
+          1.6,
+          2.4
+        ],
+        "EAST": [
+          2.9,
+          1.2,
+          1.6,
+          2.4
+        ]
+      },
+      "open": "NONE"
+    },
+    {
+      "part": "light",
+      "at": [
+        10.36,
+        3.36,
+        15.82
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "MECH-CORRIDOR-S"
+    },
+    {
+      "part": "light",
+      "at": [
+        10.36,
+        3.36,
+        19.82
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 10,
+        "color": 16771272
+      },
+      "room": "MECH-CORRIDOR-S"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.36,
+        -0.04,
+        -10.58
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.36,
+        -0.04,
+        1.58
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.64,
+        -0.04,
+        -3.5
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.08,
+        -0.04,
+        -6.5
+      ],
+      "size": [
+        0.16,
+        0.08,
+        2.4
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.08,
+        -0.04,
+        5.66
+      ],
+      "size": [
+        0.16,
+        0.08,
+        2.4
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        12.64,
+        -0.04,
+        8.66
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.36,
+        -0.04,
+        13.74
+      ],
+      "size": [
+        3.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        10.36,
+        -0.04,
+        21.9
+      ],
+      "size": [
+        2.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.78,
+        -0.04,
+        20.72
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.94,
+        -0.04,
+        20.72
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.78,
+        -0.04,
+        25.34
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        13.94,
+        -0.04,
+        25.34
+      ],
+      "size": [
+        0.16,
+        0.08,
+        1.6
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        20.8,
+        -0.04,
+        8.16
+      ],
+      "size": [
+        0.16,
+        0.08,
+        2
+      ],
+      "material": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        18.02,
+        -0.04,
+        4.58
+      ],
+      "size": [
+        1.4,
+        0.08,
+        0.16
+      ],
+      "material": "deck-plate"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "note": [
+    "Station 384's fabric (DR-106), cut from the one computer layout in scripts/fabric-computer.mjs -- regenerate from there, do not hand-edit. STATION-384 v1: two featureless 6.0 m plates 0.6 m thick, the lower underfoot, the upper's underside 3.2 m up; the eye at the middle, 7.0 m west of Strip Near Station's. No numeral, no marking, no support, no fitting. No shell, walls, lamps or sky: the black void is the package's own lighting.fog (black, 8 to 16 m), which the engine makes the fog and the background, and the fill is its sourceless lighting.fill. Past 16 m everything is black. The microbe and the speck are overlays and are not in the fabric.",
+    "East, the whole 6.0 x 3.2 side between the plates onto the strip: its deck flush with the lower plate from 3.0 m out to its far edge 11.0 m out, running north into the black (its west edge to about z -14.7, its east edge to about -10.2, before the fog takes them -- the last of that is Middle of Strip's section, which is why it is here) and, south, its end: a straight edge 5.0 m south of the strip's eye where the filament turns straight down. North, south and west the plates' edges and the void."
+  ],
+  "parts": [
+    {
+      "part": "open"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        -0.3,
+        0
+      ],
+      "size": [
+        6,
+        0.6,
+        6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        3.5,
+        0
+      ],
+      "size": [
+        6,
+        0.6,
+        6
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7,
+        -0.5,
+        -2.5
+      ],
+      "size": [
+        8,
+        1,
+        15
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7,
+        -20.5,
+        4.5
+      ],
+      "size": [
+        8,
+        39,
+        1
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        7,
+        -0.5,
+        -20
+      ],
+      "size": [
+        8,
+        1,
+        20
+      ],
+      "material": "plate-steel"
+    }
+  ]
+}

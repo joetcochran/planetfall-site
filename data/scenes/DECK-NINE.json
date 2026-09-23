@@ -1,0 +1,497 @@
+{
+  "note": "Deck Nine built from the parts kit (DR-063), against DECK-NINE.metadata.json and the package README. The shell is the corridor channel only -- the README's 2.2 m clear width at 2.3 m -- with the gangway bay recessed north and the sanitation alcove south, because the room is a corridor with two recesses and not a box. Openings are [across, height-of-centre, width, height] in each wall's own plane; all four are centred, so `across` is 0 throughout.",
+  "parts": [
+    {
+      "part": "shell",
+      "size": [
+        7,
+        2.3,
+        2.2
+      ],
+      "floor": "deck-plate",
+      "wall": "wall-panel",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.05,
+          1.6,
+          2
+        ],
+        "EAST": [
+          0,
+          1.1,
+          2.2,
+          2.1
+        ],
+        "NORTH": [
+          0,
+          1,
+          0.9,
+          1.9
+        ],
+        "SOUTH": [
+          0,
+          1.1,
+          2.2,
+          2.1
+        ]
+      }
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        -1.65
+      ],
+      "size": [
+        2.2,
+        3.4,
+        1.1
+      ],
+      "open": "SOUTH",
+      "wall": "wall-panel",
+      "floor": "deck-plate"
+    },
+    {
+      "part": "bay",
+      "at": [
+        0,
+        0,
+        1.65
+      ],
+      "size": [
+        2.2,
+        2.3,
+        1.1
+      ],
+      "open": "NORTH",
+      "wall": "wall-panel",
+      "floor": "deck-plate"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.02,
+        0
+      ],
+      "size": [
+        2.6,
+        0.02,
+        1.9
+      ],
+      "material": "deck-plate-scrubbed"
+    },
+    {
+      "part": "frame",
+      "at": [
+        -3.42,
+        1.05,
+        0
+      ],
+      "facing": "WEST",
+      "size": [
+        1.6,
+        2
+      ],
+      "band": 0.16,
+      "depth": 0.12
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.33,
+        1.05,
+        0
+      ],
+      "size": [
+        0.1,
+        1.95,
+        1.55
+      ],
+      "material": "bulkhead-door",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.27,
+        1.72,
+        0
+      ],
+      "size": [
+        0.03,
+        0.16,
+        1.5
+      ],
+      "material": "emergency-band",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.27,
+        0.36,
+        0
+      ],
+      "size": [
+        0.03,
+        0.16,
+        1.5
+      ],
+      "material": "emergency-band",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.27,
+        1.05,
+        0
+      ],
+      "size": [
+        0.06,
+        0.34,
+        0.34
+      ],
+      "shape": "cylinder",
+      "rot": 1.5708,
+      "material": "machinery",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "stair",
+      "from": [
+        0,
+        0.06,
+        -1.25
+      ],
+      "to": [
+        0,
+        2.45,
+        -2.05
+      ],
+      "width": 0.86,
+      "treads": 11
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1,
+        -1.12
+      ],
+      "facing": "NORTH",
+      "size": [
+        0.9,
+        1.9
+      ],
+      "band": 0.12,
+      "depth": 0.1
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1,
+        -1.16
+      ],
+      "size": [
+        0.9,
+        1.9,
+        0.08
+      ],
+      "material": "bulkhead-door",
+      "when": "GANGWAY-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        3.4,
+        1.1,
+        0
+      ],
+      "size": [
+        0.08,
+        2.1,
+        2.2
+      ],
+      "material": "bulkhead-door",
+      "when": "CORRIDOR-DOOR without OPENBIT"
+    },
+    {
+      "part": "light",
+      "at": [
+        -2,
+        2.22,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 16,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        1.4,
+        2.22,
+        0
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 16,
+        "distance": 8
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        3.3,
+        -1.7
+      ],
+      "size": [
+        0.7,
+        0.05,
+        0.2
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 6,
+        "color": 16759232
+      }
+    },
+    {
+      "part": "pipe",
+      "material": "pipe",
+      "radius": 0.07,
+      "path": [
+        [
+          -3.2,
+          2.05,
+          -1
+        ],
+        [
+          1,
+          2.05,
+          -1
+        ],
+        [
+          1.4,
+          2.05,
+          -0.75
+        ],
+        [
+          3.3,
+          2.05,
+          -0.75
+        ]
+      ]
+    },
+    {
+      "part": "pipe",
+      "material": "conduit",
+      "radius": 0.045,
+      "path": [
+        [
+          -3.2,
+          1.88,
+          -1.02
+        ],
+        [
+          -0.8,
+          1.88,
+          -1.02
+        ],
+        [
+          -0.8,
+          1.3,
+          -1.02
+        ]
+      ]
+    },
+    {
+      "part": "pipe",
+      "material": "pipe",
+      "radius": 0.055,
+      "path": [
+        [
+          3.3,
+          0.35,
+          1.02
+        ],
+        [
+          0.9,
+          0.35,
+          1.02
+        ],
+        [
+          0.9,
+          0.9,
+          1.02
+        ]
+      ]
+    },
+    {
+      "part": "panel",
+      "at": [
+        1.95,
+        1.3,
+        -1.06
+      ],
+      "facing": "NORTH",
+      "size": [
+        0.5,
+        0.72
+      ],
+      "material": "control-face",
+      "lamps": [
+        {
+          "x": -0.14,
+          "y": 0.24,
+          "material": "indicator-live",
+          "size": [
+            0.05,
+            0.04
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0.24,
+          "material": "indicator-live",
+          "size": [
+            0.05,
+            0.04
+          ]
+        },
+        {
+          "x": 0.14,
+          "y": 0.24,
+          "material": "indicator-fault",
+          "size": [
+            0.05,
+            0.04
+          ]
+        },
+        {
+          "x": 0,
+          "y": -0.08,
+          "material": "stencil",
+          "size": [
+            0.36,
+            0.24
+          ]
+        }
+      ]
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.6,
+        1.05,
+        -1.02
+      ],
+      "size": [
+        0.34,
+        0.46,
+        0.1
+      ],
+      "material": "stencil"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.75,
+        0.35,
+        1.9
+      ],
+      "size": [
+        0.5,
+        0.7,
+        0.42
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.75,
+        0.72,
+        1.9
+      ],
+      "size": [
+        0.44,
+        0.05,
+        0.36
+      ],
+      "material": "plate-steel"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.55,
+        0.6,
+        2
+      ],
+      "size": [
+        0.06,
+        1.2,
+        0.06
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.8,
+        0.62,
+        2
+      ],
+      "size": [
+        0.05,
+        1.24,
+        0.05
+      ],
+      "material": "handrail"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.2,
+        1.45,
+        2.08
+      ],
+      "size": [
+        1.1,
+        0.05,
+        0.3
+      ],
+      "material": "plate-steel"
+    }
+  ],
+  "actors": {
+    "BLATHER": {
+      "position": [
+        0,
+        0,
+        1.55
+      ],
+      "note": "\"Standing before you\" (globals.zil 733), in the mouth of the sanitation alcove facing the player: 1.55 m from the eye, where the 90-degree recess still shows round him and no exit lane is crossed. Without a spot the ring solver stood him 0.9 m from the eye, close enough to fill the view. Here until the package places him (brief 4.5)."
+    }
+  }
+}

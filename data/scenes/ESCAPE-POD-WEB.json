@@ -1,0 +1,2173 @@
+{
+  "note": [
+    "The Escape Pod seen from INSIDE THE SAFETY WEB (DR-112, the user's decision of 2026-09-16, asked for repeatedly before it was heard). The same cabin as ESCAPE-POD.json, cut from the one Feinstein layout in scripts/fabric-feinstein.mjs and moved so the nest's eye is at the origin -- regenerate from there, do not hand-edit.",
+    "Why it is a room at all: the game moves the player INTO the safety web, which is a vehicle (SAFETY-WEB, VEHBIT and CLIMBBIT, globals.zil 950-956), and DR-112 keeps them there from the explosion to the thud -- the whole storyboard, the Feinstein blowing apart and the planet growing from four thousand miles to the surf, is read from this seat. That is a different eye from the one standing in the open strip, and the view system gives one eye and one ring to a room, so the nest gets its own. It is an ART room: `viewOf` says the game room it belongs to, and nothing in the rules changes.",
+    "The eye is seated 1.2 m up, 0.5 m behind the near strap plane (z -0.55) and 1.45 m in front of the back curtain, square to the middle of the 2.4 x 1.1 m porthole 1.4 m across the cabin on the north flank. The near straps are the foreground and the view through them is nearly normal to the pane, which is the whole reason the window is opposite the webbing rather than on an end wall: a line to the end wall rakes the strap plane at 66 degrees and hides three quarters of what is beyond, where this one hides about a fifth.",
+    "THE VIEW IS CLAMPED here, not free: a player strapped into a safety web cannot swing round, and the storyboard is the porthole. About 40 degrees either side of the pane's normal, which fits inside one painted view at lens 110 with margin -- so this room wants ONE frame and no ring or caps."
+  ],
+  "viewOf": "ESCAPE-POD",
+  "parts": [
+    {
+      "part": "shell",
+      "at": [
+        0,
+        0,
+        -1.2
+      ],
+      "size": [
+        4,
+        2.45,
+        3.1
+      ],
+      "thickness": 0.1,
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "ceiling": "ceiling",
+      "openings": {
+        "EAST": [
+          0,
+          1.05,
+          1.6,
+          2
+        ]
+      }
+    },
+    {
+      "part": "vault",
+      "at": [
+        0,
+        0,
+        -1.2
+      ],
+      "length": 4,
+      "chord": 2.4,
+      "crown": 2.4,
+      "material": "wall-panel"
+    },
+    {
+      "part": "pipe",
+      "material": "structural-rib",
+      "radius": 0.05,
+      "elbow": 1,
+      "path": [
+        [
+          1.2,
+          0,
+          -2.4
+        ],
+        [
+          1.2,
+          0.154,
+          -2.501
+        ],
+        [
+          1.2,
+          0.319,
+          -2.583
+        ],
+        [
+          1.2,
+          0.493,
+          -2.644
+        ],
+        [
+          1.2,
+          0.674,
+          -2.683
+        ],
+        [
+          1.2,
+          0.857,
+          -2.699
+        ],
+        [
+          1.2,
+          1.042,
+          -2.693
+        ],
+        [
+          1.2,
+          1.224,
+          -2.665
+        ],
+        [
+          1.2,
+          1.401,
+          -2.614
+        ],
+        [
+          1.2,
+          1.571,
+          -2.542
+        ],
+        [
+          1.2,
+          1.73,
+          -2.449
+        ],
+        [
+          1.2,
+          1.877,
+          -2.338
+        ],
+        [
+          1.2,
+          2.01,
+          -2.209
+        ],
+        [
+          1.2,
+          2.125,
+          -2.066
+        ],
+        [
+          1.2,
+          2.222,
+          -1.909
+        ],
+        [
+          1.2,
+          2.299,
+          -1.741
+        ],
+        [
+          1.2,
+          2.355,
+          -1.565
+        ],
+        [
+          1.2,
+          2.389,
+          -1.384
+        ],
+        [
+          1.2,
+          2.4,
+          -1.2
+        ],
+        [
+          1.2,
+          2.389,
+          -1.016
+        ],
+        [
+          1.2,
+          2.355,
+          -0.835
+        ],
+        [
+          1.2,
+          2.299,
+          -0.659
+        ],
+        [
+          1.2,
+          2.222,
+          -0.491
+        ],
+        [
+          1.2,
+          2.125,
+          -0.334
+        ],
+        [
+          1.2,
+          2.01,
+          -0.191
+        ],
+        [
+          1.2,
+          1.877,
+          -0.062
+        ],
+        [
+          1.2,
+          1.73,
+          0.049
+        ],
+        [
+          1.2,
+          1.571,
+          0.142
+        ],
+        [
+          1.2,
+          1.401,
+          0.214
+        ],
+        [
+          1.2,
+          1.224,
+          0.265
+        ],
+        [
+          1.2,
+          1.042,
+          0.293
+        ],
+        [
+          1.2,
+          0.857,
+          0.299
+        ],
+        [
+          1.2,
+          0.674,
+          0.283
+        ],
+        [
+          1.2,
+          0.493,
+          0.244
+        ],
+        [
+          1.2,
+          0.319,
+          0.183
+        ],
+        [
+          1.2,
+          0.154,
+          0.101
+        ],
+        [
+          1.2,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "part": "pipe",
+      "material": "structural-rib",
+      "radius": 0.05,
+      "elbow": 1,
+      "path": [
+        [
+          0.45,
+          0,
+          -2.4
+        ],
+        [
+          0.45,
+          0.154,
+          -2.501
+        ],
+        [
+          0.45,
+          0.319,
+          -2.583
+        ],
+        [
+          0.45,
+          0.493,
+          -2.644
+        ],
+        [
+          0.45,
+          0.674,
+          -2.683
+        ],
+        [
+          0.45,
+          0.857,
+          -2.699
+        ],
+        [
+          0.45,
+          1.042,
+          -2.693
+        ],
+        [
+          0.45,
+          1.224,
+          -2.665
+        ],
+        [
+          0.45,
+          1.401,
+          -2.614
+        ],
+        [
+          0.45,
+          1.571,
+          -2.542
+        ],
+        [
+          0.45,
+          1.73,
+          -2.449
+        ],
+        [
+          0.45,
+          1.877,
+          -2.338
+        ],
+        [
+          0.45,
+          2.01,
+          -2.209
+        ],
+        [
+          0.45,
+          2.125,
+          -2.066
+        ],
+        [
+          0.45,
+          2.222,
+          -1.909
+        ],
+        [
+          0.45,
+          2.299,
+          -1.741
+        ],
+        [
+          0.45,
+          2.355,
+          -1.565
+        ],
+        [
+          0.45,
+          2.389,
+          -1.384
+        ],
+        [
+          0.45,
+          2.4,
+          -1.2
+        ],
+        [
+          0.45,
+          2.389,
+          -1.016
+        ],
+        [
+          0.45,
+          2.355,
+          -0.835
+        ],
+        [
+          0.45,
+          2.299,
+          -0.659
+        ],
+        [
+          0.45,
+          2.222,
+          -0.491
+        ],
+        [
+          0.45,
+          2.125,
+          -0.334
+        ],
+        [
+          0.45,
+          2.01,
+          -0.191
+        ],
+        [
+          0.45,
+          1.877,
+          -0.062
+        ],
+        [
+          0.45,
+          1.73,
+          0.049
+        ],
+        [
+          0.45,
+          1.571,
+          0.142
+        ],
+        [
+          0.45,
+          1.401,
+          0.214
+        ],
+        [
+          0.45,
+          1.224,
+          0.265
+        ],
+        [
+          0.45,
+          1.042,
+          0.293
+        ],
+        [
+          0.45,
+          0.857,
+          0.299
+        ],
+        [
+          0.45,
+          0.674,
+          0.283
+        ],
+        [
+          0.45,
+          0.493,
+          0.244
+        ],
+        [
+          0.45,
+          0.319,
+          0.183
+        ],
+        [
+          0.45,
+          0.154,
+          0.101
+        ],
+        [
+          0.45,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "part": "pipe",
+      "material": "structural-rib",
+      "radius": 0.05,
+      "elbow": 1,
+      "path": [
+        [
+          -0.4,
+          0,
+          -2.4
+        ],
+        [
+          -0.4,
+          0.154,
+          -2.501
+        ],
+        [
+          -0.4,
+          0.319,
+          -2.583
+        ],
+        [
+          -0.4,
+          0.493,
+          -2.644
+        ],
+        [
+          -0.4,
+          0.674,
+          -2.683
+        ],
+        [
+          -0.4,
+          0.857,
+          -2.699
+        ],
+        [
+          -0.4,
+          1.042,
+          -2.693
+        ],
+        [
+          -0.4,
+          1.224,
+          -2.665
+        ],
+        [
+          -0.4,
+          1.401,
+          -2.614
+        ],
+        [
+          -0.4,
+          1.571,
+          -2.542
+        ],
+        [
+          -0.4,
+          1.73,
+          -2.449
+        ],
+        [
+          -0.4,
+          1.877,
+          -2.338
+        ],
+        [
+          -0.4,
+          2.01,
+          -2.209
+        ],
+        [
+          -0.4,
+          2.125,
+          -2.066
+        ],
+        [
+          -0.4,
+          2.222,
+          -1.909
+        ],
+        [
+          -0.4,
+          2.299,
+          -1.741
+        ],
+        [
+          -0.4,
+          2.355,
+          -1.565
+        ],
+        [
+          -0.4,
+          2.389,
+          -1.384
+        ],
+        [
+          -0.4,
+          2.4,
+          -1.2
+        ],
+        [
+          -0.4,
+          2.389,
+          -1.016
+        ],
+        [
+          -0.4,
+          2.355,
+          -0.835
+        ],
+        [
+          -0.4,
+          2.299,
+          -0.659
+        ],
+        [
+          -0.4,
+          2.222,
+          -0.491
+        ],
+        [
+          -0.4,
+          2.125,
+          -0.334
+        ],
+        [
+          -0.4,
+          2.01,
+          -0.191
+        ],
+        [
+          -0.4,
+          1.877,
+          -0.062
+        ],
+        [
+          -0.4,
+          1.73,
+          0.049
+        ],
+        [
+          -0.4,
+          1.571,
+          0.142
+        ],
+        [
+          -0.4,
+          1.401,
+          0.214
+        ],
+        [
+          -0.4,
+          1.224,
+          0.265
+        ],
+        [
+          -0.4,
+          1.042,
+          0.293
+        ],
+        [
+          -0.4,
+          0.857,
+          0.299
+        ],
+        [
+          -0.4,
+          0.674,
+          0.283
+        ],
+        [
+          -0.4,
+          0.493,
+          0.244
+        ],
+        [
+          -0.4,
+          0.319,
+          0.183
+        ],
+        [
+          -0.4,
+          0.154,
+          0.101
+        ],
+        [
+          -0.4,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "part": "pipe",
+      "material": "structural-rib",
+      "radius": 0.05,
+      "elbow": 1,
+      "path": [
+        [
+          -1.1,
+          0,
+          -2.4
+        ],
+        [
+          -1.1,
+          0.154,
+          -2.501
+        ],
+        [
+          -1.1,
+          0.319,
+          -2.583
+        ],
+        [
+          -1.1,
+          0.493,
+          -2.644
+        ],
+        [
+          -1.1,
+          0.674,
+          -2.683
+        ],
+        [
+          -1.1,
+          0.857,
+          -2.699
+        ],
+        [
+          -1.1,
+          1.042,
+          -2.693
+        ],
+        [
+          -1.1,
+          1.224,
+          -2.665
+        ],
+        [
+          -1.1,
+          1.401,
+          -2.614
+        ],
+        [
+          -1.1,
+          1.571,
+          -2.542
+        ],
+        [
+          -1.1,
+          1.73,
+          -2.449
+        ],
+        [
+          -1.1,
+          1.877,
+          -2.338
+        ],
+        [
+          -1.1,
+          2.01,
+          -2.209
+        ],
+        [
+          -1.1,
+          2.125,
+          -2.066
+        ],
+        [
+          -1.1,
+          2.222,
+          -1.909
+        ],
+        [
+          -1.1,
+          2.299,
+          -1.741
+        ],
+        [
+          -1.1,
+          2.355,
+          -1.565
+        ],
+        [
+          -1.1,
+          2.389,
+          -1.384
+        ],
+        [
+          -1.1,
+          2.4,
+          -1.2
+        ],
+        [
+          -1.1,
+          2.389,
+          -1.016
+        ],
+        [
+          -1.1,
+          2.355,
+          -0.835
+        ],
+        [
+          -1.1,
+          2.299,
+          -0.659
+        ],
+        [
+          -1.1,
+          2.222,
+          -0.491
+        ],
+        [
+          -1.1,
+          2.125,
+          -0.334
+        ],
+        [
+          -1.1,
+          2.01,
+          -0.191
+        ],
+        [
+          -1.1,
+          1.877,
+          -0.062
+        ],
+        [
+          -1.1,
+          1.73,
+          0.049
+        ],
+        [
+          -1.1,
+          1.571,
+          0.142
+        ],
+        [
+          -1.1,
+          1.401,
+          0.214
+        ],
+        [
+          -1.1,
+          1.224,
+          0.265
+        ],
+        [
+          -1.1,
+          1.042,
+          0.293
+        ],
+        [
+          -1.1,
+          0.857,
+          0.299
+        ],
+        [
+          -1.1,
+          0.674,
+          0.283
+        ],
+        [
+          -1.1,
+          0.493,
+          0.244
+        ],
+        [
+          -1.1,
+          0.319,
+          0.183
+        ],
+        [
+          -1.1,
+          0.154,
+          0.101
+        ],
+        [
+          -1.1,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.01,
+        -2.15
+      ],
+      "size": [
+        4,
+        0.02,
+        1.2
+      ],
+      "material": "tread"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.687,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.312,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.937,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.562,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.187,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.188,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.563,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.938,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.313,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.688,
+        1.12,
+        -1.2
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.35,
+        -1.2
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.75,
+        -1.2
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.15,
+        -1.2
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.55,
+        -1.2
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.95,
+        -1.2
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.687,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.312,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.937,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.562,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.187,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.188,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.563,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.938,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.313,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.688,
+        1.12,
+        0.3
+      ],
+      "size": [
+        0.07,
+        2.24,
+        0.06
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.35,
+        0.3
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.75,
+        0.3
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.15,
+        0.3
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.55,
+        0.3
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.95,
+        0.3
+      ],
+      "size": [
+        3.9,
+        0.07,
+        0.05
+      ],
+      "material": "safety-web"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.2,
+        1.1,
+        0.32
+      ],
+      "size": [
+        0.1,
+        2.2,
+        0.06
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0.45,
+        1.1,
+        0.32
+      ],
+      "size": [
+        0.1,
+        2.2,
+        0.06
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -0.4,
+        1.1,
+        0.32
+      ],
+      "size": [
+        0.1,
+        2.2,
+        0.06
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.1,
+        1.1,
+        0.32
+      ],
+      "size": [
+        0.1,
+        2.2,
+        0.06
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.7,
+        1.1,
+        0.32
+      ],
+      "size": [
+        0.1,
+        2.2,
+        0.06
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        0.5,
+        0.325
+      ],
+      "size": [
+        3.9,
+        0.05,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1,
+        0.325
+      ],
+      "size": [
+        3.9,
+        0.05,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.5,
+        0.325
+      ],
+      "size": [
+        3.9,
+        0.05,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        2,
+        0.325
+      ],
+      "size": [
+        3.9,
+        0.05,
+        0.05
+      ],
+      "material": "structural-rib"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.75,
+        0.55,
+        -1.6
+      ],
+      "size": [
+        0.4,
+        1.1,
+        1.4
+      ],
+      "material": "machinery"
+    },
+    {
+      "part": "panel",
+      "at": [
+        -1.54,
+        0.8,
+        -1.6
+      ],
+      "facing": "EAST",
+      "size": [
+        1.2,
+        0.5
+      ],
+      "material": "control-face",
+      "lamps": [
+        {
+          "x": -0.48,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-live"
+        },
+        {
+          "x": -0.36,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-live"
+        },
+        {
+          "x": -0.24,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-fault"
+        },
+        {
+          "x": -0.12,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-live"
+        },
+        {
+          "x": 0,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-live"
+        },
+        {
+          "x": 0.12,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-live"
+        },
+        {
+          "x": 0.24,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-fault"
+        },
+        {
+          "x": 0.36,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-live"
+        },
+        {
+          "x": 0.48,
+          "y": 0.22,
+          "size": [
+            0.05,
+            0.04
+          ],
+          "material": "indicator-live"
+        }
+      ]
+    },
+    {
+      "part": "prop",
+      "at": [
+        0,
+        1.25,
+        -2.65
+      ],
+      "size": [
+        2.4,
+        1.1,
+        0.2
+      ],
+      "material": "viewport-glass"
+    },
+    {
+      "part": "frame",
+      "at": [
+        0,
+        1.25,
+        -2.54
+      ],
+      "facing": "NORTH",
+      "size": [
+        2.4,
+        1.1
+      ],
+      "band": 0.12,
+      "depth": 0.18
+    },
+    {
+      "part": "frame",
+      "at": [
+        1.92,
+        1.05,
+        -1.2
+      ],
+      "facing": "EAST",
+      "size": [
+        1.6,
+        2
+      ],
+      "band": 0.12,
+      "depth": 0.12
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.85,
+        0.95,
+        -0.15
+      ],
+      "size": [
+        0.3,
+        1.9,
+        0.5
+      ],
+      "material": "machinery",
+      "when": "TRIP-COUNTER < 15"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.85,
+        0.43,
+        -0.15
+      ],
+      "size": [
+        0.3,
+        0.86,
+        0.5
+      ],
+      "material": "machinery",
+      "when": "TRIP-COUNTER >= 15"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.85,
+        1.65,
+        -0.15
+      ],
+      "size": [
+        0.3,
+        0.5,
+        0.5
+      ],
+      "material": "machinery",
+      "when": "TRIP-COUNTER >= 15"
+    },
+    {
+      "part": "bay",
+      "at": [
+        -1.84,
+        0.9,
+        -0.15
+      ],
+      "size": [
+        0.28,
+        0.5,
+        0.42
+      ],
+      "open": "EAST",
+      "thickness": 0.04,
+      "ceiling": null,
+      "wall": "machinery",
+      "floor": "machinery",
+      "when": "TRIP-COUNTER >= 15"
+    },
+    {
+      "part": "light",
+      "at": [
+        -1.4,
+        2.36,
+        -1.2
+      ],
+      "size": [
+        0.28,
+        0.05,
+        0.4
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 5,
+        "distance": 4.5
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        1.4,
+        2.36,
+        -1.2
+      ],
+      "size": [
+        0.28,
+        0.05,
+        0.4
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 5,
+        "distance": 4.5
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        2,
+        -2.22
+      ],
+      "housing": false,
+      "cast": {
+        "intensity": 2,
+        "distance": 3
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        0,
+        2,
+        -0.18
+      ],
+      "housing": false,
+      "cast": {
+        "intensity": 2,
+        "distance": 3
+      }
+    },
+    {
+      "part": "bay",
+      "size": [
+        7,
+        2.3,
+        2.2
+      ],
+      "floor": "deck-plate",
+      "wall": "wall-panel",
+      "ceiling": "ceiling",
+      "openings": {
+        "WEST": [
+          0,
+          1.05,
+          1.6,
+          2
+        ],
+        "EAST": [
+          0,
+          1.1,
+          2.2,
+          2.1
+        ],
+        "NORTH": [
+          0,
+          1,
+          0.9,
+          1.9
+        ],
+        "SOUTH": [
+          0,
+          1.1,
+          2.2,
+          2.1
+        ]
+      },
+      "at": [
+        5.6,
+        0,
+        -1.2
+      ],
+      "open": "WEST",
+      "thickness": 0.1,
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "bay",
+      "at": [
+        5.6,
+        0,
+        -2.85
+      ],
+      "size": [
+        2.2,
+        3.4,
+        1.1
+      ],
+      "open": "SOUTH",
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "bay",
+      "at": [
+        5.6,
+        0,
+        0.45
+      ],
+      "size": [
+        2.2,
+        2.3,
+        1.1
+      ],
+      "open": "NORTH",
+      "wall": "wall-panel",
+      "floor": "deck-plate",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.6,
+        0.02,
+        -1.2
+      ],
+      "size": [
+        2.6,
+        0.02,
+        1.9
+      ],
+      "material": "deck-plate-scrubbed",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "frame",
+      "at": [
+        2.18,
+        1.05,
+        -1.2
+      ],
+      "facing": "WEST",
+      "size": [
+        1.6,
+        2
+      ],
+      "band": 0.16,
+      "depth": 0.12,
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.27,
+        1.05,
+        -1.2
+      ],
+      "size": [
+        0.1,
+        1.95,
+        1.55
+      ],
+      "material": "bulkhead-door",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.33,
+        1.72,
+        -1.2
+      ],
+      "size": [
+        0.03,
+        0.16,
+        1.5
+      ],
+      "material": "emergency-band",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.33,
+        0.36,
+        -1.2
+      ],
+      "size": [
+        0.03,
+        0.16,
+        1.5
+      ],
+      "material": "emergency-band",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.33,
+        1.05,
+        -1.2
+      ],
+      "size": [
+        0.06,
+        0.34,
+        0.34
+      ],
+      "shape": "cylinder",
+      "rot": 1.5708,
+      "material": "machinery",
+      "when": "POD-DOOR without OPENBIT"
+    },
+    {
+      "part": "stair",
+      "from": [
+        5.6,
+        0.06,
+        -2.45
+      ],
+      "to": [
+        5.6,
+        2.45,
+        -3.25
+      ],
+      "width": 0.86,
+      "treads": 11,
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "frame",
+      "at": [
+        5.6,
+        1,
+        -2.32
+      ],
+      "facing": "NORTH",
+      "size": [
+        0.9,
+        1.9
+      ],
+      "band": 0.12,
+      "depth": 0.1,
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.6,
+        1,
+        -2.36
+      ],
+      "size": [
+        0.9,
+        1.9,
+        0.08
+      ],
+      "material": "bulkhead-door",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        9,
+        1.1,
+        -1.2
+      ],
+      "size": [
+        0.08,
+        2.1,
+        2.2
+      ],
+      "material": "bulkhead-door",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "light",
+      "at": [
+        3.6,
+        2.22,
+        -1.2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 16,
+        "distance": 8
+      },
+      "when": "BLOWUP-COUNTER < 5",
+      "room": "DECK-NINE"
+    },
+    {
+      "part": "light",
+      "at": [
+        7,
+        2.22,
+        -1.2
+      ],
+      "size": [
+        1.2,
+        0.06,
+        0.24
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 16,
+        "distance": 8
+      },
+      "when": "BLOWUP-COUNTER < 5",
+      "room": "DECK-NINE"
+    },
+    {
+      "part": "light",
+      "at": [
+        5.6,
+        3.3,
+        -2.9
+      ],
+      "size": [
+        0.7,
+        0.05,
+        0.2
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 9,
+        "distance": 6,
+        "color": 16759232
+      },
+      "when": "BLOWUP-COUNTER < 5",
+      "room": "DECK-NINE"
+    },
+    {
+      "part": "pipe",
+      "material": "pipe",
+      "radius": 0.07,
+      "path": [
+        [
+          2.4,
+          2.05,
+          -2.2
+        ],
+        [
+          6.6,
+          2.05,
+          -2.2
+        ],
+        [
+          7,
+          2.05,
+          -1.95
+        ],
+        [
+          8.9,
+          2.05,
+          -1.95
+        ]
+      ],
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "pipe",
+      "material": "conduit",
+      "radius": 0.045,
+      "path": [
+        [
+          2.4,
+          1.88,
+          -2.22
+        ],
+        [
+          4.8,
+          1.88,
+          -2.22
+        ],
+        [
+          4.8,
+          1.3,
+          -2.22
+        ]
+      ],
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "pipe",
+      "material": "pipe",
+      "radius": 0.055,
+      "path": [
+        [
+          8.9,
+          0.35,
+          -0.18
+        ],
+        [
+          6.5,
+          0.35,
+          -0.18
+        ],
+        [
+          6.5,
+          0.9,
+          -0.18
+        ]
+      ],
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "panel",
+      "at": [
+        7.55,
+        1.3,
+        -2.26
+      ],
+      "facing": "NORTH",
+      "size": [
+        0.5,
+        0.72
+      ],
+      "material": "control-face",
+      "lamps": [
+        {
+          "x": -0.14,
+          "y": 0.24,
+          "material": "indicator-live",
+          "size": [
+            0.05,
+            0.04
+          ]
+        },
+        {
+          "x": 0,
+          "y": 0.24,
+          "material": "indicator-live",
+          "size": [
+            0.05,
+            0.04
+          ]
+        },
+        {
+          "x": 0.14,
+          "y": 0.24,
+          "material": "indicator-fault",
+          "size": [
+            0.05,
+            0.04
+          ]
+        },
+        {
+          "x": 0,
+          "y": -0.08,
+          "material": "stencil",
+          "size": [
+            0.36,
+            0.24
+          ]
+        }
+      ],
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        8.2,
+        1.05,
+        -2.22
+      ],
+      "size": [
+        0.34,
+        0.46,
+        0.1
+      ],
+      "material": "stencil",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.85,
+        0.35,
+        0.7
+      ],
+      "size": [
+        0.5,
+        0.7,
+        0.42
+      ],
+      "material": "machinery",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        4.85,
+        0.72,
+        0.7
+      ],
+      "size": [
+        0.44,
+        0.05,
+        0.36
+      ],
+      "material": "plate-steel",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.15,
+        0.6,
+        0.8
+      ],
+      "size": [
+        0.06,
+        1.2,
+        0.06
+      ],
+      "material": "handrail",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        6.4,
+        0.62,
+        0.8
+      ],
+      "size": [
+        0.05,
+        1.24,
+        0.05
+      ],
+      "material": "handrail",
+      "when": "BLOWUP-COUNTER < 5"
+    },
+    {
+      "part": "prop",
+      "at": [
+        5.8,
+        1.45,
+        0.88
+      ],
+      "size": [
+        1.1,
+        0.05,
+        0.3
+      ],
+      "material": "plate-steel",
+      "when": "BLOWUP-COUNTER < 5"
+    }
+  ]
+}

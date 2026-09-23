@@ -1,0 +1,10 @@
+{
+  "_comment": [
+    "Lenses dev has FITTED for painted views and decided to trust, by room and view id, in degrees of horizontal field.",
+    "The package's referenceImages.hfov is what was asked of the generator; this is what was drawn, measured from where",
+    "each view overlaps its neighbours (fitLenses in wwwroot/dashboard/turn.js, printed by scripts/review-room.mjs).",
+    "The two are kept apart on purpose (ARTWORK-BRIEF.md 1.4). A view with no entry hangs on its package's number.",
+    "A variant hangs on its base view's entry.",
+    "Views built by the underpaint method (brief 2.1) are drawn at exactly the lens they were built for and need no entry. Deck Nine's old caps had one (130, for caps drawn to 110); it went with them when DR-108's set replaced them, since its caps are built for 127."
+  ]
+}

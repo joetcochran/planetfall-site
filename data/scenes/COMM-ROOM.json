@@ -1,0 +1,819 @@
+{
+  "note": [
+    "The Comm Room's fabric (DR-113), cut from the one tower layout in scripts/fabric-tower.mjs -- regenerate from there, do not hand-edit. COMM-ROOM.metadata.json v2: a regular octagon, apothem 3.2 (6.4 across the flats, 6.93 across the corners), 3 m high, its walls centred on bearings 0, 45, 90 and so on -- the tower's own axis, the one the core's two passages are cut on. The receive console fills the north-west wall, the send console the south-east, the doorway is the south-west wall and the cable trunk climbs the north-east; the four views land on those and the four seams on the plain walls between them.",
+    "The game: \"a small room with no windows. The sole exit is southwest. Two wide consoles fill either end of the room; thick cables lead up into the ceiling\" (compone.zil 2822-2828). The red \"Tranzmishun Reeseevd\" lamp is the room's referable light, not a ceiling fitting (rules/connectors.js 271-275); the enunciator's panel is drawn once with every lamp dark and the flashing one is an engine OVERLAY on its own CHEMICAL-REQUIRED value, dark once COMM-FIXED or COMM-SHUTDOWN. The seven lamps are NOT fabric: COMM-ROOM.metadata.json's `overlays` hangs each as a `cutout` cut square-on out of TURN-135's own painted lens and re-lit in its canon colour (compone.zil 2854-2869), which is how all seven carry colours the palette has not got.",
+    "Out through the doorway, along the 45-degree line the room shares with the core and the deck: 0.80 m of passage, then the core's drum -- its curved wall, its worn floor, the stair standing due west of its centre and the cool lamp over it -- and straight on through the core's south-west gap, the Observation Deck's daylight and the sea over its parapet. The elevator door is NOT in sight: it lies at bearing 250 from this eye and the passage holds every ray inside 215 to 235."
+  ],
+  "parts": [
+    {
+      "part": "prism",
+      "at": [
+        0,
+        0,
+        0
+      ],
+      "sides": 8,
+      "apothem": 3.2,
+      "height": 3,
+      "first": 0,
+      "thickness": 0.08,
+      "wall": "wall-panel",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "openings": {
+        "225": [
+          0,
+          1.2,
+          1.5,
+          2.4
+        ]
+      }
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.015,
+        0.55,
+        -2.015
+      ],
+      "size": [
+        2.4,
+        1.1,
+        0.7
+      ],
+      "material": "machinery",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.015,
+        1.12,
+        -2.015
+      ],
+      "size": [
+        2.2,
+        0.04,
+        0.6
+      ],
+      "material": "control-face",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.234,
+        2.1,
+        -2.234
+      ],
+      "size": [
+        2.4,
+        0.18,
+        0.04
+      ],
+      "material": "stencil",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.015,
+        0.55,
+        2.015
+      ],
+      "size": [
+        2.4,
+        1.1,
+        0.7
+      ],
+      "material": "machinery",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.015,
+        1.12,
+        2.015
+      ],
+      "size": [
+        2.2,
+        0.04,
+        0.6
+      ],
+      "material": "control-face",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.234,
+        2.1,
+        2.234
+      ],
+      "size": [
+        2.4,
+        0.18,
+        0.04
+      ],
+      "material": "stencil",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.95,
+        1.55,
+        -2.23
+      ],
+      "size": [
+        0.16,
+        0.16,
+        0.06
+      ],
+      "material": "indicator-fault"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -1.38,
+        1.55,
+        -2.8
+      ],
+      "size": [
+        0.12,
+        0.12,
+        0.06
+      ],
+      "material": "lamp-warm"
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.02,
+        1.5,
+        2.16
+      ],
+      "size": [
+        0.6,
+        0.4,
+        0.05
+      ],
+      "material": "stencil",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.28,
+        0.95,
+        2.9
+      ],
+      "size": [
+        0.3,
+        0.16,
+        0.3
+      ],
+      "material": "machinery",
+      "rot": 0.785,
+      "shape": "cylinder"
+    },
+    {
+      "part": "prop",
+      "at": [
+        1.56,
+        1.5,
+        2.62
+      ],
+      "size": [
+        0.34,
+        0.72,
+        0.08
+      ],
+      "material": "control-face",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        2.2,
+        2.55,
+        -2.2
+      ],
+      "size": [
+        1.2,
+        0.35,
+        0.12
+      ],
+      "material": "conduit",
+      "rot": -0.785
+    },
+    {
+      "part": "pipe",
+      "material": "conduit",
+      "radius": 0.07,
+      "elbow": 1,
+      "path": [
+        [
+          -1.838,
+          1.15,
+          -1.838
+        ],
+        [
+          -1.838,
+          2.6,
+          -1.838
+        ],
+        [
+          2.051,
+          2.6,
+          -2.051
+        ],
+        [
+          2.157,
+          2.55,
+          -2.157
+        ]
+      ]
+    },
+    {
+      "part": "pipe",
+      "material": "conduit",
+      "radius": 0.07,
+      "elbow": 1,
+      "path": [
+        [
+          1.838,
+          1.15,
+          1.838
+        ],
+        [
+          1.838,
+          2.6,
+          1.838
+        ],
+        [
+          2.051,
+          2.6,
+          -2.051
+        ],
+        [
+          2.157,
+          2.55,
+          -2.157
+        ]
+      ]
+    },
+    {
+      "part": "light",
+      "at": [
+        1.3,
+        2.92,
+        -1.3
+      ],
+      "size": [
+        1.1,
+        0.07,
+        0.28
+      ],
+      "material": "lamp-warm",
+      "rot": 0.785,
+      "cast": {
+        "intensity": 11,
+        "distance": 7,
+        "decay": 1.8,
+        "color": 16767406
+      }
+    },
+    {
+      "part": "light",
+      "at": [
+        -1.3,
+        2.92,
+        1.3
+      ],
+      "size": [
+        1.1,
+        0.07,
+        0.28
+      ],
+      "material": "lamp-warm",
+      "rot": 0.785,
+      "cast": {
+        "intensity": 11,
+        "distance": 7,
+        "decay": 1.8,
+        "color": 16767406
+      }
+    },
+    {
+      "part": "drum",
+      "at": [
+        -5.374,
+        0,
+        5.374
+      ],
+      "radius": 3.4,
+      "height": 4.2,
+      "segments": 56,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": "ceiling",
+      "gaps": [
+        {
+          "from": -19,
+          "to": 19,
+          "head": 2.5
+        },
+        {
+          "from": 32,
+          "to": 58,
+          "head": 2.5
+        },
+        {
+          "from": 212,
+          "to": 238,
+          "head": 2.5
+        }
+      ],
+      "ceilingHole": {
+        "at": [
+          -2.2,
+          0
+        ],
+        "width": 1.2,
+        "depth": 2.4
+      }
+    },
+    {
+      "part": "frame",
+      "at": [
+        -5.374,
+        1.25,
+        2.034
+      ],
+      "facing": "NORTH",
+      "size": [
+        2.2,
+        2.5
+      ],
+      "band": 0.16,
+      "depth": 0.12,
+      "material": "trim"
+    },
+    {
+      "part": "stair",
+      "from": [
+        -7.574,
+        0.06,
+        6.424
+      ],
+      "to": [
+        -7.574,
+        4.1,
+        4.324
+      ],
+      "width": 1.1,
+      "treads": 16,
+      "tread": "plate-steel",
+      "rail": "trim"
+    },
+    {
+      "part": "prop",
+      "at": [
+        -7.574,
+        0.5,
+        5.374
+      ],
+      "size": [
+        0.34,
+        1,
+        0.34
+      ],
+      "material": "trim",
+      "shape": "cylinder"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.374,
+        4.05,
+        5.374
+      ],
+      "size": [
+        1.4,
+        0.07,
+        0.3
+      ],
+      "material": "lamp-cool",
+      "cast": {
+        "intensity": 30,
+        "distance": 14,
+        "decay": 1.8
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -3.474,
+        2.5,
+        3.474
+      ],
+      "size": [
+        0.3,
+        0.05,
+        0.18
+      ],
+      "material": "lamp-warm",
+      "rot": 0.7853981633974483,
+      "cast": {
+        "intensity": 8,
+        "distance": 6,
+        "decay": 1.8,
+        "color": 14198368
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -5.374,
+        2.95,
+        2.374
+      ],
+      "size": [
+        1.1,
+        0.08,
+        0.22
+      ],
+      "material": "lamp-warm",
+      "cast": {
+        "intensity": 14,
+        "distance": 6,
+        "decay": 1.8,
+        "color": 16765088
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -7.474,
+        2.85,
+        7.474
+      ],
+      "size": [
+        1.1,
+        0.08,
+        0.22
+      ],
+      "material": "lamp-warm",
+      "rot": -0.7853981633974483,
+      "cast": {
+        "intensity": 14,
+        "distance": 6,
+        "decay": 1.8,
+        "color": 16765088
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -8.424,
+        1.8,
+        5.374
+      ],
+      "size": [
+        0.18,
+        0.06,
+        0.12
+      ],
+      "material": "lamp-warm",
+      "rot": 1.5707963267948966,
+      "cast": {
+        "intensity": 4,
+        "distance": 3.5,
+        "decay": 1.8,
+        "color": 16766380
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "light",
+      "at": [
+        -8.174,
+        3.35,
+        4.824
+      ],
+      "size": [
+        0.18,
+        0.06,
+        0.12
+      ],
+      "material": "lamp-warm",
+      "rot": 1.5707963267948966,
+      "cast": {
+        "intensity": 4,
+        "distance": 3.5,
+        "decay": 1.8,
+        "color": 16766380
+      },
+      "room": "TOWER-CORE"
+    },
+    {
+      "part": "drum",
+      "at": [
+        -5.374,
+        -0.005,
+        5.374
+      ],
+      "radius": 11.5,
+      "height": 1.1,
+      "segments": 72,
+      "thickness": 0.2,
+      "wall": "concrete",
+      "floor": "concrete-worn",
+      "ceiling": null
+    },
+    {
+      "part": "drum",
+      "at": [
+        -5.374,
+        -3,
+        5.374
+      ],
+      "radius": 9.8,
+      "height": 11,
+      "segments": 72,
+      "thickness": 0.2,
+      "wall": "concrete",
+      "floor": "concrete",
+      "ceiling": null,
+      "gaps": [
+        {
+          "from": 175,
+          "to": 275
+        },
+        {
+          "from": 15,
+          "to": 75
+        }
+      ]
+    },
+    {
+      "part": "prop",
+      "at": [
+        -4.794,
+        4,
+        12.009
+      ],
+      "size": [
+        6.28,
+        8,
+        0.2
+      ],
+      "material": "concrete",
+      "rot": -1.484
+    },
+    {
+      "part": "prop",
+      "at": [
+        -12.009,
+        4,
+        4.794
+      ],
+      "size": [
+        6.28,
+        8,
+        0.2
+      ],
+      "material": "concrete",
+      "rot": -3.229
+    },
+    {
+      "part": "pipe",
+      "path": [
+        [
+          -1.475,
+          1.3,
+          16.086
+        ],
+        [
+          -2.423,
+          1.3,
+          16.386
+        ],
+        [
+          -3.394,
+          1.3,
+          16.601
+        ],
+        [
+          -4.38,
+          1.3,
+          16.731
+        ],
+        [
+          -5.374,
+          1.3,
+          16.774
+        ],
+        [
+          -6.368,
+          1.3,
+          16.731
+        ],
+        [
+          -7.354,
+          1.3,
+          16.601
+        ],
+        [
+          -8.325,
+          1.3,
+          16.386
+        ],
+        [
+          -9.273,
+          1.3,
+          16.086
+        ],
+        [
+          -10.192,
+          1.3,
+          15.706
+        ],
+        [
+          -11.074,
+          1.3,
+          15.247
+        ],
+        [
+          -11.913,
+          1.3,
+          14.712
+        ],
+        [
+          -12.702,
+          1.3,
+          14.107
+        ],
+        [
+          -13.435,
+          1.3,
+          13.435
+        ],
+        [
+          -14.107,
+          1.3,
+          12.702
+        ],
+        [
+          -14.712,
+          1.3,
+          11.913
+        ],
+        [
+          -15.247,
+          1.3,
+          11.074
+        ],
+        [
+          -15.706,
+          1.3,
+          10.192
+        ],
+        [
+          -16.086,
+          1.3,
+          9.273
+        ],
+        [
+          -16.386,
+          1.3,
+          8.325
+        ],
+        [
+          -16.601,
+          1.3,
+          7.354
+        ],
+        [
+          -16.731,
+          1.3,
+          6.368
+        ],
+        [
+          -16.774,
+          1.3,
+          5.374
+        ],
+        [
+          -16.731,
+          1.3,
+          4.38
+        ],
+        [
+          -16.601,
+          1.3,
+          3.394
+        ],
+        [
+          -16.386,
+          1.3,
+          2.423
+        ],
+        [
+          -16.086,
+          1.3,
+          1.475
+        ]
+      ],
+      "radius": 0.05,
+      "material": "handrail",
+      "elbow": 1
+    },
+    {
+      "part": "sea",
+      "level": -500,
+      "radius": 40000
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.602,
+        -0.04,
+        2.602
+      ],
+      "size": [
+        0.8,
+        0.08,
+        1.66
+      ],
+      "material": "concrete",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.602,
+        2.44,
+        2.602
+      ],
+      "size": [
+        0.8,
+        0.08,
+        1.66
+      ],
+      "material": "ceiling",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        -3.161,
+        1.2,
+        2.044
+      ],
+      "size": [
+        0.8,
+        2.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.044,
+        1.2,
+        3.161
+      ],
+      "size": [
+        0.8,
+        2.4,
+        0.08
+      ],
+      "material": "wall-panel",
+      "rot": 0.785
+    },
+    {
+      "part": "prop",
+      "at": [
+        -2.857,
+        2.45,
+        2.857
+      ],
+      "size": [
+        0.08,
+        0.1,
+        1.5
+      ],
+      "material": "wall-panel",
+      "rot": 0.785
+    }
+  ]
+}
