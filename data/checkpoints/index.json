@@ -19,6 +19,10 @@
   {
    "id": "microbe",
    "label": "Middle of Strip, face to face with the microbe: the laser in hand at setting 6"
+  },
+  {
+   "id": "aux-booth",
+   "label": "Auxiliary Booth, out of the computer: the Lab Office, the gas mask and the run to the cryo-elevator"
   }
  ]
 }
