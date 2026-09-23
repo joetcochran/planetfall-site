@@ -23,7 +23,7 @@ const obj = ctx => ctx.rarg === 'M-OBJECT';
 const is = (ctx, ...verbs) => verbs.includes(ctx.verb);
 
 // The colour COND shared by COMM-ROOM-F (M-END) and CHEMICAL-FLUID-F, keyed by CHEMICAL-REQUIRED.
-const CHEMICAL_COLORS = [null, 'red', 'blue', 'green', 'yellow', 'gray', 'brown', 'black'];
+const CHEMICAL_COLORS = [null, 'red', 'blue', 'green', 'yellow', 'gray', 'brown', 'pink'];
 const chemicalColor = g => CHEMICAL_COLORS[g.getg('CHEMICAL-REQUIRED')] ?? '';
 
 export const rooms = {
@@ -132,7 +132,7 @@ export const pseudos = {
     // though its flashing colour is the coolant puzzle's clue.
     if (obj(ctx) && is(ctx, 'EXAMINE')) {
       const done = g.getg('COMM-FIXED') || g.getg('COMM-SHUTDOWN');
-      g.tell("It's a panel of small coloured lights: red, blue, green, yellow, gray, brown and black. " + (done || !chemicalColor(g) ? 'All of them are dark.' : `The ${chemicalColor(g)} one is flashing.`));
+      g.tell("It's a panel of small coloured lights: red, blue, green, yellow, gray, brown and pink. " + (done || !chemicalColor(g) ? 'All of them are dark.' : `The ${chemicalColor(g)} one is flashing.`));
       return true;
     }
     if (!obj(ctx) || !is(ctx, 'LOOK-INSIDE', 'PUSH', 'MOVE')) return false;

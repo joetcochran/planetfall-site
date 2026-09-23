@@ -451,6 +451,17 @@ export const menus = {
   'MINI-CARD': [{ verb: 'TAKE', when: g => !g.fsetP('MINI-CARD', 'NDESCBIT') }],   // seen through the window it is "in the next room"
 };
 
+// Drawn things hidden for now (parser.isVisible). THE MINI CARD IS NOT DRAWN WHILE IT IS "IN THE NEXT ROOM". Canon
+// defines it IN BIO-LOCK-EAST from the start (comptwo.zil 1571-1580, TAKEBIT NDESCBIT INVISIBLE), standing for the
+// card seen through the window into the Bio Lab: NDESCBIT there means "It's in the next room." (MINI-CARD-F,
+// 1582-1585). The game logic is right, but the drawing read the id's location literally and, from the moment Floyd
+// peers in (INVISIBLE cleared above), put the card on a drop anchor at the player's feet -- a card they could see and
+// click and not take (playtests/2026-09-23 items 19-20; the user: "it shouldnt actually print until AFTER he comes
+// out and does his death scene"). It is drawn from Floyd's death on, which clears NDESCBIT and drops it (I-FLOYD-FORAY
+// above; comptwo.zil 2029). The window is painted, so "not drawn" is the honest picture of a card beyond it. Typed,
+// every word still reaches MINI-CARD-F as before. The same per-object rule as lawanda.js's GOOD-BOARD in the robot hole.
+export const visible = { 'MINI-CARD': g => !g.fsetP('MINI-CARD', 'NDESCBIT') };
+
 // Two-object click-menu entries (see parser.usesFor): things go over the edge of the strip (STRIP-F THROW-OFF).
 export const uses = [
   { verb: 'THROW-OFF', prso: ['LASER', 'OLD-BATTERY', 'NEW-BATTERY', 'MINI-CARD', 'FOOD-KIT', 'CANTEEN'], prsi: ['STRIP'], label: 'Throw off the strip' },

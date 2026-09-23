@@ -31,7 +31,7 @@ const chemicalPours = (g, id) => g.tell(`The chemical pours all over the ${D(g, 
 const STRIP_DISSOLVES = 'The chemical drips all over the silicon strip, which immediately begins to dissolve. As it does so, you plunge into the void below.';   // STRIP-DISSOLVES (JIGS-UP)
 
 // COLOR-LTBL (compone.zil), indexed by a button's C-MOVE property, and the buttons' C-MOVE values.
-const COLOR_LTBL = [null, 'red', 'blue', 'green', 'yellow', 'gray', 'brown', 'black', 'clear', 'clear'];
+const COLOR_LTBL = [null, 'red', 'blue', 'green', 'yellow', 'gray', 'brown', 'pink', 'clear', 'clear'];
 const BUTTON_CMOVE = { 'RED-BUTTON': 1, 'BLUE-BUTTON': 2, 'GREEN-BUTTON': 3, 'YELLOW-BUTTON': 4, 'GRAY-BUTTON': 5, 'BROWN-BUTTON': 6, 'BLACK-BUTTON': 7, 'ROUND-WHITE-BUTTON': 8, 'SQUARE-WHITE-BUTTON': 9 };
 // BEAM-COLOR (comptwo.zil), indexed by LASER-SETTING.
 const BEAM_COLOR = [null, 'red', 'orange', 'yellow', 'green', 'blue', 'violet'];

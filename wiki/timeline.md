@@ -377,3 +377,20 @@ A dated list of the events that shaped the remake, one line each, with the commi
 | 12:13 | **The dark slabs in the elevator doorways are the page drawing fabric over paintings that never declared the door shut; fixed in data, accepted rooms byte-identical** | mail 20260922-161322-dev-0851 |
 | 12:22 | Three tool fixes the user approved: a state is not a view, a busy build folder is left whole, masks are not in front | d18fe697 |
 | 12:36 | **Accepted rooms reach 88 of 105 on the dashboard, nineteen of them accepted on this day** | `wwwroot/data/room-status.json` |
+
+## 22 September evening to 23 September: the user plays it to the end
+
+| When | Event | Record |
+|---|---|---|
+| 22 Sep 15:05 | "Play from here": the review page drops the user into the game in the room under review | a8c5fdb7 |
+| 22 Sep 18:48 | **Every planned view is painted: 863 of 863, the Library's ceiling last** | 47cdf362 |
+| 22 Sep 19:26 | The Conference Room's table becomes long in the ZIL itself, the first edit to Infocom's text for the sake of a picture | 304ab4c2 |
+| 22 Sep 21:29 | **The public site is found stale, every release since the last good Pages build having failed while reporting success; the build machine's disk is freed and the release waits for the workflow** | 88db0df9 |
+| 22 Sep 21:40 | A room with one eye by design may say so (`metadata.singleView`), and the site publishes with 109 rooms | 6534ef8f |
+| 23 Sep 06:59 | The Comm Room is accepted; checkpoints are born, so a playtest can start at the Comm Room door | 4cf99e5b, b5a5e3a9 |
+| 23 Sep 07:12 | Releases send only what changed and fetch only the art the site hangs: 18 minutes to about five | c4df9c2e |
+| 23 Sep 07:21 | The first sparse release fails safely: Linux cut the art list at 64 KB | adca7f6e |
+| 23 Sep 07:39 to 08:47 | Five more checkpoints, each at the user's request; every checkpoint starts fed, rested and well | 73a416d8 to 777488a4 |
+| 23 Sep morning | **The user reaches the ending as a clicker: 74 of 80, Cluster Admiral** | the note to the historian; the same score as the checkpoint route to the ending (7b06d7c8) |
+| 23 Sep 09:08 | The user triages 25 playtest items: click fixes checked by real clicks, one lit-sign style, pink for black | 9b969ec9 |
+| 23 Sep | The deviations from the original are gathered on one page, at the user's request | [Where we left the original](canon-deviations.md) |

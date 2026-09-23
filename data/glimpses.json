@@ -1,0 +1,26 @@
+{
+  "note": [
+    "The narrow glimpse (scene/glimpse.js; the user's triage of 2026-09-23, playtests/2026-09-23/PLAYTEST-LOG.md item 25): the four Bio Lab mutants drawn in the NEXT room, seen through the opening, in exactly two places of the final chase. Keyed by the room the player stands in, then by the neighbour. Nothing else is drawn through any opening; PLAN-FLOYD-IN-A-GLIMPSE.md is the general feature and stays parked.",
+    "offset: the neighbour's frame in the viewing room's frame, ROOMS[N].at - ROOMS[R].at in scripts/fabric-lawanda.mjs (BIO-LOCK-EAST is LAB.BLE, 4.9 + 2 = 6.9 m east of LAB.BLW; the Projcon Office is D(PROJCON-OFFICE) + 2T + D(CRYO-ELEVATOR) = 7.16 m north of the car). scripts/tests/glimpse.mjs holds each one to the neighbour's bay and lamp in the shipped scene.",
+    "spots: floor points in the NEIGHBOUR's frame for the actors its package does not place. BIO-LOCK-EAST's package places all four mutants in the lab-door lane (its actors), so it needs none. PROJCON-OFFICE's places only Floyd; at step 292 the mutants are on the player's heels toward the elevator mouth in the south wall (z +4.0, 3.2 m wide), and at 293 the door shuts 'The elevator door closes just as the monsters reach it!' (globals.zil 2661), so they stand in a knot 1.3 to 3.2 m inside the office from that mouth, the rat-ant nearest, the triffid -- the slowest -- last, all inside the mouth's width so the jambs cut the outer two."
+  ],
+  "BIO-LOCK-WEST": {
+    "BIO-LOCK-EAST": {
+      "offset": [6.9, 0, 0],
+      "actors": ["RAT-ANT", "TRIFFID", "TROLL", "GRUE"]
+    }
+  },
+  "CRYO-ELEVATOR": {
+    "PROJCON-OFFICE": {
+      "offset": [0, 0, -7.16],
+      "when": "CRYO-ELEVATOR-DOOR has OPENBIT and CRYO-SCORE-FLAG != true",
+      "actors": ["RAT-ANT", "TRIFFID", "TROLL", "GRUE"],
+      "spots": {
+        "RAT-ANT": [-0.2, 0, 2.7],
+        "GRUE": [0.9, 0, 2.3],
+        "TROLL": [-1.1, 0, 1.7],
+        "TRIFFID": [0.5, 0, 0.8]
+      }
+    }
+  }
+}

@@ -887,6 +887,14 @@ const PARTS = {
     const b = (s.facing ?? 0) * Math.PI / 180;
     mesh.rotation.y = onWall ? Math.atan2(Math.sin(b), -Math.cos(b)) : Math.atan2(ex - ax, ez - az);
     if (onWall) mesh.renderOrder = 22;             // over the painting and any deck decal, like a decal
+    // `blinkPeriod` (seconds) makes it a lamp that is flashing: the Comm Room's enunciator, "A <colour> colored
+    // light is flashing" (compone.zil 2869). A slow, eased blink, not a strobe -- it fades up, holds, fades out and
+    // holds dark, the painted lens showing through while it is off. Absent, nothing here is touched.
+    if (s.blinkPeriod > 0) {
+      const period = s.blinkPeriod * 1000;
+      mesh.userData.blinkPeriod = s.blinkPeriod;
+      mesh.onBeforeRender = () => { mat.opacity = blinkLevel(performance.now(), period); };
+    }
     return mesh;
   },
 
@@ -1208,6 +1216,15 @@ const MASK_MATERIAL = new THREE.MeshBasicMaterial({
 // Build a room's scenery. Returns one group; the caller adds it under everything pickable.
 // `parts` is the array from data/scenes/<ROOM>.json. A part with an unmet `when` is simply not built, and a part
 // naming something the kit has no builder for is skipped and reported, never thrown.
+// A slow blink's brightness at `ms` for a period of `periodMs`: 1 at the start of each period, 0 half way, eased
+// between (smoothstep over the middle half of each ramp) so it dwells lit and dwells dark.
+export function blinkLevel(ms, periodMs) {
+  const phase = ((ms % periodMs) + periodMs) % periodMs / periodMs;
+  const tri = Math.abs(2 * phase - 1);             // 1 at the period's start and end, 0 at its middle
+  const t = Math.min(1, Math.max(0, (tri - 0.25) / 0.5));
+  return t * t * (3 - 2 * t);
+}
+
 export function buildParts(g, parts = [], ctx = {}) {
   const group = new THREE.Group();
   const missing = [];

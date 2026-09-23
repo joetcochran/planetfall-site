@@ -1,6 +1,6 @@
 // Game bootstrap: loads world.json, creates the engine, the 3D view and the UI, and routes actions.
 import { Game } from './engine/core.js';
-import { parse, addVocabulary, resolve, VERB_LABELS, verbLabel, numberEntry, putInto, throwAt } from './engine/parser.js';
+import { parse, addVocabulary, resolve, VERB_LABELS, verbLabel, numberEntry, putInto, throwAt, isVisible } from './engine/parser.js';
 import { rules } from './rules/index.js';
 import { View } from './scene/view.js';
 import * as THREE from 'three';
@@ -9,7 +9,8 @@ import { designOverrides, packageImage } from './scene/design.js';
 import { lighting } from './scene/lighting.js';
 import { fitTextures } from './scene/textures.js';
 import { turnFor, pickVariants, partsForTurn } from './dashboard/turn.js';
-import { when } from './scene/parts.js';
+import { when, buildParts } from './scene/parts.js';
+import { glimpseParts } from './scene/glimpse.js';
 import { UI } from './ui/ui.js';
 import { applyCheckpoint } from './engine/checkpoint.js';
 
@@ -25,6 +26,9 @@ const view = new View(document.querySelector('#view'));
 // Character cutouts (data/characters.json): one flat picture per actor, hung where the room puts him. Absent or
 // unreadable, every actor stays the graybox box it was, so the game does not depend on any of it existing.
 const characters = await fetch('./data/characters.json').then(r => r.ok ? r.json() : {}).catch(() => ({}));
+// The narrow glimpse (scene/glimpse.js, data/glimpses.json): the Bio Lab mutants seen one room behind in the final
+// chase, and nothing else. Absent or unreadable, nothing is ever drawn through an opening, as before.
+const glimpses = await fetch('./data/glimpses.json').then(r => r.ok ? r.json() : {}).catch(() => ({}));
 const sceneCache = new Map();
 // data/scenes/index.json lists the rooms that have an override file, so only those are fetched and a room
 // without one never produces a 404 in the console. Without a manifest every room is probed once.
@@ -146,6 +150,16 @@ async function renderNow() {
   if (g.state.here !== room) return;               // the player moved on while the paintings loaded
   built = buildRoom(g, overrides, { loadTexture, resolveImage: p => packageImage(packages, viewRoom, p), fixtures: look.fixtures, characters });
   if (turn?.plates?.length && !turn.whole) fitTextures(built.group);
+  // Who is in the next room, seen through the opening -- only the pairs data/glimpses.json lists, only from the room's
+  // own eye (not an art room's). No plate, no pick target: added to the group, never registered. Over a painting it
+  // is drawn with the things that move (renderOrder 20, graybox.js register), after the depth-only masks that cut it.
+  const far = viewRoom === room ? glimpseParts(g, { room, table: glimpses, design, characters, eye: built.eye, when, visible: isVisible }) : [];
+  if (far.length) {
+    const glimpse = buildParts(g, far, { loadTexture }).group;
+    if ((overrides.parts ?? []).some(p => p?.part === 'plate' || p?.part === 'panorama')) glimpse.traverse(m => { m.renderOrder = 20; });
+    glimpse.userData.glimpse = far.map(p => p.glimpse);
+    built.group.add(glimpse);
+  }
   view.setLighting(look);
   // Before setRoom, so the first frame of a new room is already aimed. Only where paintings were actually hung: a
   // room showing its graybox has nothing to be turned away from, and must stay free to look round. The plate's own

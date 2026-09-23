@@ -1,0 +1,137 @@
+# Where we left the original
+
+This remake is a hand port of Infocom's 1983 *Planetfall*. Its first rule was to copy the original's routines and text word for word. Its second rule, set by the user on 10 September at 12:49, allowed exceptions: "a little bit of common sense deviation from the source makes sense. we don't have to stay 100% true if gameplay would be significantly improved." This page lists every deliberate deviation in one place: what the original does, what this port does instead, why, and who decided. On 23 September the user asked for it: "i think a whole article discussing all the different canon deviations we have made would be nice".
+
+## How a deviation is made and marked
+
+A deviation starts as a problem that a player ran into. Most came from the blind playtest rounds of 10 to 18 September (see [Playing it](playing-it.md)), and the rest from the user's own play and reviews. Norm sorts each round's findings into three kinds: A, a fix that is faithful or only changes the interface; B, a departure from the original, which needs the user's approval; and C, leave it as the original. Then Norm waits for the user. Every B that is approved is marked in the code with a comment that begins `Deliberate deviation (user decision, <date>, <round>)` and says what the source does and why this differs (HANDOFF.md 460-461). There are about ninety such comments in the engine, the rule modules and the page: 25 dated 10 September, 32 dated 11 September, 17 dated 12 September, and a few on each day from 16 to 18 September. Most have a test that pins them.
+
+Three kinds of change are **not** deviations, and they are kept apart below:
+
+- **Fixes to the port.** Where the port did something the source does not, correcting it is fidelity. An example is the lamp that lit nothing ([The port](the-port.md)).
+- **Interface.** Some things a browser game has to do differently from a 1983 interpreter, such as saving without a file.
+- **Presentation.** Most of the pictures, lamps, plates and signs are drawn from what the text already says, and change nothing a typing player would read. Some go beyond the text, and those are listed here, apart from the changes to the game itself.
+
+File references are to `wwwroot/` for the game and to `source/` for Infocom's ZIL. "Round" means a playtest round.
+
+## Infocom's own sentences, changed
+
+These are the few places where the original's own words were changed or replaced, and not just added to. Only two are edits to the ZIL source itself.
+
+| Change | The original | Why | Decided | Where |
+|---|---|---|---|---|
+| A typo corrected: "The is the second half of the sterilization chamber" reads "This is" | comptwo.zil 1705 | A plain error in the original | The user, 11 Sep, round nine | `rules/biolab.js:486` |
+| The escape pod's viewport no longer "polarizes" into "a featureless black rectangle" | The window is black from turn 2 to turn 9, exactly the turns when the descent could be seen | "The polarizing existed to excuse a window a 1983 parser could not draw; this port draws it" | The user, 16 Sep, DR-112 | `rules/ship.js:453` |
+| Underwater describes the depth you are at, in four stages | One description for a one-move room, which was reprinted at every stage of the new climb, even "at the surface" | A tester stopped at the surface to LOOK and drowned | The user, 18 Sep, rounds fourteen and sixteen | `rules/ship.js:253` |
+| The Computer Room's "glowing red light" is described as dark once the computer is fixed | Fixed text, whatever the state | The painting turns the light off, so the text had to follow | The user, 18 Sep | `rules/connectors.js:271`, `:495` |
+| **The Conference Room's round table is long.** "almost filled by a long conference table", and ROUND is gone from the table's words | compone.zil 247, "round"; globals.zil 178 | The round table took eight rounds of painting and never came right ([The Conference Room table](the-conference-table.md)). The user: "conf room - work up a rectangular table" (22 Sep). The first ZIL edit made for the sake of a picture | The user, 22 Sep | compone.zil 247 and globals.zil 178, re-extracted (304ab4c2); `PLAN-CONFERENCE-ROOM-TABLE.md`. The repaint waits until every other room is accepted |
+| **Colour 7 of the chemical puzzle is pink, not black**, on the enunciator and the dispenser, in every sentence that names it. BLACK is not kept as a word | compone.zil 1657, 1748-1750, 1783, 2867, 3022 | A black light does not read as lit. The user: "i want to change this to PINK to make it more obvious what color is being asked for (this also affects the chemical dispenser AND canon text"; at triage, "Pink only" | The user, 23 Sep, playtest item 8 | **In progress when this page was written.** The ZIL lines were edited but not yet committed, the port's own colour lists (`rules/lower.js`, `rules/tower.js`) still said black, and Greg was asked to paint the button pink (mail 20260923-131217-dev-0892). The Lab's "black button" for the lights is a different object and stays |
+
+## The words the game understands
+
+The original's dictionary lacks some words that its own text uses. A player types a word the game has just printed and is told it is not known. Each addition below maps new words onto a routine the source already has, so no new behaviour is invented.
+
+| Words added | Why | Decided | Where |
+|---|---|---|---|
+| "ask Floyd about X" and "tell Floyd about X", where X may be anything seen anywhere | The source has no topics. Every typing tester tried it | 10 Sep, round five | `engine/parser.js:214`, `rules/floyd.js:508` |
+| "put bar in crevice" lowers the magnet, as "get key with bar" does | The tester took "You can't do that." for a wrong idea rather than a wrong phrasing | 11 Sep, round six | `rules/connectors.js:183` |
+| "press 21" at a keyboard types it | The source answers "You probably want to use the TYPE command" | 11 Sep, round nine | `rules/kalamontee.js:618` |
+| SIGN at the Lawanda Platform; ISLAND and DOORS at the Observation Deck and the Helicopter; "Kalamontee map" and "Lawanda map"; "robot-like devices" | Things the room text shows that answered "You can't see any ... here!" | 11 Sep, rounds eight to ten | `rules/lawanda.js:475`, `rules/tower.js:83`, `rules/kalamontee.js:440` |
+| ACID and BAAS on the dispenser's buttons; "message playback" | "press acid button" failed in a room whose whole puzzle is reading labels | 11 Sep, round ten | `rules/lower.js:426` |
+| "display", "center" and "middle" on the shuttle's panel, and "set lever to center" | "A control panel contains a slot, a lever, and a display", on the one panel that must be worked precisely | 12 Sep, rounds eleven and twelve | `rules/connectors.js:316`, `:510` |
+| "call librarian" gets an answer (there is none) | The index terminal's only instruction came back as an unknown word | 12 Sep, round eleven | `rules/lawanda.js:478` |
+| "cut" and "slice" with the laser | The natural verbs for a laser | 12 Sep, round twelve | `rules/lower.js:443` |
+| "press up" and "press down" in an elevator | The panel's own words came back as "What do you want to press?" | 12 Sep, round twelve | `rules/connectors.js:664` |
+| STORY, for Floyd's "Tell Floyd a story?" He gets no story, because the source has none | A tester answered him four times and decided the parser was broken | 12 Sep, round twelve | `rules/floyd.js:373` |
+| "wait until morning" says plainly that WAIT is one turn | It used to drop the last words and answer "Time passes...", which looked like it had worked | 12 Sep, round eleven | `engine/parser.js:138` |
+| "enter the transport" at the shuttle | The platform's own word for it | 18 Sep, round nineteen | `rules/lower.js:431` |
+
+## Rules and timing
+
+These change what happens, not only what is said. The pattern is the same throughout: the source had a dead end that a player could not see coming, or a clock that punished something other than play.
+
+| Change | The original | Why | Decided | Where |
+|---|---|---|---|---|
+| The collapsed ladder is refused at the rift instead of dropped into it for good; a ladder bridging the rift cannot be collapsed | compone.zil 682-688: lost, unwarned, and it cuts off a wing of the map | The first approved deviation. Both blind playtests lost the run here | The user, 10 Sep, then round ten | `rules/kalamontee.js:294`, `:308` (bf7d1c5) |
+| Floyd can carry out orders in the dark | The dark stopped him as it stops the player | A robot has his own sensors | 11 Sep, round eleven | `engine/core.js:152` |
+| A card smeared by the magnet is re-recorded by the slot on the second try | Ruined for the rest of the game, and nothing said so | A silent state with no way back, against a single save slot | 11 Sep, round ten | `rules/kalamontee.js:120` |
+| The magnet warns for a turn before it smears a card | It smears the first card on the first turn, silently | Testers lost two cards in two commands | 11 Sep, rounds six and seven | `rules/lower.js:486` |
+| Once carded, an elevator stays enabled | The enable lapses after 180 and 200 time units, so every trip costs the card again | "pure tax" on the long round trip between food and work | 11 Sep, round ten | `rules/kalamontee.js:141-148` |
+| The flask survives a fumble | Dropping it empties it (verbs.zil 564-568) | A 24-move fetch, on a turn that itself cost nothing, and no word of what slipped | 11 Sep, round eleven | `engine/verbs.js:332` |
+| An unhooked padlock that is too heavy to carry is set down, and the game says so | It unhooks the padlock, then fails the take with "Your load is too heavy." | It read as if the padlock were still on the door | 11 Sep, round seven | `rules/kalamontee.js:244` |
+| The medicine's cure stops at zero and gives back strength per level cured | The sickness level can go below zero | A player dosed early read "a bit sick and feverish" from DIAGNOSE for ever after | 11 Sep, round six | `rules/lawanda.js:235` |
+| The chronometer counts minutes, and the survival clocks run on them | The source's own comments count minutes; the clocks ran on turns | Testers rationed commands while the long hall ate three hours a crossing | 11 Sep, round eleven | `engine/core.js:451` |
+| The last hunger warning gives 150 time units, not 50 | Two turns from warning to collapse | A tester read the warning, walked one room and died | 12 Sep, round eleven | `rules/survival.js:258` |
+| An emergency ration in the Lawanda Infirmary. It has no ZIL at all | There is no food anywhere in the Lawanda wing | A tester starved at turn 532 | 12 Sep, round eleven | `rules/lawanda.js:633` |
+| Once the shuttle's curfew has turned you away, a bunk takes you even if you are not tired | Sleep is refused until you are weary | A player reaching the platform at dusk could be shut out of half the game for a night | 12 Sep, round eleven | `rules/survival.js:7` |
+| SCORE costs no time, as SAVE already does not | It spent a turn | A tester checked the score during the mutant chase, which allows one turn per room, and was eaten | 12 Sep, round twelve | `engine/verbs.js:27` |
+| A lapsed teleport booth says it has lapsed, and the refusal costs no turn | Word for word the refusal for never having had the card | Testers wrote the network off as broken | 12 Sep, round twelve | `rules/kalamontee.js:395` |
+| **The escape pod, DR-112**: the safety web holds you from the explosion to the landing, and standing up is implicit | You could stand at any point and die at the landing. Getting out needed the word STAND | The whole descent is shown through the viewport while you are strapped in. The landing death "becomes unreachable, knowingly", and LOOK no longer stands you up | The user, 16 Sep | `rules/ship.js:44`; tests in `scripts/tests/pod.mjs` (b487d77) |
+| **The climb out of the water is in stages, and a turn spent climbing is free** | Three turns and one UP, with nothing to see | The user asked for a climb you can watch, "with the light improving as you rise", and chose to make the climb free rather than loosen the clock, "so the pressure stays exactly where the source put it, on dithering" | The user, 16 Sep | `rules/ship.js:180`; `scripts/play.mjs:89` |
+| The Tower Core's north exit checks where the car is, as the lobby's does | compone.zil 2731: a plain exit | With the car at the bottom, "north" at the top stepped into it and straight out into the lobby, a ride without the ride | The user, 17 Sep | `rules/connectors.js:383` |
+| Floyd, switched on while he still holds the lower elevator card, says now and then that he feels itchy; searching him produces it | The card came out only by a small random chance at card slots, 5% a use on day 2 | Rounds ten and thirteen stalled on it for hundreds of commands | 18 Sep, round thirteen | `rules/floyd.js:22` |
+
+Two things were deliberately **left** as the source has them in this group. The pod's escape window after the landing is one: correct play uses every turn of it, and one stray LOOK drowns you. Three ways of widening it were offered, and the user chose to leave it, so the code says not to widen it quietly ([The port](the-port.md)). The microbe on the strip is the other. The laser warms with each shot, and the game says so ("slightly warm", "quite hot", `rules/lower.js:321-329`). Held too hot, it drives the microbe into a lunge that takes you both over the edge (`rules/biolab.js:409-411`). The user died there on 23 September, by the account of the note that commissioned this page, and took it for bad luck. The hint is subtle, but the puzzle is fair, and nothing was changed.
+
+## What the player is told
+
+These are the most numerous. Each adds a line or a description, and leaves the source's own line in place. Where the source answers "nothing special", or prints nothing at all, a new sentence says only what the room text or the object's own words already imply.
+
+- **Descriptions for things that had none.** The magnet, the padlock (and the padlock once acid has fused it: "no key will ever turn in it again"), the conference door, the three goos (each smells of what it tastes of), the funnel-shaped hole, the helicopter, the enunciator panel and the Comm Room's lights. Round four and five decisions of 10 September; the fused padlock is from 12 September. `rules/lower.js:223`, `rules/kalamontee.js:200`, `:255`, `:258`, `rules/survival.js:182`, `rules/tower.js:45`, `:55`, `:131`, `rules/connectors.js:276`.
+- **Floyd by name.** Once he has introduced himself, the narrator and the menus call him Floyd, not "multiple purpose robot". A tester took the second name for a second robot (10 Sep, round four; `engine/core.js:64`, `rules/floyd.js:532`).
+- **Signs that something worked.** Switching on Floyd adds "you notice a faint hum from somewhere inside the robot" to "Nothing happens." (`rules/floyd.js:252`). An elevator announces its arrival and which side the door is on (`rules/connectors.js:28`). An elevator panel with no card adds that "The slot beside the buttons stays dark" (`:242`). A door or container that changed while you were away is reported when you come back (`engine/core.js:266`). Points scored show as a green notice over the view (`ui/ui.js:203`). All of these are from 10 and 11 September.
+- **The clocks explained.** DIAGNOSE says how long each survival clock has left, in hours (`engine/verbs.js:8`, `rules/survival.js:201`). The first hunger warning names DIAGNOSE. Each hunger warning points at food you can reach (`rules/survival.js:131`, `:252`). Tiredness warnings name the dormitories (`:222`, `:403`). A long walk says what it cost (`engine/verbs.js:237`). The status line names the part of the day (`engine/core.js:472`). The shuttle's recording names its hours, and on 18 September a notice under the Kalamontee platform sign gave them too, in the complex's phonetic spelling: "Shutul Servis: evree dae until 6000..." (`rules/connectors.js:350`, `rules/kalamontee.js:455`).
+- **What happened in your sleep.** On waking, the game says your things slipped to the floor, and whether the flask or an open canteen spilled. The source empties them without a word (10 Sep; round five for the spills; `rules/survival.js:321-324`).
+- **Why a take failed.** The weight refusal names what to drop (`engine/verbs.js:352`), and the uniform's pocket the first time the limit bites (`:364`). A fumble says the things together were too much (`:327`).
+- **Clues a 1983 player took for granted.** A sound card says it has a magnetic stripe, and a smeared card says so when examined (`rules/lower.js:473`, `:476`). The switched-off Floyd's compartments are mentioned (`rules/floyd.js:258`). The Lawanda map on the Plan Room wall points at the Lower Elevator (`rules/kalamontee.js:531`).
+- **Save and restore.** When a player dies with nothing saved, a note after the prompt says that "SAVE costs no time at all, and one would have spared you replaying all of this". The source's own line is untouched (11 Sep, round eleven; `engine/core.js:127`).
+- **Other additions.** VERBOSE is on from the start, where the original began in BRIEF (10 Sep; `engine/core.js:55`). The goo says it quenched your thirst too (`rules/survival.js:176`). The crag's exit button on a flooded day says it is the sea (`rules/ship.js:329`).
+
+## Clicks
+
+The click menus are the port's own invention, so most of what they do is interface. Four of them combine two ordinary turns into one click, which a typing player cannot do in one command:
+
+- "Wait for the elevator" (up to twelve ordinary waits, 11 Sep, round seven; `engine/core.js:460`);
+- "Open the canteen and drink" (18 Sep, round thirteen; `engine/parser.js:560`);
+- "Take the survival kit and eat", click only, since typing EAT keeps the source's refusal (18 Sep, round fourteen; `engine/parser.js:568`, `engine/core.js:400`);
+- "Drop all except..." (18 Sep, round fourteen; `ui/ui.js:57`);
+
+and, for a mouse player in the first half of the game, orders to Floyd (11 Sep, round ten; `rules/floyd.js:541`).
+
+## What the player sees
+
+The rooms are painted, and a painting has to decide things the text never says. Most of those decisions follow the text closely. The ones below go beyond it. None of them changes anything a typing player would read, but they do change what a clicking player sees.
+
+**Built:**
+
+- **Small things drawn three times their size.** Keys, cards, fuses and the rest are drawn at three times their size in the source. "A deliberate legibility deviation and not a reading of canon": at true size, 25 of 44 things stood under 20 pixels tall where they are usually dropped, and "the user has said three times over that things that small cannot be seen" (DR-117, 21 Sep; `data/characters.json`).
+- **Name plates** above the things you can click, which can be moved off what matters (`labelOffset`, 16 Sep).
+- **The shuttle's moving tunnel lights**, with the lever, the speed display and a darker grade while moving. These are overlays on the cabin paintings (093214c8, 18 Sep). The user, on 23 September: "a highly unexpected graphic display - very impressive!!"
+- **The long conference table**, once it is painted, and **the pink lamp and button**. Both follow the text edits above.
+
+**Decided on 23 September and being built as this page was written** (playtest triage, `playtests/2026-09-23/PLAYTEST-LOG.md`):
+
+- **Lit signs where a card switches something on.** They go in both elevator cars, the four shuttle cabins, Course Control, the Mini Booth and the teleport booths. There is one style for all of them, lettered in canon's phonetic spelling, for example *SHUTUL KUNTROOLS AKTIVAATID*. This was the user's own proposal: "light up a sign that says "shuttle controls activated" (following the same phonetic spellings as other signage has)". The words are new, though canon already has the opposite sign in the teleport booths, "Teleportaashun buux not aktivaatid" (globals.zil 1527). Course Control's sign, *KORS DIIVURJINS MINIMIIZEENG*, is canon's own words (comptwo.zil 522-539). Note for the two elevator cars: because of the round-ten deviation above, the port never lets their enable lapse, so their sign would never go out. The playtest log (items 4a and 7) assumed it would.
+- **The mutants glimpsed one room behind** in the final chase, but only at Bio Lock West and the Cryo-Elevator door.
+- **The Lab Office's buttons' name plates carry their painted labels**, such as red button "Eemurjensee Sistum". The words are canon's own, from the room description (comptwo.zil 2225-2238). Showing them on a plate is new.
+- **A click on a name plate opens that thing's menu.**
+- **Larger enunciator lamps with a slow blink.** Canon already says the light is "flashing" (compone.zil 2869).
+
+**Asked for and turned down:** a greyed-out Take that gives its reason (23 Sep).
+
+## Not the game: interface and testing
+
+- **Save and restore** keep one slot inside the game, where the original asked for a file. RESTART and QUIT point at the page's restart link instead of asking yes or no (`engine/verbs.js:113`, `:125`).
+- **Checkpoints refresh the player.** A checkpoint (born 23 September; see the [journal](journal.md)) is a real route of commands replayed to a position. On load, the player is set fed, rested and well, at the user's word: "every checkpoint should start me off with full health and sleep". The code says so: "Not in the source" (`rules/survival.js:352-364`). This happens only on a checkpoint load. No one playing from the start ever meets it.
+- **"Play from here"** (`?room=ID`, 22 Sep) drops a reviewer into a room, for checking continuity. It is not part of a game.
+
+## Asked for and left as the original
+
+Some proposals were declined, and they matter as much as the approvals. They include "take all" leaving out the magnet, a warning before the ending, and opening the kitchen door from inside (18 Sep, rounds thirteen and fourteen; HANDOFF-ARCHIVE.md, section 5b). The pod's escape window and the microbe are described above. The mini card that answers "It's in the next room." is canon's own shortcut, and the fix decided on 23 September is to stop drawing it until it really is in the room, not to change its text. The filled flask is milky white because that is what canon's EXAMINE says, and the user chose it: "flask color should always be milky white".
+
+## Where to look
+
+- The comments: `grep -rn "Deliberate deviation" wwwroot scripts`.
+- The rounds and their A, B and C lists: [Playing it](playing-it.md) and `HANDOFF-ARCHIVE.md`.
+- The escape pod's three deviations, in the order they were decided: the [journal](journal.md) for 16 September.
+- The 23 September playtest and its triage: `playtests/2026-09-23/PLAYTEST-LOG.md`, and the [journal](journal.md) entry for that day.

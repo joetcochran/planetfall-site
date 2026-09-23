@@ -70,3 +70,4 @@ This history follows the commits, the files, the request ledger, the mailbox and
 - [Timeline](timeline.md): one dated line per event, with commit hashes
 - [Journal](journal.md): the running history from 14 September on
 - [The Conference Room table](the-conference-table.md): one room's round table, eight rounds of painting, and the six lessons it cost to learn (15-19 September)
+- [Where we left the original](canon-deviations.md): every deliberate deviation from Infocom's *Planetfall* -- the words, the rules and timing, what the player is told, what the player sees, and the few edits to the original's own text -- with why, who decided, and where in the code; and what was proposed and left as the original

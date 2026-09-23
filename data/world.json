@@ -9,7 +9,7 @@
       "globals.zil": "a09085f4b2543b96ca2b62cbcbab3d6024964d8275ff6cb8aa26483b218a6509",
       "parser.zil": "9f1fe2de81e80bfcebe99ec4a9c816358e560510987ec69eecad4177760949c2",
       "verbs.zil": "0e40cda51c1c7b25ec705a8d4b5eaf39281fae5a841f5aa084627970644f67f7",
-      "compone.zil": "c35ef9aa6b5f30efe6649ee9d6dd0d1c3af0b686e82b62dafb310a1785f272b6",
+      "compone.zil": "89ae3baacd20ca7863896fc2ba8299af94a940b98c6e15c79e5bcf02703e3b7c",
       "comptwo.zil": "a0a7c46fe1e6f98150e1371bf4f01301f79542d16bd4dc74da540687e29f61a2"
     }
   },
@@ -4632,7 +4632,7 @@
           },
           {
             "type": "text",
-            "text": "The dispenser is lined with brightly-colored buttons. The first four buttons, labelled \"KUULINTS 1 - 4\", are colored red, blue, green, and yellow. The next three buttons, labelled \"KATALISTS 1 - 3\", are colored gray, brown, and black. The last two buttons are both white. One of these is square and says \"BAAS.\" The other white button is round and says \"ASID.\""
+            "text": "The dispenser is lined with brightly-colored buttons. The first four buttons, labelled \"KUULINTS 1 - 4\", are colored red, blue, green, and yellow. The next three buttons, labelled \"KATALISTS 1 - 3\", are colored gray, brown, and pink. The last two buttons are both white. One of these is square and says \"BAAS.\" The other white button is round and says \"ASID.\""
           },
           {
             "type": "break"
@@ -11600,7 +11600,7 @@
     },
     "BLACK-BUTTON": {
       "id": "BLACK-BUTTON",
-      "name": "black button",
+      "name": "pink button",
       "file": "compone.zil",
       "line": 1746,
       "location": "MACHINE-SHOP",
@@ -11611,7 +11611,7 @@
         "BUTTON"
       ],
       "adjectives": [
-        "BLACK"
+        "PINK"
       ],
       "flags": [
         "NDESCBIT"

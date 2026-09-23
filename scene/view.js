@@ -1,8 +1,9 @@
 // Fixed-viewpoint 3D view: the player stands at one spot in the room and drags to look around.
-// Clicks are raycast against the pickables the graybox builder registers.
+// Clicks are raycast against the pickables the graybox builder registers, and against their name plates.
 import * as THREE from 'three';
 import { setGrade, makeSkyMattesWith } from './grade.js';
 import { skyMatte } from './skymatte.js';
+import { pickWith, plateTargets, sampleGrid, judgeTarget, GRID } from './pickrule.js';
 
 // The grade finds the sky in each painting with a matte that needs a canvas to make, so the page -- the one place with
 // a DOM -- hands it the maker. Every view on the page shares it, like the grade itself.
@@ -230,14 +231,62 @@ export class View {
     });
     el.addEventListener('pointerleave', () => this.setHover(null));
   }
-  pick(e) {
+  // What a click at this point reaches. An object's name plate counts as the object (scene/pickrule.js says why) and,
+  // being drawn over everything, wins over whatever mesh is behind it.
+  pick(e) { return this.pickAt(e.clientX, e.clientY)?.pickable ?? null; }
+  pickAt(clientX, clientY) {
     const r = this.renderer.domElement.getBoundingClientRect();
-    this.ray.setFromCamera(new THREE.Vector2((e.clientX - r.left) / r.width * 2 - 1, -(e.clientY - r.top) / r.height * 2 + 1), this.camera);
-    const meshes = this.pickables.map(p => p.mesh);
-    const hit = this.ray.intersectObjects(meshes, true)[0];
-    if (!hit) return null;
-    let o = hit.object; while (o && !o.userData.pickable) o = o.parent;
-    return o ? o.userData.pickable : null;
+    this.ray.setFromCamera(new THREE.Vector2((clientX - r.left) / r.width * 2 - 1, -(clientY - r.top) / r.height * 2 + 1), this.camera);
+    return pickWith(this.ray, this.pickables, plateTargets(this.room, this.pickables));
+  }
+  // CAN A PLAYER CLICK IT? For the browser harness (scripts/browser.mjs), which used to open menus by id and so never
+  // met a thing it could not click. Turns to the pickable as the menu hook does, draws a frame so the camera and the
+  // plates are where a player would see them, projects the pickable's mesh to screen, and asks pickAt() -- the same
+  // code a real click runs -- about a grid of points across it. judgeTarget gives the verdict and the point to click;
+  // the harness then clicks there for real. Page coordinates, whole pixels, so the click lands where it was measured.
+  probe(p, { name = p.id ?? p.word ?? p.direction, n = GRID, minPx, minCover, nameOf = q => q.id ?? q.word ?? q.direction } = {}) {
+    this.setHover(null);
+    this.faceTowards(p.position);
+    this.render();
+    const r = this.renderer.domElement.getBoundingClientRect(), cam = this.camera;
+    p.mesh.updateWorldMatrix(true, true);
+    const box = new THREE.Box3().setFromObject(p.mesh);
+    let rect = null;
+    if (!box.isEmpty()) {
+      let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity, behind = 0;
+      for (let i = 0; i < 8; i++) {
+        const v = new THREE.Vector3(i & 1 ? box.max.x : box.min.x, i & 2 ? box.max.y : box.min.y, i & 4 ? box.max.z : box.min.z);
+        if (v.clone().applyMatrix4(cam.matrixWorldInverse).z > -cam.near) { behind++; continue; }
+        v.project(cam);
+        const sx = r.left + (v.x + 1) / 2 * r.width, sy = r.top + (1 - v.y) / 2 * r.height;
+        x0 = Math.min(x0, sx); x1 = Math.max(x1, sx); y0 = Math.min(y0, sy); y1 = Math.max(y1, sy);
+      }
+      if (behind === 8) x0 = Infinity;
+      else if (behind) { x0 = r.left; y0 = r.top; x1 = r.right; y1 = r.bottom; }   // straddles the eye: take the screen
+      const cx0 = Math.max(x0, r.left), cy0 = Math.max(y0, r.top), cx1 = Math.min(x1, r.right), cy1 = Math.min(y1, r.bottom);
+      if (cx1 > cx0 && cy1 > cy0) rect = { x: cx0, y: cy0, w: cx1 - cx0, h: cy1 - cy0 };
+    }
+    const own = new THREE.Raycaster();
+    const samples = rect ? sampleGrid(rect, n).map(({ x, y }) => {
+      x = Math.round(x); y = Math.round(y);
+      const got = this.pickAt(x, y);
+      own.setFromCamera(new THREE.Vector2((x - r.left) / r.width * 2 - 1, -(y - r.top) / r.height * 2 + 1), cam);
+      const on = own.intersectObject(p.mesh, true).length > 0;
+      const reached = got?.pickable === p;
+      return { x, y, on, reached, by: reached || !got ? null : nameOf(got.pickable), plate: got?.via === 'plate' };
+    }) : [];
+    // Its own plate, reported beside the verdict: showing or dropped for a crowd, and whether a click on it reaches it.
+    let plate = null;
+    const mine = p.kind === 'object' ? plateTargets(this.room, this.pickables).find(t => t.pickable === p) : null;
+    if (p.kind === 'object') {
+      if (!mine) plate = { shown: false, reaches: false };
+      else {
+        const v = mine.sprite.getWorldPosition(new THREE.Vector3()).project(cam);
+        const sx = Math.round(r.left + (v.x + 1) / 2 * r.width), sy = Math.round(r.top + (1 - v.y) / 2 * r.height);
+        plate = { shown: true, reaches: this.pickAt(sx, sy)?.pickable === p, at: [sx, sy] };
+      }
+    }
+    return { ...judgeTarget({ name, rect, samples, plate, minPx, minCover }), rect };
   }
   setHover(p) {
     if (p === this.hover) return;

@@ -96,6 +96,8 @@ On 10 September at 12:49 the user set a rule that has shaped the port ever since
 
 The same conversation left one thing alone. After the landing the pod sinks, and correct play uses every turn of the escape window: one stray LOOK drowns you. Three ways of widening it were offered, and the user chose to leave it exactly as the source has it, so the code says so and says not to widen it quietly.
 
+Every deviation, up to and including the playtest of 23 September, is gathered on one page: [Where we left the original](canon-deviations.md).
+
 ## The world map today
 
 `map.html`, `layout.js` and `layout.json` have not changed since the baseline commit bd88341. `check_layout.mjs` still places all 105 rooms with no shared cells and 13 exits off the grid. One task in `HANDOFF.md` is still open: tightening the region anchors so that elevator shafts run vertically and the shuttle tunnel joins its two platforms. The work moved on to playtesting and graphics.
