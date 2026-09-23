@@ -116,9 +116,20 @@ let builtRoom = null;
 // scene still the Mess Corridor's three turns after walking into Storage West (2026-09-18, under a render).
 // planetfall.settled() is the condition to wait on; drawnRoom() alone cannot see a same-room render.
 let rendering = 0;
+// A loading spinner while a room's paintings load (the user, 2026-09-23: "a loading spinner ... the 'planetfall guy'
+// head" -- the favicon's own picture, assets/ui/loading-head.png). Shown only when a render outlasts a quarter of a
+// second, so a quick step never flashes it; hidden as soon as no render is in flight.
+const loadingEl = Object.assign(document.createElement('div'), { id: 'loading', hidden: true, role: 'status', ariaLabel: 'Loading the room' });
+loadingEl.innerHTML = '<div class="ring"></div><img src="assets/ui/loading-head.png" alt="">';
+document.querySelector('#view').appendChild(loadingEl);
+let loadingTimer = null;
 async function render() {
   rendering++;
-  try { await renderNow(); } finally { rendering--; }
+  if (!loadingTimer) loadingTimer = setTimeout(() => { if (rendering) loadingEl.hidden = false; }, 250);
+  try { await renderNow(); } finally {
+    rendering--;
+    if (!rendering) { clearTimeout(loadingTimer); loadingTimer = null; loadingEl.hidden = true; }
+  }
 }
 async function renderNow() {
   const room = g.state.here;
