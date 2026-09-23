@@ -256,7 +256,22 @@ export function buildRoom(g, overrides = {}, ctx = {}) {
       if (host) spot.set(id, host);
     }
   }
-  const loose = ids.filter(id => here.includes(id) && !ownPlace(id) && g.objects[id].flags.includes('TAKEBIT') && !g.objects[id].flags.includes('ACTORBIT'));
+  // A place a thing in the room keeps for WHATEVER A GLOBAL NAMES (`placeFor: { global, at }`): the Machine Shop's
+  // spout. PUT FLASK UNDER DISPENSER moves the flask into the room, not into the dispenser, and sets SPOUT-PLACED to
+  // it (compone.zil 1680-1690; rules/lower.js), so `contentsAt` cannot reach it and it fell to the drop anchors, at
+  // the player's feet (playtest 2026-09-23, item 10). `at` is a foot point whose height is kept (the grate's top);
+  // it holds while the host is in the room and the named thing lies loose in it, and taking the thing frees it,
+  // because taking resets the global (engine/verbs.js ITAKE). Checked before the drop anchors, so the thing takes
+  // none; every room without the field is untouched.
+  const placedFoot = new Map();
+  for (const [host, o] of Object.entries(overrides.objects ?? {})) {
+    const pf = o?.placeFor;
+    if (!pf?.global || !Array.isArray(pf.at) || !ids.includes(host)) continue;
+    const id = g.getg(pf.global);
+    if (typeof id !== 'string' || id === host || !here.includes(id) || ownPlace(id) || spot.has(id)) continue;
+    spot.set(id, pf.at); placedFoot.set(id, Number(pf.at[1]) || 0);
+  }
+  const loose = ids.filter(id => here.includes(id) && !ownPlace(id) && !placedFoot.has(id) && g.objects[id].flags.includes('TAKEBIT') && !g.objects[id].flags.includes('ACTORBIT'));
   const kept = anchorMemory.get(g.state.here) ?? new Map(); anchorMemory.set(g.state.here, kept);
   for (const [id, k] of kept) if (!loose.includes(id) || k >= anchors.length) kept.delete(id);
   const taken = new Set(kept.values());
@@ -328,7 +343,8 @@ export function buildRoom(g, overrides = {}, ctx = {}) {
     // ...unless the actor opts in to its authored height (actors.<ID>.anchorHeight): ESCALATOR's Floyd stands on a
     // tread 6.67 m up a 17.6 m shaft. Everywhere else foot is 0, so the placement is unchanged by construction.
     const a = overrides.actors?.[id];
-    const foot = a?.anchorHeight && Array.isArray(a.position) ? a.position[1] : 0;
+    // ...and a thing on a global's place (`placeFor`, above) stands at that place's own height: the spout's grate.
+    const foot = placedFoot.has(id) ? placedFoot.get(id) : a?.anchorHeight && Array.isArray(a.position) ? a.position[1] : 0;
     const p = ownPlace(id) ? new THREE.Vector3(...ownPlace(id)) : new THREE.Vector3(at[0], foot + size[1] / 2, at[2]);
     const mesh = art?.flat
       ? buildParts(g, [{ part: 'decal', image: art.image, at: [p.x, Math.max(0.005, p.y - size[1] / 2 + 0.004), p.z], size: [size[0], size[2]] }], ctx).group
@@ -360,7 +376,11 @@ export function buildRoom(g, overrides = {}, ctx = {}) {
     // The name plate sits above the thing's box, unless the room moves it: `labelOffset` in metres, negative to drop
     // it. Above is wrong wherever the player needs what is directly above -- the porthole over the pod's controls,
     // the key lying in the Admin Corridor's crevice.
-    const s = label(g.name(id), { size: 0.38 }); s.position.set(p.x, p.y + size[1] / 2 + 0.35 + (o?.labelOffset ?? 0), p.z);
+    // Its text is the game's name for it, unless the room's data gives the plate its own (`plateText`): the Lab
+    // Office's buttons read what is lettered on them -- "Eemurjensee Sistum", not "red button" -- because that
+    // lettering is the clue, painted too small to read (playtest 2026-09-23, item 24). Only the plate: the menu and
+    // the game's own text keep the game's name.
+    const s = label(o?.plateText ?? g.name(id), { size: 0.38 }); s.position.set(p.x, p.y + size[1] / 2 + 0.35 + (o?.labelOffset ?? 0), p.z);
     s.userData.labelFor = id;                      // so the plate of whatever the pointer is on always wins its place
     group.add(s);
     // Contents of open containers sit on top -- or, where the room says where a container shows what is in it
@@ -371,11 +391,25 @@ export function buildRoom(g, overrides = {}, ctx = {}) {
     // bottle, painted with the medicine at the bottom) keeps its contents clickable but draws nothing for them --
     // otherwise the medicine stood over the bottle as an olive box (the user, 2026-09-18).
     const pictured = !!ctx.characters?.[id]?.showsContents;
+    const shownInside = [];                        // the contents drawn, for their plates (below)
     if (g.seeInside(id)) g.contents(id).forEach((c, j) => {
       if (pictured) {
+        // Its pick box goes BEHIND the container's picture, not at its centre. At the centre half of the box stood in
+        // front of the picture's plane, so a third of the clicks on the filled flask opened the fluid's menu and a
+        // good share of those on the medicine bottle the medicine's (playtest 2026-09-23, items 11 and 18): the
+        // container must win every click across what is drawn of it. The box is slid back along the line from the
+        // eye through the container's centre until it is 0.12 m behind the picture's plane -- more than the 0.085 m
+        // a corner of the box reaches toward the eye -- so it sits wholly behind a standing picture larger than it,
+        // centred on the same point of the screen. (Slid back along the floor instead, it rose into view over the
+        // top of a flask seen from above.) A player reaches the contents through the container: take it, and the
+        // inventory lists what is inside (ui.js). A container drawn as a box, or lying flat, keeps the old place:
+        // there the box was never in front of anything.
         const pm = box(0.12, 0.12, 0.12, COLORS.item);
-        pm.position.set(p.x, p.y, p.z);
-        register(pm, { kind: 'object', id: c, position: [p.x, p.y, p.z] }, false);
+        const dx = p.x - eyeAt[0], dy = p.y - eyeAt[1], dz = p.z - eyeAt[2], flat = Math.hypot(dx, dz);
+        const back = art && !art.flat && art.facing == null && flat > 1e-6 ? 0.12 / flat : 0;
+        const cp = [p.x + dx * back, p.y + dy * back, p.z + dz * back];
+        pm.position.set(...cp);
+        register(pm, { kind: 'object', id: c, position: cp }, false);
         return;
       }
       const cb = ctx.characters?.[c], cv = cb?.variants?.find(v => when(g, v.when));
@@ -402,7 +436,25 @@ export function buildRoom(g, overrides = {}, ctx = {}) {
         : box(0.3, 0.25, 0.3, COLORS.item);
       if (!ca) m.position.set(...cp);
       register(m, { kind: 'object', id: c, position: cp }, true);
+      // ITS OWN NAME PLATE, like anything else in the room. A thing in an open container had none, so a small one was
+      // findable only by its picture -- the fused bedistor on Course Control's cube, 15 x 11 px, under the cube's
+      // plate (playtest 2026-09-23, item 15) -- and a click on a plate opens that thing's menu (pickrule.js). Hung
+      // after all the container's contents are placed, in one row 0.35 m over the TALLEST of them: a plate is a
+      // click target drawn over everything, so a flat thing's plate hung over its own low top lay across the
+      // standing thing beside it and took its clicks (Storage East's fromitz board over the good bedistor, the
+      // real-click walkthrough). The plates' collision rule is unchanged: in a crowd the nearer plate stays, and the
+      // one under the pointer always does. Not for a showsContents container's contents (above): its picture shows
+      // them. The content's own `plateText` is its text, as for anything; its `labelOffset` is not applied, since it
+      // is authored for where the thing stands in its room, not for a container's lid.
+      shownInside.push({ c, cp, top: ca ? (ca.flat ? foot : foot + ca.height) : cp[1] + 0.125 });
     });
+    const row = Math.max(...shownInside.map(t => t.top));
+    for (const { c, cp } of shownInside) {
+      const cs = label(overrides.objects?.[c]?.plateText ?? g.name(c), { size: 0.38 });
+      cs.position.set(cp[0], row + 0.35, cp[2]);
+      cs.userData.labelFor = c;
+      group.add(cs);
+    }
   });
   // Referable globals (window, controls, stairway...) and scenery words as plaques on the walls. A placed plaque with
   // no wall faces the wall nearest its position (not the next wall in turn); a `size` [w, h, d] shrinks the pick proxy

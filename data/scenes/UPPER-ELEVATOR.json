@@ -109,21 +109,6 @@
     {
       "part": "prop",
       "at": [
-        1.84,
-        1.05,
-        0.62
-      ],
-      "size": [
-        0.05,
-        0.04,
-        0.12
-      ],
-      "material": "indicator-live",
-      "when": "UPPER-ELEVATOR-ON == true"
-    },
-    {
-      "part": "prop",
-      "at": [
         0,
         0.95,
         -1.64

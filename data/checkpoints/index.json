@@ -23,6 +23,10 @@
   {
    "id": "aux-booth",
    "label": "Auxiliary Booth, out of the computer: the Lab Office, the gas mask and the run to the cryo-elevator"
+  },
+  {
+   "id": "final-chase",
+   "label": "The Bio Lab, the fungicide released and the mutants stunned: the final chase to the cryo-elevator"
   }
  ]
 }

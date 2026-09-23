@@ -59,6 +59,19 @@
       }
     ]
   },
+  "DEAD-FLOYD": {
+    "image": "assets/items/DEAD-FLOYD.png",
+    "height": 1.3,
+    "aspect": 1.0625,
+    "flat": true,
+    "pixels": [
+      816,
+      768
+    ],
+    "provisional": false,
+    "source": "RoomPolishInstructions/items/reference/DEAD-FLOYD-DECAL_GREG.png (dev-0890, mail design-0807), real alpha on a 1254 square; trimmed to its own 1171x1102 figure and downsampled to 768 px by scripts/sprite.mjs, then turned 180 degrees so his feet point to the top edge.",
+    "note": "The mangled robot (compone.zil 2295-2301): \"Your former companion, Floyd, is lying on the ground in a pool of oil.\" -- torn plating, loose wires, the oil from his lubrication system (biolab.js I-FLOYD-FORAY). Drawn from above, so it lies on the deck as a decal (flat: true); 1.3 m along the picture's vertical is Floyd head to foot (he stands 1.22 m, FLOYD), the whole figure and the pool with it, 1.38 m across. In Greg's picture the pool lies inside the figure's own span, so at Floyd's true size the pool comes out about 1.2 m, not the 1.8 m the ask named: the figure's size governs. TURNED 180 DEGREES from the delivery: Greg drew him slightly oblique, soles toward the viewer, so the asset's top edge (north, graybox) is his FEET -- in Bio Lock East, where he dies, the player stands north-west of him and sees him from the feet, the way the picture was drawn. Where he lies is the room's (BIO-LOCK-EAST objects.DEAD-FLOYD). Not takeable, not an actor; the picture is all the player gets (EXAMINE turns away, compone.zil 2303-2307)."
+  },
   "RAT-ANT": {
     "image": "assets/characters/RAT-ANT.png",
     "height": 1.8,
@@ -70,7 +83,21 @@
     ],
     "provisional": false,
     "source": "RoomPolishInstructions/characters/RAT-ANT/RAT-ANT_STANDING_MAGENTA.png (DR-096, mail 20260919-015149-design-0587), cut by scripts/cutout.mjs --tol 60 as FLOYD was; then the magenta held in the hair and fur wisps beyond the 2 px rim was unmixed: within 12 px of the edge, a pixel with b > g and r > g was read as figure mixed with the key, the key share t = (b - g)/255 taken into alpha (Norm, 2026-09-19)",
-    "note": "\"Rat-like, ant-like man-sized monster\". A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius. The tail and claws spread the silhouette; the body is a man's width. A few of the finest whiskers were lost as specks."
+    "note": "\"Rat-like, ant-like man-sized monster\". A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius. The tail and claws spread the silhouette; the body is a man's width. A few of the finest whiskers were lost as specks.",
+    "variants": [
+      {
+        "when": "LAB-FLOODED == true",
+        "image": "assets/characters/RAT-ANT-STUNNED.png",
+        "height": 1.63,
+        "aspect": 1.0391,
+        "pixels": [
+          1144,
+          1101
+        ],
+        "source": "RoomPolishInstructions/characters/RAT-ANT/RAT-ANT_STUNNED_R2_MAGENTA.png (DR-098, mail 20260923-205836-design-0821, answering dev-0904; the first round, RAT-ANT_STUNNED_MAGENTA.png, was sent back and is not used), cut by scripts/cutout.mjs --tol 60 as the standing one was, the magenta held in wisps within 12 px of the edge unmixed the same way (b > g and r > g: key share t = (b - g)/255 taken into alpha), and also any plainly key-blended speck deeper in (b - g and r - g both over 80) (Norm, 2026-09-23)",
+        "note": "Stunned in the fungicide mist, staggering sideways mid-stumble, pincers out for balance: \"The air is filled with mist, which is affecting the mutants. They appear to be stunned and confused, but are slowly recovering.\" (comptwo.zil:2064-2067; playtest 2026-09-23 item 33). Shown while LAB-FLOODED, i.e. until I-UNFLOOD clears it and they give chase standing. Height from the picture: 1101 / 1217 px of the standing figure at the same scale (ear to ear about 250 px in both), so 1.8 x 0.905 = 1.63 m; the wide stumble makes it wider than tall. The foot stays where the standing picture's is (graybox.js reckons the foot from the base height)."
+      }
+    ]
   },
   "TROLL": {
     "image": "assets/characters/TROLL.png",
@@ -83,7 +110,21 @@
     ],
     "provisional": false,
     "source": "RoomPolishInstructions/characters/TROLL/TROLL_STANDING_MAGENTA.png (DR-096, mail 20260919-015712-design-0588), cut by scripts/cutout.mjs --tol 60 as FLOYD was; then the magenta held in the hair and fur wisps beyond the 2 px rim was unmixed: within 12 px of the edge, a pixel with b > g and r > g was read as figure mixed with the key, the key share t = (b - g)/255 taken into alpha (Norm, 2026-09-19)",
-    "note": "\"Hairy growling biped\". A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius."
+    "note": "\"Hairy growling biped\". A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius.",
+    "variants": [
+      {
+        "when": "LAB-FLOODED == true",
+        "image": "assets/characters/TROLL-STUNNED.png",
+        "height": 2.1,
+        "aspect": 0.6125,
+        "pixels": [
+          743,
+          1213
+        ],
+        "source": "RoomPolishInstructions/characters/TROLL/TROLL_STUNNED_R2_MAGENTA.png (DR-098, mail 20260923-205836-design-0821, answering dev-0904; the first round, TROLL_STUNNED_MAGENTA.png, was sent back and is not used), cut by scripts/cutout.mjs --tol 60 as the standing one was, the magenta held in wisps within 12 px of the edge unmixed the same way (b > g and r > g: key share t = (b - g)/255 taken into alpha), and also any plainly key-blended speck deeper in (b - g and r - g both over 80) (Norm, 2026-09-23)",
+        "note": "Stunned in the fungicide mist, rubbing its eyes with both fists, head bowed (the user's pose): \"The air is filled with mist, which is affecting the mutants. They appear to be stunned and confused, but are slowly recovering.\" (comptwo.zil:2064-2067; playtest 2026-09-23 item 33). Shown while LAB-FLOODED, i.e. until I-UNFLOOD clears it and they give chase standing. Height from the picture: 1213 / 1214 px of the standing figure on the same 1254 canvas (the feet are the standing picture's own, pixel for pixel), so 2.1 m as standing: the bowed head keeps the hair's crown at the same line. The foot stays where the standing picture's is (graybox.js reckons the foot from the base height)."
+      }
+    ]
   },
   "GRUE": {
     "image": "assets/characters/GRUE.png",
@@ -96,7 +137,21 @@
     ],
     "provisional": false,
     "source": "RoomPolishInstructions/characters/GRUE/GRUE_STANDING_MAGENTA.png (DR-096, mail 20260919-020213-design-0589), cut by scripts/cutout.mjs --tol 60 as FLOYD was",
-    "note": "\"Lurking fanged creature\", crouched and mostly dark, as a grue must be. A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius."
+    "note": "\"Lurking fanged creature\", crouched and mostly dark, as a grue must be. A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius.",
+    "variants": [
+      {
+        "when": "LAB-FLOODED == true",
+        "image": "assets/characters/GRUE-STUNNED.png",
+        "height": 1.28,
+        "aspect": 0.6558,
+        "pixels": [
+          722,
+          1101
+        ],
+        "source": "RoomPolishInstructions/characters/GRUE/GRUE_STUNNED_R2_MAGENTA.png (DR-098, mail 20260923-205836-design-0821, answering dev-0904; the first round, GRUE_STUNNED_MAGENTA.png, was sent back and is not used), cut by scripts/cutout.mjs --tol 60 as the standing one was, the magenta held in wisps within 12 px of the edge unmixed the same way (b > g and r > g: key share t = (b - g)/255 taken into alpha), and also any plainly key-blended speck deeper in (b - g and r - g both over 80) (Norm, 2026-09-23)",
+        "note": "Stunned in the fungicide mist, on its knees, upright from the waist, eyes screwed shut (the user's pose): \"The air is filled with mist, which is affecting the mutants. They appear to be stunned and confused, but are slowly recovering.\" (comptwo.zil:2064-2067; playtest 2026-09-23 item 33). Shown while LAB-FLOODED, i.e. until I-UNFLOOD clears it and they give chase standing. Height from the picture: 1101 / 1206 px of the standing figure at the same scale (head and forearms measure alike in both), so 1.4 x 0.913 = 1.28 m. The foot stays where the standing picture's is (graybox.js reckons the foot from the base height)."
+      }
+    ]
   },
   "TRIFFID": {
     "image": "assets/characters/TRIFFID.png",
@@ -109,7 +164,21 @@
     ],
     "provisional": false,
     "source": "RoomPolishInstructions/characters/TRIFFID/TRIFFID_STANDING_MAGENTA.png (DR-096, mail 20260919-020916-design-0590), cut by scripts/cutout.mjs --tol 60 as FLOYD was; then the magenta held in the hair and fur wisps beyond the 2 px rim was unmixed: within 12 px of the edge, a pixel with b > g and r > g was read as figure mixed with the key, the key share t = (b - g)/255 taken into alpha (Norm, 2026-09-19)",
-    "note": "\"Mobile man-eating plant\", on its root-feet. A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius. The lashes spread the silhouette wider than the stem."
+    "note": "\"Mobile man-eating plant\", on its root-feet. A lab mutant of the Bio Lab chase (biolab.js MUTANTS), painted by the design agent on flat magenta for extraction, full figure, three-quarter facing, answering dev-0596 after the user saw purple blocks in BIO-LOCK-EAST. The source gives only the name and one phrase; the height is DEV's proposal in dev-0596, which the design agent painted to. Depth is footprint only, inside the rooms' 0.6 m clearanceRadius. The lashes spread the silhouette wider than the stem.",
+    "variants": [
+      {
+        "when": "LAB-FLOODED == true",
+        "image": "assets/characters/TRIFFID-STUNNED.png",
+        "height": 1.73,
+        "aspect": 1.2375,
+        "pixels": [
+          1188,
+          960
+        ],
+        "source": "RoomPolishInstructions/characters/TRIFFID/TRIFFID_STUNNED_R2_MAGENTA.png (DR-098, mail 20260923-205836-design-0821, answering dev-0904; the first round, TRIFFID_STUNNED_MAGENTA.png, was sent back and is not used), cut by scripts/cutout.mjs --tol 60 as the standing one was, the magenta held in wisps within 12 px of the edge unmixed the same way (b > g and r > g: key share t = (b - g)/255 taken into alpha), and also any plainly key-blended speck deeper in (b - g and r - g both over 80) (Norm, 2026-09-23)",
+        "note": "Stunned in the fungicide mist, wilted: head bowed to the floor, tentacles trailing, root stalks buckled: \"The air is filled with mist, which is affecting the mutants. They appear to be stunned and confused, but are slowly recovering.\" (comptwo.zil:2064-2067; playtest 2026-09-23 item 33). Shown while LAB-FLOODED, i.e. until I-UNFLOOD clears it and they give chase standing. Height from the picture: 960 / 1222 px of the standing figure at the same scale (the root-feet span about 970 px in both), so 2.2 x 0.786 = 1.73 m. The foot stays where the standing picture's is (graybox.js reckons the foot from the base height)."
+      }
+    ]
   },
   "PADLOCK": {
     "image": "assets/items/PADLOCK.png",
@@ -156,7 +225,7 @@
     ],
     "provisional": false,
     "source": "RoomPolishInstructions/KITCHEN_Visual-Design-Handoff/.../reference (mail 20260914-162616-design-0085), real alpha from the design agent via scripts/cutout.mjs, padded so the body is centred",
-    "note": "The canteen: on its Mess Hall bench until first taken (MESS-HALL objects.CANTEEN), and in the Kitchen dispenser's niche while it is there (KITCHEN objects.DISPENSER.contentsAt). Open, it is drawn lidless -- with the brown liquid when the dispenser has filled it; a variant keeps the same foot. RETURNED TO CANON 0.25 m, 2026-09-21: it lives in the Kitchen dispenser's PAINTED octagonal niche, which the art sized for the canon canteen (KITCHEN objects.DISPENSER.contentsAt [1.65, 0.86, -3.68], \"puts its foot on the niche floor\"). At 3x it was 0.75 m tall and 0.30 m deep against a dispenser body 1.7 m tall and 0.24 m DEEP, so it overflowed the niche it stands in and read with its left side cut away (the user, with a screenshot). Same reasoning as the fromitz boards: where canon paints the container, canon sizes the thing inside it.",
+    "note": "The canteen: on its Mess Hall bench until first taken (MESS-HALL objects.CANTEEN), and in the Kitchen dispenser's niche while it is there (KITCHEN objects.DISPENSER.contentsAt). Open, it is drawn lidless -- with the brown liquid when the dispenser has filled it; a variant keeps the same foot. RETURNED TO CANON 0.25 m, 2026-09-21: it lives in the Kitchen dispenser's PAINTED octagonal niche, which the art sized for the canon canteen (KITCHEN objects.DISPENSER.contentsAt [1.65, 0.86, -3.68], \"puts its foot on the niche floor\"). At 3x it was 0.75 m tall and 0.30 m deep against a dispenser body 1.7 m tall and 0.24 m DEEP, so it overflowed the niche it stands in and read with its left side cut away (the user, with a screenshot). Same reasoning as the fromitz boards: where canon paints the container, canon sizes the thing inside it. SHOWS ITS CONTENTS (showsContents, 2026-09-23, fabric sweep F6): the canteen is opaque metal with a narrow neck, and CANTEEN-OPEN-FULL.png already paints the brown liquid at the open mouth, so the high-protein liquid inside it is a pick target only -- not the 0.3 m tan box graybox draws on the lid of an open container with a content it has no picture of. The same fix as FLASK.",
     "variants": [
       {
         "when": "CANTEEN has OPENBIT and HIGH-PROTEIN in CANTEEN",
@@ -178,7 +247,8 @@
         ],
         "height": 0.229
       }
-    ]
+    ],
+    "showsContents": true
   },
   "CAN": {
     "image": "assets/items/CAN.png",
@@ -204,11 +274,25 @@
     ],
     "provisional": false,
     "source": "RoomPolishInstructions/items/reference/LADDER.png (the design agent's item set, ITEM-MANIFEST LADDER), cut from its white backdrop by Norm via scripts/cutout.mjs (a seed in each enclosed gap between the rungs), downsampled to 1024 px tall with the colour unblended from the alpha",
-    "note": "The collapsed aluminum ladder: leaning against the Storage West north wall until first taken (STORAGE-WEST objects.LADDER at [-0.35, 1.25, -1.88]; largeObjects.LADDER, about 2.5 m collapsed, source/compone.zil), then carried or dropped as the engine has it. The extended ladder across the rift is painted into the Admin Corridor rooms (their largeObjects), not drawn from this. Extended (LADDER-EXTENDED) it has no picture: the variant with a null image draws its box.",
+    "note": "The collapsed aluminum ladder: leaning against the Storage West north wall until first taken (STORAGE-WEST objects.LADDER at [-0.35, 1.25, -1.88]; largeObjects.LADDER, about 2.5 m collapsed, source/compone.zil), then carried or dropped as the engine has it. The extended ladder across the rift is painted into the Admin Corridor rooms (their largeObjects), not drawn from this. Extended (LADDER-EXTENDED) it lies flat on the floor as Greg's top-down decal (2026-09-23); across the rift it is the painting's (Admin Corridor North) or the Admin Corridor overlay's.",
     "variants": [
       {
+        "when": "LADDER-FLAG == true",
+        "image": null,
+        "note": "Spanning the rift. No picture of its own here: in Admin Corridor the package draws Greg's decal across the gap (ADMIN-CORRIDOR decals.LADDER-ACROSS) and in Admin Corridor North it is painted, and in both the ladder object is the painting's (largeObjects.LADDER paintedWhen), a pick target only. Listed first so the floor picture below is never laid on the floor under the player once the ladder is across."
+      },
+      {
         "when": "LADDER-EXTENDED == true",
-        "image": null
+        "image": "assets/items/LADDER-EXTENDED.png",
+        "flat": true,
+        "height": 8,
+        "aspect": 0.0625,
+        "pixels": [
+          128,
+          2048
+        ],
+        "source": "RoomPolishInstructions/items/reference/LADDER-EXTENDED-DECAL_GREG.png (dev-0891, mail design-0808), real alpha, top-down; trimmed to its own 200x1555 figure and downsampled to 2048 px long by scripts/sprite.mjs, then its width resampled to 128 px (premultiplied box filter) so the picture is 8.0 x 0.5 m, as Greg asked in design-0808 (\"please scale the decal to the canonical 8.0 m by 0.5 m\") -- his canvas is a portrait at 0.129.",
+        "note": "Extended to about eight metres (\"The ladder extends to a length of around eight meters.\", compone.zil 677; kalamontee.js 289) and lying on the floor, so flat: a decal 8.0 m long and 0.5 m across (the package's rungs are 0.48 m wide), its top edge (the end with the hazard triangle) north. In Admin Corridor it lies where the package puts it (largeObjects.LADDER, z -4.6 to 3.4, 0.15 m west of the axis)."
       }
     ]
   },

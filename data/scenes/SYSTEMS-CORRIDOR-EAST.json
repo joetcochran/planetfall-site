@@ -2126,21 +2126,6 @@
       "at": [
         4.96,
         2.45,
-        -14.66
-      ],
-      "size": [
-        0.06,
-        0.4,
-        1.4
-      ],
-      "material": "control-face",
-      "when": "COURSE-CONTROL-FIXED == true"
-    },
-    {
-      "part": "prop",
-      "at": [
-        4.96,
-        2.45,
         -12.66
       ],
       "size": [
@@ -2150,36 +2135,6 @@
       ],
       "material": "indicator-fault",
       "when": "COURSE-CONTROL-FIXED == false"
-    },
-    {
-      "part": "prop",
-      "at": [
-        4.96,
-        2.45,
-        -12.66
-      ],
-      "size": [
-        0.06,
-        0.4,
-        1.4
-      ],
-      "material": "control-face",
-      "when": "COURSE-CONTROL-FIXED == true"
-    },
-    {
-      "part": "prop",
-      "at": [
-        4.96,
-        2.45,
-        -11.16
-      ],
-      "size": [
-        0.06,
-        0.4,
-        0.8
-      ],
-      "material": "indicator-live",
-      "when": "COURSE-CONTROL-FIXED == true"
     },
     {
       "part": "prop",

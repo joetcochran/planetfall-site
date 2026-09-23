@@ -746,21 +746,6 @@
     {
       "part": "prop",
       "at": [
-        2.3,
-        1.05,
-        7.81
-      ],
-      "size": [
-        0.03,
-        0.04,
-        0.12
-      ],
-      "material": "indicator-live",
-      "when": "(LOWER-ELEVATOR-ON == true) and LOWER-ELEVATOR-DOOR has OPENBIT and LOWER-ELEVATOR-UP == true"
-    },
-    {
-      "part": "prop",
-      "at": [
         0,
         0.95,
         9.31

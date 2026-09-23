@@ -1,26 +1,180 @@
 {
   "note": [
-    "The narrow glimpse (scene/glimpse.js; the user's triage of 2026-09-23, playtests/2026-09-23/PLAYTEST-LOG.md item 25): the four Bio Lab mutants drawn in the NEXT room, seen through the opening, in exactly two places of the final chase. Keyed by the room the player stands in, then by the neighbour. Nothing else is drawn through any opening; PLAN-FLOYD-IN-A-GLIMPSE.md is the general feature and stays parked.",
+    "The narrow glimpse (scene/glimpse.js; the user's triage of 2026-09-23, playtests/2026-09-23/PLAYTEST-LOG.md item 25): the four Bio Lab mutants drawn in the NEXT room, seen through the opening, in exactly two places of the final chase; widened by the user from play (#29, #30, #31) to Floyd's foray into the Bio Lab to the mangled robot seen down the bio-lock, and to the mutants seen from the Lab Office through its open door. Keyed by the room the player stands in, then by the neighbour. Nothing else is drawn through any opening; PLAN-FLOYD-IN-A-GLIMPSE.md is the general feature and stays parked.",
     "offset: the neighbour's frame in the viewing room's frame, ROOMS[N].at - ROOMS[R].at in scripts/fabric-lawanda.mjs (BIO-LOCK-EAST is LAB.BLE, 4.9 + 2 = 6.9 m east of LAB.BLW; the Projcon Office is D(PROJCON-OFFICE) + 2T + D(CRYO-ELEVATOR) = 7.16 m north of the car). scripts/tests/glimpse.mjs holds each one to the neighbour's bay and lamp in the shipped scene.",
-    "spots: floor points in the NEIGHBOUR's frame for the actors its package does not place. BIO-LOCK-EAST's package places all four mutants in the lab-door lane (its actors), so it needs none. PROJCON-OFFICE's places only Floyd; at step 292 the mutants are on the player's heels toward the elevator mouth in the south wall (z +4.0, 3.2 m wide), and at 293 the door shuts 'The elevator door closes just as the monsters reach it!' (globals.zil 2661), so they stand in a knot 1.3 to 3.2 m inside the office from that mouth, the rat-ant nearest, the triffid -- the slowest -- last, all inside the mouth's width so the jambs cut the outer two."
+    "spots: floor points in the NEIGHBOUR's frame for the actors its package does not place. BIO-LOCK-EAST's package places all four mutants in the lab-door lane (its actors), so it needs none. PROJCON-OFFICE's places only Floyd; at step 292 the mutants are on the player's heels toward the elevator mouth in the south wall (z +4.0, 3.2 m wide), and at 293 the door shuts 'The elevator door closes just as the monsters reach it!' (globals.zil 2661), so they stand in a knot 1.3 to 3.2 m inside the office from that mouth, the rat-ant nearest, the triffid -- the slowest -- last, all inside the mouth's width so the jambs cut the outer two.",
+    "BIO-LOCK-EAST > BIO-LAB (playtest #29): offset [13.16, 0, 2.287], LAB.BL - LAB.BLE (the lab 2 + 2T + 11 m east, its door 2.287 m north of its centre line). No `when`: the lab door's leaves are fabric with the 0.5 x 0.4 m window cut between them at 1.45-1.85 m (BIO-LOCK-EAST scene, BIO-DOOR-EAST without OPENBIT), and the depth masks cut the figures to what the open door, or the window, shows. The lab package places its actors across the whole floor, out of any sightline through a 2.4 m door; so `spots`, in the lab's frame (its door at x -11, z -2.287): the mutants crowding toward the door 4.5 to 6 m in, where BIO-DOOR-EAST-F has them ('Immediately, he is set upon by hideous, mutated monsters! More are heading straight toward the open door!', rules/biolab.js).",
+    "FLOYD is a stand-in: canon REMOVEs him as he plunges in (BIO-DOOR-EAST-F) and only I-FLOYD-FORAY's fourth turn MOVEs him back into the lock ('Floyd stumbles out'). FLOYD-FORAYED true and FORAY-COUNTER below 4 is exactly that span: set 0 -> 1 on the turn he plunges, 2 and 3 the sounds through the shut door (traced from the bio-lock checkpoint, walkthrough steps 251-253); FLOYD has RLANDBIT excludes the case where he has died in there. Just past the door while it is open (the plunge); in the fray among the mutants while it is shut. At 1.22 m he is below a window whose sill is at 1.45 m, so through the shut door only his head shows over the fray, and only from well in: a real quad at a real place, not a cheat.",
+    "gain: the Bio Lab is dark until the Lab Office's light button (LAB-LIGHTS-ON; its painted view through the door is 'the dim Bio Lab'), and canon's window shows 'Shadowy, ominous shapes move about within the room.' (WINDOW-F, globals.zil 83-93), so the figures are drawn, dimmed to sit in the unlit lab rather than hidden.",
+    "BIO-LOCK-WEST > BIO-LOCK-EAST also carries DEAD-FLOYD (playtest #30): the mangled robot, a FLAT decal (characters.json DEAD-FLOYD, flat), at the place Bio Lock East's package gives him (objects.DEAD-FLOYD.position), laid exactly as buildRoom lays him in that room, so both views agree.",
+    "LAB-OFFICE > BIO-LAB (playtest #31): offset [-16.16, 0, 0], LAB.BL - LAB.LO (the lab 11 + 2T + 5 m west; the office door on the lab's east wall, on both centre lines). While OFFICE-DOOR has OPENBIT: canon's LAB-OFFICE M-END then reads 'Through the open doorway you can see the Bio Lab. It seems to be filled with a light mist. Horrifying biological nightmares stagger about...' (comptwo.zil 2245). No spots: the four stand where the Bio Lab's own package places them, so what shows through the door is what the player then finds on walking in (step 284); from the office eye a 2.2 m door 5 m off shows a cone about 12 degrees either side, so some of them are outside it and cut by the wall, which is the truth of that doorway. The same cutouts (there is no stunned pose), dimmed with the lab's lights off, as in the lock.",
+    "seals (BIO-LOCK-EAST > BIO-LAB): the lab door's two leaves meet 1 cm apart in the fabric (scripts/fabric-lawanda.mjs bioDoorEast; z -0.0045 to +0.0055), a crack the painting of the shut door does not have, and the figures behind showed through it as a vertical sliver. Two depth-only boxes close it below and above the window, drawn only with these figures, so no room's own picture changes."
   ],
   "BIO-LOCK-WEST": {
     "BIO-LOCK-EAST": {
-      "offset": [6.9, 0, 0],
-      "actors": ["RAT-ANT", "TRIFFID", "TROLL", "GRUE"]
+      "offset": [
+        6.9,
+        0,
+        0
+      ],
+      "actors": [
+        "RAT-ANT",
+        "TRIFFID",
+        "TROLL",
+        "GRUE",
+        "DEAD-FLOYD"
+      ]
     }
   },
   "CRYO-ELEVATOR": {
     "PROJCON-OFFICE": {
-      "offset": [0, 0, -7.16],
+      "offset": [
+        0,
+        0,
+        -7.16
+      ],
       "when": "CRYO-ELEVATOR-DOOR has OPENBIT and CRYO-SCORE-FLAG != true",
-      "actors": ["RAT-ANT", "TRIFFID", "TROLL", "GRUE"],
+      "actors": [
+        "RAT-ANT",
+        "TRIFFID",
+        "TROLL",
+        "GRUE"
+      ],
       "spots": {
-        "RAT-ANT": [-0.2, 0, 2.7],
-        "GRUE": [0.9, 0, 2.3],
-        "TROLL": [-1.1, 0, 1.7],
-        "TRIFFID": [0.5, 0, 0.8]
+        "RAT-ANT": [
+          -0.2,
+          0,
+          2.7
+        ],
+        "GRUE": [
+          0.9,
+          0,
+          2.3
+        ],
+        "TROLL": [
+          -1.1,
+          0,
+          1.7
+        ],
+        "TRIFFID": [
+          0.5,
+          0,
+          0.8
+        ]
       }
+    }
+  },
+  "BIO-LOCK-EAST": {
+    "BIO-LAB": {
+      "offset": [
+        13.16,
+        0,
+        2.287
+      ],
+      "actors": [
+        "RAT-ANT",
+        "TRIFFID",
+        "TROLL",
+        "GRUE"
+      ],
+      "spots": {
+        "GRUE": [
+          -7.6,
+          0,
+          -1.9
+        ],
+        "RAT-ANT": [
+          -6.6,
+          0,
+          -1.5
+        ],
+        "TROLL": [
+          -6.9,
+          0,
+          -3.1
+        ],
+        "TRIFFID": [
+          -5.2,
+          0,
+          -2.6
+        ]
+      },
+      "standIns": {
+        "FLOYD": [
+          {
+            "when": "FLOYD-FORAYED == true and FORAY-COUNTER < 4 and FLOYD has RLANDBIT and BIO-DOOR-EAST has OPENBIT",
+            "spot": [
+              -9.4,
+              0,
+              -2
+            ]
+          },
+          {
+            "when": "FLOYD-FORAYED == true and FORAY-COUNTER < 4 and FLOYD has RLANDBIT",
+            "spot": [
+              -6.2,
+              0,
+              -2.2
+            ]
+          }
+        ]
+      },
+      "gain": [
+        {
+          "when": "LAB-LIGHTS-ON != true",
+          "value": 0.5
+        }
+      ],
+      "seals": [
+        {
+          "at": [
+            2.08,
+            0.725,
+            0.0005
+          ],
+          "size": [
+            0.16,
+            1.45,
+            0.03
+          ],
+          "when": "BIO-DOOR-EAST without OPENBIT"
+        },
+        {
+          "at": [
+            2.08,
+            2.425,
+            0.0005
+          ],
+          "size": [
+            0.16,
+            1.15,
+            0.03
+          ],
+          "when": "BIO-DOOR-EAST without OPENBIT"
+        }
+      ]
+    }
+  },
+  "LAB-OFFICE": {
+    "BIO-LAB": {
+      "offset": [
+        -16.16,
+        0,
+        0
+      ],
+      "when": "OFFICE-DOOR has OPENBIT",
+      "actors": [
+        "RAT-ANT",
+        "TRIFFID",
+        "TROLL",
+        "GRUE"
+      ],
+      "gain": [
+        {
+          "when": "LAB-LIGHTS-ON != true",
+          "value": 0.5
+        }
+      ]
     }
   }
 }

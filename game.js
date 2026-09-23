@@ -156,8 +156,8 @@ async function renderNow() {
   const far = viewRoom === room ? glimpseParts(g, { room, table: glimpses, design, characters, eye: built.eye, when, visible: isVisible }) : [];
   if (far.length) {
     const glimpse = buildParts(g, far, { loadTexture }).group;
-    if ((overrides.parts ?? []).some(p => p?.part === 'plate' || p?.part === 'panorama')) glimpse.traverse(m => { m.renderOrder = 20; });
-    glimpse.userData.glimpse = far.map(p => p.glimpse);
+    if ((overrides.parts ?? []).some(p => p?.part === 'plate' || p?.part === 'panorama')) glimpse.traverse(m => { if (!m.userData.mask) m.renderOrder = 20; });   // a seal (glimpse.js) stays a depth mask, drawn first
+    glimpse.userData.glimpse = far.filter(p => p.glimpse).map(p => p.glimpse);
     built.group.add(glimpse);
   }
   view.setLighting(look);

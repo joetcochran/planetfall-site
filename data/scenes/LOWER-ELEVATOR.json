@@ -1,7 +1,7 @@
 {
   "note": [
     "The Lower Elevator's fabric (DR-106), cut from the one Kalamontee layout in scripts/fabric-kalamontee.mjs -- regenerate from there, do not hand-edit. LOWER-ELEVATOR.metadata.json v4: 4.8 x 3.6 x 4.2, the eye at the middle; one 3.4 x 3.0 hole in the north wall, which is NORTH and OUT both (compone.zil 2421-2423).",
-    "\"A control panel contains an Up button, a Down button, and a narrow slot\" (compone.zil 2439-2441) on the east wall at the metadata's anchors, the slot lit while LOWER-ELEVATOR-ON; a handrail on the back wall; one ceiling fitting. The red door is two leaves meeting in the middle of the reveal, shut without OPENBIT and pocketed when open.",
+    "\"A control panel contains an Up button, a Down button, and a narrow slot\" (compone.zil 2439-2441) on the east wall at the metadata's anchors (LOWER-ELEVATOR-ON lights the package's ELAVAATUR AKTIVAATID sign above it, an overlay); a handrail on the back wall; one ceiling fitting. The red door is two leaves meeting in the middle of the reveal, shut without OPENBIT and pocketed when open.",
     "Two landings through the one hole, by LOWER-ELEVATOR-UP (compone.zil 2467-2476), and the car never turns, so both are straight out of the north wall. The frame holds the car at the foot of its shaft, where the game starts it (2597); with LOWER-ELEVATOR-UP == true the Elevator Lobby is registered into this room's own frame, lowered by the shaft's 30 m drop, its blue door drawn shut. With it false the Waiting Area is 2.18 m off, north of the car as the lobby is: its benches along the far wall 10.2 m out, and hard against the east edge of the frame a sliver of its Kalamontee mouth, 0.46 m of that mouth's 4.0 m at bearings 36.4 to 37.9 where the jamb cuts it off. (The package reckons that sliver 1.12 m; on the cut wall planes it is 0.46.)",
     "The blue door's own open state (LOBBY-BLUE-OPEN) is not cut: what is behind it is the upper elevator car, which is scripts/fabric-tower.mjs's, and the Elevator Lobby has had no geometry pass. The drop is inferred and invisible: no eye sees both ends of the shaft."
   ],
@@ -101,21 +101,6 @@
         0.14
       ],
       "material": "machinery"
-    },
-    {
-      "part": "prop",
-      "at": [
-        2.3,
-        1.05,
-        0.55
-      ],
-      "size": [
-        0.03,
-        0.04,
-        0.12
-      ],
-      "material": "indicator-live",
-      "when": "LOWER-ELEVATOR-ON == true"
     },
     {
       "part": "prop",

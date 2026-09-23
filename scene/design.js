@@ -76,6 +76,15 @@ export function designOverrides(scene = {}, meta = null) {
     if (!framed || o?.labelOffset == null) continue;
     out.objects = { ...out.objects, [id]: { ...scene.objects?.[id], ...out.objects?.[id], labelOffset: o.labelOffset } };
   }
+  // `plateText` is what a thing's name plate says, where the room's data gives it: the Lab Office's three buttons
+  // read what is lettered on them (comptwo.zil 2236-2238), because the red one's "Eemurjensee Sistum" is the clue and
+  // the painting's lettering is too small to read (playtest 2026-09-23, item 24). The plate only: menus and the
+  // game's own text keep the game's name. Text is not a place, so it comes through whether or not the room is framed.
+  // A string, not `label`, which the packages already use for a description of the thing.
+  for (const [id, o] of Object.entries(meta.objects ?? {})) {
+    if (typeof o?.plateText !== 'string' || !o.plateText || scene.objects?.[id]?.plateText) continue;
+    out.objects = { ...out.objects, [id]: { ...scene.objects?.[id], ...out.objects?.[id], plateText: o.plateText } };
+  }
   // A large object the package paints into the room (`largeObjects`: the extended ladder lying across the rift) is
   // part of the painting, not a thing standing in front of it. Its place comes through, marked `painted`, so graybox
   // keeps it as a pick target there and draws no box over the picture -- the ladder, moved into the Admin Corridor
@@ -94,6 +103,14 @@ export function designOverrides(scene = {}, meta = null) {
   for (const [id, o] of Object.entries(meta.objects ?? {})) {
     if (!framed || !Array.isArray(o?.contentsAt) || scene.objects?.[id]?.contentsAt) continue;
     out.objects = { ...out.objects, [id]: { ...scene.objects?.[id], ...out.objects?.[id], contentsAt: o.contentsAt } };
+  }
+  // And where a thing keeps a place for whatever a global names (`placeFor: { global, at }`): the Machine Shop's
+  // dispenser, whose spout's grate is where the object SPOUT-PLACED names stands. That object is in the ROOM, not in
+  // the dispenser, so `contentsAt` cannot say it (playtest 2026-09-23, item 10). A place, so only in a framed room.
+  for (const [id, o] of Object.entries(meta.objects ?? {})) {
+    const pf = o?.placeFor;
+    if (!framed || typeof pf?.global !== 'string' || !Array.isArray(pf.at) || scene.objects?.[id]?.placeFor) continue;
+    out.objects = { ...out.objects, [id]: { ...scene.objects?.[id], ...out.objects?.[id], placeFor: { global: pf.global, at: pf.at } } };
   }
   // Flat things lying on the room's surfaces -- the ambassador's slime -- as the package places them. Each becomes
   // a scene part appended after the scene file's own, so it composes over whatever the room draws: a PATCH has a
