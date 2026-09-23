@@ -7,6 +7,10 @@
   {
    "id": "comm-fixed",
    "label": "Comm Room, help message sent: laser, pliers, good bedistor and the three cards (day 2)"
+  },
+  {
+   "id": "bio-lock",
+   "label": "Bio Lock West, before the Bio Lab: new battery, laser, Floyd along to fetch the mini card"
   }
  ]
 }

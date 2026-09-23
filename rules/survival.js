@@ -359,6 +359,7 @@ function checkpointRefresh(g) {
   g.setg('HUNGER-LEVEL', 0); g.queue('I-HUNGER-WARNINGS', 3600);
   g.setg('SLEEPY-LEVEL', 0); g.disable('I-FALL-ASLEEP'); g.queue('I-SLEEP-WARNINGS', AWAKE_FOR[g.getg('DAY')] ?? 3000);
   g.setg('LOAD-ALLOWED', 100); g.setg('SICKNESS-LEVEL', 0);
+  g.setg('SICKNESS-WARNING-FLAG', false);        // and no step of the disease pending from this morning's waking
 }
 export const helpers = { 'CHECKPOINT-REFRESH': checkpointRefresh };
 
