@@ -1,5 +1,7 @@
 # The port: from ZIL source to a playable engine
 
+![The front of Infocom's 1983 Planetfall package: an ensign of the Stellar Patrol running with a mop and bucket, a planet behind him](wiki/planetfall-box-1983.jpg)
+
 Infocom wrote *Planetfall* in ZIL, a Lisp-like language whose original compiler is lost. This page tells how that source became a JavaScript engine that plays the whole game in a browser: first the world map, then a shared plan, a first milestone built in about fifteen minutes, two waves of parallel porting agents, and a coverage report that reached 105 of 105 rooms by the morning of 10 September. It also covers what that report missed, which blind playtesters kept finding for two more days.
 
 ## Before the first session: a map viewer
@@ -12,6 +14,8 @@ The work did not start from nothing. Before the first Claude Code session on 9 S
 
 It read 105 rooms and 284 exits from the historical source of Planetfall (the `historicalsource/planetfall` collection, commit 7e7af12). Next to it sat an empty ASP.NET Core "Hello World" project.
 
+![The world map viewer, milestone 01: 105 rooms as blocks in 3-D, grouped by area and joined by their exits, with counts of connections, doors and objects above](wiki/world-map-01.png)
+
 So the world map came first, before the port. The user remembered it the other way round, but the record is clear.
 
 ## The first morning (9 September)
@@ -22,9 +26,9 @@ The first session ran from 11:10 to 12:43. Git did not exist yet, so this mornin
 
 **A grid map (11:24–11:34).** The user asked for north, south, east and west to run up, down, right and left on screen, with up and down using the third axis. Norm checked the data first. "Short answer: the data supports it well within each region, but not across the whole map." There were ten regions joined only by special exits such as elevators, the shuttle and the long hall. Four rooms had no compass exits at all, and 13 exits contradicted a unit grid. So `layout.js` places rooms on a grid within each region. The regions themselves get hand-set anchors in `layout.json`, which is marked as a rendering choice and not a game fact, and exits that do not fit are drawn slanted. `check_layout.mjs` fails if two rooms share a cell.
 
-**Every room described (11:46–11:54).** The user asked to "recreate the planetfall game using the world map you created and the original source". The extractor grew to take in all 105 room descriptions, 150 objects, the doors, the flags and the scenery words. Descriptions are not plain strings in the source. 33 rooms print theirs from routine code with branches, such as the Balcony's different text on different days. So each description is kept as a tree whose branches are labelled with the original ZIL condition.
+**Every room described (11:46–11:54).** ***The user asked for the game itself, rebuilt from the new world map and the original source***. The extractor grew to take in all 105 room descriptions, 150 objects, the doors, the flags and the scenery words. Descriptions are not plain strings in the source. 33 rooms print theirs from routine code with branches, such as the Balcony's different text on different days. So each description is kept as a tree whose branches are labelled with the original ZIL condition.
 
-**A shared vision (11:58–12:06).** Next the user asked for "a game engine which honors the world map", with rooms you drag to look around and click to interact with. The user asked Norm to put questions first "so we get a shared vision". Two rounds of multiple-choice questions settled the design. The central decision was how the game logic would run. There were three options: run the original in a Z-machine interpreter, reinterpret the game freely, or hand-port the routines as data-driven JavaScript. The user chose the hand port. The other answers:
+**A shared vision (11:58–12:06).** Next ***the user asked for a game engine faithful to the world map***, with rooms you drag to look around and click to interact with. ***The user asked Norm to put questions first, so the two of them would agree on the vision***. Two rounds of multiple-choice questions settled the design. The central decision was how the game logic would run. There were three options: run the original in a Z-machine interpreter, reinterpret the game freely, or hand-port the routines as data-driven JavaScript. The user chose the hand port. The other answers:
 
 - grey boxes now, hand-authored scenes later;
 - a click menu of verbs plus an optional command line;
@@ -35,14 +39,14 @@ The first session ran from 11:10 to 12:43. Git did not exist yet, so this mornin
 
 **Milestone 1 (12:06–12:21).** The first engine took about fifteen minutes to build: the Feinstein opening, from Deck Nine through Blather, the explosion and the escape pod to landing on the Crag. `engine/core.js` is a pure state machine. Its helpers are named after their ZIL counterparts (`fset`, `move`, `queue`, `tell`, `jigsUp`, `perform`), and each turn follows the original order. Around it went a small parser, the default verbs from `verbs.zil`, a description renderer that evaluates the stored condition trees, the grey-box room builder and the page. Any routine the engine reaches without a handler is written to a notes list instead of failing silently.
 
-**The first fan-out (12:21–12:39).** The user said "fan out subagents". Four agents worked in parallel, each owning its own files:
+**The first fan-out (12:21–12:39).** ***The user told Norm to fan the work out to subagents.*** Four agents worked in parallel, each owning its own files:
 
 - a browser tester, which found and fixed a death overlay that covered the view from the first frame;
 - the Kalamontee shore;
 - the survival clocks (hunger and sleep);
 - Floyd.
 
-At the end Norm wrote `coverage.mjs`, which read 52 of 105 rooms and 117 of 244 routines. Norm also wrote `HANDOFF.md`, because the user asked to "store our progress in a readme file so an agent can pick it up later".
+At the end Norm wrote `coverage.mjs`, which read 52 of 105 rooms and 117 of 244 routines. Norm also wrote `HANDOFF.md`, because ***the user asked for the progress to be written down so that a later agent could pick it up***.
 
 ## The first commit and the connectors (9 September, afternoon)
 
@@ -56,11 +60,11 @@ The next hour joined the regions:
 
 A playthrough tester followed at 16:54 (b0aa81d); [Playing it](playing-it.md) tells that story.
 
-At 16:55 the user asked to "run remaining areas as parallel agents". Five more agents took the Kalamontee lower levels, the tower, Lawanda, the bio lab and endgame, and the scenery words. Norm held back integration until all five had finished, "since registering a module changes seeded random draws and would disturb the checks the running agents rely on". Four finished. The bio lab agent was stopped at 17:13 by the account's session limit.
+At 16:55 ***the user asked for the remaining areas to be run as parallel agents***. Five more agents took the Kalamontee lower levels, the tower, Lawanda, the bio lab and endgame, and the scenery words. Norm held back integration until all five had finished, "since registering a module changes seeded random draws and would disturb the checks the running agents rely on". Four finished. The bio lab agent was stopped at 17:13 by the account's session limit.
 
 ## "The engine port of Planetfall is complete" (10 September)
 
-The user returned at 06:34 the next morning: "you were interrupted last session by token exhaustion". Every agent had written to disk as it went, so Norm found only two failing checks in the bio lab work and resumed that same agent to finish them. Integration then resolved the places where modules overlapped: the chronometer, the bed, the protein liquid, and a verb defined twice. Commit 2ab5898 (06:44) reached 105 of 105 rooms, 322 of 322 routines, 37 of 37 timed events and 945 test checks. Norm reported: "The engine port of Planetfall is complete."
+The user returned at 06:34 the next morning ***and told Norm the last session had been cut off when the tokens ran out***. Every agent had written to disk as it went, so Norm found only two failing checks in the bio lab work and resumed that same agent to finish them. Integration then resolved the places where modules overlapped: the chronometer, the bed, the protein liquid, and a verb defined twice. Commit 2ab5898 (06:44) reached 105 of 105 rooms, 322 of 322 routines, 37 of 37 timed events and 945 test checks. Norm reported: "The engine port of Planetfall is complete."
 
 The rest of that morning found the seams between the parallel ports:
 
@@ -86,7 +90,7 @@ The last one is described in the code itself: "two blind runs spent a thousand c
 
 ## Deliberate deviations
 
-On 10 September at 12:49 the user set a rule that has shaped the port ever since: "a little bit of common sense deviation from the source makes sense. we don't have to stay 100% true if gameplay would be significantly improved." Each deviation is proposed, approved by the user one at a time, and marked in the code with the words "Deliberate deviation" and the date and round. There are 81 such comments in the engine and rule modules (16 September). Among them:
+On 10 September at 12:49 the user set a rule that has shaped the port ever since: ***a little common-sense departure from the source was fine, and the port need not stay perfectly true where gameplay would be much better for it***. Each deviation is proposed, approved by the user one at a time, and marked in the code with the words "Deliberate deviation" and the date and round. There are 81 such comments in the engine and rule modules (16 September). Among them:
 
 - the collapsed ladder is refused at the rift instead of lost (bf7d1c5);
 - the narrator calls Floyd by name once he has been introduced;

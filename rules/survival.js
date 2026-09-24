@@ -301,9 +301,9 @@ function wakingUp(g) {
   g.setg('SLEEPY-LEVEL', 0);
   resetTime(g);
   if (g.state.dead) return;
-  let slipped = false; const spilled = [];
+  const slipped = [], spilled = [];
   for (const x of g.contents('ADVENTURER')) {
-    if (!g.fsetP(x, 'WORNBIT')) { g.move(x, g.state.here); slipped = true; }
+    if (!g.fsetP(x, 'WORNBIT')) { g.move(x, g.state.here); slipped.push(x); }
     if (x === 'CANTEEN' && g.isIn('HIGH-PROTEIN', 'CANTEEN') && g.fsetP('CANTEEN', 'OPENBIT')) { g.remove('HIGH-PROTEIN'); spilled.push('CANTEEN'); }
     if (x === 'FLASK' && g.isIn('CHEMICAL-FLUID', 'FLASK')) { g.remove('CHEMICAL-FLUID'); spilled.push('FLASK'); }
   }
@@ -321,7 +321,10 @@ function wakingUp(g) {
   // Deliberate deviation (user decision, 2026-09-10): the source drops everything carried without a word, and the
   // typed playtester nearly walked off without the ID card. Say so once.
   // Round five (user decision): the line also says what spilled, which the source empties without a word.
-  if (slipped) g.tell('While you slept, the things you were carrying slipped to the floor beside you.' + (spilled.includes('FLASK') ? ' The fluid in the flask spilled out and evaporated.' : '') + (spilled.includes('CANTEEN') ? ' The open canteen spilled its liquid across the floor.' : ''));
+  // Deliberate deviation (user decision, 2026-09-24, rounds 21-22): the line names them, so the player can tell at a
+  // glance what to pick up again (round twenty-two, #49: "the things you were carrying" left the tester to work it out).
+  const names = slipped.map(x => `the ${g.name(x)}`), list = names.length > 1 ? `${names.slice(0, -1).join(', ')} and ${names.at(-1)}` : names[0];
+  if (slipped.length) g.tell(`While you slept, the things you were carrying slipped to the floor beside you: ${list}.` + (spilled.includes('FLASK') ? ' The fluid in the flask spilled out and evaporated.' : '') + (spilled.includes('CANTEEN') ? ' The open canteen spilled its liquid across the floor.' : ''));
   // depends on: Floyd (compone.zil FLOYD-F and the FLOYD-INTRODUCED / FLOYD-SPOKE globals). Read, not invented.
   if (g.fsetP('FLOYD', 'RLANDBIT') && g.getg('FLOYD-INTRODUCED')) {
     g.move('FLOYD', g.state.here); g.setg('FLOYD-SPOKE', true);

@@ -43,7 +43,8 @@ export const rules = {
   pseudoWords: Object.assign({}, ...modules.map(m => m.pseudoWords ?? {})), // room -> [{ word, routine }]: scenery words the source lacks
   objectWords: Object.assign({}, ...modules.map(m => m.objectWords ?? {})), // object id -> { synonyms, adjectives }: labels the prose prints that the source never made words
   dynamicOrders: Object.assign({}, ...modules.map(m => m.dynamicOrders ?? {})), // actor -> g => [{ label, cmd }]: orders that depend on the moment
-  uses: modules.flatMap(m => m.uses ?? []),                                 // two-object click-menu entries [{verb, prso:[ids], prsi:[ids], label}]
+  putAccepts: Object.assign({}, ...modules.map(m => m.putAccepts ?? {})), // container -> g => [ids]: the only things its "Put in…" offers (reached: carried, or loose in the room)
+  uses: modules.flatMap(m => m.uses ?? []),                                // two-object click-menu entries [{verb, prso:[ids], prsi:[ids], label}]
   verbs: Object.assign({}, ...modules.map(m => m.verbs ?? {})),           // extra/overriding verb defaults
   vocabulary: modules.flatMap(m => m.vocabulary ?? []),                     // extra parser phrases [phrase, VERB, needsObject, prep?]
   setup(g) { for (const m of modules) m.setup?.(g); },

@@ -1,23 +1,27 @@
 # The look: Greg, the packages and the review loop
 
-Every room began as a grey box. This page covers how that changed, from 10 September to the evening of 12 September. A second agent, Greg, started delivering one design package per room, with a written spec, painted concept images and later machine-readable metadata. Norm learned to review those packages against the original game. A list of findings grew into a numbered ledger with a contract. A dashboard and a per-room review page gave the user a place to judge the results. The page ends at the moment the user chose painted rooms you can look around; [Seamless rooms](seamless-rooms.md) takes it from there.
+Every room began as a grey box. This page covers how that changed, from 10 September to the evening of 12 September. A second agent, Greg, started delivering one design package per room, with a written spec, painted concept images and later machine-readable metadata. Norm learned to review those packages against the original game. A list of findings grew into a numbered ledger with a contract. A dashboard and a per-room review page gave the user a place to judge the results. The page ends at the moment the user chose painted rooms you can look around; [How a room is painted](deck-nine-room-reconstruction.md) takes it from there.
 
 ## The graybox
 
 From the first commit (bd88341, 9 September) every room was built from its game data as flat-coloured boxes. Exits were panels, objects were small boxes, actors were purple boxes, and portable things were gold. The eye is fixed in the middle of the room: you can turn it but not walk it. `scene/view.js` renders at 70 degrees vertical, lit by a hemisphere light and one point light. Per-room override files in `data/scenes/` existed, but only the escape pod had one. The backlog item read "Replace grayboxes with real graphics (user goal)", with the asset pipeline undecided.
 
+![Systems Monitors twice, side by side: on the left the graybox, flat-coloured shapes for the monitor screens, the tables and the equipment, with their name plates; on the right the same room painted, seven monitors with red and green status strips over two worktables of equipment, riveted steel walls and two ceiling lamps](wiki/systems-monitors-graybox-and-painted.jpg)
+
 On the morning of 10 September the user asked how far away room-by-room imagery was. Norm's assessment (1c24cc4) was blunt: one room of 105 had a scene file, and "the plumbing is small, the content is the long pole". Norm recommended one generated 360-degree panorama per room. That idea came back, and failed, two days later.
 
 ## A second agent
 
-At 11:13 that morning the user wrote: "i'm having another agent create the room details and instructions for integration into the local folder "RoomPolishInstructions" -- when we get to the point of "painting" the rooms, take a look at those." The first four packages were committed at 11:35 (eef7c52): Deck Nine, the escape pod, Underwater to Crag, and the Balcony.
+At 11:13 that morning ***the user told Norm that another agent was writing room details and integration instructions into a local folder, `RoomPolishInstructions`, and that Norm should look at them when the time came to paint the rooms***. The first four packages were committed at 11:35 (eef7c52): Deck Nine, the escape pod, Underwater to Crag, and the Balcony.
 
 Each package had two parts:
 
 - An authoritative README covering geometry, palette, states and suggested Three.js integration. It proposed a bespoke builder function per room.
 - Two or more framed concept images, the "comps", about 1672 by 941 pixels.
 
-The rule of authority was game state first, then README, then images. The Deck Nine README listed "a full equirectangular panorama" as out of scope. This agent was "another agent", "the graphics agent" or "the design agent" until 11 September at 08:36, when the user wrote "the design agent (lets call him greg)".
+![Two of Greg's comps for the Helipad at dusk: the rusted helicopter on the rain-wet deck under a burning sky, and the stairwell head in its railing looking the other way](wiki/helipad-comps-dusk.jpg)
+
+The rule of authority was game state first, then README, then images. The Deck Nine README listed "a full equirectangular panorama" as out of scope. This agent went by descriptions such as another agent, the graphics agent or the design agent until 11 September at 08:36, when ***the user named him Greg***.
 
 ## Reviewing the packages
 
@@ -41,9 +45,9 @@ Read-only review agents checked each batch. One finding shows the kind of error 
 
 ## From a list to a ledger
 
-On 11 September at 06:22 the user asked Norm to put every finding "in one and call it DESIGN-REQUESTS" (0a863ef). It was rewritten within the hour against an ingestion contract the user supplied, in which Greg's changes arrived as numbered override layers on a baseline (283577d).
+On 11 September at 06:22 ***the user asked Norm to gather every finding into one file named DESIGN-REQUESTS*** (0a863ef). It was rewritten within the hour against an ingestion contract the user supplied, in which Greg's changes arrived as numbered override layers on a baseline (283577d).
 
-At 08:06 the user proposed the loop that still runs today: "lets come up with a pattern where you review the design artifacts for canonical accuracy and can provide requests back to the design agent ... can we put that in a contract that you both have access to". `DESIGN-REVIEW-CONTRACT.md` (3710e1f, 08:14) turned the list into a ledger of numbered requests, DR-001 onward. Each has an owner, a status and an append-only thread. The user decides, Greg owns the look, and Norm reviews for faithfulness and buildability, not taste. Norm makes every commit.
+At 08:06 the user proposed the loop that still runs today: ***Norm would review the design work for faithfulness to the original and send requests back to Greg, under a contract both agents could read***. `DESIGN-REVIEW-CONTRACT.md` (3710e1f, 08:14) turned the list into a ledger of numbered requests, DR-001 onward. Each has an owner, a status and an append-only thread. The user decides, Greg owns the look, and Norm reviews for faithfulness and buildability, not taste. Norm makes every commit.
 
 The contract changed quickly:
 
@@ -51,14 +55,14 @@ The contract changed quickly:
 |---|---|---|
 | 1 | 11 Sep | First version: numbered requests, statuses, threads |
 | 2 | 11 Sep | Greg got write access to the repository. The override layers were dropped in favour of direct per-room metadata, with an index, a schema and shared metadata. |
-| 3 | 11 Sep | Time-stamped thread entries "so we can see a dialogue", a delivery checklist with `check_design.mjs`, and Norm allowed to correct metadata but never images |
+| 3 | 11 Sep | Time-stamped thread entries, so that each thread reads as a dialogue, a delivery checklist with `check_design.mjs`, and Norm allowed to correct metadata but never images |
 | 4 | 11 Sep | The inventory of sky rooms, and a check that each has all three day-phase looks |
-| 5 | 12 Sep | The artwork brief and audit (see [Seamless rooms](seamless-rooms.md)) |
+| 5 | 12 Sep | The artwork brief and audit (see [How a room is painted](deck-nine-room-reconstruction.md#3-a-planned-four-view-ring-dr-108)) |
 | 5.1 | 12 Sep | The ledger cut down to the live queue, with the rest archived verbatim; Norm given his name |
 | 6 | 13 Sep | The mailbox (see [How we work](how-we-work.md)) |
 | 7 | 20 Sep | The brakes, after an adversarial review of the workflow: an ask says what would settle it and its close brings that evidence; a verdict asking for changes says what is wrong, with the boxes drawn on the blockout where it names a rectangle; and a view gets two change asks, not three, before the room goes to the user |
 
-The user put the division of labour in one sentence: "you are empowered to make any corrections to the metadata files, but any design artifacts (images) should be left to greg" (11 September, 08:43).
+The user put the division of labour in one sentence: ***Norm may correct any metadata file, but the images are Greg's alone*** (11 September, 08:43).
 
 ## Metadata, and a checker
 
@@ -66,7 +70,7 @@ With repository access, Greg consolidated everything into one `<ROOM>.metadata.j
 
 Most review findings were mechanical: an object from the wrong room, dropped-item anchors inside exit lanes, Floyd inside the item fan, doors missing their panels. So Norm wrote `scripts/check_design.mjs` (992386c, 09:13), a read-only checker Greg runs before marking anything ready. Later a sweep of doorways shared by two packages found 6 of 41 disagreeing on size. The checker now catches that too (DR-084).
 
-The first decision the user made through the ledger was DR-014. The user had proposed separate "light", "dark" and "crepuscular" window states. Greg recommended one set of paintings with three lighting looks in the metadata, instead of 20 to 30 extra images. The user answered "DR-014 - yes", and it was approved that morning.
+The first decision the user made through the ledger was DR-014. ***The user had proposed separate light, dark and twilight states for the windows.*** Greg recommended one set of paintings with three lighting looks in the metadata, instead of 20 to 30 extra images. ***The user agreed to DR-014***, and it was approved that morning.
 
 ## The graybox reads the design
 
@@ -74,7 +78,7 @@ Until 11 September the grey box ignored all of this, so small controls overlappe
 
 ## The Planetfall Dashboard
 
-On 11 September at 19:26 the user asked for "a dashboard so i can check on overall status ... lets call this the Planetfall Dashboard". After a round of questions, Norm built it in twenty minutes (5c9a0eb, 19:46). It lists all 105 rooms, grouped by the 13 regions the map layout already computed, through the stages package, review, integrated and room test. Each room shows its comps, links to its package files, and a walkable preview that uses the game's own pipeline, with hopping to the next room. At launch it showed 26 rooms packaged; 28 were indexed, but Deck Nine and the escape pod had no metadata yet.
+On 11 September at 19:26 ***the user asked for a dashboard to check on overall status, to be called the Planetfall Dashboard***. After a round of questions, Norm built it in twenty minutes (5c9a0eb, 19:46). It lists all 105 rooms, grouped by the 13 regions the map layout already computed, through the stages package, review, integrated and room test. Each room shows its comps, links to its package files, and a walkable preview that uses the game's own pipeline, with hopping to the next room. At launch it showed 26 rooms packaged; 28 were indexed, but Deck Nine and the escape pod had no metadata yet.
 
 Over the next days it gained:
 
@@ -87,9 +91,9 @@ Since cba06f2, `/` opens the dashboard.
 
 ## The acceptance gate and the review page
 
-On 12 September the user pointed out the cost of the obvious approach: a model eyeballing screenshots and nudging geometry would spend about 50,000 tokens a room. They asked instead for a tool, and for "a user acceptance gate on whether it looks right". Commit 8f18eac (08:45) delivered two things. The first was the parts kit: a room is described as a block of JSON built from nine reusable parts and named materials. The second was the gate: a "Does it look right?" verdict with a note, written by `POST /design/accept` into `room-status.json`. It is the one stage no check can replace.
+On 12 September the user pointed out the cost of the obvious approach: a model eyeballing screenshots and nudging geometry would spend about 50,000 tokens a room. ***They asked instead for a tool, and for an acceptance step where they themselves decide whether a room looks right***. Commit 8f18eac (08:45) delivered two things. The first was the parts kit: a room is described as a block of JSON built from nine reusable parts and named materials. The second was the gate: a "Does it look right?" verdict with a note, written by `POST /design/accept` into `room-status.json`. It is the one stage no check can replace.
 
-Later that day the user asked whether Deck Nine had states worth showing, such as "the ambassador showing up / blather showing up / after the emergency happens / open bulkhead". The answer was `uat.html` (45adc47). It draws one room exactly as the game does, and derives its switches from the room's own conditions, doors and actors. It replaced a temporary comparison page. It marks any switch that has no artwork behind it. It is where the user now does every final look.
+Later that day ***the user asked whether Deck Nine had states worth showing, such as the ambassador or Blather arriving, the room after the emergency, or the bulkhead open***. The answer was `uat.html` (45adc47). It draws one room exactly as the game does, and derives its switches from the room's own conditions, doors and actors. It replaced a temporary comparison page. It marks any switch that has no artwork behind it. It is where the user now does every final look.
 
 ## Clearing the backlog
 
@@ -97,15 +101,17 @@ By the morning of 12 September, 51 rooms had packages and none was in the game. 
 
 ## The day the look changed (12 September)
 
-The user asked Norm to "move to the starting point room and try to apply the design guidance there". Deck Nine had no metadata, so Norm wrote it (DR-086). Norm also found two places where the comp contradicted the running game (DR-087). The comp put a wheel door at the top of the gangway, where the game has a narrow bulkhead at its base, and it drew a hinged hatch where the pod door slides. Greg repainted both.
+***The user asked Norm to go to the starting room and try the design guidance there.*** Deck Nine had no metadata, so Norm wrote it (DR-086). Norm also found two places where the comp contradicted the running game (DR-087). The comp put a wheel door at the top of the gangway, where the game has a narrow bulkhead at its base, and it drew a hinged hatch where the pod door slides. Greg repainted both.
 
-Then the user looked at the built room: "the scene in deck 9 is very blocky. is there going to be some overlay of the graphics at some point?" Norm had to admit that the comps had only ever been references and would not appear in the game as they were. Norm later said, "I explained it badly. Twice." Several attempts followed:
+Then the user looked at the built room: ***Deck Nine looked very blocky, and they asked whether the artwork would ever be laid over it***. Norm had to admit that the comps had only ever been references and would not appear in the game as they were. Norm later said, "I explained it badly. Twice." Several attempts followed:
 
 - **A panorama.** Greg's generator returned 1774 by 887 pixels against the 6144 by 3072 needed, so the trial was withdrawn on its own pass criterion (240d1df).
 - **Better lighting**: the day-phase rig (DR-060) and authored interior lighting (DR-092).
 - **Three ways.** Deck Nine was built three ways on one comparison page (66025be): as it was, as stylised geometry with drawn textures, and as the comp with clickable hotspots over it.
 
-The user chose the painted comp, and refused to lose what made the rooms rooms: "ok c is the best visually, but we lost the ability to drag around to see the whole room". How the team got both is the subject of [Seamless rooms](seamless-rooms.md).
+![The Helipad as it came to be painted: on the left, guides rendered from the room's measured shell with the new part left as a flat block, boxed in magenta; on the right, Greg's paintings of the same views, the helicopter looking north and the stairwell looking south](wiki/helipad-guide-and-painted.jpg)
+
+The user chose the painted comp, and refused to lose what made the rooms rooms: ***option C looked best, but it had lost the drag to look around the whole room***. How the team got both is the subject of [How a room is painted: Deck Nine](deck-nine-room-reconstruction.md).
 
 ## What was hard
 

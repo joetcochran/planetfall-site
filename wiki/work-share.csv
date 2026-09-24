@@ -3,111 +3,119 @@ day,category,asks,git_lines,playtest_commands,share_of_day
 2026-09-10,Layout and blockouts,0,0,0,0.0000
 2026-09-10,Painting,0,0,0,0.0000
 2026-09-10,Objects and sprites,0,0,0,0.0000
-2026-09-10,Tools and engine,0,1188,0,0.0710
-2026-09-10,Playtesting,0,2768,3090,0.8821
-2026-09-10,Playtest review and fixes,0,784,0,0.0469
+2026-09-10,Tools and engine,0,592,0,0.0476
+2026-09-10,Playtesting,0,748,3090,0.8903
+2026-09-10,Playtest review and fixes,0,771,0,0.0620
 2026-09-10,Rework,0,0,0,0.0000
 2026-09-11,Metadata and canon,0,0,0,0.0000
 2026-09-11,Layout and blockouts,0,0,0,0.0000
 2026-09-11,Painting,0,0,0,0.0000
 2026-09-11,Objects and sprites,0,0,0,0.0000
-2026-09-11,Tools and engine,0,1415,0,0.0456
-2026-09-11,Playtesting,0,4947,6132,0.9264
-2026-09-11,Playtest review and fixes,0,870,0,0.0280
+2026-09-11,Tools and engine,0,1415,0,0.0511
+2026-09-11,Playtesting,0,4947,6132,0.9175
+2026-09-11,Playtest review and fixes,0,870,0,0.0314
 2026-09-11,Rework,0,0,0,0.0000
 2026-09-12,Metadata and canon,0,0,0,0.0000
-2026-09-12,Layout and blockouts,0,727,0,0.0406
+2026-09-12,Layout and blockouts,0,727,0,0.0442
 2026-09-12,Painting,0,0,0,0.0000
 2026-09-12,Objects and sprites,0,0,0,0.0000
-2026-09-12,Tools and engine,0,4433,0,0.2478
-2026-09-12,Playtesting,0,2124,2629,0.6892
-2026-09-12,Playtest review and fixes,0,399,0,0.0223
+2026-09-12,Tools and engine,0,4433,0,0.2693
+2026-09-12,Playtesting,0,2124,2629,0.6623
+2026-09-12,Playtest review and fixes,0,399,0,0.0242
 2026-09-12,Rework,0,0,0,0.0000
-2026-09-13,Metadata and canon,3,0,0,0.0319
-2026-09-13,Layout and blockouts,7,718,0,0.2210
-2026-09-13,Painting,22,0,0,0.2342
+2026-09-13,Metadata and canon,3,0,0,0.0317
+2026-09-13,Layout and blockouts,7,718,0,0.2214
+2026-09-13,Painting,22,0,0,0.2325
 2026-09-13,Objects and sprites,1,0,0,0.0106
-2026-09-13,Tools and engine,0,1887,0,0.3850
+2026-09-13,Tools and engine,0,1887,0,0.3875
 2026-09-13,Playtesting,0,0,0,0.0000
 2026-09-13,Playtest review and fixes,0,0,0,0.0000
-2026-09-13,Rework,11,0,0,0.1171
-2026-09-14,Metadata and canon,8,0,0,0.0241
-2026-09-14,Layout and blockouts,33,2377,0,0.2369
-2026-09-14,Painting,45,0,0,0.1357
+2026-09-13,Rework,11,0,0,0.1163
+2026-09-14,Metadata and canon,8,0,0,0.0240
+2026-09-14,Layout and blockouts,33,2377,0,0.2371
+2026-09-14,Painting,45,0,0,0.1347
 2026-09-14,Objects and sprites,1,0,0,0.0030
-2026-09-14,Tools and engine,0,6733,0,0.3891
+2026-09-14,Tools and engine,0,6733,0,0.3917
 2026-09-14,Playtesting,0,0,0,0.0000
 2026-09-14,Playtest review and fixes,0,0,0,0.0000
-2026-09-14,Rework,70,0,0,0.2111
-2026-09-15,Metadata and canon,1,0,0,0.0181
-2026-09-15,Layout and blockouts,1,509,0,0.1946
-2026-09-15,Painting,25,0,0,0.4523
+2026-09-14,Rework,70,0,0,0.2096
+2026-09-15,Metadata and canon,1,0,0,0.0180
+2026-09-15,Layout and blockouts,1,509,0,0.1963
+2026-09-15,Painting,25,0,0,0.4507
 2026-09-15,Objects and sprites,0,0,0,0.0000
-2026-09-15,Tools and engine,1,236,0,0.0999
+2026-09-15,Tools and engine,1,236,0,0.1007
 2026-09-15,Playtesting,0,0,0,0.0000
 2026-09-15,Playtest review and fixes,0,0,0,0.0000
-2026-09-15,Rework,13,0,0,0.2352
+2026-09-15,Rework,13,0,0,0.2343
 2026-09-16,Metadata and canon,1,0,0,0.0055
-2026-09-16,Layout and blockouts,2,203,0,0.0325
-2026-09-16,Painting,52,0,0,0.2869
+2026-09-16,Layout and blockouts,2,203,0,0.0327
+2026-09-16,Painting,52,0,0,0.2863
 2026-09-16,Objects and sprites,0,0,0,0.0000
-2026-09-16,Tools and engine,0,1116,0,0.1180
+2026-09-16,Tools and engine,0,1116,0,0.1194
 2026-09-16,Playtesting,0,0,0,0.0000
 2026-09-16,Playtest review and fixes,0,0,0,0.0000
-2026-09-16,Rework,101,0,0,0.5572
-2026-09-17,Metadata and canon,12,0,0,0.0523
-2026-09-17,Layout and blockouts,17,2197,0,0.2576
-2026-09-17,Painting,88,0,0,0.3836
-2026-09-17,Objects and sprites,1,0,0,0.0044
-2026-09-17,Tools and engine,0,1843,0,0.1539
+2026-09-16,Rework,101,0,0,0.5561
+2026-09-17,Metadata and canon,12,0,0,0.0521
+2026-09-17,Layout and blockouts,17,2197,0,0.2589
+2026-09-17,Painting,88,0,0,0.3818
+2026-09-17,Objects and sprites,1,0,0,0.0043
+2026-09-17,Tools and engine,0,1843,0,0.1553
 2026-09-17,Playtesting,0,0,0,0.0000
 2026-09-17,Playtest review and fixes,0,0,0,0.0000
-2026-09-17,Rework,34,0,0,0.1482
+2026-09-17,Rework,34,0,0,0.1475
 2026-09-18,Metadata and canon,0,0,0,0.0000
-2026-09-18,Layout and blockouts,18,8039,0,0.2246
-2026-09-18,Painting,171,0,0,0.2232
+2026-09-18,Layout and blockouts,18,8039,0,0.2333
+2026-09-18,Painting,171,0,0,0.2290
 2026-09-18,Objects and sprites,0,0,0,0.0000
-2026-09-18,Tools and engine,0,5052,0,0.1264
-2026-09-18,Playtesting,0,1430,2460,0.2746
-2026-09-18,Playtest review and fixes,0,358,0,0.0090
-2026-09-18,Rework,109,0,0,0.1423
+2026-09-18,Tools and engine,0,5052,0,0.1315
+2026-09-18,Playtesting,0,1430,2460,0.2509
+2026-09-18,Playtest review and fixes,0,358,0,0.0093
+2026-09-18,Rework,109,0,0,0.1460
 2026-09-19,Metadata and canon,0,0,0,0.0000
 2026-09-19,Layout and blockouts,1,0,0,0.0058
-2026-09-19,Painting,59,0,0,0.3421
+2026-09-19,Painting,59,0,0,0.3415
 2026-09-19,Objects and sprites,0,0,0,0.0000
-2026-09-19,Tools and engine,0,1172,0,0.1302
+2026-09-19,Tools and engine,0,1172,0,0.1318
 2026-09-19,Playtesting,0,0,0,0.0000
 2026-09-19,Playtest review and fixes,0,0,0,0.0000
-2026-09-19,Rework,90,0,0,0.5219
+2026-09-19,Rework,90,0,0,0.5209
 2026-09-20,Metadata and canon,0,0,0,0.0000
-2026-09-20,Layout and blockouts,36,121,0,0.3137
-2026-09-20,Painting,26,0,0,0.2129
+2026-09-20,Layout and blockouts,36,121,0,0.3126
+2026-09-20,Painting,26,0,0,0.2119
 2026-09-20,Objects and sprites,0,0,0,0.0000
-2026-09-20,Tools and engine,0,1974,0,0.3097
+2026-09-20,Tools and engine,0,1974,0,0.3125
 2026-09-20,Playtesting,0,0,0,0.0000
 2026-09-20,Playtest review and fixes,0,0,0,0.0000
-2026-09-20,Rework,20,0,0,0.1637
+2026-09-20,Rework,20,0,0,0.1630
 2026-09-21,Metadata and canon,0,0,0,0.0000
 2026-09-21,Layout and blockouts,0,0,0,0.0000
-2026-09-21,Painting,8,0,0,0.2486
+2026-09-21,Painting,8,0,0,0.2478
 2026-09-21,Objects and sprites,0,0,0,0.0000
-2026-09-21,Tools and engine,0,375,0,0.2233
+2026-09-21,Tools and engine,0,375,0,0.2257
 2026-09-21,Playtesting,0,0,0,0.0000
 2026-09-21,Playtest review and fixes,0,0,0,0.0000
-2026-09-21,Rework,17,0,0,0.5282
-2026-09-22,Metadata and canon,1,0,0,0.0297
-2026-09-22,Layout and blockouts,1,113,0,0.0940
-2026-09-22,Painting,7,0,0,0.2079
-2026-09-22,Objects and sprites,3,0,0,0.0891
-2026-09-22,Tools and engine,0,235,0,0.1338
+2026-09-21,Rework,17,0,0,0.5266
+2026-09-22,Metadata and canon,1,0,0,0.0296
+2026-09-22,Layout and blockouts,1,113,0,0.0946
+2026-09-22,Painting,7,0,0,0.2073
+2026-09-22,Objects and sprites,3,0,0,0.0889
+2026-09-22,Tools and engine,0,235,0,0.1352
 2026-09-22,Playtesting,0,0,0,0.0000
 2026-09-22,Playtest review and fixes,0,0,0,0.0000
-2026-09-22,Rework,15,0,0,0.4455
+2026-09-22,Rework,15,0,0,0.4443
 2026-09-23,Metadata and canon,0,0,0,0.0000
-2026-09-23,Layout and blockouts,0,22,0,0.0020
-2026-09-23,Painting,3,0,0,0.0141
+2026-09-23,Layout and blockouts,0,22,0,0.0021
+2026-09-23,Painting,3,0,0,0.0149
 2026-09-23,Objects and sprites,0,0,0,0.0000
-2026-09-23,Tools and engine,0,2993,0,0.2695
-2026-09-23,Playtesting,1,1329,1325,0.5875
+2026-09-23,Tools and engine,0,2993,0,0.2888
+2026-09-23,Playtesting,1,1329,1325,0.5601
 2026-09-23,Playtest review and fixes,0,0,0,0.0000
-2026-09-23,Rework,27,0,0,0.1269
+2026-09-23,Rework,27,0,0,0.1341
+2026-09-24,Metadata and canon,0,0,0,0.0000
+2026-09-24,Layout and blockouts,0,38,0,0.0034
+2026-09-24,Painting,1,0,0,0.0045
+2026-09-24,Objects and sprites,1,0,0,0.0045
+2026-09-24,Tools and engine,0,1195,0,0.1055
+2026-09-24,Playtesting,0,1101,2481,0.8287
+2026-09-24,Playtest review and fixes,0,89,0,0.0079
+2026-09-24,Rework,10,0,0,0.0455

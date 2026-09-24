@@ -126,8 +126,27 @@ export async function show(doc = globalThis.document) {
     const seen = new Set(['?page=index']);
     const links = (listed.length ? listed : [...parsed.querySelectorAll('a[href^="?page="]')])
       .filter(a => { const page = a.getAttribute('href').split('#')[0]; return !seen.has(page) && seen.add(page); });
+    // A page listed in a nested item of the contents (the Conference Room table under the journal, the diaries under
+    // Playing it) is a subpage of the top-level page whose item holds it, and is drawn indented beneath it. A page with
+    // subpages is a group that folds: the user (2026-09-24) wanted Playing it's 35 diaries folded away by default. A
+    // group of more than FOLD subpages starts folded, unless one of its subpages is on screen; a smaller one starts open.
+    const FOLD = 5;
+    const sub = a => !!a.parentElement?.parentElement?.closest('li');
+    const top = links.filter(a => !sub(a));
+    const parentOf = a => { for (let li = a.parentElement?.parentElement?.closest('li'); li; li = li.parentElement?.closest('li')) { const first = li.querySelector(':scope > a:first-child'); if (first && top.includes(first)) return first; } return null; };
+    const here = a => a.getAttribute('href').split('#')[0] === `?page=${name}`;
+    const link = (a, child) => `<a href="${a.getAttribute('href')}"${[child && 'sub', here(a) && 'here'].filter(Boolean).length ? ` class="${[child && 'sub', here(a) && 'here'].filter(Boolean).join(' ')}"` : ''}${child ? ' style="padding-left:1.6rem;font-size:.88rem"' : ''}>${a.textContent}</a>`;
     nav.innerHTML = `<a href="?page=index"${name === 'index' ? ' class="here"' : ''}>Overview</a>`
-      + links.map(a => `<a href="${a.getAttribute('href')}"${a.getAttribute('href').split('#')[0] === `?page=${name}` ? ' class="here"' : ''}>${a.textContent}</a>`).join('');
+      + top.map(a => {
+        const kids = links.filter(k => sub(k) && parentOf(k) === a);
+        if (!kids.length) return link(a, false);
+        const open = kids.length <= FOLD || kids.some(here);
+        return `<div class="group${open ? ' open' : ''}"><div class="head"><button type="button" class="fold" aria-expanded="${open}" title="Show or hide its ${kids.length} pages"></button>${link(a, false)}<span class="count">${kids.length}</span></div><div class="kids"${open ? '' : ' hidden'}>${kids.map(k => link(k, true)).join('')}</div></div>`;
+      }).join('');
+    for (const g of nav.querySelectorAll('.group')) g.querySelector('.fold').addEventListener('click', () => {
+      const open = !g.classList.contains('open');
+      g.classList.toggle('open', open); g.querySelector('.kids').hidden = !open; g.querySelector('.fold').setAttribute('aria-expanded', String(open));
+    });
     doc.title = `${main.querySelector('h1')?.textContent ?? 'History'} · Planetfall`;
     if (location.hash) doc.getElementById(location.hash.slice(1))?.scrollIntoView();
   } catch (e) {

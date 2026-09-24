@@ -11,6 +11,15 @@
   nav a { color: var(--dim); text-decoration: none; padding: .3rem .6rem; border-radius: .3rem; font-size: .95rem; }
   nav a:hover { color: var(--ink); background: var(--panel); }
   nav a.here { color: var(--ink); background: var(--panel); border-left: 3px solid var(--link); }
+  nav .group .head { display: flex; align-items: center; }
+  nav .group .head > a { flex: 1; }
+  nav .group .fold { background: none; border: 0; color: var(--dim); cursor: pointer; width: 1.1rem; margin-left: -1.1rem; padding: 0; font-size: .8rem; line-height: 1; }
+  nav .group .fold::before { content: '\25B8'; display: inline-block; transition: transform .15s; }
+  nav .group.open .fold::before { transform: rotate(90deg); }
+  nav .group .fold:hover { color: var(--ink); }
+  nav .group .count { color: var(--dim); font-size: .75rem; padding-right: .4rem; }
+  nav .group .kids { display: flex; flex-direction: column; gap: .15rem; }
+  nav .group .kids[hidden] { display: none; }
   main { padding: 1.5rem 0 4rem; min-width: 0; }
   main h1 { font-size: 2rem; line-height: 1.2; margin: 0 0 1rem; }
   main h2 { margin-top: 2.2rem; padding-top: .6rem; border-top: 1px solid var(--line); }
@@ -25,7 +34,7 @@
   main th, main td { border: 1px solid var(--line); padding: .4rem .6rem; vertical-align: top; text-align: left; }
   main th { background: var(--panel); }
   @media (max-width: 760px) { .wrap { grid-template-columns: 1fr; gap: 0; } nav { position: static; flex-direction: row; flex-wrap: wrap; padding: .8rem 0 0; } }
-</style></head><body>
+</style><script data-goatcounter="https://planetfall.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></head><body>
 <header><strong>PLANETFALL · how it was made</strong><a href="index.html">play the game</a><a href="map.html">world map</a></header>
 <div class="wrap"><nav id="contents" aria-label="Pages"></nav><main id="page"><p>Loading…</p></main></div>
 <script type="module">import('./wiki/wiki.js').then(m => m.show()).catch(e => { document.getElementById('page').textContent = 'Unable to load: ' + e.message; });</script>

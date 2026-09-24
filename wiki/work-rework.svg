@@ -11,60 +11,64 @@
 <text x="50" y="128.5" fill="#7d8b99" font-size="11" text-anchor="end">75%</text>
 <line x1="58" y1="28.0" x2="768" y2="28.0" stroke="#263039"/>
 <text x="50" y="32.0" fill="#7d8b99" font-size="11" text-anchor="end">100%</text>
-<text x="83.4" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/10</text>
-<text x="134.1" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/11</text>
-<text x="184.8" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/12</text>
-<text x="235.5" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/13</text>
-<text x="286.2" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/14</text>
-<text x="336.9" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/15</text>
-<text x="387.6" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/16</text>
-<text x="438.4" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/17</text>
-<text x="489.1" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/18</text>
-<text x="539.8" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/19</text>
-<text x="590.5" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/20</text>
-<text x="641.2" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/21</text>
-<text x="691.9" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/22</text>
-<text x="742.6" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/23</text>
-<polyline points="235.5,317.5 286.2,241.9 336.9,291.6 387.6,164.1 438.4,327.7 489.1,273.3 539.8,182.4 590.5,319.9 641.2,151.5 691.9,199.6 742.6,77.8" fill="none" stroke="#e5534b" stroke-width="2.5"/>
-<circle cx="235.5" cy="317.5" r="4" fill="#e5534b"/>
-<text x="235.5" y="307.5" fill="#e6edf3" font-size="11" text-anchor="middle">25%</text>
-<text x="235.5" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">11 of 44</text>
-<circle cx="286.2" cy="241.9" r="4" fill="#e5534b"/>
-<text x="286.2" y="231.9" fill="#e6edf3" font-size="11" text-anchor="middle">45%</text>
-<text x="286.2" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">70 of 157</text>
-<circle cx="336.9" cy="291.6" r="4" fill="#e5534b"/>
-<text x="336.9" y="281.6" fill="#e6edf3" font-size="11" text-anchor="middle">32%</text>
-<text x="336.9" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">13 of 41</text>
-<circle cx="387.6" cy="164.1" r="4" fill="#e5534b"/>
-<text x="387.6" y="154.1" fill="#e6edf3" font-size="11" text-anchor="middle">65%</text>
-<text x="387.6" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">101 of 156</text>
-<circle cx="438.4" cy="327.7" r="4" fill="#e5534b"/>
-<text x="438.4" y="317.7" fill="#e6edf3" font-size="11" text-anchor="middle">22%</text>
-<text x="438.4" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">34 of 152</text>
-<circle cx="489.1" cy="273.3" r="4" fill="#e5534b"/>
-<text x="489.1" y="263.3" fill="#e6edf3" font-size="11" text-anchor="middle">36%</text>
-<text x="489.1" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">109 of 299</text>
-<circle cx="539.8" cy="182.4" r="4" fill="#e5534b"/>
-<text x="539.8" y="172.4" fill="#e6edf3" font-size="11" text-anchor="middle">60%</text>
-<text x="539.8" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">90 of 150</text>
-<circle cx="590.5" cy="319.9" r="4" fill="#e5534b"/>
-<text x="590.5" y="309.9" fill="#e6edf3" font-size="11" text-anchor="middle">24%</text>
-<text x="590.5" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">20 of 82</text>
-<circle cx="641.2" cy="151.5" r="4" fill="#e5534b"/>
-<text x="641.2" y="141.5" fill="#e6edf3" font-size="11" text-anchor="middle">68%</text>
-<text x="641.2" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">17 of 25</text>
-<circle cx="691.9" cy="199.6" r="4" fill="#e5534b"/>
-<text x="691.9" y="189.6" fill="#e6edf3" font-size="11" text-anchor="middle">56%</text>
-<text x="691.9" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">15 of 27</text>
-<circle cx="742.6" cy="77.8" r="4" fill="#e5534b"/>
-<text x="742.6" y="67.8" fill="#e6edf3" font-size="11" text-anchor="middle">87%</text>
-<text x="742.6" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">27 of 31</text>
+<text x="81.7" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/10</text>
+<text x="129.0" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/11</text>
+<text x="176.3" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/12</text>
+<text x="223.7" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/13</text>
+<text x="271.0" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/14</text>
+<text x="318.3" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/15</text>
+<text x="365.7" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/16</text>
+<text x="413.0" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/17</text>
+<text x="460.3" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/18</text>
+<text x="507.7" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/19</text>
+<text x="555.0" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/20</text>
+<text x="602.3" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/21</text>
+<text x="649.7" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/22</text>
+<text x="697.0" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/23</text>
+<text x="744.3" y="432" fill="#7d8b99" font-size="11" text-anchor="middle">09/24</text>
+<polyline points="223.7,317.5 271.0,241.9 318.3,291.6 365.7,164.1 413.0,327.7 460.3,273.3 507.7,182.4 555.0,319.9 602.3,151.5 649.7,199.6 697.0,77.8 744.3,92.3" fill="none" stroke="#e5534b" stroke-width="2.5"/>
+<circle cx="223.7" cy="317.5" r="4" fill="#e5534b"/>
+<text x="223.7" y="307.5" fill="#e6edf3" font-size="11" text-anchor="middle">25%</text>
+<text x="223.7" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">11 of 44</text>
+<circle cx="271.0" cy="241.9" r="4" fill="#e5534b"/>
+<text x="271.0" y="231.9" fill="#e6edf3" font-size="11" text-anchor="middle">45%</text>
+<text x="271.0" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">70 of 157</text>
+<circle cx="318.3" cy="291.6" r="4" fill="#e5534b"/>
+<text x="318.3" y="281.6" fill="#e6edf3" font-size="11" text-anchor="middle">32%</text>
+<text x="318.3" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">13 of 41</text>
+<circle cx="365.7" cy="164.1" r="4" fill="#e5534b"/>
+<text x="365.7" y="154.1" fill="#e6edf3" font-size="11" text-anchor="middle">65%</text>
+<text x="365.7" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">101 of 156</text>
+<circle cx="413.0" cy="327.7" r="4" fill="#e5534b"/>
+<text x="413.0" y="317.7" fill="#e6edf3" font-size="11" text-anchor="middle">22%</text>
+<text x="413.0" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">34 of 152</text>
+<circle cx="460.3" cy="273.3" r="4" fill="#e5534b"/>
+<text x="460.3" y="263.3" fill="#e6edf3" font-size="11" text-anchor="middle">36%</text>
+<text x="460.3" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">109 of 299</text>
+<circle cx="507.7" cy="182.4" r="4" fill="#e5534b"/>
+<text x="507.7" y="172.4" fill="#e6edf3" font-size="11" text-anchor="middle">60%</text>
+<text x="507.7" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">90 of 150</text>
+<circle cx="555.0" cy="319.9" r="4" fill="#e5534b"/>
+<text x="555.0" y="309.9" fill="#e6edf3" font-size="11" text-anchor="middle">24%</text>
+<text x="555.0" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">20 of 82</text>
+<circle cx="602.3" cy="151.5" r="4" fill="#e5534b"/>
+<text x="602.3" y="141.5" fill="#e6edf3" font-size="11" text-anchor="middle">68%</text>
+<text x="602.3" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">17 of 25</text>
+<circle cx="649.7" cy="199.6" r="4" fill="#e5534b"/>
+<text x="649.7" y="189.6" fill="#e6edf3" font-size="11" text-anchor="middle">56%</text>
+<text x="649.7" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">15 of 27</text>
+<circle cx="697.0" cy="77.8" r="4" fill="#e5534b"/>
+<text x="697.0" y="67.8" fill="#e6edf3" font-size="11" text-anchor="middle">87%</text>
+<text x="697.0" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">27 of 31</text>
+<circle cx="744.3" cy="92.3" r="4" fill="#e5534b"/>
+<text x="744.3" y="82.3" fill="#e6edf3" font-size="11" text-anchor="middle">83%</text>
+<text x="744.3" y="406" fill="#7d8b99" font-size="10" text-anchor="middle">10 of 12</text>
 <rect x="784" y="31" width="12" height="12" fill="#e5534b"/>
 <text x="802" y="41" fill="#cbd5e0" font-size="12">rework</text>
 <text x="784" y="68" fill="#7d8b99" font-size="11">the mailbox opened on 13/09,</text>
 <text x="784" y="83" fill="#7d8b99" font-size="11">so there are no asks before it</text>
 <text x="784" y="98" fill="#7d8b99" font-size="11"></text>
-<text x="784" y="113" fill="#7d8b99" font-size="11">whole period: 507 of 1164</text>
+<text x="784" y="113" fill="#7d8b99" font-size="11">whole period: 517 of 1176</text>
 <text x="784" y="128" fill="#7d8b99" font-size="11">asks, 44%</text>
 <text x="784" y="143" fill="#7d8b99" font-size="11"></text>
 <text x="784" y="158" fill="#7d8b99" font-size="11">rework: a re-delivered view,</text>

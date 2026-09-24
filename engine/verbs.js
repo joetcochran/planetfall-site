@@ -14,7 +14,8 @@ const LONG_WALK = 60;   // minutes; an ordinary step is 20
 const clockTail = (g, which, level) => {
   const left = level > 0 ? g.rules.clocks?.[which]?.(g) : null;
   if (left == null) return '';
-  return which === 'sleep' ? ` You can stay on your feet ${g.inHours(left)} longer.` : ` You can go ${g.inHours(left)} longer without food or drink.`;
+  const time = `${g.inHours(left)} (${g.inMoves(left)})`;   // hours and a rough count of moves (rounds 21-22, core.js inMoves)
+  return which === 'sleep' ? ` You can stay on your feet ${time} longer.` : ` You can go ${time} longer without food or drink.`;
 };
 const announceWalk = (g, minutes) => { if (minutes >= LONG_WALK && !g.state.dead) g.tell(`(That walk took ${g.inHours(minutes)}.)`, 'event'); };
 
@@ -100,13 +101,16 @@ export const DEFAULT_VERBS = {
   DIAGNOSE(g) {
     g.state.elapsed = 18;
     const sick = g.getg('SICKNESS-LEVEL') ?? 0, sleepy = g.getg('SLEEPY-LEVEL') ?? 0, hunger = g.getg('HUNGER-LEVEL') ?? 0;
-    g.tell(sick === 0 ? 'You are in perfect health.' : `You are ${sick > 7 ? 'severely' : sick > 5 ? 'very' : sick > 3 ? 'somewhat' : 'a bit'} sick and feverish.`);
+    // V-DIAGNOSE tests SICKNESS-LEVEL for 0 (verbs.zil 1431); the medicine can take it below zero (comptwo.zil 183), where
+    // the source said "a bit sick and feverish". Deliberate deviation (user decision, 2026-09-24, rounds 21-22): at or
+    // below zero is perfect health, which is what the dose means (round six's clamp, lifted, had kept that promise).
+    g.tell(sick <= 0 ? 'You are in perfect health.' : `You are ${sick > 7 ? 'severely' : sick > 5 ? 'very' : sick > 3 ? 'somewhat' : 'a bit'} sick and feverish.`);
     g.tell((sleepy === 0 ? 'You feel well-rested.' : `You feel ${sleepy > 2 ? 'phenomenally' : sleepy > 1 ? 'quite' : 'sort of'} tired.`) + clockTail(g, 'sleep', sleepy));
     g.tell((hunger === 0 ? 'You seem to be well-fed.' : `You seem to be ${hunger > 4 ? 'awesomely phenomenally' : hunger > 2 ? 'noticeably' : 'fairly'} thirsty and hungry.`) + clockTail(g, 'hunger', hunger));
     // Said once, the first time either clock has begun to run: what the hours are counted against.
     if ((sleepy || hunger) && !g.getg('CLOCK-EXPLAINED')) {
       g.setg('CLOCK-EXPLAINED', true);
-      g.tell('(Those are hours on your chronometer, not turns. Time passes as you move about, and some walks take hours.)');
+      g.tell('(Those are hours on your chronometer, not turns. Time passes as you move about, and some walks take hours. The moves are a rough count of ordinary steps from room to room; waiting and looking closely use time faster.)');
     }
   },
   // V-SAVE / V-RESTORE: one save slot kept inside the game state (so it survives the page's autosave and a playtest
@@ -258,6 +262,10 @@ export const DEFAULT_VERBS = {
     if (e.kind === 'conditional') {
       if (e.door) {
         if (g.fsetP(e.door, 'OPENBIT')) { g.state.elapsed = time; g.goto(e.target); return announceWalk(g, time); }
+        // A door exit's ELSE string is said instead, when it has one (V-WALK's DEXIT): the ProjCon Office's south exit
+        // is "You can't go that way." (comptwo.zil 1313), so it does not name the cryo-elevator door behind the mural
+        // before the mural is found (round twenty-three).
+        if (e.elseMessage) { g.tell(e.elseMessage); ctx.fatal = true; return; }
         g.tell(`The ${D(g, e.door)} is closed.`); g.state.lastObject = e.door; ctx.fatal = true; return;
       }
       if (g.getg(e.flag)) { g.state.elapsed = time; g.goto(e.target); return announceWalk(g, time); }
@@ -326,16 +334,22 @@ export function itake(g, ctx) {
     const drop = g.contents('ADVENTURER').filter(id => !g.fsetP(id, 'WORNBIT')).sort((a, b) => seq(b) - seq(a))[0];
     // Deliberate deviation (user decision, 2026-09-18, round thirteen): the source's line says what fell but not why, and
     // click-13 met it three times (the bedistor, the canteen in "take all", the full flask) and read each as a silent
-    // failure or a quirk. The fumble is about how many things are in hand (CCOUNT > FUMBLE-NUMBER), so the line says
-    // that they are too much together, and names the uniform's pocket the first time, as the weight refusal does.
-    g.tell(`Oh, no. The ${D(g, drop)} slips from your arms while taking the ${D(g, o)} and both tumble to the ground. ${TOO_MANY}` + pocketHint(g));
+    // failure or a quirk. The fumble is about how many things are in hand (CCOUNT > FUMBLE-NUMBER), so the line says so.
+    // Deliberate deviation (user decision, 2026-09-24, rounds 21-22): round thirteen's words ("too much for you to
+    // carry") read as weight, and players shed their heaviest things to no effect; the rule is a count -- more than
+    // FUMBLE-NUMBER, seven, things directly in hand, worn ones included (verbs.zil 527, 552-553). The line now says it
+    // is the number, and every time (not once) where to put things so they stop counting, or what to drop.
+    g.tell(`Oh, no. The ${D(g, drop)} slips from your arms while taking the ${D(g, o)} and both tumble to the ground. ${TOO_MANY}` + fumbleHint(g, [drop, o]));
     // Deliberate deviation (user decision, 2026-09-11, round eleven): the source empties the flask when a fumble
     // drops it (verbs.zil 564-568), which costs a 24-move fetch on a turn that itself costs nothing, and names
     // neither what slipped nor why. The flask now survives the fall; the fumble still drops both things.
     // Round thirteen: the line used to end on "you are lucky", and click-13 read the pair as a successful take and walked
     // seven rooms without the flask. It now says where the flask is.
     if ([drop, o].includes('FLASK') && g.isIn('CHEMICAL-FLUID', 'FLASK')) g.tell('The flask lands on its side on the floor. Luckily the stopper holds, and the chemical is still in it.');
-    if ([drop, o].includes('CANTEEN') && g.isIn('HIGH-PROTEIN', 'CANTEEN') && g.fsetP('CANTEEN', 'OPENBIT')) { g.remove('HIGH-PROTEIN'); g.tell('To make matters worse, the high-protein liquid spills all over the place and then evaporates.'); }
+    // Deliberate deviation (user decision, 2026-09-24, rounds 21-22): the open canteen no longer spills in a fumble
+    // (verbs.zil 569-575 removes the liquid), for the flask's reason above: a fumble costs nothing and says little, and
+    // losing the day's only drink to it was a trip back to the kitchen. It lands with its liquid, and says so.
+    if ([drop, o].includes('CANTEEN') && g.isIn('HIGH-PROTEIN', 'CANTEEN') && g.fsetP('CANTEEN', 'OPENBIT')) g.tell('The canteen lands upright on the floor, and the high-protein liquid is still in it.');
     g.move(drop, g.state.here); g.move(o, g.state.here); ctx.fatal = true; return false;
   }
   g.move(o, 'ADVENTURER'); g.fclear(o, 'NDESCBIT'); g.scoreObj(o); g.fset(o, 'TOUCHBIT');
@@ -354,7 +368,22 @@ export function idrop(g, ctx) {
 // enough. The lightest single thing that makes enough room is named; failing that, the heaviest few together. When
 // even empty hands would not do (sickness shrinks LOAD-ALLOWED), the original line stands alone. A rule module can
 // still supply its own reason for one object through helpers['TOO-HEAVY'].
-export const TOO_MANY = 'Collectively, all these items are too much for you to carry.';
+// ITAKE's fumble (above): the count, not the weight. FUMBLE_NUMBER is the source's (verbs.zil 527); the fumble can start
+// once more than that many things are directly in hand, worn ones counted (verbs.zil 552), which parser.js's
+// Inventory button marks as "(hands full)".
+export const FUMBLE_NUMBER = 7;
+export const handsFull = g => g.contents('ADVENTURER').length > FUMBLE_NUMBER;
+export const TOO_MANY = 'You are holding too many things at once: with more than seven in your hands, counting what you wear, anything you pick up may slip.';
+// Where to put things so they stop counting (what is inside something you hold is not in your hands): the worn
+// uniform's pocket and any open container you carry; failing both, the lightest thing you could drop.
+function fumbleHint(g, fell) {
+  const places = [];
+  if (g.fsetP('PATROL-UNIFORM', 'WORNBIT') && g.isIn('PATROL-UNIFORM', 'ADVENTURER') && g.seeInside('PATROL-UNIFORM')) places.push("your uniform's pocket");
+  for (const c of g.contents('ADVENTURER')) if (!fell.includes(c) && !g.fsetP(c, 'WORNBIT') && g.fsetP(c, 'CONTBIT') && g.fsetP(c, 'OPENBIT') && (parseInt(g.obj(c)?.capacity ?? 0) || 0) > 0) places.push(`the ${D(g, c)}`);
+  if (places.length) return ` (What you put in ${places.length > 1 ? places.slice(0, -1).join(', ') + ' or ' + places.at(-1) : places[0]} doesn't count.)`;
+  const spare = g.contents('ADVENTURER').filter(c => !fell.includes(c) && !g.fsetP(c, 'WORNBIT')).sort((a, b) => g.weight(a) - g.weight(b))[0];
+  return spare ? ` (Dropping something would help: the ${D(g, spare)}, say.)` : '';
+}
 function pocketHint(g) {
   if (g.getg('POCKET-HINTED') || !g.fsetP('PATROL-UNIFORM', 'WORNBIT') || !g.seeInside('PATROL-UNIFORM')) return '';
   g.setg('POCKET-HINTED', true); return ' (Your uniform has a pocket you can put small things in.)';

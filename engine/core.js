@@ -404,12 +404,14 @@ export class Game {
     if (command.takeFirst) {
       const { takeFirst, ...rest } = command;
       const first = this.dispatch({ verb: 'TAKE', prso: takeFirst });
-      if (this.state.dead || !this.held(takeFirst) || !this.isIn(rest.prso, takeFirst)) return first;
+      if (this.state.dead || !this.held(takeFirst) || (rest.prso !== takeFirst && !this.isIn(rest.prso, takeFirst))) return first;   // the thing itself (the ration, rounds 21-22) or what holds it
       return [...first, ...this.dispatch(rest)];
     }
     this.messages = [];
-    if (this.state.dead && command.verb === 'RESTORE' && !this.state.finished) { this.verbs.RESTORE(this, { verb: 'RESTORE', finish: true }); return this.messages; }   // FINISH: RESTORE (its own <RESTORE>, not V-RESTORE: no Floyd line)
-    if (this.state.dead) { this.tell(this.state.finished ? 'The game is over. Restart to play again.' : this.state.saveSlot ? 'You have died. Restart, or restore a saved game position, to play again.' : 'You have died, with no saved position to go back to. Restart to play again, and remember that SAVE costs no time.'); return this.messages; }
+    // FINISH (verbs.zil 252-279) asks "restart, restore a saved game position, or quit" after a win as after a death,
+    // so a finished game restores too (round twenty-two, #55: the victory screen had lost it).
+    if (this.state.dead && command.verb === 'RESTORE') { this.verbs.RESTORE(this, { verb: 'RESTORE', finish: true }); return this.messages; }   // FINISH: RESTORE (its own <RESTORE>, not V-RESTORE: no Floyd line)
+    if (this.state.dead) { this.tell(this.state.finished ? (this.state.saveSlot ? 'The game is over. Restart, or restore a saved game position, to play again.' : 'The game is over. Restart to play again.') : this.state.saveSlot ? 'You have died. Restart, or restore a saved game position, to play again.' : 'You have died, with no saved position to go back to. Restart to play again, and remember that SAVE costs no time.'); return this.messages; }
     // V-AGAIN ("again", "g"): replay the last command, unless an object in it has since vanished (ANYMORE).
     if (command.verb === 'AGAIN' && !command.prso) {
       const last = this.state.lastCommand;
@@ -422,7 +424,7 @@ export class Game {
     if (command.number != null) this.setg('P-NUMBER', command.number);   // a number entry (dial, keyboard): the original parser's P-NUMBER
     if (command.pseudo) this.state.pseudo = command.pseudo;
     this.setg('WINNER', command.winner ?? 'ADVENTURER');
-    const ctx = command.all ? this.performAll(command.verb, command.from ?? null, command.except ?? []) : command.prsos ? this.performList(command.verb, command.prsos) : this.perform(command.verb, command.prso, command.prsi, { dir: command.dir, text: command.text, topic: command.topic });
+    const ctx = command.all ? this.performAll(command.verb, command.from ?? null, command.except ?? []) : command.prsos ? this.performList(command.verb, command.prsos, command.prsi ?? null) : this.perform(command.verb, command.prso, command.prsi, { dir: command.dir, text: command.text, topic: command.topic });
     this.setg('WINNER', 'ADVENTURER');
     // "it" follows the direct object unless a handler redirected it (THIS-IS-IT).
     if (command.prso && this.state.lastObject === before) this.state.lastObject = command.prso;
@@ -463,6 +465,14 @@ export class Game {
     if (h < 0.75) return 'less than an hour';
     if (h < 1.5) return 'about an hour';
     return `about ${Math.round(h)} hours`;
+  }
+  // Deliberate deviation (user decision, 2026-09-24, rounds 21-22): beside the hours, a rough count of moves, since a
+  // player plans in moves (round twenty-one, #60). A move is taken as an ordinary step between rooms (DEFAULT_MOVE,
+  // V-WALK's 20), rounded down and marked "~": waiting (40), examining (32) and the long walks spend more, taking,
+  // dropping and most other commands less (7). The Diagnose note says which moves it means.
+  inMoves(minutes) {
+    const n = Math.floor(minutes / DEFAULT_MOVE);
+    return n < 1 ? 'under a move' : `~${n} move${n === 1 ? '' : 's'}`;
   }
   // Deliberate deviation (user decision, 2026-09-11, round seven): a "Wait for ..." button (rules.waitFor[key] =
   // { label, when(g) }) waits turn after turn, each an ordinary WAIT with its own text, while `when` holds, at most 12

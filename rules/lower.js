@@ -384,6 +384,13 @@ export const menus = {
   'LASER-DIAL': [{ verb: 'SET', number: true }],                      // "Set to a number"
 };
 
+// What a container's "Put in…" submenu may offer (parser.putInto reads rules.putAccepts[container](g) as the only
+// things it takes). LASER-F's PUT (comptwo.zil 2673-2688) takes OLD-BATTERY or NEW-BATTERY -- even one lying in the
+// room, which it picks up itself (the PUT syntax's TAKE) -- and answers anything else "doesn't fit the depression".
+// Round twenty-one: the laser's list offered the access cards in the uniform pocket and never the new battery on the
+// Lab Storage shelf, the one thing it is for.
+export const putAccepts = { LASER: () => ['OLD-BATTERY', 'NEW-BATTERY'] };
+
 // Two-object click-menu entries (see parser.usesFor): the laser at its targets (V-ZAP), containers under the
 // dispenser's spout (CHEMICAL-DISPENSER-F PUT-UNDER) and the flask's fluid into the comm room's funnel (CHEMICAL-FLUID-F).
 export const uses = [

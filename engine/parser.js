@@ -3,6 +3,7 @@
 // This is not the original parser; it covers the phrasings the click UI produces plus common typed forms.
 
 import { pseudoLabel } from './core.js';
+import { handsFull } from './verbs.js';
 export { pseudoLabel };
 
 const DIRS = { n:'NORTH', north:'NORTH', s:'SOUTH', south:'SOUTH', e:'EAST', east:'EAST', w:'WEST', west:'WEST', ne:'NE', northeast:'NE', nw:'NW', northwest:'NW',
@@ -49,9 +50,14 @@ const VERBS = [
 ];
 // WHICH-PRINT's "the X", except for a proper name (Game.properName: "Floyd", not "the Floyd").
 const theName = (g, id) => g.properName(id) ?? 'the ' + g.name(id);
+// WHICH-PRINT (parser.zil 1008-1020) says the noun as it was typed, "Which door do you mean, the lab door or the office
+// door?" (CLAUSE-PRINT); the port had said "Which do you mean, ..." (round twenty-three, the user's decision).
+const whichQ = (g, said, ids) => `Which ${said ? said + ' ' : ''}do you mean, ${ids.map(id => theName(g, id)).join(' or ')}?`;
 // syntax.zil 6's BUZZ words (A AN THE IS ARE ONE OUR ...) are skipped wherever they stand (parser.zil 274), so "what is
-// goo" is WHAT GOO and "the blue one" answers "Which do you mean ...?" as BLUE does (round nineteen).
-const NOISE = new Set(['the','a','an','to','at','with','my','some','your','is','are','one','our']);
+// goo" is WHAT GOO and "the blue one" answers "Which do you mean ...?" as BLUE does (round nineteen). OF is one of them
+// too, and the source's parser carries a noun phrase on past it (parser.zil 345, 845): round twenty-three's "look in
+// pocket of lab uniform" was "I don't know the word 'of'". Here the phrase resolves on its other words.
+const NOISE = new Set(['the','a','an','to','at','with','my','some','your','is','are','one','our','of']);
 // A verb with no declared preposition still splits "VERB NOUN with/about/... NOUN" into two objects, so that
 // "open padlock with pliers" or "ask floyd about water" reach the object's handler instead of failing on a
 // noun made of both nouns ("You can't see any padlock pliers here!"), which the typed playtest hit five times.
@@ -95,6 +101,10 @@ export function parse(text, g) {
 }
 
 function parseCommand(text, g) {
+  // TELL ACTOR TO ...: the source's parser turns the TO after TELL into a quote (parser.zil 174), so "tell floyd to get
+  // the card" is "floyd, get the card". Round twenty-three got "I don't know the word 'get'".
+  const told = text.match(/^\s*tell\s+(?:the\s+)?([a-z][a-z'\-]*)\s+to\s+(.+)$/i);
+  if (told) text = `${told[1]}, ${told[2]}`;
   // "floyd, follow me": a command addressed to an actor in the room (the original's WINNER); the rest is parsed as usual.
   const addressed = text.match(/^\s*([a-z][a-z'\-]*)\s*,\s*(.+)$/i);
   if (addressed) {
@@ -159,13 +169,18 @@ function parseCommand(text, g) {
     if (!objWords.length) return { error: `What do you want to ${words[0]}?` };
     // ALL with a noun ("take all boards", "drop all cards") is every one of those things (P-ALL with P-NAM set: GET-OBJECT
     // keeps each match). It used to reach the noun resolver whole: "You can't see any all boards here!" (round sixteen).
-    if (['all', 'every'].includes(objWords[0]) && objWords.length > 1 && !['except', 'but'].includes(objWords[1]) && ['TAKE', 'DROP', 'EXAMINE'].includes(verb)) {
+    // PUT ... IN / ON takes MANY HELD too (syntax.zil 257-258): "put all cards in uniform" (round twenty-three).
+    const putMany = verb === 'PUT' && prsiWords.length;
+    if (['all', 'every'].includes(objWords[0]) && objWords.length > 1 && !['except', 'but'].includes(objWords[1]) && (['TAKE', 'DROP', 'EXAMINE'].includes(verb) || putMany)) {
       const r = resolve(objWords.slice(1), g);
       if (r.error && !r.candidates) return r;
-      const ids = (r.candidates ?? [r.id]).filter(id => verb === 'TAKE' ? !g.held(id) : verb === 'DROP' ? g.held(id) && !g.fsetP(id, 'WORNBIT') : true);
-      if (ids.length > 1) return { verb, prsos: ids, text };
-      if (ids.length === 1) return { verb, prso: ids[0], text };
-      return r.error ? r : { verb, prso: r.id, text };
+      let into;
+      if (putMany) { const p = resolve(prsiWords, g); if (p.error) return p; into = p.id; }
+      const ids = (r.candidates ?? [r.id]).filter(id => verb === 'TAKE' ? !g.held(id) : verb === 'DROP' || putMany ? g.held(id) && !g.fsetP(id, 'WORNBIT') && id !== into && g.loc(id) !== into : true);
+      const more = putMany ? { prsi: into } : {};
+      if (ids.length > 1) return { verb, prsos: ids, ...more, text };
+      if (ids.length === 1) return { verb, prso: ids[0], ...more, text };
+      return r.error ? r : { verb, prso: r.id, ...more, text };
     }
     if (['all', 'everything'].includes(objWords[0]) && ['TAKE', 'DROP', 'EXAMINE'].includes(verb) && (objWords.length === 1 || ['except', 'but'].includes(objWords[1]))) {   // "take all" / "drop all" / "take all from box" / "drop all except card"; EXAMINE takes MANY too (syntax.zil 129)
       const cmd = { verb, all: true, text };
@@ -245,7 +260,7 @@ function onGround(g, verb, prsiWords, r) {
   };
   const ground = r.candidates.filter(top);
   if (ground.length === 1) return { id: ground[0] };
-  if (ground.length > 1 && ground.length < r.candidates.length) return { ...r, error: `Which do you mean, ${ground.map(id => theName(g, id)).join(' or ')}?`, candidates: ground };
+  if (ground.length > 1 && ground.length < r.candidates.length) return { ...r, error: whichQ(g, r.said, ground), candidates: ground };
   return r;
 }
 // Things the player knows of, for conversation topics: what they have handled, carry, or have seen in a room they have
@@ -286,7 +301,7 @@ export function resolve(words, g, scope = g.scope()) {
     // funnel-shaped hole.
     const adj = scope.filter(id => g.objects[id].adjectives.some(a => forms(words[0]).includes(cut(a.toLowerCase()))));
     if (adj.length === 1) return { id: adj[0] };
-    if (adj.length > 1) return { error: `Which do you mean, ${adj.map(id => theName(g, id)).join(' or ')}?`, candidates: adj, plural: false };
+    if (adj.length > 1) return { error: whichQ(g, words.join(' '), adj), candidates: adj, plural: false, said: words.join(' ') };
   }
   if (!scored.length) {
     // "open south door": a compass word names the door on that side of the room ("A door to the south"), when the rest
@@ -328,7 +343,7 @@ export function resolve(words, g, scope = g.scope()) {
   const best = Math.max(...scored.map(s => s.adj));
   const top = scored.filter(s => s.adj === best);
   if (top.length === 1) return { id: top[0].id };
-  return { error: `Which do you mean, ${top.map(s => theName(g, s.id)).join(' or ')}?`, candidates: top.map(s => s.id), plural: pluralOf(g, words.at(-1), top.map(s => s.id)) };
+  return { error: whichQ(g, words.join(' '), top.map(s => s.id)), candidates: top.map(s => s.id), plural: pluralOf(g, words.at(-1), top.map(s => s.id)), said: words.join(' ') };
 }
 
 // ---------------------------------------------------------------- click-menu contract
@@ -375,7 +390,7 @@ export function verbsFor(g, id) {
   // here." Hiding it read as "this cannot be taken": both testers left the towel and the survival kit in the escape
   // pod because the take buttons appear only on the turn the pod starts to sink. takeableHere still leaves them out,
   // so "Take all" does not spend a turn of a timed emergency on things that are out of reach.
-  if (f('TAKEBIT') && !g.held(id)) out.push('TAKE');
+  if (f('TAKEBIT') && (!g.held(id) || takeOut(g, id))) out.push('TAKE');
   if (g.held(id) && !f('WORNBIT') && !(f('NDESCBIT') && !f('TAKEBIT'))) out.push('DROP');   // not a fixed part of something carried (the laser's dial)
   if (f('DOORBIT') || f('CONTBIT')) out.push(f('OPENBIT') ? 'CLOSE' : 'OPEN');
   if (f('CONTBIT') || f('DOORBIT')) out.push('LOOK-INSIDE');
@@ -383,8 +398,11 @@ export function verbsFor(g, id) {
   if (f('WEARBIT')) out.push(f('WORNBIT') ? 'TAKE-OFF' : 'WEAR');
   if (f('VEHBIT')) out.push(g.inVehicle() === id ? 'DISEMBARK' : 'BOARD');
   else if (f('CLIMBBIT')) {   // a stairway is climbed, not boarded: Climb up / Climb down by the room's exits
-    const dirs = exitChoices(g).map(e => e.direction), up = dirs.includes('UP'), down = dirs.includes('DOWN');
-    if (up || !down) out.push('CLIMB-UP'); if (down) out.push('CLIMB-DOWN');
+    // Only a direction the room has an exit for, blocked ones included (their refusal is the room's own answer, as
+    // "climb up" typed gets it). Round twenty-two (#42): the Library's global STAIRS offered "Climb up" in a room with
+    // neither exit, where V-CLIMB-UP can only say "You can't go that way."
+    const dirs = g.here().exits.map(e => e.direction);
+    if (dirs.includes('UP')) out.push('CLIMB-UP'); if (dirs.includes('DOWN')) out.push('CLIMB-DOWN');
   }
   if (f('DOORBIT')) out.push('THROUGH');
   if (f('FOODBIT')) out.push('EAT');
@@ -403,6 +421,16 @@ export function verbsFor(g, id) {
   if (f('FOODBIT') && out.includes('EAT') && !reachableFood) out.splice(out.indexOf('EAT'), 1);
   return out;
 }
+// A thing inside an open container you carry, which TAKE brings into your hands: PRE-TAKE (verbs.zil 497-521) only
+// refuses a thing held directly or a closed container, and ITAKE skips the load check for it (546). Round twenty-two
+// (#40): verbsFor hid Take on everything held at any depth, so the spool in the carried survival kit had no way out of
+// it but Drop. Not a fixed part (NDESCBIT: the laser's dial), and not what sits in a worn garment's pocket. The battery
+// in the laser is an ordinary TAKEBIT thing in an open container (LASER-F has no TAKE clause), so it is offered too.
+// Labelled "Take out" (verbLabel).
+function takeOut(g, id) {
+  const c = g.loc(id);
+  return !!c && c !== 'ADVENTURER' && g.held(id) && g.fsetP(c, 'CONTBIT') && !g.fsetP(c, 'WORNBIT') && !g.fsetP(id, 'NDESCBIT') && openUpTo(g, id);
+}
 // The command an object menu's entry sends. Eat on food in an open container at your feet (the goo in the survival kit
 // on the floor) takes the container first, as the quick button does (round fourteen, B2): the menu offered Eat there
 // (round eleven, A4) and the source then refused it, "You're not holding the survival kit." (round twenty). Click only.
@@ -419,7 +447,9 @@ function openUpTo(g, id) { for (let l = g.loc(id); l && l !== 'ADVENTURER' && !g
 // The label a menu shows for `verb` on `id`: a module's own label for that entry (menus: { 'HIGH-PROTEIN': [{ verb: 'EAT',
 // label: 'Drink' }] }: the liquid is drunk, though DRINK is EAT in the source), else the verb's usual label.
 export function verbLabel(g, id, verb) {
-  return menuEntries(g, id).find(e => e.verb === verb && e.label && !e.number && !e.hidden)?.label ?? VERB_LABELS[verb] ?? verb;
+  const own = menuEntries(g, id).find(e => e.verb === verb && e.label && !e.number && !e.hidden)?.label;
+  if (!own && verb === 'TAKE' && takeOut(g, id)) return 'Take out';   // out of a carried container (round twenty-two)
+  return own ?? VERB_LABELS[verb] ?? verb;
 }
 // The exits the compass and the click list offer: not the blocked ones, which only print a refusal ("Certain death.",
 // "You'll have to use the elevator controls."), unless a module keeps one because its refusal is part of the story
@@ -469,15 +499,27 @@ export function clickableObjects(g) {
   return out;
 }
 // Held things that can go into container `c` right now, for the container's "Put in…" submenu: `c` must be an open
-// container that is not an actor, and the thing must be a loose takeable one (carried in hand or in a worn pocket, not
-// the goo in the kit or the battery in the laser), not `c` itself or holding `c`, and it must fit (roomFor). Listing every held thing on every container was the wall of "put in" lines both click
-// playtests reported. A module hides the whole entry with a gated PUT menu entry (floyd.js).
+// container that is not an actor, and the thing must be a takeable one you carry -- in hand, in a worn pocket, or
+// (round twenty-two) inside an open container you carry, but not a fixed part or food there (the laser's dial, the goo
+// in the kit) -- not `c` itself or holding `c`, and it must fit (roomFor). Round four had limited it to loose things
+// only: listing every held thing on every container was the wall of "put in" lines both click playtests reported, and
+// the fixed parts and food were most of that wall. A module hides the whole entry with a gated PUT menu entry
+// (floyd.js), or names the only things a container takes (rules.putAccepts: the laser's batteries).
 export function putInto(g, c) {
   if (!g.fsetP(c, 'CONTBIT') || !g.fsetP(c, 'OPENBIT') || g.fsetP(c, 'ACTORBIT')) return [];
   if (menuEntries(g, c).some(e => e.verb === 'PUT' && e.hidden)) return [];
+  // A container whose routine takes only certain things declares them (rules.putAccepts, e.g. lower.js's LASER: the
+  // two batteries). Only those are offered, wherever they can be reached -- carried, or lying loose in the room, which
+  // the container's own PUT picks up -- and nothing at all when none can.
+  const only = g.rules.putAccepts?.[c]?.(g);
+  if (only) return only.filter(id => id !== c && !g.isIn(id, c) && ((g.held(id) && openUpTo(g, id)) || g.loc(id) === g.state.here));
   const loose = [];
+  // Round twenty-two (#45): what stands in an open container you carry is offered too (the bedistor in the survival
+  // kit, for the cube), as V-PUT takes it from there. Not a fixed part (NDESCBIT: the laser's dial) and not food (the
+  // goo, the medicine), which would flood every list and goes nowhere but a mouth.
+  const inside = c => { for (const id of g.contents(c)) if (g.fsetP(id, 'TAKEBIT') && !g.fsetP(id, 'NDESCBIT') && !g.fsetP(id, 'FOODBIT')) { loose.push(id); if (g.fsetP(id, 'OPENBIT')) inside(id); } };
   for (const id of g.contents('ADVENTURER')) {
-    if (!g.fsetP(id, 'WORNBIT')) loose.push(id);
+    if (!g.fsetP(id, 'WORNBIT')) { loose.push(id); if (g.fsetP(id, 'CONTBIT') && g.fsetP(id, 'OPENBIT')) inside(id); }
     else if (g.seeInside(id)) loose.push(...g.contents(id));   // the uniform's pocket
   }
   const within = (a, b) => { for (let l = g.loc(a); l; l = g.loc(l)) if (l === b) return true; return false; };   // a is somewhere inside b
@@ -523,14 +565,14 @@ export function takeableHere(g) {
 function clockState(g) {
   const bits = [];
   const hunger = g.getg('HUNGER-LEVEL') ?? 0, sleepy = g.getg('SLEEPY-LEVEL') ?? 0, sick = g.getg('SICKNESS-LEVEL') ?? 0;
-  const hours = which => { const m = g.rules.clocks?.[which]?.(g); return m == null ? '' : ', ' + g.inHours(m); };
+  const hours = which => { const m = g.rules.clocks?.[which]?.(g); return m == null ? '' : ', ' + g.inHours(m) + ', ' + g.inMoves(m); };   // "about 3 hours, ~9 moves" (rounds 21-22, core.js inMoves)
   if (hunger > 0) bits.push((hunger > 3 ? 'starving' : 'hungry') + (eatButton(g, hunger) ? '' : ', nothing to eat') + hours('hunger'));
   if (sleepy > 0) bits.push((sleepy > 2 ? 'exhausted' : 'tired') + hours('sleep'));
-  if (sick > 0) bits.push(sick > 5 ? 'very sick' : 'feverish');
+  if (sick > 0) bits.push(sick > 5 ? 'very sick' : 'feverish');   // at or below zero (after the medicine) is well
   return bits.length ? ` (${bits.join('; ')})` : '';
 }
-// The quick button that eats, or null: food in hand, food in a closed container you hold, or food in an open kit at
-// your feet. Diagnose's "nothing to eat" asks the same question, so the two cannot disagree (round twenty: the row read
+// The quick button that eats, or null: food in hand, food in a closed container you hold, or food here that one take
+// puts in your hands (an open kit at your feet, the ration on the floor, the canteen in the kitchen niche). Diagnose's "nothing to eat" asks the same question, so the two cannot disagree (round twenty: the row read
 // "hungry, nothing to eat" beside an "Open the survival kit and eat" button).
 function eatButton(g, hungry) {
   const starving = hungry > 3 ? ' (starving!)' : '';
@@ -551,10 +593,23 @@ function eatButton(g, hungry) {
   // was three clicks at the worst moment -- round fourteen's tester was starving in Storage West. One click takes the
   // container and eats, as two ordinary turns (core.js dispatch, takeFirst); the fumble and the weight check still
   // apply to the take. Click only: typing EAT keeps the source's refusal.
+  // Deliberate deviation (user decision, 2026-09-24, rounds 21-22): the same one click for food lying loose on the
+  // floor (the emergency ration, taken itself) and for food in a takeable container standing in an open one here (the
+  // filled canteen left in the kitchen dispenser's niche). Round twenty-one (#41): the Diagnose row read "nothing to
+  // eat" with the full canteen in the niche beside you. The take can still fumble or be too heavy, as any take can.
   const feeds = id => g.fsetP(id, 'FOODBIT') && id !== 'MEDICINE';   // the medicine is FOODBIT but no meal
-  const kit = g.contents(g.state.here).find(c => g.fsetP(c, 'CONTBIT') && g.fsetP(c, 'OPENBIT') && g.fsetP(c, 'TAKEBIT') && g.contents(c).some(feeds));
-  const atFeet = kit && g.contents(kit).find(feeds);
-  if (atFeet) return { key: 'eat', label: `Take the ${g.name(kit)} and ${verbLabel(g, atFeet, 'EAT').toLowerCase()} the ${g.name(atFeet)}` + starving, cmd: { verb: 'EAT', prso: atFeet, takeFirst: kit } };
+  const here = [];
+  const look = c => { for (const id of g.contents(c)) { if (id === 'ADVENTURER' || g.fsetP(id, 'ACTORBIT') || g.fsetP(id, 'INVISIBLE')) continue; if (feeds(id)) here.push(id); if (g.fsetP(id, 'OPENBIT')) look(id); } };
+  look(g.state.here);
+  for (const food of here) {
+    // What must be in hand to eat it: the food itself when it can be picked up (the ration), else what it sits in (the
+    // survival kit, the canteen: GOO-F and HIGH-PROTEIN-F want those held).
+    const take = g.fsetP(food, 'TAKEBIT') ? food : g.loc(food);
+    if (!take || !g.fsetP(take, 'TAKEBIT') || !openUpTo(g, food)) continue;
+    const what = `${verbLabel(g, food, 'EAT').toLowerCase()}`;
+    const label = take === food ? `Take the ${g.name(food)} and ${what} it` : `Take the ${g.name(take)} and ${what} the ${g.name(food)}`;
+    return { key: 'eat', label: label + starving, cmd: { verb: 'EAT', prso: food, takeFirst: take } };
+  }
   return null;
 }
 // The quick buttons beside the compass, in screen order. Look, Inventory, Wait and Diagnose (how you feel: the
@@ -563,7 +618,10 @@ function eatButton(g, hungry) {
 // off, where it answers "You'll probably be asleep before you know it." and time passes; its label grows more urgent
 // with each warning). Save is always there and Restore once something is saved.
 export function quickButtons(g) {
-  const out = [{ key: 'look', label: 'Look', cmd: { verb: 'LOOK' } }, { key: 'inv', label: 'Inventory', cmd: { verb: 'INVENTORY' } }, { key: 'wait', label: 'Wait', cmd: { verb: 'WAIT' } }, { key: 'diagnose', label: 'Diagnose' + clockState(g), cmd: { verb: 'DIAGNOSE' } }];
+  // Deliberate deviation (user decision, 2026-09-24, rounds 21-22): Inventory says "(hands full)" once more than seven
+  // things are directly in hand, worn ones counted -- the point from which any take may fumble (verbs.zil 552-553,
+  // verbs.js handsFull). The source shows the count nowhere; the fumble was the first a player heard of it.
+  const out = [{ key: 'look', label: 'Look', cmd: { verb: 'LOOK' } }, { key: 'inv', label: 'Inventory' + (handsFull(g) ? ' (hands full)' : ''), cmd: { verb: 'INVENTORY' } }, { key: 'wait', label: 'Wait', cmd: { verb: 'WAIT' } }, { key: 'diagnose', label: 'Diagnose' + clockState(g), cmd: { verb: 'DIAGNOSE' } }];
   // Round twelve (A8): waking says "the things you were carrying slipped to the floor beside you" in the same breath
   // as the row losing its Take all, because from inside a vehicle the room's things are out of reach. The button that
   // fixes it now says that is what it is for.

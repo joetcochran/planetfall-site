@@ -20,6 +20,14 @@ if (!response.ok) throw new Error('world.json could not be loaded');
 const world = await response.json();
 addVocabulary(rules.vocabulary ?? []);
 const params = new URLSearchParams(location.search);
+// The published site marks its page data-release (scripts/build-site.mjs): no debug panel, and the testing shortcuts
+// ?room= and ?checkpoint= do nothing there (the user, 2026-09-24).
+const release = document.body.hasAttribute('data-release');
+if (release) { params.delete('room'); params.delete('checkpoint'); }
+// Visitor counts on the published site (GoatCounter, whose script build-site.mjs adds there only): beside the page
+// view, a first move (someone playing, not only looking), a death and a win. Never locally, and never in the way.
+const track = name => { if (!release) return; try { window.goatcounter?.count?.({ path: 'game-' + name, title: name, event: true }); } catch { /* not loaded */ } };
+let moved = false;
 const seed = parseInt(params.get('seed') ?? '', 10);   // ?seed=N makes a run repeatable (scripts/browser.mjs)
 const g = new Game(world, rules, { seed: Number.isFinite(seed) ? seed : (Date.now() % 100000) | 0 });
 const view = new View(document.querySelector('#view'));
@@ -89,10 +97,20 @@ async function paintedTurn(room, raw) {
 // registers exactly ONE level view (caps and state variants aside) is inherently clamped to that view, and a room
 // with a ring is not clamped at all. Nothing new to author, and the next single-view art room is covered by having
 // been painted that way.
+//
+// A room is single-view when its level views all face ONE bearing. Counting only the views with no `state` was wrong
+// (2026-09-24, the user: the Rec Area turned like the escape pod's web): the Rec Area's four ring views each carry
+// "CONFERENCE-DOOR without OPENBIT" and were all dropped, leaving VIEW-A, a composition image with no camera, as its
+// one "view". A door state is a variant of a view, not a different direction, and a reference with no bearing is not
+// a view. A sweep of all 109 rooms' metadata found the web and the Rec Area locked under the old rule, and only the
+// web under this one.
 function clampFor(roomId) {
   const views = Object.values(design[roomId]?.referenceImages ?? {})
-    .filter(v => !v.state && Math.abs(v.pitch ?? 0) < 45);      // the base ring, without caps or painted states
-  return views.length === 1 ? { bearing: views[0].bearing ?? 0, hfov: views[0].hfov ?? 110 } : null;
+    .filter(v => typeof v.bearing === 'number' && Math.abs(v.pitch ?? 0) < 45);   // level views with a camera
+  const bearings = new Set(views.map(v => ((v.bearing % 360) + 360) % 360));
+  if (bearings.size !== 1) return null;
+  const base = views.find(v => !v.state) ?? views[0];
+  return { bearing: base.bearing, hfov: base.hfov ?? 110 };
 }
 
 function viewRoomFor(raw, g) {
@@ -204,8 +222,10 @@ function run(command) {
     return;
   }
   restartArmed = false;
-  const before = g.state.score;
+  const before = g.state.score, wasDead = g.state.dead;
   const messages = g.dispatch(cmd);
+  if (!moved) { moved = true; track('first-move'); }
+  if (g.state.dead && !wasDead) track(g.state.finished ? 'won' : 'died');
   ui.append(messages, echo);
   if (g.state.score > before && cmd.verb !== 'RESTORE') ui.scoreNotice(g.state.score - before, g.state.score);   // points scored this turn
   render();
@@ -271,7 +291,7 @@ if (checkpointId) {
   params.delete('checkpoint');
   history.replaceState(null, '', location.pathname + (params.size ? '?' + params : '') + location.hash);
 }
-fetch('./data/checkpoints/index.json').then(r => r.ok ? r.json() : null).then(index => {
+if (!release) fetch('./data/checkpoints/index.json').then(r => r.ok ? r.json() : null).then(index => {
   const select = document.querySelector('#checkpoint');
   for (const c of index?.checkpoints ?? []) { const o = document.createElement('option'); o.value = c.id; o.textContent = c.label; select.appendChild(o); }
   select.onchange = () => { if (select.value) location.search = '?checkpoint=' + encodeURIComponent(select.value); };

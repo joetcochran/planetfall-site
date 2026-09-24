@@ -28,7 +28,7 @@ export class UI {
     // Three ways to restart, because RESTART used to point at a button only the debug panel had: the HUD link a
     // player can see, the debug panel's button, and the death screen's.
     root.querySelector('#restart-hud').onclick = onRestart;
-    root.querySelector('#restart').onclick = onRestart;
+    const restart = root.querySelector('#restart'); if (restart) restart.onclick = onRestart;   // in the debug panel, which the published site leaves out
     root.querySelector('#restart2').onclick = onRestart;
     // The quick row is parser.quickButtons(g), whole: one button per entry, labelled and run exactly as that entry says
     // (round thirteen). The page used to wire eleven buttons by hand with their own commands and fixed labels, so
@@ -44,11 +44,13 @@ export class UI {
     this.restore = root.querySelector('#restore');
     this.restore2 = root.querySelector('#restore2');
     this.restore2.onclick = () => onCommand({ verb: 'RESTORE' });
-    // Debug: jump to any room.
+    // Debug: jump to any room. The published site has no debug panel (scripts/build-site.mjs).
     const jump = root.querySelector('#jump');
-    for (const r of [...g.world.rooms].sort((a, b) => a.name.localeCompare(b.name))) { const o = el('option', null, `${r.name} · ${r.id}`); o.value = r.id; jump.appendChild(o); }
-    jump.onchange = () => { if (jump.value) onJump(jump.value); jump.value = ''; };
-    root.querySelector('#toggle-debug').onclick = () => root.querySelector('#debug').classList.toggle('open');
+    if (jump) {
+      for (const r of [...g.world.rooms].sort((a, b) => a.name.localeCompare(b.name))) { const o = el('option', null, `${r.name} · ${r.id}`); o.value = r.id; jump.appendChild(o); }
+      jump.onchange = () => { if (jump.value) onJump(jump.value); jump.value = ''; };
+      root.querySelector('#toggle-debug').onclick = () => root.querySelector('#debug').classList.toggle('open');
+    }
     document.addEventListener('pointerdown', e => { if (!this.menu.contains(e.target)) this.hideMenu(); }, true);
   }
   // One button per quickButtons entry, in its order; the rest of the row hidden (see the constructor).
@@ -197,7 +199,7 @@ export class UI {
       const won = !!g.state.finished; this.deathOverlay.querySelector('#death-title').textContent = won ? 'You have won' : 'You have died';
       const t = this.deathOverlay.querySelector('#death-text'); t.hidden = !won; if (won) t.textContent = `Score ${g.state.score}, day ${g.getg('DAY')}.`;
       this.deathOverlay.classList.toggle('won', won);
-      this.restore2.hidden = won || !g.state.saveSlot;   // FINISH offers RESTORE: the saved game, when there is one
+      this.restore2.hidden = !g.state.saveSlot;   // FINISH offers RESTORE, after a win too (verbs.zil 264-279): the saved game, when there is one
     }
   }
   // Deliberate deviation (user decision, 2026-09-11, round six): points are announced by a green notice over the view;

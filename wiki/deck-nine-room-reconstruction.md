@@ -1,147 +1,181 @@
-# Building a painted room: Deck Nine reconstructed
+# How a room is painted: Deck Nine
 
-Deck Nine is a useful room to follow because nearly every stage survived: the first experiment, the geometry package, failed measurements, grey blockouts, two approved seed paintings, the computed material placed beneath new views, the four-view ring, the ceiling and floor caps, structural variants, user acceptance, and one late correction caused by the room next door. It is therefore less a perfect model than an honest one. The process can be seen changing while the room is being made.
+This page shows how a painted room is fitted together, by following one room through every stage. Deck Nine is a good room to follow because nearly every stage survived in its package: the first trial, the room's geometry, lenses that had to be measured, grey blockouts, two approved seed paintings, the material computed beneath each new view, the four-view ring, the ceiling and floor caps, the door states, the user's acceptance, and a later correction caused by the room next door. The last sections cover the lessons other rooms added in the same days, and how rooms are painted now.
 
-This article reconstructs that process from commits, the design ledger and mailbox, `DECK-NINE.metadata.json`, and the image files in the room package. The contact sheets are made from those archived files. The opening cutaway is a new explanatory illustration: it shows the method, not a literal intermediate artifact. Bearings are clockwise: `000` faces north toward the gangway, `090` east toward the reactor corridor, `180` south toward the sanitation alcove, and `270` west toward the escape pod.
+The page is drawn from the commits, the request ledger and mailbox, `DECK-NINE.metadata.json`, and the image files in the room's package. The contact sheets are made from those files. The opening cutaway is an explanatory illustration of the method, not a file from the work. Bearings run clockwise: `000` faces north toward the gangway, `090` east toward the reactor corridor, `180` south toward the sanitation alcove, and `270` west toward the escape pod.
 
 ![Reconstructed exploded view of Deck Nine's four-view ring and two caps](wiki/deck-nine-overview-reconstruction.png)
 
-The important idea is simple. The player does not walk a camera freely through a 3D room. The eye stays at one measured point and can turn. Painted views are hung around that eye like panels inside a lantern: four across the horizon, one overhead and one underfoot. Ordinary overlap hides the edges. Doors and other structural changes swap in additional paintings; actors, items and slime are drawn separately so they can move.
+The idea behind it is simple. The player does not walk a camera through a 3D room. The eye stays at one measured point and can only turn. A painting made from that eye, hung on the flat plane it was projected onto, is exactly right from the eye however the player turns, and nothing behind it needs to be modelled. Norm built this on 12 September as "the plate" (e41b1a6). Painted views are hung around the eye like panels inside a lantern: four across the horizon, one overhead and one underfoot. Doors and other structural changes swap in other paintings. Actors, items and slime are drawn separately so they can move.
 
 ## 1. Begin with the room, not with a painting
 
-The authoritative room was a small, awkward volume: 7.0 m east to west, 2.3 m high through its main corridor, and 4.4 m across including the two recesses. The eye was fixed at `[0, 1.6, 0]`. Three routes had to remain readable from that point:
+The room's metadata describes a small, awkward space: 7.0 m east to west and 2.3 m high through its main channel, and 4.4 m north to south, which is a 2.2 m channel with a 1.1 m bay on each side. The eye is fixed at `[0, 1.6, 0]`. Three routes have to stay readable from that point:
 
-- west through a 1.6 by 2.0 m sliding door into the escape pod;
-- east through a 2.2 by 2.1 m opening into a corridor that curves toward the reactor lobby;
-- north and upward through a 0.9 by 1.9 m gangway mouth, with a steep stair rising through the deck head.
+- west, through a 1.6 by 2.0 m sliding door, into the escape pod;
+- east, through a 2.2 by 2.1 m opening, into a corridor that curves out of sight toward the reactor lobby;
+- north and up, through a 0.9 by 1.9 m gangway mouth, with a steep stair rising through the deck head.
 
-The fourth direction was deliberately not an exit. It was a shallow sanitation alcove. This matters because image generation likes balanced architecture and can quietly turn a recess into a passage. The package also fixed the room's visual grammar: worn blue-grey steel, dark ribs, cool fluorescent strips, a warmer pool at the gangway, and a locally scrubbed rather than mirror-polished floor.
+The fourth direction is deliberately not an exit. It is a shallow sanitation alcove, and a painting must not turn it into a passage. The package's README also sets the room's look: desaturated blue-grey painted steel, dark navy-charcoal ribs, cool ageing fluorescent light, a warm pool at the gangway mouth, and a freshly scrubbed patch of floor that is cleaner than the rest but not mirror-polished.
 
-The metadata did more than describe a box. It recorded which wall each door belonged to, how the doors moved, what was beyond every opening, the lighting, pickable objects, and state conditions. That made the room testable. A pretty image could disagree with the package; the package decided which one was wrong.
+The metadata does more than describe a box. It records which wall each door belongs to, how the doors move, what lies beyond every opening, the lighting, the things a player can click, and the game conditions for each state. That made the room testable. A painting could disagree with the package, and the package decided which one was wrong.
 
-## 2. The first trial asked the right question
+## 2. The first trial (DR-093)
 
-DR-093 did not begin by rebuilding every room. It asked whether painted views could cover one room while the player still dragged through a full turn. Deck Nine was drawn as six level views, 60 degrees apart, plus an up and a down view. The pass criteria were written before the pictures existed: one fixed viewpoint, continuous overlaps, consistent lighting and contents, no actors baked into the background, and enough pixel density.
+The panorama trial earlier on 12 September had shown why one wide image would not do: a single 360-degree image gave about 4.9 pixels per degree, against about 23 for a framed view. DR-093 (b9f3334) asked instead whether several painted views could cover one room while the player still dragged through a full turn. Deck Nine was drawn as six level views, 60 degrees apart, plus an up and a down view, with the pass and fail criteria written before the pictures existed: one fixed viewpoint, continuous overlaps, consistent lighting and contents, no actors in the background, and enough pixel density.
 
 ![The six archived level views from the DR-093 Deck Nine trial](wiki/deck-nine-01-inherited-trial.png)
 
-The trial exposed two different kinds of uncertainty. First, the stated 74-degree lens did not match what the paintings actually showed. The strong vertical edges of known door jambs were used to fit each image instead. Five of the six clustered around 101 to 120 degrees, with a common working value near 110. Hung at 74 degrees, openings collided; hung near the measured lens, the corridor began to read as one place.
+The trial exposed two kinds of problem. First, the lens the pictures were asked for, 74 degrees, was not the lens they showed. Norm first declared the set a failure from a table that assumed the asked-for lens, then withdrew the verdict when Greg challenged it (dbbd89a, 00c2918). He then fitted each picture's real lens against the door jambs, whose bearings from the eye are known exactly. Five of the six fits ran from 101.5 to 119.5 degrees, and the sixth, the weakest fit, came out at 74.5. Hung at a common 110, the set held together; at 74 every doorway collided (bd6b9e4).
 
-Second, fitting a lens could not make inconsistent content agree. Neighbouring views changed pipe runs, lamps and door details. The trial proved that the viewer could hang paintings, but also proved that six independently generated paintings were not yet a production room. That distinction became central: a view is not accepted because it looks good alone; it is accepted because it agrees with the views on both sides.
+Second, no lens could make two pictures agree about content. The two views either side of the pod door disagreed about where the door was, because each had been drawn from its own implied standing point (d10bb79). The trial showed that the viewer could hang paintings, and also that six separately generated paintings were not yet a room. A view is accepted not because it looks good alone but because it agrees with the views on both sides.
 
-## 3. Replace the turn with a planned four-view ring
+## 3. A planned four-view ring (DR-108)
 
-The production rebuild became DR-108. The planner chose four cardinal views at 115 degrees. Four times 115 gives 460 degrees of painted coverage for a 360-degree turn, leaving about 25 degrees of overlap at each boundary. The views were all 1672 by 941 pixels and shared the same eye and level pitch.
+That evening Norm wrote one brief for all the artwork and audited every package against it: 128 images in 51 packages, and no room could be hung as it stood (264a87e). He also built `planRing()`, which works out from the metadata alone the cheapest set of views that keeps every seam on plain wall (69cc078). For Deck Nine it chose four views at 115 degrees. Four times 115 gives 460 degrees of painting for a 360-degree turn, about 25 degrees of overlap at each join. The Deck Nine rebuild became DR-108: four level views of 1672 by 941 pixels, all from the same eye at a level pitch.
 
-This reduced the number of horizontal seams from six to four and gave each view enough shared material to be checked against its neighbours. It also established a repeatable order:
+This cut the joins from six to four and gave each view enough shared picture to be checked against its neighbours. It also set an order that later rooms followed:
 
-1. render exact blockouts from the room geometry;
+1. render exact blockouts from the room's geometry;
 2. approve two opposite seed paintings;
-3. compute what those seeds imply in each missing direction;
-4. paint only the regions the seeds cannot supply;
-5. restore the protected material and fit the result;
-6. close the horizontal ring before attempting either cap.
+3. compute what those seeds already show in each missing direction;
+4. paint only the parts the seeds cannot supply;
+5. put the protected pixels back and fit the result;
+6. close the ring of level views before either cap.
 
-The blockout is not a beauty reference. It is a camera and geometry reference. Its doors, wall junctions and horizon tell the painter where the room is, even when its temporary materials are ugly.
+The blockout is not a beauty reference. It is a camera and geometry reference. Its doors, wall corners and horizon tell the painter where the room is, even where its flat colours are ugly.
 
-## 4. Two seeds establish the visual world
+## 4. Two seeds set the look
 
-The north (`000`) and south (`180`) views became the opposite seeds. Together they established the room's material language, exposure, scale and fixed fittings. Choosing opposites was useful: each seed contributed to both side views, and neither missing side had to be invented in isolation.
+The north (`000`) and south (`180`) views were the seeds. Together they set the room's materials, exposure, scale and fixed fittings. Choosing opposites meant each seed fed both side views, so neither side had to be invented alone.
 
-The seeds were still checked against the blockouts. This is where the earlier trial had taught the most expensive lesson: prose such as “camera in the centre” is weaker than a visible consequence such as a nearby wall occupying a particular part of the frame. The blockout supplied the consequence.
+The seeds were painted over blockouts rendered from the engine's own fabric. Deck Nine's older views did not match that fabric: a deck head ran through as wall, and the alcove sat five degrees off centre. `graybox-view.mjs` renders the fabric from the eye at an exact camera, so a seed painted over it is at the right camera by construction (1adf50a). The trial had taught the same lesson in prose: "camera in the centre" did not hold a camera in place, but door jambs at stated fractions of the frame did. On 13 September the seed blockouts were committed at 08:50 and the seeds at 09:01 (8ce2940, 7d06a6a).
 
-## 5. Build a side view from protected pixels and a small new region
+## 5. A side view from protected pixels and a small new part
 
-TURN-090 shows the method most clearly. A tool reprojected the accepted `000` and `180` seeds into the exact target camera. That image was the **underpaint**: material already decided elsewhere, placed where the new view should see it. A companion `NEW` mask identified the region that neither seed owned reliably. Greg painted the missing material. Norm's restore step then put the protected seed pixels back and measured the join.
+TURN-090 shows the method most clearly. A tool projected the accepted `000` and `180` seeds into the exact camera of the new view. Because every view shares one eye, any two views differ only by a rotation, so this projection is exact. The result is the **underpaint**: material already decided elsewhere, placed where the new view sees it. A companion `NEW` mask marks the part neither seed covers. Greg painted over the whole guide. Norm's restore step then put the protected seed pixels back and measured the join.
 
 ![Blockout, underpaint, new region and final TURN-090](wiki/deck-nine-02-one-view-built.png)
 
-The recorded target for this view was bearing 90, pitch 0, horizontal field of view 115, at 1672 by 941 pixels. Its underpaint drew from both opposite seeds and marked 45 per cent as new share. The fitted final retained 93.6 per cent of the protected image overall; in the join band it retained 53.9 per cent. A per-channel gain corrected the small exposure difference, and the recorded join measure was 9.4.
+The method came from a failure the night before. The first attempt put an accepted seed in the middle of a larger grey canvas and asked the image generator to fill the border; it drew a new room at its own framing instead (70fe4c4). Whole-picture edits, by contrast, kept every edge. Norm's conclusion was that the generator must be given complete pictures and never holes, and `underpaint.mjs` (6f29ab0) was built on that. It was proved first on the dorm pilot (DR-107): Dorm A's ring hung that night with joins scoring 1.2 to 2.5, where Deck Nine's DR-093 set had scored 8 to 37.
 
-Those numbers are not a claim that a room can be accepted by arithmetic. They are guardrails. They answer narrow questions: did a supposedly protected wall change, did the view drift, did the seam get brighter? The visual review still asks the broader one: does turning through it feel like one room?
+TURN-090's receipts record the camera as bearing 90, pitch 0, horizontal lens 115 degrees, at 1672 by 941 pixels. Its underpaint drew from both seeds and left 45 percent of the frame as new. The final view kept 93.6 percent of the protected picture overall and 53.9 percent in the band where old meets new. A per-channel gain corrected a small exposure difference, and the join measured 9.4 (`DR-108_TURN-090_UNDER.json`, `DR-108_TURN-090.json`).
 
-TURN-270 was built the same way. At that point the room had four level views rather than six unrelated illustrations.
+Those numbers do not accept a room. They answer narrow questions: did a protected wall change, did the view drift, did the join get brighter? The review still asks the broad one: does turning through it feel like one room?
+
+TURN-270 was built the same way. Norm approved both side views at 09:13 on 13 September (c2ed959), and the room had four level views rather than six unrelated pictures.
 
 ![The four accepted cardinal views of the DR-108 ring](wiki/deck-nine-03-closed-ring.png)
 
-“Hanging” the views means registering each image with its bearing, pitch, lens and state condition. The viewer then chooses the view whose centre is nearest the direction the player is looking and blends across the overlap near a boundary. A wrong lens makes two correct paintings collide. A changed object at the edge makes the blend reveal two versions at once. This is why every view is judged in motion, not only as a still.
+"Hanging" a view means registering it with its bearing, pitch, lens and state condition. The viewer draws every view at once, each as a flat plate at its own fitted lens (`dashboard/turn.js`, `scene/parts.js`). Each view owns an arc of bearing outright and fades out just beyond it, over 5 degrees, or 2 where one view was built from the other. Where the joins fall is solved, not fixed: one gain per view first levels the exposure across the overlaps, then each join is placed where the two pictures agree best, with a heavy charge for any join inside a doorway, because "two views of a DOOR disagree about what the door IS" (ec7fbc8). These rules came from the user's first drag through the DR-093 set on 12 September, which found a jump in the east corridor and a pod door that sat closer in one picture than the next (d10bb79, a30de17). Where no join could be put on plain wall, the rule became a view centred on every opening (cba06f2). A wrong lens makes two correct paintings collide, and a changed object at the edge of a fade shows two versions at once, which is why every view is judged while turning, not only as a still.
 
-## 6. Build the caps from the closed ring
+## 6. The caps, from the closed ring
 
-The ceiling and floor came after the ring. Both were square, 1254 by 1254 pixels, with a 127-degree field of view and pitch `+90` or `-90`. They were not independent overhead paintings. The closed ring was projected into their outer region first, producing an underpaint that fixed what the cap had to meet at every edge. Only the unseen centre needed to be completed.
+The ceiling and floor came after the ring. Both are square, 1254 by 1254 pixels, with a 127-degree lens at pitch `+90` or `-90`. They were not free overhead paintings. The closed ring was projected into their outer part first, so the underpaint fixed what each cap had to meet at every edge, and only the unseen centre needed painting.
 
 ![Blockout, underpaint and accepted UP and DOWN caps](wiki/deck-nine-04-caps-built.png)
 
-The accepted UP cap retained 94.7 per cent of its protected source overall and recorded a join of 7.9. DOWN retained 92.3 per cent, with a join of 4.6. More important than either number, their boundary material came from the ring they would actually touch.
+The accepted UP cap kept 94.7 percent of its protected picture and recorded a join of 7.9. DOWN kept 92.3 percent, with a join of 4.6 (`DR-108_TURN-UP.json`, `DR-108_TURN-DOWN.json`). More important than either number, their edges came from the ring they actually touch. If a ceiling is painted first, all four wall-to-ceiling joins must be negotiated against a picture that never knew those walls. When the ring feeds the cap, the cap starts with four agreements in place.
 
-This order prevents a common trap. If a beautiful ceiling is painted first and the wall views later, all four wall-to-ceiling joins must be negotiated against a picture that never knew those walls. When the ring feeds the cap, the cap begins with four agreements already in place.
+Caps gave more trouble than their size suggests. In the first days they were thrown to about 10^16 metres by a tangent in the maths (b920d0f); they became square because a wide cap left a dark band when looking down (bd86df5); one drew as a single flat colour at a level gaze, and caps sometimes drew over the ring (41b26a8); and open-air rooms had been given a ceiling (5a2f7ac). The Crag's floor join survived three repaints until Norm measured a bright highlight ridge lying exactly on it; `underpaint seam` now takes out such a ridge, and restore reports each stretch of a join as a STEP or a RIDGE (2f97763, 7654323). Projecting the ring does not fill a cap: on a complete four-view ring, `caps` found about 69 percent real pixels and left the centre flat, so a cap still has to be painted, or, for regular plating, filled by `cap-fill.mjs` (see [Tools](tools.md#painting-tools)).
 
-## 7. Add structural states after the empty room works
+## 7. Door states, once the empty room works
 
-The base room was intentionally empty. Blather, the ambassador, the translator, slime and loose objects could appear, disappear or move, so none belonged permanently in a background. The room paintings changed only when the architecture changed:
+The base room is empty. Blather, the ambassador, the translator, slime and loose objects can appear, disappear or move, so none belongs in a background. Since DR-100 on 12 September, a state that changes structure is a painted variant of the view that sees it, such as `TURN-270@POD-DOOR-OPEN`, with a condition in the game's own terms. The base is the default and the most specific matching variant wins. Only the views a state changes need a variant, and flat additions such as the slime are drawn by the engine as decals (see [Actors and items](actors-and-items.md)). DR-100 began because the review page's door switches had changed nothing on screen. Deck Nine's pod door was the first state in the game that actually drew (7d8e85e).
 
-- the gangway emergency bulkhead shut across the north opening;
-- the wider corridor bulkhead shut across the east opening;
-- the escape-pod door opened in the west wall.
+In the DR-108 set, the room's paintings change only when the architecture does:
+
+- the narrow emergency bulkhead shut across the base of the gangway (`TURN-000@GANGWAY-DOOR-SHUT`);
+- the wider bulkhead shut across the east corridor (`TURN-090@CORRIDOR-DOOR-SHUT`);
+- the escape-pod door open in the west wall (`TURN-270@POD-DOOR-OPEN`).
 
 ![Base and conditional structural views for Deck Nine](wiki/deck-nine-05-structural-states.png)
 
-Each variant was restored against its accepted base outside the changed area. That makes the condition legible without allowing an edit to repaint the rest of the room. The images were tied to game conditions such as `POD-DOOR has OPENBIT`, rather than to a reviewer manually choosing an attractive alternate.
+Each variant was edited only through its doorway, and every pixel outside was restored from its base, so a state cannot repaint the rest of the room. Each is tied to a game condition such as `POD-DOOR has OPENBIT`, not to a reviewer choosing an alternative by eye.
 
-One state exposed why caps also need state coverage. When the gangway bulkhead shut in TURN-000, the open stair grating could still show through the floor cap's blend. The horizontal view was correct and the room was still wrong while turning downward. A gangway-shut DOWN variant was added after the main room had been accepted. The lesson is that a state owns every view in which its changed structure can appear, including a neighbouring cap.
+One state showed that caps need states too. With the gangway bulkhead shut in TURN-000, the open step grating in the floor cap still showed through the bottom fade of that view. The level view was right, and the room was still wrong when looking down. A gangway-shut variant of the floor cap was added on 15 September, two days after the room was accepted (276ee2a). The check that found it, `capStates` in `review-room.mjs`, was written after the same fault in Storage West, and on its first run it found Deck Nine's. A state owns every view in which its changed structure can appear, including a cap.
 
-## 8. Register, toggle, playtest, then ask for acceptance
+## 8. Register, toggle, review, then ask for acceptance
 
-Registration made the six base views and their variants available to the running game. Review then happened at several levels:
+Registering the four level views, the two caps and their variants in the metadata made them available to the review page, and from 14 September to the game itself, which hangs the paintings of every accepted room (f31720b). Review happened at several levels:
 
-- metadata and package checks caught missing cameras, invalid conditions and references;
-- image measurements checked protected regions, lenses, gains and joins;
-- the room review page exercised every state while taking views around the eye;
-- a person dragged through the seams and toggled doors to see whether anything changed on screen;
-- gameplay verified that the same doors remained clickable and led to the right places;
-- the user made the final visual decision at the dashboard gate.
+- the package checks catch missing cameras, invalid conditions and missing files;
+- image measurements check protected pixels, lenses, gains and joins;
+- the room review page shows every state while turning around the eye;
+- the doors are switched to see that each switch changes something on screen;
+- the game's invisible click targets stay under the paintings, so the door the player clicks is the painted door (d10bb79);
+- the user makes the final visual decision at the dashboard gate.
 
-Deck Nine's rebuilt DR-108 set was approved, and the user accepted the room on 13 September. “Accepted” meant the production images hung in the game instead of the grey fabric. It did not mean that no neighbouring work could ever create a new obligation.
+Norm approved the whole DR-108 set at 09:35 on 13 September (2e9c699), and the user accepted Deck Nine at the gate that afternoon (810594f). Acceptance did not mean that work in a neighbouring room could never reopen part of it.
 
 ## 9. The room next door changed the view through the door
 
-The open pod door contains a glimpse of the Escape Pod. Later, the pod itself was rebuilt: webbing moved to the left side, the control panel moved to the back bulkhead, and the porthole moved to the right wall. Deck Nine's accepted open-door variant now showed an obsolete adjacent room.
+The open pod door shows a glimpse of the Escape Pod. On 16 September the pod was laid out twice more (see the [journal](journal.md#15-16-september-the-opening-sequence-and-the-pod-built-three-times)). The glimpse was re-edited that morning to the first of those layouts, with the safety web as one mass on the left; the result, `DR-108_TURN-270_POD-DOOR-OPEN_V2_R4.png`, was accepted (caa1c05). That evening's rebuild (DR-112) moved the pod's control panel to the far bulkhead and cleared the right-hand wall for the porthole, so the accepted glimpse was now right on the left and right and wrong straight ahead, the easiest kind of error to miss (the metadata's `POD-MOUTH` note).
 
-The glimpse took three attempts. The final edit was constrained through the `POD-MOUTH` mask. Compared with the accepted previous plate, exactly zero pixels changed outside the doorway and 55,559 changed inside it. The corrected far wall agreed with the pod's own accepted TURN-270, while the porthole remained only a narrow dark recess at that distance. This was filed as `DR-112_TURN-270_POD-DOOR-OPEN.png`.
+The corrected glimpse was right at the third attempt. The edit was confined to the `POD-MOUTH` doorway: measured against R4, exactly zero pixels changed outside the doorway and 55,559 inside it. The control panel now sits on the far bulkhead where the pod's own TURN-270 puts it, and the porthole reads only as a narrow dark recess at that distance. Norm approved it at 21:59 on 16 September as `DR-112_TURN-270_POD-DOOR-OPEN.png` (mail 20260917-015910-dev-0268). The mail said it was registered, but it was not: the room's metadata went on hanging R4 for the open pod door, with a note that it needed this re-edit. The wiki's own fact check found the gap on 24 September, and the corrected glimpse was registered that day, the only change to the accepted room, which went back to the user for review.
 
-That is an exception path worth keeping in the happy-path story. A room is not isolated. An opening is a contract between two rooms, and changing either side may reopen a small, bounded part of the other. The correct response is not to repaint the room; it is to identify the aperture, lock everything outside it, and update only the shared view.
+A room is not isolated. An opening is shared between two rooms, and changing either side can reopen a small, bounded part of the other. The response is not to repaint the room but to find the opening, lock everything outside it, and update only the shared view.
 
 ## What Deck Nine changed in the method
 
-Deck Nine left behind a set of rules that were used on later rooms:
+Deck Nine left a set of rules that later rooms used:
 
 - Write the pass and fail conditions before running an experiment.
-- Treat stated camera values as intent until the image has been fitted against known geometry.
+- Treat stated camera values as intent until the picture has been fitted against known geometry.
 - Plan the smallest ring with enough overlap; for this room, four views at 115 degrees.
-- Use exact blockouts to communicate spatial consequences, not merely dimensions in prose.
-- Approve opposite seeds, derive missing views from them, and protect inherited pixels.
-- Close and review the horizontal ring before deriving the UP and DOWN caps.
+- Give the painter an exact blockout, not dimensions in prose.
+- Approve opposite seeds, build the missing views from them, and protect the pixels they supply.
+- Close and review the ring before the caps.
 - Keep movable actors, items and decals out of room backgrounds.
-- Give structural variants narrow masks and real game-state conditions.
-- Review toggles and seams in the running viewer; a still image and an automated check can both pass while the turn is wrong.
-- Treat a doorway glimpse as shared continuity with the adjoining room.
+- Give door states narrow masks and real game conditions, and give a cap a state wherever a level view's state shows through its fade.
+- Review switches and joins in the running viewer; a still image and an automated check can both pass while the turn is wrong.
+- Treat a doorway glimpse as shared with the room next door.
 
-The workflow is sometimes described as Greg paints and Norm hangs. Deck Nine shows the more useful version. Greg establishes and repairs the visible world; Norm establishes cameras, derives guides, protects accepted material, connects game conditions and tests the result; the user settles whether it actually reads correctly. The room emerges through the boundaries between those jobs.
+In the work, Greg painted and repaired the visible room; Norm set the cameras, built the guides, protected accepted pixels, wired the game conditions and tested the result; and the user decided whether it read correctly.
+
+## Outdoors, rising seas and light
+
+Deck Nine is an interior. The outdoor rooms painted in the same days (DR-109) added three lessons.
+
+- **Outdoors.** There was no fabric to seed from, so the parts kit gained open rooms, sea, rock, a winding stair and prism-shaped rooms, and each sky room got one sun. The outdoors exposed engine faults the interiors had hidden: the Balcony's sea horizon sat 3.3 degrees low because the far plane stopped at 200 m, and now reaches 40 km (f372d50); and every painting had been hung round the room's floor rather than the eye, so each view's horizon sat 7.6 degrees low and neighbouring views met at an angle, hidden wherever joins fell on walls (71fbe11).
+- **Seas that rise.** Planetfall's sea rises day by day, so the outdoor rooms have a variant for each day. Asked to raise the sea, the generator also repainted fixed rock, and once painted a rock face out of the Winding Stair's day-3 view. `underpaint state` builds a sea-only variant that takes only new water, and only where the earlier day already shows sea or where fabric renders at two sea levels say the water rose; `check-states.mjs` flags any variant that changed fixed structure (7654323, 604c0b9).
+- **Light.** The lighting rig was built for geometry, and a painting is hung unlit, so dusk and night changed nothing on screen; ***the user found that none of the time-of-day switches worked*** (13 September). Since 14 September a per-phase grade is applied inside each painting's own material, leaving daylight exactly as painted, and a sky matte keeps wet rock from turning salmon at dusk (`scene/grade.js`, `scene/skymatte.js`, d1f27aa).
+
+## A number is a question, the picture is the answer
+
+By 16 September a painted room passed through five or six measuring tools before it was registered, and that day nearly every one gave at least one confident wrong answer (see the [journal](journal.md#15-16-september-the-opening-sequence-and-the-pod-built-three-times)). Each was settled in seconds by magnifying the actual boundary and looking at it.
+
+The escape pod's descent made the same point on one question: how fast the planet grows in the porthole. Counting changed pixels read 99 percent for two different beats, because the stars differ too; counting lit pixels undercounted a dim, far disc; the largest connected region was cut off by the webbing; and a span at a fixed brightness was fooled by the atmosphere's halo, on which reading a correct painting was rejected. What works is the span at half of each state's own peak brightness, which reads 41, 143, 326, 499 and 501 px across the five approach beats (a00e392). The failed measures are recorded in the package, since the next painted sequence will ask the same question.
+
+Two habits came from that day. Where a measurement cannot apply, the reason is written into the view's own registration, so nobody repaints a correct wall on the same reading twice. And where a tool's number is noise, the tool says so: `restore` prints the band's own texture beside its score, and `review-room.mjs` marks overlaps unreliable where its lens fitter trusts no view, as in fog and water (6e897eb, 581a9c1, c47aad9).
+
+## What changed after Deck Nine
+
+The order above still holds. What changed is who does each step and what guards it.
+
+- **Fabric replaced the package blockouts.** Rooms are built from `scripts/fabric-*.mjs`, and the guides are renders of that fabric (`graybox-view.mjs`). They took the place of the hand-measured props used for the first pilot rooms.
+- **One layout for rooms that see each other.** From 14 September each cluster of rooms is built as one plan and each room cut from it, starting with the Kalamontee living quarters (f0f07e4), then Lawanda and the Feinstein. A doorway shows its neighbour's real geometry. See the [journal](journal.md#14-september-not-waiting-one-layout-and-a-public-site).
+- **Norm renders the guides; Greg paints over them.** Since 18 September Greg's work is image work only, and cameras, guides, compositing and registration are Norm's (see the [journal](journal.md#18-september-image-work-to-greg-compute-to-norm-and-the-playtests-back)). Greg is asked only for what compute cannot make, inside a stated box. [The Look](the-look.md) shows the Helipad's guides beside Greg's paintings.
+- **Only the new part is taken in.** A delivery is taken in by `underpaint.mjs restore`, or by `underpaint.mjs through --rect` for a stated box, and every pixel outside the new part is kept from the accepted picture. Registering never overwrites: a repaint of a registered view carries a round number, `_R<n>`, and is restored to its own file (`scripts/deliveries.mjs`).
+- **The whole room is reviewed before the user sees it.** `review-room.mjs` shoots the room turning, with every switch; since 19 September its toggle gate holds back a room until every switch has been seen to change something on screen, and since 20 September it writes a receipt of every view it reviewed, which the mailbox checks before a room may go to the user (see [Tools](tools.md#dashboard-and-review)).
+- **Each ask says what settles it.** Since 20 September every ask in the mailbox states whether it is settled by the pixels, by a render, by the rendered page or by a test, and closing it needs that evidence.
+- **Doorway glimpses are built by compute where they can be.** `room-through.mjs` runs each doorway ray on into the neighbour and reads the point it meets from the neighbour's own paintings, so the parallax is right (18 September). Where no painting of the neighbour sees the faces the doorway looks at, those parts are painted. On 24 September the Conference Room's long table, seen from Booth 1 and through the Rec Area's door, was built this way: the reprojected parts kept, and Greg asked to paint only the holes (mail 20260924-124034-dev-0915). See [The Conference Room table](the-conference-table.md).
 
 ## Artifact trail
 
+Paths are inside `RoomPolishInstructions/DECK-NINE_Visual-Design-Handoff_v1/DECK-NINE/`.
+
 | Stage | Recorded artifact |
 |---|---|
-| Geometry and behavior | `RoomPolishInstructions/DECK-NINE_Visual-Design-Handoff_v1/DECK-NINE/DECK-NINE.metadata.json` |
-| Design and acceptance requirements | the package `README.md` |
-| Initial turntable trial | `reference/DR-093-TRIAL-NOTES.md` and `DECK-NINE_TURN-*` |
-| Production blockouts and seeds | `reference/DR-108_TURN-*_BLOCKOUT.png`, `000_SEED`, `180_SEED` |
-| Side-view derivation | `DR-108_TURN-090_UNDER.json`, `DR-108_TURN-270_UNDER.json` and their images |
-| Registered ring | `DR-108_TURN-000/090/180/270` files and camera metadata |
-| Caps | `DR-108-UP/DOWN_BLOCKOUT`, `UNDER`, and `DR-108_TURN-UP/DOWN` |
-| Structural variants | the three door-state views plus the later floor-cap state |
-| Adjacent-room correction | `DR-112_TURN-270_POD-DOOR-OPEN.png` |
-| User verdict | commits `2e9c699` and `810594f`, plus `wwwroot/data/room-status.json` |
+| Geometry and behaviour | `DECK-NINE.metadata.json` |
+| Design and acceptance requirements | `README.md` |
+| First turntable trial | `reference/DR-093-TRIAL-NOTES.md`, `DR-093-SET-PROMPTS.json` and `DECK-NINE_TURN-*` |
+| Blockouts and seeds | `reference/DR-108_TURN-*_BLOCKOUT.png`, `DR-108_TURN-000_SEED.png`, `DR-108_TURN-180_SEED.png` |
+| Side views | `DR-108_TURN-090_UNDER.json`, `DR-108_TURN-270_UNDER.json`, their `_NEW` masks, and the restored views with their `.json` receipts |
+| Registered ring | `DR-108_TURN-000_SEED.png`, `DR-108_TURN-090.png`, `DR-108_TURN-180_SEED.png`, `DR-108_TURN-270.png` |
+| Caps | `DR-108-UP_BLOCKOUT`, `DR-108-UP_UNDER`, `DR-108_TURN-UP`, and the same for DOWN |
+| Door states | `DR-108_TURN-000_GANGWAY-DOOR-SHUT.png`, `DR-108_TURN-090_CORRIDOR-DOOR-SHUT.png`, `DR-112_TURN-270_POD-DOOR-OPEN.png` (since 24 September; `DR-108_TURN-270_POD-DOOR-OPEN_V2_R4.png` before), and the later `DR-108_TURN-DOWN_GANGWAY-DOOR-SHUT_R1.png` |
+| The glimpse corrected for the pod | `DR-112_TURN-270_POD-DOOR-OPEN.png` (approved 16 September, registered 24 September) |
+| The user's verdict | commits `2e9c699` and `810594f`, and `wwwroot/data/room-status.json` |
 
-The figures on this page can be rebuilt with `scripts/build-deck-nine-wiki-figures.mjs`; the script reads the archived package images and does not alter them.
+The figures on this page are rebuilt by `scripts/build-deck-nine-wiki-figures.mjs`, which reads the package images and does not change them.

@@ -1,10 +1,12 @@
 # Actors and items
 
+![The cast arm in arm, like actors promoting their show: Blather with his clipboard, the ambassador holding a stalk of celery, the rat-ant, the ensign in his mirrored helmet with his mop and Floyd perched on his shoulder, the troll, the grue in a folding director's chair, in a cardigan and reading glasses, going over the script, the triffid, and a grinning man in the microbe costume with its head under his arm, a planet rising behind them. Painted by Greg.](wiki/the-cast.jpg)
+
 A painted room is only a backdrop until the things in it move. The characters come and go, Floyd switches on and off, and the player picks things up and drops them. This page tells how purple and gold boxes became Blather, the ambassador and his slime, and Floyd himself. It covers placement rules, cut-out figures that face the eye, painted variants for switched-off states, overlays laid on the floor, and the padlock that exposed a gap in how authored objects reached the build.
 
 ## Boxes on a ring
 
-From the first commit (bd88341, 9 September) the grey box drew every actor as a purple box, 1.7 m tall, and every portable item as a gold box. Loose things stood on a ring round the eye. The user's founding request already had items at its heart: "if they click on an item to pick it up, the item should disappear from the screen and go into the users inventory".
+From the first commit (bd88341, 9 September) the grey box drew every actor as a purple box, 1.7 m tall, and every portable item as a gold box. Loose things stood on a ring round the eye. The user's founding request already had items at its heart: ***clicking an item to pick it up should take it off the screen and put it in the player's inventory***.
 
 ## Where things stand in a room
 
@@ -14,7 +16,7 @@ Placement got smarter before anything got a face:
 - **Dropped-item anchors** (DR-045, 8d141b0). The grey box reads each room's dropped-item anchors from its metadata, in drop order, and remembers them across rebuilds. Before this, loose objects fell to a ring whose radius was 0.1 m in Booth 2, so they were drawn at the eye.
 - **The ring solver** (DR-046, 3c2c8de). Anything past the last anchor goes to the point on the ring that best clears the anchors in use and every line from the eye to an exit.
 
-One apparent bug from this period was not a bug. On 11 September the user asked whether Floyd had "dropped something unexpectedly (could be an actual bug?)". Floyd had revealed the card, and the player had taken it out of him, which is faithful: he is an open container you can see into. The fix was to the playtest harness, which now lists a character's things under "Held by a character" (7a0650d).
+One apparent bug from this period was not a bug. On 11 September ***the user wondered whether Floyd had dropped something he should not have, and whether that was a real bug***. Floyd had revealed the card, and the player had taken it out of him, which is faithful: he is an open container you can see into. The fix was to the playtest harness, which now lists a character's things under "Held by a character" (7a0650d).
 
 ## Characters as cutouts
 
@@ -32,13 +34,16 @@ Norm then wrote a runtime asset contract (529eedc, 19:09). Each character is one
 
 Two engine gaps came to light at the same time. The grey box only ever placed Floyd by name, so every other actor went to the ring. And nothing could state a size, so a four-foot Floyd drew at 1.7 m. Both were fixed in 340a897.
 
+![Every character cutout in one row, to one scale: Blather, the ambassador, Floyd standing, switched off and dying, the rat-ant, troll, grue and triffid standing and then stunned in the fungicide mist, the microbe that towers over them all, and the speck](wiki/characters-cutouts-to-scale.jpg)
+
+
 ## Blather, the ambassador and the slime
 
-The user wrote at 20:03 on 12 September: "then i want to try adding the character blather based on what greg provided". Norm cut Blather from the concept sheet and created `data/characters.json` and a `cutout` part (8d0d88f). Norm's first crop cut off Blather's head, because "a head is narrower than a body".
+At 20:03 on 12 September ***the user asked to try adding Blather next, from what Greg had provided***. Norm cut Blather from the concept sheet and created `data/characters.json` and a `cutout` part (8d0d88f). Norm's first crop cut off Blather's head, because "a head is narrower than a body".
 
-Greg's clean redraw on a plain backdrop could not be used either. The file had a transparency channel, but in Norm's words "every one of the 1,572,864 pixels is 255": fully opaque. The user had already asked Greg for it, and told Norm to make such requests through the ledger in future: "you are fully empowered to ask greg to do these tasks". With the user's permission to remove the background locally, Greg delivered a file with real transparency before Norm had finished writing DR-104. It was hung that evening (4c01c37, 20:52). Norm cut the ambassador from the sheet too; he remains provisional until Greg's production cutout arrives.
+Greg's clean redraw on a plain backdrop could not be used either. The file had a transparency channel, but in Norm's words "every one of the 1,572,864 pixels is 255": fully opaque. The user had already asked Greg for it, and told Norm to make such requests through the ledger in future: ***Norm was free to ask Greg for work like this himself***. With the user's permission to remove the background locally, Greg delivered a file with real transparency before Norm had finished writing DR-104. It was hung that evening (4c01c37, 20:52). Norm cut the ambassador from the sheet too; he remains provisional until Greg's production cutout arrives.
 
-Then the slime. The user wrote: "last thing i think will be the ambassadors slime. thats just a green square right now". Norm read the source again. The slime is a trail in, a pool under the ambassador and a trail out: "The slime is a route, not a patch" (72c427f). Norm built:
+Then the slime. ***The user named the ambassador's slime, still a green square, as the last thing for the evening***. Norm read the source again. The slime is a trail in, a pool under the ambassador and a trail out: "The slime is a route, not a patch" (72c427f). Norm built:
 
 - a `decals` block in the room metadata, each decal with its own condition;
 - a `decal` part for patches and a `trail` part for strips along a path on the floor;
@@ -59,11 +64,16 @@ In the same commit the ambassador's celery is drawn as part of his cutout rather
 
 The brief's audit found movable things painted into the room comps, where they would stay after the player took them: the padlock, the canteen, the can, the ladder, the spools, the boards, the food kit and the towel. Under the brief, these become separate assets.
 
+![Two items as the game draws them: the shuttle access card, the kitchen access card and the laser](wiki/items-cards-and-laser.jpg)
+
+
 ## Floyd
 
-Floyd arrived on 13 September. The user's Dorm A verdict read "floyd the actor does not seem to appear when i toggle his visibility". Floyd counts as an actor only while he is switched on, so a switched-off Floyd was built as an invisible click target. Anyone a room's design places as an actor now counts as one (941a2e8).
+![Floyd, the cutout the game draws](wiki/floyd.jpg)
 
-The user took a stand-in for now: "re: floyd, kind of works but floyd as an actual rendering from greg is not there". They chose "Approve, stand-in now", and Norm cut the sheet's front figure (506684a). The user still saw "a purple solid" on the Balcony. The browser had kept its old copy of the character list, so the host now tells browsers to re-check every file (35b59a4).
+Floyd arrived on 13 September. ***The user's Dorm A verdict reported that Floyd did not appear when they switched him on in the review page***. Floyd counts as an actor only while he is switched on, so a switched-off Floyd was built as an invisible click target. Anyone a room's design places as an actor now counts as one (941a2e8).
+
+The user took a stand-in for now: ***Floyd more or less worked, but a real painting of him from Greg was still missing***. ***They approved a stand-in for the time being***, and Norm cut the sheet's front figure (506684a). ***The user still saw a solid purple box*** on the Balcony. The browser had kept its old copy of the character list, so the host now tells browsers to re-check every file (35b59a4).
 
 Greg's generator could not produce real transparency. Greg reported: "the robot itself is translucent". Two other attempts had checkerboards painted into the picture. So Norm built `scripts/cutout.mjs` (3178db6), and Greg painted Floyd standing and switched off on flat magenta. The tool:
 

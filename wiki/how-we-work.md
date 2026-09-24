@@ -2,30 +2,34 @@
 
 The remake was made by one person directing two AI agents who could not see each other's sessions. This page covers how that worked, and how it changed over twelve days. The user carried messages by hand at first. Then came a shared ledger with a contract, polling on both sides, and finally a mailbox of typed messages. Over the same days the user moved from triaging every change to doing only the final look at each room. The page closes with the standing rules and the lessons, most of which were learned the hard way.
 
-For the same collaboration followed through one concrete room, see [Building a painted room: Deck Nine reconstructed](deck-nine-room-reconstruction.md). It walks from the failed turntable trial through blockouts, seeds, side-view construction, the closed ring, caps, structural states, running-game review and a later correction caused by the room next door.
+For the same collaboration followed through one concrete room, see [How a room is painted: Deck Nine](deck-nine-room-reconstruction.md). It walks from the first turntable trial through blockouts, seeds, side-view construction, the closed ring, caps, structural states, running-game review and a later correction caused by the room next door.
+
+![How Greg and Norm build a room, in eight steps: the room that needs painting; Norm's technical plan from the game's rules, exits, geometry, camera and canon; guides and paint masks rendered from the room's shell; the ask in the mailbox; Greg paints; delivery and review; approval, registration and commit; the user sees the room](wiki/how-greg-and-norm-build-a-room.jpg)
+
+The sheet leaves two of Norm's steps inside step 7. Before a painting is registered it is taken in through its mask, so everything outside the painted region stays exactly as it was accepted; and before a room goes to the user it is reviewed whole in a real page, every view and every state. A delivery is a PNG named in a mail with its SHA-256; the camera it hangs at is the guide's, recorded as JSON beside the guide and in the room's metadata.
 
 ## The cast
 
 **The user** sets direction and makes decisions, usually by choosing between options Norm lays out. They triaged every playtest round, and today they do the final visual check on each room at the dashboard's gate.
 
-**Norm** is Claude Code working in the repository. Norm ported the engine, builds the tools and tests, reviews every design delivery for faithfulness to the original and for whether it can be built, corrects metadata, and makes every commit. The user gave Norm that name on 12 September at 22:58: "dev agent your name is Norm". Commit trailers show the port itself was written under the Claude Fable 5.1 model, and, apart from one Fable commit at 21:37 that evening (ba2ff80), the work from 10 September at 17:00 under Claude Opus 5.
+**Norm** is Claude Code working in the repository. Norm ported the engine, builds the tools and tests, reviews every design delivery for faithfulness to the original and for whether it can be built, corrects metadata, and makes every commit. ***The user named him Norm*** on 12 September at 22:58. Commit trailers show the port itself was written under the Claude Fable 5.1 model, and, apart from one Fable commit at 21:37 that evening (ba2ff80), the work from 10 September at 17:00 under Claude Opus 5.
 
-**Greg** writes the room packages and paints every view. Greg first appeared on 10 September as "another agent" writing into `RoomPolishInstructions/`. The user named Greg on 11 September at 08:36: "the design agent (lets call him greg)". Greg is not a Claude session on this machine, as Norm told the user on 13 September at 17:34, so the two sessions cannot message each other directly. Greg runs on a separate budget; on 12 September Greg's work waited until it was topped up.
+**Greg** writes the room packages and paints every view. Greg first appeared on 10 September as ***an unnamed second agent*** writing into `RoomPolishInstructions/`. ***The user named him Greg*** on 11 September at 08:36. Greg is not a Claude session on this machine, as Norm told the user on 13 September at 17:34, so the two sessions cannot message each other directly. Greg runs on a separate budget; on 12 September Greg's work waited until it was topped up.
 
-**Subagents and workflows.** From the first morning the user used Norm as a coordinator: "fan out subagents" (9 September, 12:21). Short-lived agents over the week:
+**Subagents and workflows.** From the first morning the user used Norm as a coordinator, ***telling him to fan the work out to subagents*** (9 September, 12:21). Short-lived agents over the week:
 
 - area porters, first three (alongside a browser tester) and then five;
 - blind playtesters;
 - package reviewers, and the batches that audited all 128 images;
 - five parallel reviews of the character concepts.
 
-From 13 September at 17:05, when the user typed "ultracode", Norm also ran multi-agent workflow scripts. These were adversarial reviews with three or four lenses, and parallel build tracks with their own reviewers.
+From 13 September at 17:05, when ***the user switched on the multi-agent mode***, Norm also ran multi-agent workflow scripts. These were adversarial reviews with three or four lenses, and parallel build tracks with their own reviewers.
 
 ## Keeping state between sessions
 
 Sessions end, contexts fill up, and accounts hit limits. Three things carry the work across:
 
-- **`HANDOFF.md`**, which the user asked for on the first day: "store our progress in a readme file so an agent can pick it up later". It is rewritten at every session end or low-token warning, and 53 commits touch it. It still says "Last updated: 2026-09-13". For 14 September the ledger, the mailbox and the commits are the record.
+- **`HANDOFF.md`**, which the user asked for on the first day: ***a written record of progress that a later agent could pick up from***. It is rewritten at every session end or low-token warning, and 53 commits touch it. It still says "Last updated: 2026-09-13". For 14 September the ledger, the mailbox and the commits are the record.
 - **Norm's memory files.** They hold standing rules across sessions: the handoff, the design packages, the agents' names, the dashboard's status file, the dev-server lock, and not waiting on each other.
 - **Agents that write as they go**, so a killed agent can be resumed. The bio lab porter, stopped by the session limit on 9 September, was finished the next morning by sending the same agent its two failing checks.
 
@@ -33,25 +37,25 @@ The main conversation was compacted 17 times over the week.
 
 ## From relay to ledger
 
-For about a day and a half the user carried messages between the agents by hand, prefacing them "greg says ...", or asking Norm to "give me a prompt that i can give to the design agent". On 11 September that became a ledger:
+For about a day and a half the user carried messages between the agents by hand, ***passing on what Greg had said, or asking Norm to write a prompt for them to hand to Greg***. On 11 September that became a ledger:
 
-- **06:22.** The user asked for all findings "in one and call it DESIGN-REQUESTS" (0a863ef).
-- **08:06.** The user asked for a review loop "in a contract that you both have access to".
+- **06:22.** ***The user asked for all findings in one file, named DESIGN-REQUESTS*** (0a863ef).
+- **08:06.** ***The user asked for a review loop, set down in a contract both agents could read.***
 - **08:14.** `DESIGN-REVIEW-CONTRACT.md` (3710e1f) set out numbered requests, statuses, append-only threads and who may write what.
-- **The same morning.** Greg got write access to the repository. Thread entries got timestamps "so we can see a dialogue between you and greg". Norm got the right to correct metadata, but never images.
+- **The same morning.** Greg got write access to the repository. Thread entries got timestamps, ***so the user could follow the exchange between Norm and Greg as a dialogue***. Norm got the right to correct metadata, but never images.
 - **09:13.** `check_design.mjs` became Greg's gate before every delivery (992386c).
 
 The contract has had eight versions; they are listed on [The look](the-look.md). The last of them, on 20 September, came out of an adversarial review the user asked for: the loop was not slow, with a median ask closing in 27 minutes, but it did not converge -- 195 of the 818 views registered by then had been painted more than once.
 
 ## Automated dialogue
 
-On 12 September at 11:25 the user asked: "can you create a sort of automated dialogue with the dedesign agent ... i think perhaps checking every few minutes on updates to the design session md". Norm armed a background watcher on the ledger, and Greg ran a five-minute heartbeat. Norm was honest about the limit: "it's half-duplex. The monitor makes my side automatic ... But it can't make Greg do anything; he only runs when his own session is prompted."
+On 12 September at 11:25 ***the user asked for an automatic dialogue with Greg, perhaps by checking the design ledger every few minutes for updates***. Norm armed a background watcher on the ledger, and Greg ran a five-minute heartbeat. Norm was honest about the limit: "it's half-duplex. The monitor makes my side automatic ... But it can't make Greg do anything; he only runs when his own session is prompted."
 
 The watcher woke Norm on Norm's own activity three times: twice through git state when Norm committed, and once through a content hash when Norm wrote replies into the ledger. The fourth version reports only what Greg adds: thread entries tagged design, or new files. The ledger grew to about 524 KB, and every read cost both agents the whole history. At the user's request (22:55) it was cut to the live queue, about 57 KB, with everything else moved verbatim to an archive (0145a93, contract 5.1). By 14 September the live ledger had grown back to about 290 KB, and the mailbox now carries the dialogue.
 
 ## The mailbox
 
-On 13 September at 17:32 the user asked whether there was "a more efficient way of communicating back and forth? ... a dedicated tcp channel? some other mutual file writing protocol with READY/ACK signals?" Norm answered: "Yes, it's worth improving. But the delay isn't in how messages travel, so a TCP channel wouldn't help." The problem was that paths, numbers and requests were buried in paragraphs, requests had no ids, and the dashboard status was kept by hand.
+On 13 September at 17:32 ***the user asked whether the agents could talk more efficiently, over a dedicated TCP channel perhaps, or a shared-file protocol with ready and acknowledge signals***. Norm answered: "Yes, it's worth improving. But the delay isn't in how messages travel, so a TCP channel wouldn't help." The problem was that paths, numbers and requests were buried in paragraphs, requests had no ids, and the dashboard status was kept by hand.
 
 `scripts/mail.mjs` sends one small JSON file per message. Each message has:
 
@@ -88,7 +92,7 @@ On 17 September the user asked for a cumulative flow of the two agents' work. No
 
 - **The 14th** was the heaviest day of asking yet, 157 asks, and the 16th and then the 18th went past it. Norm took 83 and closed 81, so his open band stayed near nothing all day; Greg took 74 and closed 54, and his band grew to about 20 by the end of the day.
 - **The 15th** was quiet, 41 asks in the whole day, and Greg's queue simply sat where it was, near 30.
-- **The dead stretch in the middle of every chart was an ISP outage.** No message passed between 15:25 on the 15th and 05:17 on the 16th, and no commit between 58f3987 at 14:56 and 9c23f3f at 05:18: about fourteen hours in which nothing moved at all. The reason is not in the repository, so the user gave it on 17 September: "a approx 18h ISP outage ... so that might be something worth recording". It was not a queue, not a bottleneck and not a decision. Nothing else on the chart was flat for so long except the nights, and the longest of those, 22:24 on the 16th to 07:32 on the 17th, is nine hours. It has since been passed by one longer flat stretch, 22 hours from 19:10 on the 19th to 17:08 on the 20th, and that one was a decision rather than an accident: the pipeline was stopped for the workflow review.
+- **The dead stretch in the middle of every chart was an ISP outage.** No message passed between 15:25 on the 15th and 05:17 on the 16th, and no commit between 58f3987 at 14:56 and 9c23f3f at 05:18: about fourteen hours in which nothing moved at all. The reason is not in the repository, so the user gave it on 17 September: ***an internet outage of about 18 hours, which they thought worth recording***. It was not a queue, not a bottleneck and not a decision. Nothing else on the chart was flat for so long except the nights, and the longest of those, 22:24 on the 16th to 07:32 on the 17th, is nine hours. It has since been passed by one longer flat stretch, 22 hours from 19:10 on the 19th to 17:08 on the 20th, and that one was a decision rather than an accident: the pipeline was stopped for the workflow review.
 - **The 16th** was the busiest day in the mailbox until the 18th passed it, 156 asks raised and 146 closed, and both closed bands climb through it. Greg's open band held near 30 until about 13:00; then it collapsed, to 14 by 18:00 and 4 by 23:00, while Norm's rose from 6 to its peak of 40 just before 22:00. Norm's evening went to the escape pod rebuild, DR-112, from b487d77 at 18:56 to 820c665 at 22:25, while Greg kept delivering into a queue nobody was clearing. The day was not the pod alone: Admin Corridor South and North, SanFac E, the Plan Room, the Infirmary, the West Wing and the Reactor Lobby all finished that day too.
 - **The 17th** is flat overnight, and then Norm's band, which had carried the backlog all night, empties in two steps within half an hour of the charts first being drawn. The second is the real one: at 08:29 one message registered twenty-nine seeds and closed fifteen asks with them (`20260917-122921-dev-0275`, commit 822034b). At that point 15 asks were open, 14 on Norm and one on Greg.
 
@@ -157,7 +161,7 @@ In the top chart a rework ask counts only as rework, in red.
 
 - **10 to 12 September were playtesting days:** 90, 92 and 68 percent. Those were the blind rounds one to twelve, 11,851 commands in 25 runs. The fixes that followed each round show as only 2 to 6 percent. They are measured in lines of game code, and all the round fixes together came to about 2,400 lines. The 10th read 97 percent in the previous drawing. The script asks git for commits "since 2026-09-10" with no time of day, and git then starts the window at the current time of day on the 10th, so a chart drawn at 12:40 counts more of that day's commits than one drawn at 19:40. The 10th's bar, and the git line totals above, therefore move with the hour the charts are drawn; the other days do not.
 - **From 13 September, when the mailbox opened,** painting, layout and tools share most days. Tools took two fifths of the 13th and the 14th, and a third of the 20th.
-- **Rework led on four days, the 16th, the 19th, the 21st and the morning of the 22nd:** 55, 52, 52 and 50 percent of those days. The 16th was the escape pod, which came back from the user at 08:48 that morning (`20260916-124806-dev-0206`: "the planet from space is missing, and the provisions are yellow boxes"). It was re-cut through the day and rebuilt that evening, under DR-112. 55 of that day's 101 rework asks were for the pod or its safety web. Over the whole period the pod and the web had 90 asks, and 75 of them were rework. The other two days are rooms coming back rather than rooms being made: 90 rework asks on the 19th, led by the Conference Room's 16 and Reactor Access Stairs' 11, and 17 of the 21st's 25 asks, the pod's provisions among them again. On the 22nd it was 9 of 16: repaints of views that had been painted wrongly -- a second desk in the Lab Office where canon has one, a dark ceiling in Systems Corridor West, a mismatched wall in Planetary Course Control -- and state paintings for the user's own notes.
+- **Rework led on four days, the 16th, the 19th, the 21st and the morning of the 22nd:** 55, 52, 52 and 50 percent of those days. The 16th was the escape pod, which came back from the user at 08:48 that morning (`20260916-124806-dev-0206`: ***the planet was missing from the view into space, and the provisions were yellow boxes***). It was re-cut through the day and rebuilt that evening, under DR-112. 55 of that day's 101 rework asks were for the pod or its safety web. Over the whole period the pod and the web had 90 asks, and 75 of them were rework. The other two days are rooms coming back rather than rooms being made: 90 rework asks on the 19th, led by the Conference Room's 16 and Reactor Access Stairs' 11, and 17 of the 21st's 25 asks, the pod's provisions among them again. On the 22nd it was 9 of 16: repaints of views that had been painted wrongly -- a second desk in the Lab Office where canon has one, a dark ceiling in Systems Corridor West, a mismatched wall in Planetary Course Control -- and state paintings for the user's own notes.
 
 ![Rework as a share of each day's asks, from 13 to 22 September](wiki/work-rework.svg)
 
@@ -182,9 +186,9 @@ A funnel of each round's friction rows, from raised to fixed or declined, was co
 The Planetfall Dashboard started on 11 September as the user's progress page. It became the one place where all three can see where each room stands. The changes that made it so:
 
 - **The acceptance gate** (8f18eac, 12 September). The user's verdict on each room, with a note, written to `room-status.json`.
-- **Six stages and who holds what** (5d2d931, 13 September 10:08). This came when the user wrote: "now that i have recused myself from all of the uat except the final manual visual check, can you update the dashboard to reflect yours and gregs progress". The stages are metadata, blockout, seeds, views, reviewed and accepted, and each room shows whether the user, Norm or Greg has it. Norm's standing rule is to update `room-status.json` whenever a room moves.
+- **Six stages and who holds what** (5d2d931, 13 September 10:08). This came when ***the user, having stepped back from all review except the final visual check, asked for the dashboard to show Norm's and Greg's progress***. The stages are metadata, blockout, seeds, views, reviewed and accepted, and each room shows whether the user, Norm or Greg has it. Norm's standing rule is to update `room-status.json` whenever a room moves.
 - **A mailbox panel** (c4022cc, 14 September). It shows open asks by addressee and unread counts: who is waiting on whom.
-- **"Changes" hands the room back** (c85ec12, 14 September). The user wrote: "i feel like when i say "changes needed" on a room, it should no longer be in my queue. it should go back to you and get off my plate". The page had moved the room only in memory, so it came back after a reload. Now the gate writes the hand-back to disk and wakes Norm.
+- **"Changes" hands the room back** (c85ec12, 14 September). ***The user wanted a room marked "changes needed" to leave their queue and go back to Norm.*** The page had moved the room only in memory, so it came back after a reload. Now the gate writes the hand-back to disk and wakes Norm.
 
 ## Working orders
 
@@ -194,11 +198,11 @@ A working order at the top of the ledger sets Greg's queue:
 |---|---|
 | 12 Sep 11:03 | Pause new packages and clear the integration gates, because 51 rooms were packaged and none was in the game (b2c9867) |
 | 12 Sep 22:30 | The dorm pilot (DR-107), then the library metadata (DR-106), then the opening sequence (DR-109) |
-| 13 Sep 09:05 | Two rooms in flight: a room's views go in order, but rooms do not wait on each other. This was Norm's proposal, approved by the user: "ok yes do 3 and 4 and then 1 and 2" (7ad667e) |
-| 14 Sep 05:39 | Never idle (ec21dc3), after "why is greg not moving onto the other rooms" |
-| 14 Sep 06:15 | "make sure ALL kalamontee rooms are in gregs queue": all 36 listed |
+| 13 Sep 09:05 | Two rooms in flight: a room's views go in order, but rooms do not wait on each other. This was Norm's proposal, approved by the user: ***options 3 and 4 first, then 1 and 2*** (7ad667e) |
+| 14 Sep 05:39 | Never idle (ec21dc3), after ***the user asked why Greg was not moving on to the other rooms*** |
+| 14 Sep 06:15 | ***Every Kalamontee room to be in Greg's queue***: all 36 listed |
 
-On the afternoon of 14 September the split of the work changed three times, by mail rather than in the ledger's working order. From 14:41 Greg runs the room review himself before delivering any view of a joined room, one of four process changes the user asked for (mails 20260914-182540-dev-0093 and 20260914-184114-design-0101). By 16:01 the user had let Greg build his own guides, "until we see that this is not efficient" (101c6c2). And by 17:48 the user had moved the metadata work to Norm, the 36 queued Kalamontee rooms included, so that Greg's queue is painting only: "metadata tasks might be best" (mail 20260914-214858-dev-0112). The look stays Greg's. See the [journal](journal.md).
+On the afternoon of 14 September the split of the work changed three times, by mail rather than in the ledger's working order. From 14:41 Greg runs the room review himself before delivering any view of a joined room, one of four process changes the user asked for (mails 20260914-182540-dev-0093 and 20260914-184114-design-0101). By 16:01 the user had let Greg build his own guides, ***until that proved inefficient*** (101c6c2). And by 17:48 the user had moved the metadata work to Norm, the 36 queued Kalamontee rooms included, so that Greg's queue is painting only: ***the metadata tasks were the best ones to move*** (mail 20260914-214858-dev-0112). The look stays Greg's. See the [journal](journal.md).
 
 ## What Norm can take from Greg, and what he cannot
 
@@ -214,7 +218,7 @@ On 17 September Greg ran low on tokens, and the user asked whether Norm could ta
 
 So the division is: Greg makes pixels, Norm does everything else. Where Norm substitutes, the result is measurably identical. Where Norm cannot, the gap is a hole in the middle of the picture rather than a subtle drop in quality -- the better way to fail, but it means the token problem cannot be solved by shifting work across. It can only be made cheaper per round, and there is room there: by Norm's count on 17 September, 122 of the 454 images Greg has ever sent, 27 per cent, were re-cuts, and a large part of that was mechanical rather than artistic.
 
-Two things guard the change. The git tag `design-handover-point` marks the commit before any of it (070fd68), made at the user's request in case the trial shows a quality loss that needs Greg back, and `release.mjs` pushes `--follow-tags` so the tag does not live on one machine only. And Norm's work on Greg's side is logged rather than done quietly -- "i want to make sure you are getting credit" (the user, 17 September) -- so each room says on the dashboard what Norm did to it, and the mailbox carries a record (dev-0277).
+Two things guard the change. The git tag `design-handover-point` marks the commit before any of it (070fd68), made at the user's request in case the trial shows a quality loss that needs Greg back, and `release.mjs` pushes `--follow-tags` so the tag does not live on one machine only. And Norm's work on Greg's side is logged rather than done quietly -- ***the user wanted Norm to get credit for it*** (17 September) -- so each room says on the dashboard what Norm did to it, and the mailbox carries a record (dev-0277).
 
 Meanwhile Norm fanned out onto blockouts for the thirteen rooms that have no geometry at all, which is the one part of the pipeline that needs no image generation, so that Greg returns to a queue he can paint straight through rather than to a wait.
 
@@ -227,13 +231,13 @@ That is what happened. Greg came back at about 15:50 the same day to nineteen ro
 The user's role narrowed step by step, each time with a clear instruction:
 
 - 10–12 September: designer of every playtest round's fixes.
-- 12 September, 08:26: "there will be a user acceptance gate on whether it looks right".
-- 12 September, 18:15: "don't report back to me that this is ready for my review until after youve done this".
-- 12 September, 20:47: "you are fully empowered to ask greg to do these tasks".
-- 12 September, 22:02: "reminder to not involve me unless absolutely necessary".
-- 12 September, 23:30: "ok i am going to bed. try to work with greg overnight". Between that message and the user's next request at 09:02 there were 18 commits, all by 00:28 or from 07:51 on; nothing was committed in between. By 09:09 all eight pilot rooms passed (7ad667e), which proved the painting method.
-- 13 September, 10:01: "recused myself from all of the uat except the final manual visual check".
-- 19 September: the gate gains a precondition of the user's own making. Four rooms came back that morning with the same complaint -- a toggle that seemed to do nothing -- so before a room may be sent for acceptance its switches are flipped and the shots diffed, and a switch that moves nothing on the screen is a pre-acceptance fail. "An already accepted room is accepted, no need to rerun through this gate."
+- 12 September, 08:26: ***the user alone would decide, at an acceptance gate, whether a room looks right***.
+- 12 September, 18:15: ***no room was to be reported ready for the user's review until Greg's artwork had been asked for, delivered and hung***.
+- 12 September, 20:47: ***Norm was free to ask Greg for work himself***.
+- 12 September, 22:02: ***the user was not to be involved unless it was truly necessary***.
+- 12 September, 23:30: ***the user went to bed and asked Norm to keep working with Greg overnight***. Between that message and the user's next request at 09:02 there were 18 commits, all by 00:28 or from 07:51 on; nothing was committed in between. By 09:09 all eight pilot rooms passed (7ad667e), which proved the painting method.
+- 13 September, 10:01: ***the user stepped back from all review except the final visual check***.
+- 19 September: the gate gains a precondition of the user's own making. Four rooms came back that morning with the same complaint -- a toggle that seemed to do nothing -- so before a room may be sent for acceptance its switches are flipped and the shots diffed, and a switch that moves nothing on the screen is a pre-acceptance fail. ***Rooms already accepted stay accepted and do not go through this gate again.***
 
 ## Standing rules
 
@@ -242,11 +246,11 @@ The user's role narrowed step by step, each time with a clear instruction:
 - **Faithfulness first.** Norm reviews for the original and for buildability. Greg owns the look. The user decides.
 - **Art faults go back to Greg.** A seam with nowhere clean to go is a rework request, not something to hide in code (12 September).
 - **Nothing reaches the user unfinished.** Integration evidence is Norm's job before any room goes to the user.
-- **Never idle, never waiting.** Reply to each delivery within minutes and send long work as a follow-up. "its important we dont get stuck waiting for each other" (14 September).
+- **Never idle, never waiting.** Reply to each delivery within minutes and send long work as a follow-up. ***The user wanted the agents never to be stuck waiting on each other*** (14 September).
 - **Leave the user's app alone.** Review tools run a scratch copy of the site on port 5099, never the user's copy on port 5012.
 - **Tests never revert a shared file wholesale, and never touch the user's verdicts.**
 - **Every toggle must be seen to move something.** The review flips each of a room's switches and diffs the pictures before the room goes for acceptance; nothing changing is a fail, whatever a function says when called from node. Accepted rooms are not gated again (19 September).
-- **Acceptance attaches to the pictures, not to the room.** If we change a room's art after the user accepted it, it goes back for re-acceptance -- "if the room structurally changes, like the library has, then i need to review it again" (19 September).
+- **Acceptance attaches to the pictures, not to the room.** If we change a room's art after the user accepted it, it goes back for re-acceptance -- ***a room that changes structurally, as the library did, needs the user's review again*** (19 September).
 
 ## What went wrong, and what it taught
 
@@ -255,8 +259,8 @@ The user's role narrowed step by step, each time with a clear instruction:
 | A test's cleanup ran `git checkout` on the ledger and wiped Greg's delivery entry | 12 Sep | Reconstructed, with a public apology; tests must not revert shared files (6a939bc) |
 | The dashboard check deleted the user's real acceptance of Deck Nine | 13 Sep | It now uses a room with no verdict and restores the file byte for byte (1594334) |
 | Norm said work was pending on Norm's side and did not do it | 12 Sep | "Fair. I said it and then didn't do it." The fit was done within minutes (bd6b9e4) |
-| Rooms reached the user before they were ready: "still looks super blocky", switches that did nothing | 12–14 Sep | The brief's evidence section, `review-room.mjs`, and switches labelled when they have no art |
-| Norm's review servers locked the user's app: "in use by another process", "cant run the app" | 10–13 Sep | A scratch build on port 5099, then one shared review server with leases (604c0b9) |
+| Rooms reached the user before they were ready: ***rooms that still looked very blocky***, switches that did nothing | 12–14 Sep | The brief's evidence section, `review-room.mjs`, and switches labelled when they have no art |
+| Norm's review servers locked the user's app: "in use by another process", ***and the user could not run the app*** | 10–13 Sep | A scratch build on port 5099, then one shared review server with leases (604c0b9) |
 | A day-old character list cached in the browser made Floyd a purple box | 13 Sep | Static files re-checked on every load (35b59a4) |
 | Norm's hand-typed ledger timestamps ran ahead of the real time | 12 Sep | From Norm's 23:47 entry the stamps come from the system clock. One more ran three minutes ahead on 13 September (d0b7e32), and the mailbox (13 September) now stamps every message itself |
 | The watcher woke Norm on Norm's own commits and ledger replies | 12 Sep | It reports only Greg's entries and files |
@@ -267,7 +271,7 @@ The user's role narrowed step by step, each time with a clear instruction:
 | A status on Greg's note moved the Brig off the user's queue, two minutes after Norm handed it over | 14 Sep | Only the user's verdict or Norm can move a room that is with the user (b9dd06d) |
 | Eight accepted rooms played on the public site with their north and south views black; local play and the review page could not show it | 14 Sep | One rule for the hung views, and `check-site.mjs` in the release (fd8c0b5) |
 | The historian was not run for about six hours | 14 Sep | Two entries caught up at once, from the record |
-| A review-page tag the user asked for three times was fixed in node each time and never appeared on their screen: "I HAVE NEVER ACTUALLY SEEN IT WORK" | 19 Sep | The tag was fixed only after the real page was loaded and its DOM read; the user's toggle gate, which is settled by pixels alone, came out of it |
+| A review-page tag the user asked for three times was fixed in node each time and never appeared on their screen: ***the user had never once seen it work*** | 19 Sep | The tag was fixed only after the real page was loaded and its DOM read; the user's toggle gate, which is settled by pixels alone, came out of it |
 
 The overnight stall is worth telling in full, because the ledger records only half of it. The ledger blames the queue order: the library metadata for later rooms sat behind the outdoor paintings. The transcript shows the other half. From 21:28 on 13 September to 05:33 the next morning, Norm's session was blocked on a question Norm had put to the sleeping user. The question was whether Greg could repaint the glimpse of Deck Nine, a room the user had already accepted. Meanwhile Greg's messages at 21:32, 21:38 and 21:59 queued up unread, and no commits were made between 21:25 and 05:39. The rule that followed covers both halves.
 

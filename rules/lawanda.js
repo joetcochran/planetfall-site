@@ -232,13 +232,19 @@ export const objects = {
       if (is(ctx, 'TASTE')) { g.tell('It tastes fairly bitter.'); return true; }
       if (is(ctx, 'EAT')) {
         g.remove('MEDICINE'); g.state.elapsed = 15;
-        // Deliberate deviation (user decision, 2026-09-11, round six): the source subtracts 2 from SICKNESS-LEVEL even
-        // below zero (and adds 20 to LOAD-ALLOWED regardless), so a player dosed on the first day of fever read "You are
-        // a bit sick and feverish." from DIAGNOSE forever after. The level stops at zero, the strength returned matches
-        // the levels cured (10 each, as I-SICKNESS-WARNINGS took it), and the effect is said.
-        const was = g.getg('SICKNESS-LEVEL') ?? 0, now = Math.max(0, was - 2);
-        g.setg('SICKNESS-LEVEL', now); g.setg('LOAD-ALLOWED', g.getg('LOAD-ALLOWED') + 10 * (was - now));
-        g.tell('The medicine tasted extremely bitter.' + (was === 0 ? '' : now === 0 ? ' After a few moments the fever breaks, and you feel your strength returning.' : ' After a few moments your fever eases a little, and you feel somewhat stronger.'));
+        // Deliberate deviation (user decision, 2026-09-24, rounds 21-22): the effect is said, and "the fever breaks"
+        // only when the level is at or below zero even after the step of the disease this morning's waking has still to
+        // take (SICKNESS-WARNING-FLAG), so the next symptom line -- this turn or later today -- cannot contradict it
+        // (round twenty-two, #35: the fever broke, then "a bit weak and slightly flushed").
+        // The dose itself is the source's again: SICKNESS-LEVEL drops by 2, below zero if it goes there, and
+        // LOAD-ALLOWED rises by 20 (comptwo.zil 183-184). A level below zero is a head start on the disease that
+        // I-SICKNESS-WARNINGS climbs back through in silence (globals.zil 2335-2369 says nothing below 1). Round six
+        // (2026-09-11) had clamped the level at zero, so that a player dosed on the first day of fever would not read
+        // "You are a bit sick and feverish." from DIAGNOSE forever after, which made a dose worth one level; DIAGNOSE and
+        // the Diagnose button now read any level at or below zero as healthy instead (engine/verbs.js, parser.js).
+        const was = g.getg('SICKNESS-LEVEL') ?? 0, now = was - 2, pending = g.getg('SICKNESS-WARNING-FLAG') ? 1 : 0;
+        g.setg('SICKNESS-LEVEL', now); g.setg('LOAD-ALLOWED', g.getg('LOAD-ALLOWED') + 20);
+        g.tell('The medicine tasted extremely bitter.' + (was <= 0 ? '' : now + pending <= 0 ? ' After a few moments the fever breaks, and you feel your strength returning.' : ' After a few moments your fever eases a little, and you feel somewhat stronger.'));
         return true;
       }
       // POUR

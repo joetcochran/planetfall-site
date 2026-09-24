@@ -23,7 +23,7 @@
    "source": "scripts/out/playtest/typed-8-lawanda-transcript.txt:29"
   }
  },
- "missing": "None. Every one of the 33 diaries in playtests/ has a transcript, and every tester's score was found.",
+ "missing": "None. Every one of the 36 diaries in playtests/ has a transcript, and every tester's score was found.",
  "rounds": [
   {
    "round": 1,
@@ -903,7 +903,109 @@
      "note": "Played as an adult who knows Zork and its kind but has never played Planetfall, seed 20, in three legs. Game 1 reached 42 (transcript line 14540) and died five times: the Feinstein at turn 16, the Bio Lab door at 410, and three collapses from lack of sleep at 510-512, each restored to a save made at 507 that had no way on; it restarted at transcript line 15030 after 585 commands. Game 2 won 80 of 80, Galactic Overlord, at turn 627, in 740 commands, with five deaths, all restored: the Bio Lab door, radiation poisoning twice and the microbe twice. The diary counts about 397, 395 and 305 commands for its three legs (about 1,100); the transcript has 1,325 lines beginning \"> \"."
     }
    ]
-  }
+  },
+  {
+   "round": 21,
+   "date": "2026-09-24",
+   "testers": [
+    {
+     "session": "click-21",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 2,
+     "commands": 819,
+     "bestScore": 80,
+     "finalScore": 80,
+     "finalState": "Cryo-Anteroom, turn 701, GAME WON",
+     "deaths": 2,
+     "freshStarts": 0,
+     "won": true,
+     "wins": [
+      {
+       "score": 80,
+       "turn": 701,
+       "source": "scripts/out/playtest/click-21-transcript.txt:22087"
+      }
+     ],
+     "sources": {
+      "diary": "playtests/2026-09-24/2026-09-24-click-21.md",
+      "best": "scripts/out/playtest/click-21-transcript.txt:21979",
+      "final": "scripts/out/playtest/click-21-transcript.txt:22087; playtests/2026-09-24/2026-09-24-click-21.md:218",
+      "deaths": "scripts/out/playtest/click-21-transcript.txt:16437, scripts/out/playtest/click-21-transcript.txt:21038; playtests/2026-09-24/2026-09-24-click-21.md:172, playtests/2026-09-24/2026-09-24-click-21.md:198"
+     },
+     "note": "Played as a millennial only vaguely aware of text adventures, click only from the start, seed 21, in two legs. Leg 1 stopped at turn 183 in Dorm Corridor, score 17, when the session's permission system refused the harness call for its next move, soon after a coordinator note in the diary raised the leg budget to 750 commands (diary lines 59 and 65); a fresh agent played leg 2 from the handoff. The game won 80 of 80, Galactic Overlord, at turn 701, with two deaths, both restored: the Infirmary bed at turn 522 and the microbe at turn 675. Floyd's death in the Bio Lab is not a player death. The diary counts about 185 and about 480 commands for its legs (lines 65 and 217); the transcript has 197 lines beginning \"> \" up to the stop (line 4919) and 819 in all."
+    }
+   ]
+  },
+  {
+   "round": 22,
+   "date": "2026-09-24",
+   "testers": [
+    {
+     "session": "click-22-teen",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 1,
+     "commands": 666,
+     "bestScore": 74,
+     "finalScore": 74,
+     "finalState": "Cryo-Anteroom, turn 623, GAME WON",
+     "deaths": 1,
+     "freshStarts": 0,
+     "won": true,
+     "wins": [
+      {
+       "score": 74,
+       "turn": 623,
+       "source": "scripts/out/playtest/click-22-teen-transcript.txt:18031"
+      }
+     ],
+     "sources": {
+      "diary": "playtests/2026-09-24/2026-09-24-click-22-teen.md",
+      "best": "scripts/out/playtest/click-22-teen-transcript.txt:17958",
+      "final": "scripts/out/playtest/click-22-teen-transcript.txt:18037; playtests/2026-09-24/2026-09-24-click-22-teen.md:195",
+      "deaths": "scripts/out/playtest/click-22-teen-transcript.txt:16151; playtests/2026-09-24/2026-09-24-click-22-teen.md:53"
+     },
+     "note": "Played as a first-time 14-year-old who has never seen a text adventure, click only from the start, seed 22, in one leg. Won 74 of 80, Cluster Admiral, at turn 623: Planetary Defense was never repaired, so the ending says a second Stellar Patrol ship was destroyed by the meteor defenses (transcript line 18026; diary lines 186 and 188). The tester read the missing six points as the pliers offering no \"take with\" on the shocking boards (diary friction row 37). One death, restored: the Infirmary bed at turn 557. The diary counts about 600 commands (line 194); the transcript has 666 lines beginning \"> \". The first teen persona to finish; round 17's never left Kalamontee."
+    }
+   ]
+  },
+ {
+  "round": 23,
+  "date": "2026-09-24",
+  "testers": [
+   {
+    "session": "typed-23",
+    "mode": "typed",
+    "start": "cold start (Deck Nine, turn 0, score 0)",
+    "startScore": 0,
+    "legs": 2,
+    "commands": 996,
+    "bestScore": 80,
+    "finalScore": 80,
+    "finalState": "Cryo-Anteroom, turn 723, GAME WON",
+    "deaths": 10,
+    "freshStarts": 0,
+    "won": true,
+    "wins": [
+     {
+      "score": 80,
+      "turn": 723,
+      "source": "scripts/out/playtest/typed-23-transcript.txt:5211"
+     }
+    ],
+    "sources": {
+     "diary": "playtests/2026-09-24/2026-09-24-typed-23.md",
+     "best": "scripts/out/playtest/typed-23-transcript.txt:5174",
+     "final": "scripts/out/playtest/typed-23-transcript.txt:5214; playtests/2026-09-24/2026-09-24-typed-23.md:521",
+     "deaths": "scripts/out/playtest/typed-23-transcript.txt:3031, scripts/out/playtest/typed-23-transcript.txt:3632, scripts/out/playtest/typed-23-transcript.txt:3679, scripts/out/playtest/typed-23-transcript.txt:4054, scripts/out/playtest/typed-23-transcript.txt:4077, scripts/out/playtest/typed-23-transcript.txt:4103, scripts/out/playtest/typed-23-transcript.txt:4394, scripts/out/playtest/typed-23-transcript.txt:4458, scripts/out/playtest/typed-23-transcript.txt:4859, scripts/out/playtest/typed-23-transcript.txt:4983; playtests/2026-09-24/2026-09-24-typed-23.md:269, playtests/2026-09-24/2026-09-24-typed-23.md:320, playtests/2026-09-24/2026-09-24-typed-23.md:328, playtests/2026-09-24/2026-09-24-typed-23.md:405, playtests/2026-09-24/2026-09-24-typed-23.md:406, playtests/2026-09-24/2026-09-24-typed-23.md:407, playtests/2026-09-24/2026-09-24-typed-23.md:436, playtests/2026-09-24/2026-09-24-typed-23.md:438, playtests/2026-09-24/2026-09-24-typed-23.md:478, playtests/2026-09-24/2026-09-24-typed-23.md:491"
+    },
+    "note": "Played as an adult who knows Zork and its kind but has never played Planetfall, typed from the start, seed 23, in two legs, on main before rounds twenty-one and twenty-two's fixes were merged. Won 80 of 80, Galactic Overlord, at turn 723, in one game. Ten deaths, all restored: the Infirmary bed at turn 501, the Bio Lab mutants five times at Bio Lock East (turns 533 to 594), the Radiation Lab twice and the microbe twice. The tester numbers its deaths up to nine (diary line 491). It also restored once while alive, at turn 267, after locking the kitchen card inside the kitchen (diary line 135). Floyd's death in the Bio Lab is not a player death. The diary counts about 750 and roughly 175 commands for its legs (lines 350 and 527); the transcript has 764 lines beginning \"> \" up to the Kitchen save at turn 575 (line 3945) and 996 in all."
+   }
+  ]
+ }
  ],
  "lifeByLife": {
   "about": "The runs from the start, played in legs (rounds 10 to 12), life by life. A life ends in a death, a win, a restore or restart while alive, or the end of the session. \"began\" says how a life started: a fresh game from the beginning (--new), or a restored save. commands is the range of the session's command count the life covers; steps are [command, score] at each change of score.",
