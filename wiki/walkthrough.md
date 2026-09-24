@@ -6,7 +6,7 @@ Each section is a table of its steps: the step's number, the command a typist wo
 
 Two things differ from game to game, so read them off the screen rather than these steps:
 
-- **The chemicals.** The Comm Room's lit lamp names the chemical the coolant system wants. The steps below pour what the test game drew (green, then brown).
+- **The chemicals.** The Comm Room's lit lamp names the chemical the coolant system wants: push the Machine Shop button of that colour. The colours and the number of pours (two or three) are both random. The steps below pour what the test game drew (green, then brown).
 - **The damaged sector.** The Computer Room's print-out ends "Malfunkshun in Sekshun ...!" with a number from 100 to 999. Type that number in the Miniaturization Booth. The wrong number fries you. Infocom's game always used 384; see [Where we left the original](canon-deviations.md).
 
 The steps assume the test game's luck elsewhere too: when a step says to wait until something happens, keep waiting until it does.
@@ -184,7 +184,7 @@ The cards not needed until day two go in your uniform's pocket.
 
 ## The Comm Room
 
-The Feinstein's last message, and the coolant system. The lamp that is lit tells you which chemical to pour first; it is chosen at random each game, so pour what your lamp asks for, not what these steps pour. The flask and the dispenser are down in the Machine Shop.
+The Feinstein's last message, and the coolant system. The enunciator's one lit lamp names the chemical to pour, and its colour is chosen at random each game: push the dispenser button that matches your lamp, not the colour these steps push. The repair takes two or three chemicals, also random; each right one lights the next lamp, until the lights all go dark. The wrong one shuts the system down for good. The flask and the dispenser are down in the Machine Shop.
 
 | # | Command | What it does |
 |--:|---|---|
@@ -206,7 +206,7 @@ The Feinstein's last message, and the coolant system. The lamp that is lit tells
 | 110 | `take laser` | Taken |
 | 111 | `e` | To Machine Shop |
 | 112 | `put flask under dispenser` | The flask under the spout |
-| 113 | `push green button` | Green chemical into the flask |
+| 113 | `push` *the lit lamp's colour* `button` | The chemical your lamp names, into the flask |
 | 114 | `take flask` | Taken |
 
 ## The Robot Shop
@@ -230,7 +230,7 @@ The lower elevator card is in a compartment of the switched-off robot. Switching
 | 127 | `wait` | Repeat until "…elevator door slides open…" |
 | 128 | `s` | To Tower Core |
 | 129 | `ne` | To Comm Room |
-| 130 | `pour fluid into hole` | The first chemical; the lamp now asks for brown |
+| 130 | `pour fluid into hole` | The first chemical; the next lamp lights (brown, in the test game) |
 
 ## Evening, day one
 
@@ -279,7 +279,7 @@ Everything you held is on the floor beside the bunk. Breakfast first.
 
 ## Finishing the coolant repair
 
-The good bedistor from the carton in Storage East, the pliers from the Tool Room, the second chemical from the Machine Shop, and up to the Comm Room.
+The good bedistor from the carton in Storage East, the pliers from the Tool Room, the second chemical from the Machine Shop (the colour of the lamp now lit), and up to the Comm Room. If a lamp is still lit after this pour, your game wants a third chemical: fetch and pour it the same way.
 
 | # | Command | What it does |
 |--:|---|---|
@@ -295,7 +295,7 @@ The good bedistor from the carton in Storage East, the pliers from the Tool Room
 | 171 | `take pliers` | Taken |
 | 172 | `e` | To Machine Shop |
 | 173 | `put flask under dispenser` | The flask under the spout |
-| 174 | `push brown button` | Brown chemical into the flask |
+| 174 | `push` *the lit lamp's colour* `button` | The chemical your lamp names, into the flask |
 | 175 | `take flask` | Taken |
 | 176 | `n` | To Mech Corridor South |
 | 177 | `n` | To Mech Corridor |
@@ -308,7 +308,7 @@ The good bedistor from the carton in Storage East, the pliers from the Tool Room
 | 184 | `wait` | Repeat until "…elevator door slides open…" |
 | 185 | `s` | To Tower Core |
 | 186 | `ne` | To Comm Room |
-| 187 | `pour fluid into hole` | The second chemical; the help message goes out |
+| 187 | `pour fluid into hole` | The second chemical; if the lights go dark, the help message goes out |
 | 188 | `drop flask` | Dropped |
 | 189 | `sw` | To Tower Core |
 | 190 | `n` | To Upper Elevator |
@@ -424,13 +424,13 @@ Read the print-out in the Computer Room: its last line names the damaged sector 
 
 ## The microbe
 
-A microbe blocks the way back along the strip. Heat the laser on it, then throw the laser off the strip.
+A microbe blocks the way back along the strip. Shoot it every turn: each turn it goes unhit it closes in, and the third time it eats you. Every shot warms the laser, and once the laser is warm enough the microbe grabs for it. Throw the laser off the strip then, and the microbe follows it.
 
 | # | Command | What it does |
 |--:|---|---|
 | 272 | `set dial to 6` | The dial is now set to 6 |
 | 273 | `s` | To Middle of Strip |
-| 274 | `shoot laser at microbe` | Repeat until "…laser beam strikes the microbe…" |
+| 274 | `shoot laser at microbe` | Repeat until "…perhaps attracted by the warmth of the laser…" (about eight shots), then throw it at once. Every shot says "The laser beam strikes the microbe"; keep shooting well past the warmth line and the microbe drags you into the void |
 | 275 | `throw laser off strip` | The microbe follows the laser into the void |
 | 276 | `s` | To Strip Near Station |
 | 277 | `w` | To Auxiliary Booth |
