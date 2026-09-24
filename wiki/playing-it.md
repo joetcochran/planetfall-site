@@ -214,3 +214,5 @@ Counting the rows turned up an old fault. `compare_playtests.mjs` counted only r
 - **Measurement.** `compare_playtests.mjs` builds a table of milestones and friction counts across runs. Since 18 September it reads every shape of friction table through `scripts/lib/friction.mjs`, and keeps only the room name from the status line.
 
 The deviation rule and the A/B/C tiers are described on [How we work](how-we-work.md). The tools are listed on [Tools](tools.md).
+
+On 23 September the user played the published game through by mouse alone, and the work turned from the rooms to the player. That story is told on [Playing it as a clicker](playing-as-a-clicker.md).

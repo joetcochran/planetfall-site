@@ -394,3 +394,13 @@ A dated list of the events that shaped the remake, one line each, with the commi
 | 23 Sep morning | **The user reaches the ending as a clicker: 74 of 80, Cluster Admiral** | the note to the historian; the same score as the checkpoint route to the ending (7b06d7c8) |
 | 23 Sep 09:08 | The user triages 25 playtest items: click fixes checked by real clicks, one lit-sign style, pink for black | 9b969ec9 |
 | 23 Sep | The deviations from the original are gathered on one page, at the user's request | [Where we left the original](canon-deviations.md) |
+| 23 Sep 09:25 | The browser harness clicks where things are drawn, and a click on a name plate opens that thing's menu | 0f091163 |
+| 23 Sep 09:29 | Colour 7 becomes pink in Infocom's text and in the game; the enunciator's lamp blinks | 73b3752f |
+| 23 Sep 10:16 | **The dashboard becomes the user's playtest bug checklist: the work turns from the rooms to the player** | d71649fc |
+| 23 Sep 15:48 | Glimpses: Floyd seen in the Bio Lab during his run, the dead Floyd from Bio Lock West, the mutants through the office door | bfaea500 |
+| 23 Sep 16:07 | Greg's mangled Floyd and extended ladder replace the last boxes in the story | 219f4fa3 |
+| 23 Sep 17:46 | Lit "switched on" signs in canon's phonetic spelling replace the green boxes in ten rooms | e816cb98 |
+| 23 Sep 18:29 | The stunned mutants in four poses; the enunciator widened, with lenses twice the size | afa1ed77 |
+| 23 Sep 19:36 | A loading spinner: the Planetfall helmet from the favicon | 12524b3c |
+| 23 Sep 20:04 | Per-bug test checkpoints (TC17 and others); 30 of the user's 39 checklist entries accepted, none rejected | a2fe780a; `data/playtest-bugs.json` |
+| 23 Sep evening | A page on what a clicker needs | [Playing it as a clicker](playing-as-a-clicker.md) |

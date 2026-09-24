@@ -71,3 +71,4 @@ This history follows the commits, the files, the request ledger, the mailbox and
 - [Journal](journal.md): the running history from 14 September on
 - [The Conference Room table](the-conference-table.md): one room's round table, eight rounds of painting, and the six lessons it cost to learn (15-19 September)
 - [Where we left the original](canon-deviations.md): every deliberate deviation from Infocom's *Planetfall* -- the words, the rules and timing, what the player is told, what the player sees, and the few edits to the original's own text -- with why, who decided, and where in the code; and what was proposed and left as the original
+- [Playing it as a clicker](playing-as-a-clicker.md): what the user's own mouse-only playthrough of 23 September taught -- reaching what you see, knowing what a click did, seeing what the text says is next door -- and how the playtest checklist and checkpoints run the work
