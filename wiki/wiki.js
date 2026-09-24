@@ -104,7 +104,8 @@ function list(block) {
     const nested = sub.length && /^\s*([-*+]|\d+[.)])\s+/.test(sub[0]) ? list(sub) : sub.length ? ' ' + inline(sub.map(s => s.trim()).join(' ')) : '';
     return `<li>${inline(first)}${nested}</li>`;
   };
-  return `<${ordered ? 'ol' : 'ul'}>${items.map(li).join('')}</${ordered ? 'ol' : 'ul'}>`;
+  const start = ordered ? parseInt(block[0].trim(), 10) : 1;   // a numbered list keeps its numbers (walkthrough.md's steps)
+  return `<${ordered ? 'ol' : 'ul'}${start !== 1 ? ` start="${start}"` : ''}>${items.map(li).join('')}</${ordered ? 'ol' : 'ul'}>`;
 }
 
 // The page itself: ?page=<name> (index by default), with the contents from index.md down the side.

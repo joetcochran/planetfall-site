@@ -60,7 +60,7 @@ export class Game {
 
   // --- object tree -------------------------------------------------------------------
   obj(id) { return this.objects[id]; }
-  name(id) { if (id === 'PSEUDO-OBJECT') return this.state.pseudo ? pseudoLabel(this.state.pseudo) : 'pseudo'; return this.properName(id) ?? this.objects[id]?.name ?? this.rooms.get(id)?.name ?? id; }
+  name(id) { if (id === 'PSEUDO-OBJECT') return this.state.pseudo ? pseudoLabel(this.state.pseudo) : 'pseudo'; const n = this.properName(id) ?? this.objects[id]?.name ?? this.rooms.get(id)?.name ?? id; const sector = this.state.globals['SECTOR-NUMBER']; return sector && id === 'STATION-384' ? `Station ${sector}` : n; }
   // rules.names[id] = g => string | null gives an object a proper name while it applies. Deliberate deviation (user
   // decision, 2026-09-10, round four): once Floyd has introduced himself the narrator calls him Floyd, not "multiple
   // purpose robot" (floyd.js). A proper name takes no article: tell() folds "the Floyd" / "a Floyd" into "Floyd".
@@ -113,6 +113,8 @@ export class Game {
 
   // --- output -------------------------------------------------------------------------
   tell(text, kind = 'text') {
+    const sector = this.state.globals['SECTOR-NUMBER'];   // the damaged sector, 384 in canon, rolled per game (tower.js SECTOR-SETUP)
+    if (sector && sector !== 384) text = text.replace(/\b384\b/g, String(sector));
     for (const id of Object.keys(this.rules.names ?? {})) { const n = this.properName(id); if (n && text.includes(n)) text = text.replace(new RegExp(`\\b(?:[Tt]he|[Aa]n?) ${n}\\b`, 'g'), n); }
     this.messages.push({ kind, text });
   }

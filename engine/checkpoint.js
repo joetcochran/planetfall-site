@@ -19,4 +19,7 @@ export function applyCheckpoint(g, checkpoint, seed) {
     g.rules.helpers['COMM-SETUP'](g);
     g.setg('OLD-SHOTS', shots.old); g.setg('NEW-SHOTS', shots.fresh);
   }
+  // The damaged sector (tower.js SECTOR-SETUP) is rolled afresh too, unless the player has already read it off the
+  // print-out: then the number they saw is the one the booth takes.
+  if (!g.getg('SECTOR-READ')) g.rules.helpers['SECTOR-SETUP'](g);
 }

@@ -400,6 +400,7 @@ export const objects = {
   // PRINT-OUT-F (comptwo.zil). The source switches to a fixed font for the report.
   'PRINT-OUT'(g, ctx) {
     if (!obj(ctx) || !is(ctx, 'READ', 'EXAMINE')) return false;
+    g.setg('SECTOR-READ', true);   // a checkpoint made after this keeps its sector (engine/checkpoint.js)
     g.tell('The printout is hundreds of pages long. It would take many chrons to read it all. The last page looks pretty interesting, though:\n\n"Daalee Statis Reeport:\nPREELIMINEREE REESURC:  100.000%\nINTURMEEDEEIT REESURC:  100.000%\nFIINUL REESURC:         100.000%\nDRUG PROODUKSHUN:       100.000%\nDRUG TESTEENG:           99.985%\nProojektid tiim tuu reeviivul prooseedzur:  0 daaz, 0.8 kronz\n\n\n*** ALURT! ALURT! ***\nMalfunkshun in Sekshun 384! Sumuneeng reepaar roobot."\n\nThe printout ends at this point.');
     return true;
   },
@@ -605,8 +606,8 @@ export const verbs = {
     if (here(g, 'MINI-BOOTH')) {
       if (ctx.prso !== 'INTNUM') return numbersOnly(g);
       if (!g.getg('MINI-ACTIVATED')) return g.tell('A recording says "Internal computer repair booth not activated."');
-      const n = g.getg('P-NUMBER');
-      if (n === 384) { g.tell('You notice the walls of the booth sliding away in all directions, followed by a momentary queasiness in the pit of your stomach...'); g.crlf(); g.goto('STATION-384'); g.setg('BEEN-HERE', true); return; }
+      const n = g.getg('P-NUMBER');   // the damaged sector is this game's, 384 in canon (tower.js SECTOR-SETUP)
+      if (n === (g.getg('SECTOR-NUMBER') ?? 384)) { g.tell('You notice the walls of the booth sliding away in all directions, followed by a momentary queasiness in the pit of your stomach...'); g.crlf(); g.goto('STATION-384'); g.setg('BEEN-HERE', true); return; }
       if (n < 10) return g.tell('After a pause a recorded voice says "There are no one-digit computer sectors...clearing entry...please type damaged sector number."');
       if (n > 1024) return g.tell('A recorded voice says "Databanks indicate no computer sector corresponding to that number. Please check with your supervisor."');
       return g.jigsUp('Ooops! You seem to have transported yourself into an active sector of the computer. You are fried by powerful electric currents.');

@@ -165,11 +165,19 @@ function commSetup(g) {
   g.setg('STEPS-TO-GO', 1 + g.random(2));
   g.setg('CHEMICAL-REQUIRED', g.getg('ORDER-LTBL')[g.getg('STEPS-TO-GO') + 1]);
 }
-export const helpers = { 'COMM-SETUP': commSetup, 'RANDOMIZE-ORDER': randomizeOrder, 'CHEMICAL-COLOR': chemicalColor };
+// SECTOR-SETUP: a deviation (the user, 2026-09-23: "randomize this ... 100-999, rename the sector too"). Canon's damaged
+// sector is always 384, so a player who knows it can skip the print-out; here each game picks its own, 100 to 999, and
+// the engine writes it wherever the text says 384 (core.js tell). It is derived from the RNG's state without drawing
+// from it, so every other random draw in the game is exactly what it was.
+function sectorSetup(g) {
+  let t = Math.imul((g.state.rng ^ 0x5EC7038) | 0, 0x9E3779B1); t ^= t >>> 15; t = Math.imul(t, 0x85EBCA6B); t ^= t >>> 13;
+  g.setg('SECTOR-NUMBER', 100 + ((t >>> 0) % 900));
+}
+export const helpers = { 'COMM-SETUP': commSetup, 'SECTOR-SETUP': sectorSetup, 'RANDOMIZE-ORDER': randomizeOrder, 'CHEMICAL-COLOR': chemicalColor };
 
 export const interrupts = {
   // I-RANDOM-INTERRUPTS (misc.zil): redefined as a superset of ship.js's port, adding the COMM-SETUP call.
-  'I-RANDOM-INTERRUPTS'(g) { shipInterrupts['I-RANDOM-INTERRUPTS'](g); commSetup(g); },
+  'I-RANDOM-INTERRUPTS'(g) { shipInterrupts['I-RANDOM-INTERRUPTS'](g); commSetup(g); sectorSetup(g); },
   // I-UNENTER (compone.zil): armed every turn once the comm room has greeted you; re-arms the greeting as
   // soon as you are somewhere else.
   'I-UNENTER'(g) {
