@@ -191,7 +191,7 @@ export class UI {
     // something changes, which is one click too many (the user, playtesting the opening, 2026-09-17). The status
     // line is the one part of the screen that persists between turns, so the depth belongs here and not in the log.
     const note = g.rules.roomNote?.[g.state.here]?.(g) ?? null;
-    this.status.textContent = `${g.here().name}${note ? ' · ' + note : ''}${v ? ', in the ' + g.name(v) : ''}${part ? ' · ' + part : ''} · time ${g.state.time} · turn ${g.state.turn} · score ${g.state.score}`;
+    this.status.textContent = `${g.name(g.state.here)}${note ? ' · ' + note : ''}${v ? ', in the ' + g.name(v) : ''}${part ? ' · ' + part : ''} · time ${g.state.time} · turn ${g.state.turn} · score ${g.state.score}`;
     this.deathOverlay.hidden = !g.state.dead;
     if (g.state.dead) {   // FINISH (a completed game) also stops play, but is a win, not a death
       const won = !!g.state.finished; this.deathOverlay.querySelector('#death-title').textContent = won ? 'You have won' : 'You have died';
