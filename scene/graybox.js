@@ -451,7 +451,7 @@ export function buildRoom(g, overrides = {}, ctx = {}) {
     const row = Math.max(...shownInside.map(t => t.top));
     for (const { c, cp } of shownInside) {
       const cs = label(overrides.objects?.[c]?.plateText ?? g.name(c), { size: 0.38 });
-      cs.position.set(cp[0], row + 0.35, cp[2]);
+      cs.position.set(cp[0], row + 0.35 + (o?.contentsLabelOffset ?? 0), cp[2]);   // the container's own adjustment
       cs.userData.labelFor = c;
       group.add(cs);
     }

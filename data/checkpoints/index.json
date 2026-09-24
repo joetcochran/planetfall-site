@@ -41,6 +41,26 @@
    "label": "Course Control, the cube shut and the course not yet fixed: open, take, fix, drop"
   },
   {
+   "id": "TC17-course-fix",
+   "label": "TC17- Course Control, the fused bedistor out: put the good one in the cube"
+  },
+  {
+   "id": "TC18-infirmary",
+   "label": "TC18- Infirmary, just entered: click the medicine bottle on the shelf"
+  },
+  {
+   "id": "TC22-mini-booth",
+   "label": "TC22- Miniaturization Booth, dial set: slide the mini card and watch the sign"
+  },
+  {
+   "id": "TC24-lab-office",
+   "label": "TC24- Lab Office, just entered: the three buttons and their labels"
+  },
+  {
+   "id": "TC40-cube-open",
+   "label": "TC40- Course Control, the cube just opened: the bedistor's label over the socket"
+  },
+  {
    "id": "final-chase",
    "label": "The Bio Lab, the fungicide released and the mutants stunned: the final chase to the cryo-elevator"
   }

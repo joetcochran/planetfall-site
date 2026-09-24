@@ -76,6 +76,12 @@ export function designOverrides(scene = {}, meta = null) {
     if (!framed || o?.labelOffset == null) continue;
     out.objects = { ...out.objects, [id]: { ...scene.objects?.[id], ...out.objects?.[id], labelOffset: o.labelOffset } };
   }
+  // `contentsLabelOffset`: the same, for the row of plates over an open container's contents (playtest 2026-09-23,
+  // item 40: the fused bedistor's plate lay across the cube's painted socket).
+  for (const [id, o] of Object.entries(meta.objects ?? {})) {
+    if (!framed || typeof o?.contentsLabelOffset !== 'number') continue;
+    out.objects = { ...out.objects, [id]: { ...scene.objects?.[id], ...out.objects?.[id], contentsLabelOffset: o.contentsLabelOffset } };
+  }
   // `plateText` is what a thing's name plate says, where the room's data gives it: the Lab Office's three buttons
   // read what is lettered on them (comptwo.zil 2236-2238), because the red one's "Eemurjensee Sistum" is the clue and
   // the painting's lettering is too small to read (playtest 2026-09-23, item 24). The plate only: menus and the
