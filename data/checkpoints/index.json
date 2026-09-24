@@ -1,68 +1,68 @@
 {
  "checkpoints": [
   {
-   "id": "comm-room",
-   "label": "Tower Core, before the Comm Room: flask in hand, Floyd following"
+   "id": "01-ladder",
+   "label": "01- Admin Corridor, the ladder just opened on the floor: next, put it across the rift"
   },
   {
-   "id": "comm-fixed",
-   "label": "Comm Room, help message sent: laser, pliers, good bedistor and the three cards (day 2)"
+   "id": "02-machine-shop",
+   "label": "02- Machine Shop, the empty flask in hand: the pink button, the flask under the spout"
   },
   {
-   "id": "bio-lock",
-   "label": "Bio Lock West, before the Bio Lab: new battery, laser, Floyd along to fetch the mini card"
+   "id": "03-comm-room",
+   "label": "03- Tower Core, before the Comm Room: flask in hand, Floyd following"
   },
   {
-   "id": "mini-card",
-   "label": "Bio Lock East, the mini card just taken: laser, new battery, bound for the Miniaturization Booth"
+   "id": "04-comm-fixed",
+   "label": "04- Comm Room, help message sent: laser, pliers, good bedistor and the three cards (day 2)"
   },
   {
-   "id": "microbe",
-   "label": "Middle of Strip, face to face with the microbe: the laser in hand at setting 6"
+   "id": "05-lower-elevator",
+   "label": "05- Lower Elevator, the lower card not yet slid: the elevator sign, the Waiting Area, the shuttle sign"
   },
   {
-   "id": "aux-booth",
-   "label": "Auxiliary Booth, out of the computer: the Lab Office, the gas mask and the run to the cryo-elevator"
+   "id": "06-course-control",
+   "label": "06- Course Control, the cube shut and the course not yet fixed: open, take, fix, drop"
   },
   {
-   "id": "ladder",
-   "label": "Admin Corridor, the ladder just opened on the floor: next, put it across the rift"
+   "id": "07-cube-open",
+   "label": "07- Course Control, the cube just opened: the bedistor's label over the socket"
   },
   {
-   "id": "machine-shop",
-   "label": "Machine Shop, the empty flask in hand: the pink button, the flask under the spout"
+   "id": "08-course-fix",
+   "label": "08- Course Control, the fused bedistor out: put the good one in the cube"
   },
   {
-   "id": "lower-elevator",
-   "label": "Lower Elevator, the lower card not yet slid: the elevator sign, the Waiting Area, the shuttle sign"
+   "id": "09-infirmary",
+   "label": "09- Infirmary, just entered: click the medicine bottle on the shelf"
   },
   {
-   "id": "course-control",
-   "label": "Course Control, the cube shut and the course not yet fixed: open, take, fix, drop"
+   "id": "10-bio-lock",
+   "label": "10- Bio Lock West, before the Bio Lab: new battery, laser, Floyd along to fetch the mini card"
   },
   {
-   "id": "TC17-course-fix",
-   "label": "TC17- Course Control, the fused bedistor out: put the good one in the cube"
+   "id": "11-mini-card",
+   "label": "11- Bio Lock East, the mini card just taken: laser, new battery, bound for the Miniaturization Booth"
   },
   {
-   "id": "TC18-infirmary",
-   "label": "TC18- Infirmary, just entered: click the medicine bottle on the shelf"
+   "id": "12-mini-booth",
+   "label": "12- Miniaturization Booth, dial set: slide the mini card and watch the sign"
   },
   {
-   "id": "TC22-mini-booth",
-   "label": "TC22- Miniaturization Booth, dial set: slide the mini card and watch the sign"
+   "id": "13-microbe",
+   "label": "13- Middle of Strip, face to face with the microbe: the laser in hand at setting 6"
   },
   {
-   "id": "TC24-lab-office",
-   "label": "TC24- Lab Office, just entered: the three buttons and their labels"
+   "id": "14-aux-booth",
+   "label": "14- Auxiliary Booth, out of the computer: the Lab Office, the gas mask and the run to the cryo-elevator"
   },
   {
-   "id": "TC40-cube-open",
-   "label": "TC40- Course Control, the cube just opened: the bedistor's label over the socket"
+   "id": "15-lab-office",
+   "label": "15- Lab Office, just entered: the three buttons and their labels"
   },
   {
-   "id": "final-chase",
-   "label": "The Bio Lab, the fungicide released and the mutants stunned: the final chase to the cryo-elevator"
+   "id": "16-final-chase",
+   "label": "16- The Bio Lab, the fungicide released and the mutants stunned: the final chase to the cryo-elevator"
   }
  ]
 }

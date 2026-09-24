@@ -1,6 +1,6 @@
 // Panels: transcript, verb menu, compass strip, inventory, command line, status bar, debug panel.
 // The UI never touches game state directly; every action goes through onCommand(command).
-import { takeableHere, verbsFor, usesFor, VERB_LABELS, verbLabel, exitChoices, menuEntries, numberEntries, numberLabel, numberCommand, putInto, throwAt, doorVerbs, quickButtons, ordersFor, topicsFor, topicLabel, exitNote, isMarker } from '../engine/parser.js';
+import { takeableHere, verbsFor, objectCommand, usesFor, VERB_LABELS, verbLabel, exitChoices, menuEntries, numberEntries, numberLabel, numberCommand, putInto, throwAt, doorVerbs, quickButtons, ordersFor, topicsFor, topicLabel, exitNote, isMarker } from '../engine/parser.js';
 
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const DIR_LABEL = { NORTH: 'N', SOUTH: 'S', EAST: 'E', WEST: 'W', NE: 'NE', NW: 'NW', SE: 'SE', SW: 'SW', UP: 'Up', DOWN: 'Down', IN: 'In', OUT: 'Out' };
@@ -111,7 +111,7 @@ export class UI {
   // Verb menu for an object, including "Put in ..." targets and a free-text prompt.
   objectMenu(x, y, id) {
     const g = this.g;
-    const items = verbsFor(g, id).map(v => ({ label: verbLabel(g, id, v), run: () => this.onCommand({ verb: v, prso: id }) }));
+    const items = verbsFor(g, id).map(v => ({ label: verbLabel(g, id, v), run: () => this.onCommand(objectCommand(g, id, v)) }));
     for (const e of numberEntries(g, id)) items.push({ label: numberLabel(e), number: true, run: n => this.onCommand(numberCommand(e.verb, id, n)) });
     const put = putInto(g, id);   // an open container offers the held things that fit, one submenu
     if (put.length) items.push({ label: 'Put in…', sub: put.map(o => ({ label: g.name(o), run: () => this.onCommand({ verb: 'PUT', prso: o, prsi: id }) })) });

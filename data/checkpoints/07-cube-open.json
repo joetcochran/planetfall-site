@@ -1,6 +1,6 @@
 {
- "id": "TC40-cube-open",
- "label": "TC40- Course Control, the cube just opened: the bedistor's label over the socket",
+ "id": "07-cube-open",
+ "label": "07- Course Control, the cube just opened: the bedistor's label over the socket",
  "room": "PLANETARY-COURSE-CONTROL",
  "turn": 269,
  "reroll": [],

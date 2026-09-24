@@ -23,7 +23,7 @@
    "source": "scripts/out/playtest/typed-8-lawanda-transcript.txt:29"
   }
  },
- "missing": "None. Every one of the 32 diaries in playtests/ has a transcript, and every tester's score was found.",
+ "missing": "None. Every one of the 33 diaries in playtests/ has a transcript, and every tester's score was found.",
  "rounds": [
   {
    "round": 1,
@@ -867,6 +867,40 @@
       "deaths": "scripts/out/playtest/r19-transcript.txt:756; playtests/2026-09-18/2026-09-18-typed-19.md:35"
      },
      "note": "Played as a first-time player typing plain modern English. The session was run under the name r19, so its transcript is r19-transcript.txt. It reached 13 at Kalamontee Platform, then died at the rift (turn 134) and restored its only save, from the Crag; it stopped alive and saved in the Robot Shop at turn 87 with score 9, so its best (13) is above its final (9). The diary says roughly 190 commands counting refused ones; the transcript has 244 lines beginning \"> \"."
+    }
+   ]
+  },
+  {
+   "round": 20,
+   "date": "2026-09-23",
+   "testers": [
+    {
+     "session": "click-20",
+     "mode": "click",
+     "start": "cold start (Deck Nine, turn 0, score 0)",
+     "startScore": 0,
+     "legs": 3,
+     "commands": 1325,
+     "bestScore": 80,
+     "finalScore": 80,
+     "finalState": "Cryo-Anteroom, turn 627 of game 2, GAME WON",
+     "deaths": 10,
+     "freshStarts": 2,
+     "won": true,
+     "wins": [
+      {
+       "score": 80,
+       "turn": 627,
+       "source": "scripts/out/playtest/click-20-transcript.txt:34999"
+      }
+     ],
+     "sources": {
+      "diary": "playtests/2026-09-23/2026-09-23-click-20.md",
+      "best": "scripts/out/playtest/click-20-transcript.txt:34935",
+      "final": "scripts/out/playtest/click-20-transcript.txt:34999; playtests/2026-09-23/2026-09-23-click-20.md:521",
+      "deaths": "scripts/out/playtest/click-20-transcript.txt:441, scripts/out/playtest/click-20-transcript.txt:11268, scripts/out/playtest/click-20-transcript.txt:14707, scripts/out/playtest/click-20-transcript.txt:14837, scripts/out/playtest/click-20-transcript.txt:15016, scripts/out/playtest/click-20-transcript.txt:26453, scripts/out/playtest/click-20-transcript.txt:27434, scripts/out/playtest/click-20-transcript.txt:27824, scripts/out/playtest/click-20-transcript.txt:33318, scripts/out/playtest/click-20-transcript.txt:33704; playtests/2026-09-23/2026-09-23-click-20.md:53, playtests/2026-09-23/2026-09-23-click-20.md:343, playtests/2026-09-23/2026-09-23-click-20.md:369, playtests/2026-09-23/2026-09-23-click-20.md:525"
+     },
+     "note": "Played as an adult who knows Zork and its kind but has never played Planetfall, seed 20, in three legs. Game 1 reached 42 (transcript line 14540) and died five times: the Feinstein at turn 16, the Bio Lab door at 410, and three collapses from lack of sleep at 510-512, each restored to a save made at 507 that had no way on; it restarted at transcript line 15030 after 585 commands. Game 2 won 80 of 80, Galactic Overlord, at turn 627, in 740 commands, with five deaths, all restored: the Bio Lab door, radiation poisoning twice and the microbe twice. The diary counts about 397, 395 and 305 commands for its three legs (about 1,100); the transcript has 1,325 lines beginning \"> \"."
     }
    ]
   }

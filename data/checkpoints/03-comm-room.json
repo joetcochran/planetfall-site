@@ -1,6 +1,6 @@
 {
- "id": "comm-room",
- "label": "Tower Core, before the Comm Room: flask in hand, Floyd following",
+ "id": "03-comm-room",
+ "label": "03- Tower Core, before the Comm Room: flask in hand, Floyd following",
  "room": "TOWER-CORE",
  "turn": 130,
  "reroll": [

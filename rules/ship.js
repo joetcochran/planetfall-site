@@ -307,7 +307,9 @@ export const exitVisible = { 'POD-EXIT-F': (g, dir) => g.getg('BLOWUP-COUNTER') 
 // The pod door and the two bulkheads only close by themselves ("You can't close it yourself."): no Close entry.
 const never = () => false;
 // The emergency bulkheads only move by themselves ("There doesn't seem to be any way to open it."): neither Open nor Close.
-export const menus = { 'POD-DOOR': [{ verb: 'CLOSE', when: never }], 'GANGWAY-DOOR': [{ verb: 'OPEN', when: never }, { verb: 'CLOSE', when: never }], 'CORRIDOR-DOOR': [{ verb: 'OPEN', when: never }, { verb: 'CLOSE', when: never }] };
+// Round twenty: the source answers TAKE CELERY (CELERY-F) and SCRUB SLIME (SLIME-PSEUDO), but the click menus offered
+// neither, so the opening's two jokes were typed only.
+export const menus = { CELERY: ['TAKE'], 'SLIME-PSEUDO': ['SCRUB'], 'POD-DOOR': [{ verb: 'CLOSE', when: never }], 'GANGWAY-DOOR': [{ verb: 'OPEN', when: never }, { verb: 'CLOSE', when: never }], 'CORRIDOR-DOOR': [{ verb: 'OPEN', when: never }, { verb: 'CLOSE', when: never }] };
 
 export const exits = {
   // POD-EXIT-F: where EAST/OUT/UP from the pod lead, depending on the phase of the trip.

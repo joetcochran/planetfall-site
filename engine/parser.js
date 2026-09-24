@@ -403,6 +403,15 @@ export function verbsFor(g, id) {
   if (f('FOODBIT') && out.includes('EAT') && !reachableFood) out.splice(out.indexOf('EAT'), 1);
   return out;
 }
+// The command an object menu's entry sends. Eat on food in an open container at your feet (the goo in the survival kit
+// on the floor) takes the container first, as the quick button does (round fourteen, B2): the menu offered Eat there
+// (round eleven, A4) and the source then refused it, "You're not holding the survival kit." (round twenty). Click only.
+export function objectCommand(g, id, verb) {
+  const cmd = { verb, prso: id };
+  const c = g.loc(id);
+  if (verb === 'EAT' && !g.held(id) && c && !g.rooms.has(c) && g.loc(c) === g.state.here && g.fsetP(c, 'CONTBIT') && g.fsetP(c, 'TAKEBIT')) cmd.takeFirst = c;
+  return cmd;
+}
 // Every container between `id` and the player (or the room it stands in) is open. It used to walk on past the room,
 // which is never OPENBIT, so food in an open kit on the floor always failed and round eleven's A4 never took effect
 // (round fourteen: starving in Storage West, the goo offered only Examine).
@@ -515,17 +524,38 @@ function clockState(g) {
   const bits = [];
   const hunger = g.getg('HUNGER-LEVEL') ?? 0, sleepy = g.getg('SLEEPY-LEVEL') ?? 0, sick = g.getg('SICKNESS-LEVEL') ?? 0;
   const hours = which => { const m = g.rules.clocks?.[which]?.(g); return m == null ? '' : ', ' + g.inHours(m); };
-  if (hunger > 0) bits.push((hunger > 3 ? 'starving' : 'hungry') + (foodToHand(g) ? '' : ', nothing to eat') + hours('hunger'));
+  if (hunger > 0) bits.push((hunger > 3 ? 'starving' : 'hungry') + (eatButton(g, hunger) ? '' : ', nothing to eat') + hours('hunger'));
   if (sleepy > 0) bits.push((sleepy > 2 ? 'exhausted' : 'tired') + hours('sleep'));
   if (sick > 0) bits.push(sick > 5 ? 'very sick' : 'feverish');
   return bits.length ? ` (${bits.join('; ')})` : '';
 }
-// Food you could eat or drink where you stand: what verbsFor would offer EAT for, out of what you carry.
-function foodToHand(g) {
+// The quick button that eats, or null: food in hand, food in a closed container you hold, or food in an open kit at
+// your feet. Diagnose's "nothing to eat" asks the same question, so the two cannot disagree (round twenty: the row read
+// "hungry, nothing to eat" beside an "Open the survival kit and eat" button).
+function eatButton(g, hungry) {
+  const starving = hungry > 3 ? ' (starving!)' : '';
   const food = [];
   const reach = c => { for (const id of g.contents(c)) { if (g.fsetP(id, 'FOODBIT')) food.push(id); if (g.seeInside(id)) reach(id); } };
   reach('ADVENTURER');
-  return food.some(id => openUpTo(g, id));
+  const best = food.find(id => openUpTo(g, id));
+  if (best) return { key: 'eat', label: `${verbLabel(g, best, 'EAT')} the ${g.name(best)}` + starving, cmd: { verb: 'EAT', prso: best } };
+  // Deliberate deviation (user decision, 2026-09-18, round thirteen, B2): closing the canteen hid the drink, and
+  // leaving it open spills it overnight (WAKING-UP), so the careful move cost the button. A closed container you hold
+  // with something to eat or drink in it offers both steps as one click. It is still two turns: OPEN, then EAT
+  // (core.js dispatch, openFirst).
+  const shut = g.contents('ADVENTURER').find(c => !g.fsetP(c, 'OPENBIT') && g.fsetP(c, 'CONTBIT') && !g.fsetP(c, 'LOCKEDBIT') && g.contents(c).some(id => g.fsetP(id, 'FOODBIT')));
+  const inShut = shut && g.contents(shut).find(id => g.fsetP(id, 'FOODBIT'));
+  if (inShut) return { key: 'eat', label: `Open the ${g.name(shut)} and ${verbLabel(g, inShut, 'EAT').toLowerCase()}` + starving, cmd: { verb: 'EAT', prso: inShut, openFirst: shut } };
+  // Deliberate deviation (user decision, 2026-09-18, round fourteen, B2): food in an open container at your feet
+  // (the survival kit on the floor) is eaten from the hand (GOO-F: "You're not holding the survival kit."), so eating
+  // was three clicks at the worst moment -- round fourteen's tester was starving in Storage West. One click takes the
+  // container and eats, as two ordinary turns (core.js dispatch, takeFirst); the fumble and the weight check still
+  // apply to the take. Click only: typing EAT keeps the source's refusal.
+  const feeds = id => g.fsetP(id, 'FOODBIT') && id !== 'MEDICINE';   // the medicine is FOODBIT but no meal
+  const kit = g.contents(g.state.here).find(c => g.fsetP(c, 'CONTBIT') && g.fsetP(c, 'OPENBIT') && g.fsetP(c, 'TAKEBIT') && g.contents(c).some(feeds));
+  const atFeet = kit && g.contents(kit).find(feeds);
+  if (atFeet) return { key: 'eat', label: `Take the ${g.name(kit)} and ${verbLabel(g, atFeet, 'EAT').toLowerCase()} the ${g.name(atFeet)}` + starving, cmd: { verb: 'EAT', prso: atFeet, takeFirst: kit } };
+  return null;
 }
 // The quick buttons beside the compass, in screen order. Look, Inventory, Wait and Diagnose (how you feel: the
 // original's DIAGNOSE) are always there; the others appear when they make sense: Get out (in a vehicle), Take all (two
@@ -551,33 +581,8 @@ export function quickButtons(g) {
   // never reached the clickable layer at all, and eating meant remembering a number inside a container inside the
   // inventory. Only food that is actually edible from the hand is offered (the same gate verbsFor applies).
   const hungry = g.getg('HUNGER-LEVEL') ?? 0;
-  if (hungry > 0) {
-    const food = [];
-    const reach = c => { for (const id of g.contents(c)) { if (g.fsetP(id, 'FOODBIT')) food.push(id); if (g.seeInside(id)) reach(id); } };
-    reach('ADVENTURER');
-    const best = food.find(id => openUpTo(g, id));
-    if (best) out.push({ key: 'eat', label: `${verbLabel(g, best, 'EAT')} the ${g.name(best)}` + (hungry > 3 ? ' (starving!)' : ''), cmd: { verb: 'EAT', prso: best } });
-    // Deliberate deviation (user decision, 2026-09-18, round thirteen, B2): closing the canteen hid the drink, and
-    // leaving it open spills it overnight (WAKING-UP), so the careful move cost the button. A closed container you hold
-    // with something to eat or drink in it offers both steps as one click. It is still two turns: OPEN, then EAT
-    // (core.js dispatch, openFirst).
-    else {
-      const shut = g.contents('ADVENTURER').find(c => !g.fsetP(c, 'OPENBIT') && g.fsetP(c, 'CONTBIT') && !g.fsetP(c, 'LOCKEDBIT') && g.contents(c).some(id => g.fsetP(id, 'FOODBIT')));
-      const food = shut && g.contents(shut).find(id => g.fsetP(id, 'FOODBIT'));
-      if (food) out.push({ key: 'eat', label: `Open the ${g.name(shut)} and ${verbLabel(g, food, 'EAT').toLowerCase()}` + (hungry > 3 ? ' (starving!)' : ''), cmd: { verb: 'EAT', prso: food, openFirst: shut } });
-      // Deliberate deviation (user decision, 2026-09-18, round fourteen, B2): food in an open container at your feet
-      // (the survival kit on the floor) is eaten from the hand (GOO-F: "You're not holding the survival kit."), so eating
-      // was three clicks at the worst moment -- round fourteen's tester was starving in Storage West. One click takes the
-      // container and eats, as two ordinary turns (core.js dispatch, takeFirst); the fumble and the weight check still
-      // apply to the take. Click only: typing EAT keeps the source's refusal.
-      else {
-        const feeds = id => g.fsetP(id, 'FOODBIT') && id !== 'MEDICINE';   // the medicine is FOODBIT but no meal
-        const kit = g.contents(g.state.here).find(c => g.fsetP(c, 'CONTBIT') && g.fsetP(c, 'OPENBIT') && g.fsetP(c, 'TAKEBIT') && g.contents(c).some(feeds));
-        const food = kit && g.contents(kit).find(feeds);
-        if (food) out.push({ key: 'eat', label: `Take the ${g.name(kit)} and ${verbLabel(g, food, 'EAT').toLowerCase()} the ${g.name(food)}` + (hungry > 3 ? ' (starving!)' : ''), cmd: { verb: 'EAT', prso: food, takeFirst: kit } });
-      }
-    }
-  }
+  const eat = hungry > 0 && eatButton(g, hungry);
+  if (eat) out.push(eat);
   for (const [key, w] of Object.entries(g.rules.waitFor ?? {})) if (w.when(g)) out.push({ key: 'waitfor-' + key, label: w.label, cmd: { verb: 'WAIT-FOR', key } });   // "Wait for the elevator"
   out.push({ key: 'save', label: 'Save', cmd: { verb: 'SAVE' } });   // V-SAVE / V-RESTORE: one slot kept with the game
   if (g.state.saveSlot) out.push({ key: 'restore', label: 'Restore', cmd: { verb: 'RESTORE' } });
@@ -640,7 +645,8 @@ export function reachable(g, cmd) {
   if (verb === 'PUSH-BUTTON' && !prso) {   // kalamontee.js's "push button" phrase: whatever "button" resolves to here, pushed
     const r = resolve(['button'], g); return r.error ? r.error : reachable(g, { verb: 'PUSH', prso: r.id });
   }
-  if (cmd.takeFirst) return quickButtons(g).some(b => b.key === 'eat' && b.cmd.takeFirst === cmd.takeFirst && b.cmd.prso === prso) ? null : `no "Take the ${g.name(cmd.takeFirst)} and ..." button here`;   // B2, round fourteen
+  if (cmd.takeFirst) return quickButtons(g).some(b => b.key === 'eat' && b.cmd.takeFirst === cmd.takeFirst && b.cmd.prso === prso)
+    || (clickableObjects(g).has(prso) && verbsFor(g, prso).includes(verb) && objectCommand(g, prso, verb).takeFirst === cmd.takeFirst) ? null : `no "Take the ${g.name(cmd.takeFirst)} and ..." button here`;   // B2, round fourteen; the object menu's Eat, round twenty
   if (cmd.openFirst) return quickButtons(g).some(b => b.key === 'eat' && b.cmd.openFirst === cmd.openFirst && b.cmd.prso === prso) ? null : `no "Open the ${g.name(cmd.openFirst)} and ..." button here`;   // B2
   if (cmd.prsos) {   // "take kit and towel": each one must be clickable on its own
     for (const id of cmd.prsos) { const why = reachable(g, { verb, prso: id }); if (why) return why; }
@@ -749,5 +755,5 @@ function unknownWord(g, words) {
 // "cards" is plural when "card" is itself a noun of the things it matched (the source lists CARDS as a synonym too).
 function pluralOf(g, w, ids) { const one = w.length > 3 && w.endsWith('s') ? w.slice(0, -1).slice(0, 6) : null; return !!one && ids.some(id => g.objects[id].synonyms.some(x => x.toLowerCase().slice(0, 6) === one)); }
 export const VERB_LABELS = { EXAMINE:'Examine', TAKE:'Take', DROP:'Drop', OPEN:'Open', CLOSE:'Close', 'LOOK-INSIDE':'Look inside', READ:'Read', WEAR:'Wear', 'TAKE-OFF':'Take off',
-  BOARD:'Get in', DISEMBARK:'Get out', THROUGH:'Go through', EAT:'Eat', TALK:'Talk to', SALUTE:'Salute', ATTACK:'Attack', LISTEN:'Listen to', SEARCH:'Search',
+  BOARD:'Get in', DISEMBARK:'Get out', THROUGH:'Go through', EAT:'Eat', SCRUB:'Scrub', TALK:'Talk to', SALUTE:'Salute', ATTACK:'Attack', LISTEN:'Listen to', SEARCH:'Search',
   PUSH:'Push', SLEEP:'Sleep', DIAGNOSE:'Diagnose', REMOVE:'Remove', 'PUSH-UP':'Push Up', 'PUSH-DOWN':'Push Down', PULL:'Pull', MOVE:'Move', TYPE:'Type', SET:'Set', ZAP:'Shoot', 'TURN-ON':'Turn on', 'TURN-OFF':'Turn off', TASTE:'Taste', PLAY:'Play', FLY:'Fly', SLIDE:'Slide', UNLOCK:'Unlock', LOCK:'Lock', 'LOOK-UNDER':'Look under', 'CLIMB-ON':'Climb on', 'CLIMB-UP':'Climb up', 'CLIMB-DOWN':'Climb down', RUB:'Rub', SMELL:'Smell', KICK:'Kick', HELLO:'Say hello', FOLLOW:'Follow', CALL:'Call' };

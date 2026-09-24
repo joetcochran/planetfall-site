@@ -1,6 +1,6 @@
 {
- "id": "lower-elevator",
- "label": "Lower Elevator, the lower card not yet slid: the elevator sign, the Waiting Area, the shuttle sign",
+ "id": "05-lower-elevator",
+ "label": "05- Lower Elevator, the lower card not yet slid: the elevator sign, the Waiting Area, the shuttle sign",
  "room": "LOWER-ELEVATOR",
  "turn": 223,
  "reroll": [],

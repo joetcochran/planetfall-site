@@ -332,7 +332,7 @@ export const objects = {
   // BAD-BEDISTOR-F (comptwo.zil): fused into the cube until the pliers pull it ("take bedistor with pliers" is ZATTRACT).
   'BAD-BEDISTOR'(g, ctx) {
     if (!obj(ctx)) return false;
-    if (is(ctx, 'TAKE') && g.isIn('BAD-BEDISTOR', 'CUBE')) { g.state.bedistorTried = true; g.tell('It seems to be fused to its socket.'); return true; }   // bedistorTried: the click menu's own state (uses above)
+    if (is(ctx, 'TAKE') && g.isIn('BAD-BEDISTOR', 'CUBE')) { g.tell('It seems to be fused to its socket.'); return true; }
     if (is(ctx, 'ZATTRACT')) {
       if (ctx.prsi === 'PLIERS') { g.move('BAD-BEDISTOR', 'ADVENTURER'); g.fclear('BAD-BEDISTOR', 'TRYTAKEBIT'); g.tell('With a tug, you manage to remove the fused bedistor.'); }
       else g.tell("You can't get a grip on the bedistor with that.");
@@ -579,9 +579,10 @@ export const menus = {
 
 // Two-object click-menu entries (see parser.usesFor): the fused bedistor comes out with the pliers (BAD-BEDISTOR-F ZATTRACT).
 export const uses = [
-  // Only while it is fused in the cube, and only once a plain Take has found it fused: the entry would otherwise solve
-  // the puzzle before it is met (round eight).
-  { verb: 'ZATTRACT', prso: ['BAD-BEDISTOR'], prsi: ['PLIERS'], label: 'Take with pliers', when: g => g.isIn('BAD-BEDISTOR', 'CUBE') && !!g.state.bedistorTried },
+  // Only while it is fused in the cube. It used to wait until a plain Take had found it fused (round eight, kept in
+  // rounds nine and fifteen); round twenty's tester nearly gave up there, since the magnet's "Take with magnet" is
+  // offered from the start, and the user lifted the gate (2026-09-24).
+  { verb: 'ZATTRACT', prso: ['BAD-BEDISTOR'], prsi: ['PLIERS'], label: 'Take with pliers', when: g => g.isIn('BAD-BEDISTOR', 'CUBE') },
 ];
 
 // Verb defaults from verbs.zil that this area's objects rely on and the engine does not provide.

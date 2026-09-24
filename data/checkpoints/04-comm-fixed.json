@@ -1,6 +1,6 @@
 {
- "id": "comm-fixed",
- "label": "Comm Room, help message sent: laser, pliers, good bedistor and the three cards (day 2)",
+ "id": "04-comm-fixed",
+ "label": "04- Comm Room, help message sent: laser, pliers, good bedistor and the three cards (day 2)",
  "room": "COMM-ROOM",
  "turn": 210,
  "reroll": [],

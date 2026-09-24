@@ -1,6 +1,6 @@
 {
- "id": "course-control",
- "label": "Course Control, the cube shut and the course not yet fixed: open, take, fix, drop",
+ "id": "06-course-control",
+ "label": "06- Course Control, the cube shut and the course not yet fixed: open, take, fix, drop",
  "room": "PLANETARY-COURSE-CONTROL",
  "turn": 268,
  "reroll": [],

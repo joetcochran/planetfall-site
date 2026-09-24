@@ -1,6 +1,6 @@
 {
- "id": "ladder",
- "label": "Admin Corridor, the ladder just opened on the floor: next, put it across the rift",
+ "id": "01-ladder",
+ "label": "01- Admin Corridor, the ladder just opened on the floor: next, put it across the rift",
  "room": "ADMIN-CORRIDOR",
  "turn": 89,
  "reroll": [],

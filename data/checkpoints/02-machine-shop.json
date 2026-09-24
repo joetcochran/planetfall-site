@@ -1,6 +1,6 @@
 {
- "id": "machine-shop",
- "label": "Machine Shop, the empty flask in hand: the pink button, the flask under the spout",
+ "id": "02-machine-shop",
+ "label": "02- Machine Shop, the empty flask in hand: the pink button, the flask under the spout",
  "room": "MACHINE-SHOP",
  "turn": 130,
  "reroll": [],
