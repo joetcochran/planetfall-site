@@ -428,6 +428,11 @@ export class Game {
     if (command.prso && this.state.lastObject === before) this.state.lastObject = command.prso;
     if (!ctx.fatal && !this.state.dead) {
       this.roomAction(this.state.here, 'M-END');
+      // MAIN-LOOP (misc.zil 237-241): while the pod falls every turn takes 54, and while the shuttle moves every turn
+      // takes 600 over its speed (120 at 5, 15 at 40), whatever the command -- so a fast ride costs a quarter of the
+      // clock a crawl does. Ported 2026-09-23; before that both cost the default 7.
+      if (this.enabled('I-POD-TRIP')) this.state.elapsed = 54;
+      else if ((this.getg('SHUTTLE-VELOCITY') ?? 0) > 0) this.state.elapsed = Math.floor(600 / this.getg('SHUTTLE-VELOCITY'));
       // MAIN-LOOP: INTERNAL-MOVES advances by C-ELAPSED before CLOCKER runs.
       this.state.time += this.state.elapsed;
       if (!this.state.dead) this.clocker();
