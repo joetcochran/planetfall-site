@@ -66,8 +66,14 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 /* The loading spinner (game.js): the Planetfall helmet from the favicon, clipped round, with a ring turning about it. */
 #loading{position:absolute;left:50%;top:50%;width:96px;height:96px;margin:-48px 0 0 -48px;z-index:20;pointer-events:none}
 #loading[hidden]{display:none}
-#loading img{position:absolute;inset:10px;width:76px;height:76px;border-radius:50%;box-shadow:0 0 18px rgba(0,0,0,.6);animation:pf-bob 1.6s ease-in-out infinite}
+#loading .head{position:absolute;inset:10px;animation:pf-bob 1.6s ease-in-out infinite}
+#loading img{display:block;width:76px;height:76px;border-radius:50%;box-shadow:0 0 18px rgba(0,0,0,.6)}
 #loading .ring{position:absolute;inset:0;border-radius:50%;border:4px solid rgba(121,189,206,.18);border-top-color:#79bdce;border-right-color:#79bdce;animation:pf-spin .9s linear infinite}
+/* While the room's paintings stream in (the published site; game.js preload) the ring stops turning and fills
+   clockwise to the share of the bytes arrived, and the share is read out across the visor. */
+#loading.progress .ring{border:0;animation:none;background:conic-gradient(#79bdce calc(var(--p,0)*1turn),rgba(121,189,206,.18) 0);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 4px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 4px))}
+#loading .pct{position:absolute;left:0;right:0;top:33px;text-align:center;font:800 15px/1 system-ui,sans-serif;letter-spacing:.02em;color:#06202c;text-shadow:0 0 3px #e8f7ff,0 0 6px #e8f7ff;font-variant-numeric:tabular-nums}
+#loading:not(.progress) .pct{display:none}
 @keyframes pf-spin{to{transform:rotate(360deg)}}
 @keyframes pf-bob{0%,100%{transform:scale(1)}50%{transform:scale(.94)}}
-@media (prefers-reduced-motion:reduce){#loading .ring,#loading img{animation:none}}
+@media (prefers-reduced-motion:reduce){#loading .ring,#loading .head{animation:none}}

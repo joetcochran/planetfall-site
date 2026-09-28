@@ -138,15 +138,51 @@ let rendering = 0;
 // head" -- the favicon's own picture, assets/ui/loading-head.png). Shown only when a render outlasts a quarter of a
 // second, so a quick step never flashes it; hidden as soon as no render is in flight.
 const loadingEl = Object.assign(document.createElement('div'), { id: 'loading', hidden: true, role: 'status', ariaLabel: 'Loading the room' });
-loadingEl.innerHTML = '<div class="ring"></div><img src="assets/ui/loading-head.png" alt="">';
+loadingEl.innerHTML = '<div class="ring"></div><div class="head"><img src="assets/ui/loading-head.png" alt=""><span class="pct"></span></div>';
 document.querySelector('#view').appendChild(loadingEl);
 let loadingTimer = null;
+// A PERCENTAGE ON THE HEAD, from the bytes of the room's paintings as they arrive (the user, 2026-09-28: "as the
+// images load incrementally, i think we should add a loading progress % on the planetfall guy head"). Counting
+// finished pictures would not do: a room's eight or so load side by side and finish together, so the count sat at
+// nothing and then jumped to done. So before the room is built its files are fetched here as streams and their bytes
+// counted against the sizes design/packages.json lists; turnFor's own loads then find them in the browser's cache.
+// Published site only: GitHub Pages lets a picture be reused for ten minutes (max-age=600), where the local host
+// answers no-cache and would have each picture fetched twice. Once per room: turnCache keeps its baked plates.
+const preloaded = new Set();
+let preloading = null;                            // the room whose bytes the head shows: the latest one asked for
+function showProgress(p) {
+  loadingEl.classList.add('progress');
+  loadingEl.style.setProperty('--p', p.toFixed(3));
+  loadingEl.querySelector('.pct').textContent = `${Math.floor(p * 100)}%`;
+}
+async function preload(room) {
+  const files = packages[room]?.files ?? [];
+  if (!release || !paintedRooms.has(room) || turnCache.has(room) || preloaded.has(room) || !files.length) return;
+  preloaded.add(room);
+  const total = files.reduce((n, f) => n + (f.bytes || 0), 0) || 1;
+  let got = 0;
+  preloading = room;
+  showProgress(0);
+  await Promise.all(files.map(async f => {
+    try {
+      const r = await fetch(f.url);
+      if (!r.ok || !r.body) return;
+      const reader = r.body.getReader();
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        got += value.length;
+        if (preloading === room) showProgress(Math.min(1, got / total));
+      }
+    } catch { /* turnFor asks again and skips a picture it cannot have, as before */ }
+  }));
+}
 async function render() {
   rendering++;
   if (!loadingTimer) loadingTimer = setTimeout(() => { if (rendering) loadingEl.hidden = false; }, 250);
   try { await renderNow(); } finally {
     rendering--;
-    if (!rendering) { clearTimeout(loadingTimer); loadingTimer = null; loadingEl.hidden = true; }
+    if (!rendering) { clearTimeout(loadingTimer); loadingTimer = null; loadingEl.hidden = true; loadingEl.classList.remove('progress'); preloading = null; }
   }
 }
 async function renderNow() {
@@ -170,6 +206,7 @@ async function renderNow() {
   // light does not change through the descent -- what changes comes IN through the porthole, which is the painting's
   // business and not a fixture's.
   const look = lighting(g.dayPhase(), viewRoom, design[viewRoom], shared, g);
+  await preload(viewRoom);
   const turn = await paintedTurn(viewRoom, viewRaw);
   if (turn?.plates?.length) pickVariants(turn, g);
   // Through partsForTurn with no turn as well: it keeps a patch cut from a painting off a room whose paintings are
