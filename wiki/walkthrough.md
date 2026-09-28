@@ -6,10 +6,12 @@ Each section is a table of its steps: the step's number, the command a typist wo
 
 Two things differ from game to game, so read them off the screen rather than these steps:
 
-- **The chemicals.** The Comm Room's lit lamp names the chemical the coolant system wants: push the Machine Shop button of that colour. The colours and the number of pours (two or three) are both random. The steps below pour what the test game drew (green, then brown).
+- **The chemicals.** The Comm Room's lit lamp names the chemical the coolant system wants: push the Machine Shop button of that colour. The colours and the number of pours (two or three) are both random. A game that wants a third plays steps 187a-187z; one that wants two skips them.
 - **The damaged sector.** The Computer Room's print-out ends "Malfunkshun in Sekshun ...!" with a number from 100 to 999. Type that number in the Miniaturization Booth. The wrong number fries you. Infocom's game always used 384; see [Where we left the original](canon-deviations.md).
 
-The steps assume the test game's luck elsewhere too: when a step says to wait until something happens, keep waiting until it does.
+The steps assume the test game's luck elsewhere too: when a step says to wait until something happens, keep waiting until it does (and if it has already happened, go on).
+
+A step with a letter after its number (158a, 187a) belongs to the step before it; the letters keep the numbers the same as the checkpoints and the playtest notes.
 
 ## Deck Nine
 
@@ -230,7 +232,7 @@ The lower elevator card is in a compartment of the switched-off robot. Switching
 | 127 | `wait` | Repeat until "…elevator door slides open…" |
 | 128 | `s` | To Tower Core |
 | 129 | `ne` | To Comm Room |
-| 130 | `pour fluid into hole` | The first chemical; the next lamp lights (brown, in the test game) |
+| 130 | `pour fluid into hole` | The first chemical; the next lamp lights. It waits for the morning (steps 170-187): another trip tonight and you collapse before you reach a bed |
 
 ## Evening, day one
 
@@ -273,6 +275,7 @@ Everything you held is on the floor beside the bunk. Breakfast first.
 | 156 | `take canteen` | Taken |
 | 157 | `open canteen` | Protein-rich liquid inside |
 | 158 | `drink liquid` | Breakfast: thirst and hunger both gone |
+| 158a | `drop canteen` | Leave the empty canteen: the flask needs the room later |
 | 159 | `take laser` | Taken |
 | 160 | `take flask` | Taken |
 | 161 | `take upper card` | Taken |
@@ -308,7 +311,47 @@ The good bedistor from the carton in Storage East, the pliers from the Tool Room
 | 184 | `wait` | Repeat until "…elevator door slides open…" |
 | 185 | `s` | To Tower Core |
 | 186 | `ne` | To Comm Room |
-| 187 | `pour fluid into hole` | The second chemical; if the lights go dark, the help message goes out |
+| 187 | `pour fluid into hole` | The second chemical. The lights go dark and the help message goes out, or one more lamp lights: then 187a-187z |
+
+## A third chemical (only if a lamp is still lit)
+
+Some games want three chemicals. If the second pour lit another lamp instead of sending the message, fetch that colour the same way and pour it, the third and last. Do it now, on day two: breakfast carries you through it. Not on the evening of day one: another trip then and you collapse before you reach a bed. If the second pour sent the message, go on to step 188.
+
+| # | Command | What it does |
+|--:|---|---|
+| 187a | `sw` | To Tower Core |
+| 187b | `n` | To Upper Elevator |
+| 187c | `slide upper card through slot` | Elevator enabled |
+| 187d | `push down button` | The elevator goes down |
+| 187e | `wait` | Repeat until "…elevator door slides open…" |
+| 187f | `s` | To Elevator Lobby |
+| 187g | `w` | To Corridor Junction |
+| 187h | `s` | To Mech Corridor North |
+| 187i | `s` | To Mech Corridor |
+| 187j | `s` | To Mech Corridor South |
+| 187k | `s` | To Machine Shop |
+| 187l | `put flask under dispenser` | The flask under the spout |
+| 187m | `push` *the lit lamp's colour* `button` | The chemical your lamp names, into the flask |
+| 187n | `take flask` | Taken |
+| 187o | `n` | To Mech Corridor South |
+| 187p | `n` | To Mech Corridor |
+| 187q | `n` | To Mech Corridor North |
+| 187r | `n` | To Corridor Junction |
+| 187s | `e` | To Elevator Lobby |
+| 187t | `n` | To Upper Elevator |
+| 187u | `slide upper card through slot` | Elevator enabled |
+| 187v | `push up button` | The elevator goes up |
+| 187w | `wait` | Repeat until "…elevator door slides open…" |
+| 187x | `s` | To Tower Core |
+| 187y | `ne` | To Comm Room |
+| 187z | `pour fluid into hole` | The third chemical; the help message goes out |
+
+## Down from the tower
+
+The message is going out. Leave the flask and the upper card; the lower elevator card takes you down to the shuttle.
+
+| # | Command | What it does |
+|--:|---|---|
 | 188 | `drop flask` | Dropped |
 | 189 | `sw` | To Tower Core |
 | 190 | `n` | To Upper Elevator |
