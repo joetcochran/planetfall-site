@@ -130,3 +130,9 @@ The milestones of the remake, no more than three a day, each with the commit or 
 | 11:33 | The room record shows the Rec Area and the Conference Room accepted: all 109 rooms accepted | 3a708d2a |
 | 12:53 | **Round twenty-three: the first typed tester to win 80 of 80 from the start**, at turn 723 | 742458f1 |
 | 13:03 | Rounds twenty-one and twenty-two triaged against the source; thirteen fixes merged | 26d7881b |
+
+## 28 September: a site small enough to play
+
+| When | Milestone | Record |
+|---|---|---|
+| 16:39 | **The published paintings ship as WebP at quality 85: the site goes from 1.97 GB to 194 MB, under GitHub Pages' 1 GB limit, and a room from about 18 MB to 1.4; the loading head shows the percentage arrived.** Every accepted room goes back to the user for a look | d8fb9dbc |

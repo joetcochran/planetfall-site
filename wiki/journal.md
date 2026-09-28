@@ -174,3 +174,38 @@ Each friction left a rule behind. Taken together:
 **The playtest pages** are brought up to date with this entry: the round index in `playtests/README.md`, the history, the score table and chart, and the friction charts on [Playing it](playing-it.md), and round twenty-three's diary as [its own page](diary-typed-23.md).
 
 <!-- through: git 74a1276a · mail 20260924-171606-design-0849 -->
+
+## 2026-09-28 -- A site small enough to play
+
+***The user found playtesting on the published site very slow, because the pictures were so large. They asked whether the pictures could be compressed, and whether the Planetfall head that shows while a room loads could carry a loading percentage, and they asked Norm to weigh how feasible and how effective that would be before starting.*** By the end of the session the published site had gone from 1.97 GB to 194 MB, a room downloads about 1.4 MB instead of about 18, and the head shows how much of the room has arrived. Because the pictures a player sees changed, every accepted room went back to the user for a look (d8fb9dbc). This entry also covers the afternoon of 24 September, after the last entry.
+
+**What happened**
+
+- **The analysis first.** Norm measured before building anything. The published site was 1.97 GB, and 1.92 GB of that was 933 lossless PNG paintings of about 2.1 MB each. A room loaded about 18 MB, because every state variant of its views is fetched up front. The site was also over GitHub Pages' 1 GB limit. On a sample of 24 paintings, WebP at quality 85 was 13 times smaller, JPEG at 88 was 7.7 times smaller and lossless WebP only 1.4 times. WebP 85 kept a PSNR of about 37 to 40 dB and moved mean brightness by at most 0.11 of 255. That matters because the game's exposure fit and its seams between views read brightness, and a shift that small does not reach them.
+- **WebP on the published site only.** `scripts/build-site.mjs` now encodes each painting it publishes as WebP at quality 85 (d8fb9dbc). The paintings dropped from 1916 MB to 133 MB. Only a picture's URL in `packages.json` changes. Its name stays the package's own `.png`, so the game and the code that fits the views, which look pictures up by name, needed no change. The packages, the review page and the game run locally keep the PNGs.
+- **A percentage on the head.** On the published site the game now downloads a room's files before it builds the room, and counts the bytes as they arrive. The ring round the helmet fills to that share and the percentage is written across the visor (`game.js`, `game.css`). Norm checked it in a browser throttled to 20 Mbit against a scratch build: the head went from 15% to 100% in steps, no picture was downloaded twice, the page raised no errors and all 109 accepted rooms were whole.
+- **The rest of 24 September.** Three changes of the user's to the published site: no debug link or panel, no dashboard link and no checkpoints (38aa955c); the world map link taken off the game page but kept in the wiki (615b9fcc); and visitor counts through GoatCounter, on the published pages only, with three game events counted: a first move, a death and a win (80ff959c). The [walkthrough](walkthrough.md) now tells the player to push the button of the lit lamp's colour, since both the colours and the number of pours (two or three) are random. It also says to keep shooting the microbe only until the laser is warm (0b071a6c).
+
+**Decisions**
+
+- ***The user chose WebP at quality 85*** after the analysis. It was the smallest of the three formats measured, and its change in brightness was well below what the exposure fit and the seams can see.
+- ***The user had every accepted room sent back to their review queue***, because its published pictures had changed. That is their standing rule for any change to accepted art. Acceptance itself stays, so the site keeps showing those rooms while they wait (HANDOFF.md). Because only the published copy is WebP, the look has to be taken on the site, and each room's note on the dashboard says so.
+- **Bytes, not pictures.** Norm's analysis found that a percentage counted by finished pictures would sit at 0 and then jump to done, because a room's pictures download side by side and finish together. So the head counts bytes against the sizes `packages.json` lists.
+- **The early download runs only on the published site.** GitHub Pages lets the browser reuse a picture for ten minutes. The local host tells the browser not to cache, so there the early download would have fetched every picture twice (comment in `game.js`).
+
+**What was hard**
+
+- **Encoding is slow.** Encoding every painting from nothing takes about 75 seconds of a release (comment in `release.yml`). Each result is now kept in `obj/webp-cache` under the hash of its source and its settings, and the release workflow saves and restores that folder between runs. A release re-encodes only what changed. In the release workflow, encodings of pictures the site no longer uses are dropped, so old repaints do not pile up.
+- **A security advisory.** The image library, sharp, had an advisory against libvips, the library underneath it, in its 0.34 release. It is pinned at the patched 0.35.5 (`package.json`).
+- **The Rec Area's west table (24 September).** After the floor cap's second repaint, ***the user found that the west games table still looked bad from half-down***. Norm wrote to Greg that it was Norm's own miss, passed on the contact sheet (mail 20260924-174044-dev-0936). Part of it came from compute: the tool that fills the floor cap had left two dark streaks running from the table toward the middle of the room. Norm cloned them out (R3, ca04a308). The rest was painting. The table had no base and the benches were smears, so Norm drew a box and Greg repainted the table and benches inside it. Norm counted 340,173 pixels changed and none outside the box, and hung it as R4 (5553c9c9; mail 20260924-175508-dev-0937).
+
+**Built**
+
+- `scripts/build-site.mjs` encodes the published paintings as WebP with a cache, and since 24 September strips the local-only links and panel and adds the visitor count. The release workflow keeps the WebP cache between runs. The loading head shows a percentage. There is a new entry for the [walkthrough](walkthrough.md) generator, `scripts/wiki-walkthrough.mjs`. All are updated on [Tools](tools.md).
+
+**Rooms**
+
+- Rec Area (24 September): Greg's table tops for the level views were approved, so that they match the floor cap (b1cccf21; mail 20260924-172831-dev-0935). The user reopened #46 over the west table, and after R3 and R4 the room went back to them (5553c9c9).
+- 28 September: 108 accepted rooms went back to the user's queue to see the WebP pictures on the site (d8fb9dbc). The 109th, Underwater at depth 2, was with Norm mid-repaint, and gets the same note when it goes to the user (HANDOFF.md). All 109 rooms remain accepted.
+
+<!-- through: git d8fb9dbc · mail 20260924-182500-design-0853 -->
