@@ -216,19 +216,56 @@ export class View {
   }
   bindPointer() {
     const el = this.renderer.domElement; let down = null, dragged = false;
-    el.addEventListener('pointerdown', e => { down = { x: e.clientX, y: e.clientY, yaw: this.yaw, pitch: this.pitch }; dragged = false; el.setPointerCapture(e.pointerId); });
+    // A THUMB IS NOT A MOUSE. Past this many pixels the gesture is a look-drag and the pick is dropped -- and a mouse
+    // moves a pixel or none between press and release, where a tap on glass routinely moves six to ten. At one
+    // threshold for both, the same tap on the same object worked at random and the game looked as though it were
+    // ignoring the player (the user, 2026-10-19: "playing this game on a phone is rather challenging"). The mouse
+    // keeps the 4 px it always had; a finger or a pen gets 12. The camera is not put back afterwards: the pick must
+    // use the view the player was looking at when they lifted their finger, and 12 px of drift is not visible.
+    const slop = e => (e.pointerType === 'mouse' ? 4 : 12);
+    // ONE FINGER AT A TIME, AND A SECOND FINGER IS NOT A LOOK. Now that the canvas owns its gestures (game.css,
+    // touch-action) a pinch is ours to answer, and a pinch is not a drag: measured on the phone harness, a two-finger
+    // spread turned the room by the first finger's travel -- 9.2 degrees of yaw and 4.6 of pitch -- from a gesture the
+    // player meant as a zoom, because the handler had no idea a second finger had arrived. So the first pointer down
+    // owns the look; the moment another joins it, the room goes back where the gesture started and nothing follows
+    // either finger until both are lifted. The lift is not a tap either, or a pinch would open a menu.
+    // (Option C of PLAN-MOBILE-PLAY may give the pinch a meaning of its own; this is where it would hang.)
+    // It costs the desktop nothing: a mouse has one pointer.
+    let primary = null;
+    el.addEventListener('pointerdown', e => {
+      if (primary !== null) {
+        // A MOUSE KEEPS ONE pointerId FOR EVERY BUTTON, so pressing a second button mid-drag arrives here with the
+        // id that is already looking. That is the same hand on the same pointer, not a second finger: leave the look
+        // alone, or a right-click while turning would snap the room back.
+        if (e.pointerId !== primary) { if (down) { this.yaw = down.yaw; this.pitch = down.pitch; } down = null; dragged = true; }
+        return;
+      }
+      primary = e.pointerId;
+      down = { x: e.clientX, y: e.clientY, yaw: this.yaw, pitch: this.pitch }; dragged = false; el.setPointerCapture(e.pointerId);
+    });
     el.addEventListener('pointermove', e => {
       if (down) {
+        if (e.pointerId !== primary) return;
         const dx = e.clientX - down.x, dy = e.clientY - down.y;
-        if (Math.hypot(dx, dy) > 4) dragged = true;
+        if (Math.hypot(dx, dy) > slop(e)) dragged = true;
         this.yaw = down.yaw - dx * 0.004; this.pitch = Math.max(-1.2, Math.min(1.2, down.pitch + dy * 0.004));
       } else this.setHover(this.pick(e));
     });
     el.addEventListener('pointerup', e => {
-      const wasDrag = dragged; down = null; el.releasePointerCapture(e.pointerId);
+      if (e.pointerId !== primary) return;
+      const wasDrag = dragged; down = null; primary = null; el.releasePointerCapture(e.pointerId);
       if (wasDrag) return;
       const hit = this.pick(e); if (hit && this.onPick) this.onPick(hit, e);
     });
+    // The browser can take a gesture away in the middle of it -- a native pan, a system edge swipe, a call arriving --
+    // and when it does it sends pointercancel and never a pointerup. It does not then send any more moves for that
+    // pointer (the touch check cannot even dispatch one: "Must send a TouchStart first"), so the camera does not run
+    // on by itself; what was left behind was the drag STATE -- a stale origin for a second finger to rotate from and a
+    // pointer capture never given back. Cleared here, so the gesture after an interrupted one starts clean.
+    el.addEventListener('pointercancel', e => { if (e.pointerId !== primary) return; down = null; dragged = false; primary = null; this.setHover(null); });
+    // The net under the net: if a capture is lost without an up or a cancel, the view must not be left unable to
+    // start another gesture. After an ordinary pointerup this fires too and finds nothing to do.
+    el.addEventListener('lostpointercapture', e => { if (e.pointerId === primary) { down = null; dragged = false; primary = null; } });
     el.addEventListener('pointerleave', () => this.setHover(null));
   }
   // What a click at this point reaches. An object's name plate counts as the object (scene/pickrule.js says why) and,

@@ -1,8 +1,15 @@
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{margin:0;background:#07121c;color:#dcecf6;font:15px/1.5 system-ui,sans-serif;height:100dvh;display:grid;grid-template-columns:1fr 400px;grid-template-rows:1fr auto}
-#view{position:relative;min-width:0;overflow:hidden;cursor:grab}
-#view canvas{display:block}
+#view{position:relative;min-width:0;overflow:hidden;cursor:grab;-webkit-user-select:none;user-select:none}
+/* THE VIEW OWNS ITS GESTURES. Without touch-action a swipe on the canvas is still a candidate for the browser's own
+   panning, overscroll and pull-to-refresh, and two fingers zoom the PAGE -- the HUD and the transcript -- instead of
+   the room; and when the browser claims a gesture it sends pointercancel and no pointerup (view.js bindPointer).
+   Page zoom itself is deliberately left alone: pinching the page is also how a low-vision player reads the
+   transcript, so the canvas is fixed here rather than by forbidding scale in the viewport meta. */
+#view canvas{display:block;touch-action:none}
+/* No grey flash under a tap, on any of the buttons (the compass, the quick row, the menu, the inventory). */
+button{-webkit-tap-highlight-color:transparent}
 #hud{position:absolute;top:14px;left:16px;right:16px;display:flex;justify-content:space-between;pointer-events:none;font-size:13px;color:#a8c1d0}
 #hover{background:rgba(8,14,20,.7);padding:4px 10px;border-radius:5px;min-height:1.6em}
 #toast{position:absolute;top:56px;left:50%;transform:translateX(-50%);z-index:5;background:#1f7a45;color:#f1fff6;border:1px solid #5fd38a;border-radius:6px;padding:8px 16px;font-weight:600;box-shadow:0 6px 18px rgba(0,0,0,.45);pointer-events:none}
@@ -11,7 +18,9 @@ body{margin:0;background:#07121c;color:#dcecf6;font:15px/1.5 system-ui,sans-seri
 /* The compass is a ROSE with fixed slots, not a strip: every direction keeps one place for the whole game, and
    a direction with no exit leaves its slot empty instead of letting the others slide along. A strip put UP
    first underwater and DOWN first on the crag, so the click that got you out of the sea put you back in. */
-#compass{position:absolute;bottom:16px;left:16px;display:flex;gap:10px;align-items:flex-start}
+/* The bottom controls clear the phone's home indicator and the landscape notch (index.html asks for
+   viewport-fit=cover). env() is 0px wherever there is no inset, so nothing moves on a desktop. */
+#compass{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom));left:calc(16px + env(safe-area-inset-left));display:flex;gap:10px;align-items:flex-start}
 #compass .rose{display:grid;grid-template-columns:repeat(3,auto);gap:4px}
 #compass .vert{display:grid;grid-template-columns:auto;gap:4px}
 #compass .dir,#compass .slot{min-width:3.4em;height:2.1em;box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center}
@@ -22,7 +31,7 @@ body{margin:0;background:#07121c;color:#dcecf6;font:15px/1.5 system-ui,sans-seri
 #compass .dir.closed{border-color:#e0655a}
 #compass .dir.routine{border-style:dashed}
 /* The quick row is quickButtons, whole (round thirteen), so it can be long: it wraps upward and never reaches the compass. */
-#quick{position:absolute;bottom:16px;right:16px;left:calc(32px + 17em);display:flex;flex-wrap:wrap;justify-content:flex-end;align-content:flex-end;gap:6px;pointer-events:none}
+#quick{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom));right:calc(16px + env(safe-area-inset-right));left:calc(32px + 17em);display:flex;flex-wrap:wrap;justify-content:flex-end;align-content:flex-end;gap:6px;pointer-events:none}
 #quick button{pointer-events:auto}
 #quick button,#debug button,#restart2{font:inherit;background:#132e42;color:#e7f3fa;border:1px solid #3d6379;border-radius:5px;padding:6px 10px;cursor:pointer}
 aside{display:flex;flex-direction:column;min-height:0;background:#102130;border-left:1px solid #274556}
@@ -43,7 +52,7 @@ aside{display:flex;flex-direction:column;min-height:0;background:#102130;border-
 #inventory .item{display:block;width:100%;text-align:left;font:inherit;background:none;border:0;color:#dcecf6;padding:4px 6px;cursor:pointer;border-radius:4px}
 #inventory .item:hover{background:#1c3a52}
 .muted{color:#7f95a3;font-size:13px;margin:0}
-#command-row{grid-column:1/-1;display:flex;gap:8px;padding:8px 14px;background:#0c1a26;border-top:1px solid #274556}
+#command-row{grid-column:1/-1;display:flex;gap:8px;padding:8px 14px calc(8px + env(safe-area-inset-bottom));background:#0c1a26;border-top:1px solid #274556}
 #command{flex:1;font:inherit;background:#07121c;color:#e7f3fa;border:1px solid #3d6379;border-radius:5px;padding:8px 10px}
 #menu{position:fixed;z-index:20;background:#132e42;border:1px solid #3d6379;border-radius:6px;padding:6px;min-width:180px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
 #menu .title{font-size:12px;color:#94c3d5;padding:4px 8px;text-transform:uppercase;letter-spacing:.06em}

@@ -25,9 +25,26 @@ export class UI {
     this.toast = root.querySelector('#toast');
     const input = root.querySelector('#command');
     input.addEventListener('keydown', e => { if (e.key === 'Enter' && input.value.trim()) { onCommand({ text: input.value.trim() }); input.value = ''; } });
+    // IS THE HAND A FINGER? The primary pointer, not the presence of a touchscreen: a laptop with a touch screen and
+    // a mouse reports fine and keeps every desktop behaviour. Read once; nothing here is worth watching for changes.
+    this.coarse = matchMedia('(pointer:coarse)').matches;
+    // "Drag to look · click to interact" is a mouse's instruction, and the HUD gave it to a phone as well.
+    const howto = root.querySelector('#howto');
+    if (howto && this.coarse) howto.textContent = 'Swipe to look · tap to interact';
     // Three ways to restart, because RESTART used to point at a button only the debug panel had: the HUD link a
     // player can see, the debug panel's button, and the death screen's.
-    root.querySelector('#restart-hud').onclick = onRestart;
+    //
+    // A MIS-TAP MUST NOT THROW A GAME AWAY. Typed RESTART asks for the word twice (game.js restartArmed) and the link
+    // asked for nothing -- which is safe beside a mouse and not beside a thumb, since it is 13 px of text in a row of
+    // links. So on a phone it is the same bargain as the typed word: tap once to arm, again to restart, and it
+    // forgets after six seconds.
+    const hud = root.querySelector('#restart-hud');
+    hud.onclick = !this.coarse ? onRestart : () => {
+      if (this.restartArmed) { clearTimeout(this.restartTimer); this.restartArmed = false; onRestart(); return; }
+      this.restartArmed = true;
+      this.notice('Tap restart again to start over from the beginning.');
+      this.restartTimer = setTimeout(() => { this.restartArmed = false; }, 6000);
+    };
     const restart = root.querySelector('#restart'); if (restart) restart.onclick = onRestart;   // in the debug panel, which the published site leaves out
     root.querySelector('#restart2').onclick = onRestart;
     // The quick row is parser.quickButtons(g), whole: one button per entry, labelled and run exactly as that entry says
