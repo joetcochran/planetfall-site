@@ -1,16 +1,20 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="favicon.ico" sizes="any"><title>Planetfall</title><link rel="stylesheet" href="game.css"><script type="importmap">{"imports":{"three":"./vendor/build/three.module.js","three/addons/controls/OrbitControls.js":"./vendor/OrbitControls.js"}}</script><script data-goatcounter="https://planetfall.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></head><body data-release>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="favicon.ico" sizes="any"><title>Planetfall</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#07121c"><link rel="apple-touch-icon" href="assets/ui/icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><link rel="stylesheet" href="game.css"><script type="importmap">{"imports":{"three":"./vendor/build/three.module.js","three/addons/controls/OrbitControls.js":"./vendor/OrbitControls.js"}}</script><script data-goatcounter="https://planetfall.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script></head><body data-release>
 <section id="view" aria-label="Room view: drag to look around, click things to interact">
-  <div id="hud"><span id="hover" role="status"></span><span><span id="howto">Drag to look · click to interact</span> · <a href="wiki.html" style="color:#79bdce;pointer-events:auto">how it was made</a> · <button id="restart-hud" style="pointer-events:auto;font:inherit;background:none;border:0;color:#79bdce;cursor:pointer;padding:0">restart</button></span></div>
+  <div id="hud"><span id="hover" role="status"></span><span class="hudright"><span id="howto">Drag to look · click to interact</span><span class="links"> · <a href="wiki.html" style="color:#79bdce;pointer-events:auto">how it was made</a> · <button id="restart-hud" style="pointer-events:auto;font:inherit;background:none;border:0;color:#79bdce;cursor:pointer;padding:0">restart</button></span></span><button id="hud-more" aria-label="More">⋯</button></div>
   <div id="compass" aria-label="Exits"></div>
   <div id="quick"><button id="look">Look</button><button id="inv">Inventory</button><button id="wait">Wait</button><button id="leave" hidden></button><button id="diagnose">Diagnose</button><button id="takeall" hidden>Take all</button><button id="dropall" hidden>Drop all</button><button id="sleep" hidden>Sleep</button><button id="waitfor" hidden></button><button id="save">Save</button><button id="restore" hidden>Restore</button></div>
   <div id="toast" role="status" hidden></div>
   <div id="death" hidden><div><h2 id="death-title">You have died</h2><p id="death-text" hidden></p><button id="restore2" hidden>Restore your saved game</button> <button id="restart2">Start again</button></div></div>
 </section>
 <aside>
+  <button id="drawer-handle" aria-expanded="false" aria-label="Expand the panel"></button>
   <div id="status" role="status"></div>
+  <div id="tabs" role="tablist"><button data-tab="log" class="on">Log</button><button data-tab="here">Here</button><button data-tab="carrying">Carrying</button><button data-tab="actions">Actions</button><button data-tab="type">Type</button></div>
   <div id="transcript" aria-live="polite"></div>
+  <div id="here"></div>
   <div id="inventory"></div>
 </aside>
 <div id="command-row"><input id="command" placeholder="Type a command (e.g. look, take brush, open pod door, west)" autocomplete="off" aria-label="Command"></div>
+<div id="scrim" hidden></div>
 <div id="menu" hidden></div>
 <script type="module">import('./game.js').catch(e=>{document.querySelector('#transcript').textContent='Unable to start: '+e.message;console.error(e);});</script></body></html>

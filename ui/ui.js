@@ -9,6 +9,8 @@ const DIR_LABEL = { NORTH: 'N', SOUTH: 'S', EAST: 'E', WEST: 'W', NE: 'NE', NW: 
 // is never where UP was. null is an empty slot.
 const ROSE = ['NW', 'NORTH', 'NE', 'WEST', null, 'EAST', 'SW', 'SOUTH', 'SE'];
 const VERT = ['UP', 'DOWN', 'IN', 'OUT'];
+// The Here list reads as prose, where the rose has room only for a letter.
+const DIR_WORD = { NORTH: 'north', SOUTH: 'south', EAST: 'east', WEST: 'west', NE: 'north-east', NW: 'north-west', SE: 'south-east', SW: 'south-west', UP: 'up', DOWN: 'down', IN: 'in', OUT: 'out' };
 // quickButtons keys -> the ids of their buttons in index.html. "waitfor" stands for every waitfor-<key> entry.
 const QUICK_IDS = { look: 'look', inv: 'inv', wait: 'wait', leave: 'leave', diagnose: 'diagnose', takeall: 'takeall', dropall: 'dropall', sleep: 'sleep', waitfor: 'waitfor', save: 'save', restore: 'restore' };
 
@@ -58,6 +60,43 @@ export class UI {
     this.quickEl = key => this.quickRow.querySelector(`[data-key="${key}"]`);
     for (const [key, id] of Object.entries(QUICK_IDS)) { const b = root.querySelector('#' + id); if (b) b.dataset.key = key; }
     this.quickRow.addEventListener('click', e => { const b = e.target.closest('button[data-key]'); const c = b && this.quickCmd.get(b.dataset.key); if (typeof c === 'function') c(b); else if (c) onCommand(c); });
+    // THE PHONE SHELL (game.css; PLAN-MOBILE-PLAY.md, Option B). A width query alone hands a phone in landscape the
+    // desktop layout -- 844 px wide and 390 tall is still a phone -- so a coarse pointer in a short window counts too.
+    // The stylesheet does the whole layout off body.phone-shell; this only sets the class and runs the drawer.
+    this.phoneQuery = matchMedia('(max-width: 760px), (pointer: coarse) and (max-height: 560px)');
+    this.here = root.querySelector('#here');
+    this.scrim = root.querySelector('#scrim');
+    this.tabs = root.querySelector('#tabs');
+    this.pickables = [];                              // what the scene drew, set by game.js on every render
+    root.querySelector('#drawer-handle').onclick = () => this.setDrawer(!document.body.classList.contains('drawer-open'));
+    this.tabs.addEventListener('click', e => { const b = e.target.closest('button[data-tab]'); if (b) this.setTab(b.dataset.tab); });
+    // THE TAIL OF THE TAP THAT OPENED THE SHEET MUST NOT ACT ON IT. A touch gives pointerdown, pointerup and then a
+    // synthesised click -- and the sheet and its scrim are put on screen DURING the pointerup, so that click lands on
+    // furniture that did not exist when the finger went down. It closed every object's menu the instant it opened
+    // (the menu flashed and was gone; nothing on the desktop, which has no scrim), and on a row near the bottom of
+    // the screen it could have pressed whatever verb the sheet put under the finger. So anything the sheet offers
+    // ignores a click that arrives within a breath of it opening. 350 ms: a finger cannot see and aim inside that.
+    //
+    // ONLY A SHEET SETTLES. The first cut of this guard applied to every menu, and a menu on a desktop is opened by
+    // a click that is already over -- nothing is synthesised after it, and there is no scrim to catch anything. What
+    // it did instead was swallow any click that came within a third of a second of the menu opening, which is every
+    // click the browser harness makes and every brisk click a player makes: 95 steps of the desktop walkthrough
+    // failed on it. So the wait belongs to the sheet alone, where the stray click actually comes from.
+    this.openedAt = 0;
+    this.settling = () => this.menu.classList.contains('sheet') && performance.now() - this.openedAt < 350;
+    this.scrim.onclick = () => { if (!this.settling()) this.hideMenu(); };
+    // The HUD's row of 13-px links becomes one 44-px button. The entries are READ OFF THE PAGE, so the published
+    // site -- which has no dashboard or world-map link (build-site.mjs strips them) -- offers exactly what it has.
+    root.querySelector('#hud-more').onclick = e => {
+      const r = e.currentTarget.getBoundingClientRect();
+      const items = [...root.querySelectorAll('#hud .links a')].map(a => ({ label: a.textContent, run: () => { location.href = a.href; } }));
+      // Restarting asks inside the sheet, which is the same bargain the typed word makes (game.js restartArmed) and
+      // reads better than arming a row that the sheet then closes under you.
+      items.push({ label: 'Restart the game…', sub: [{ label: 'Yes, start again from the beginning', run: onRestart }] });
+      this.showMenu(r.left, r.bottom, 'Planetfall', items);
+    };
+    this.applyShell();
+    this.phoneQuery.addEventListener('change', () => this.applyShell());
     this.restore = root.querySelector('#restore');
     this.restore2 = root.querySelector('#restore2');
     this.restore2.onclick = () => onCommand({ verb: 'RESTORE' });
@@ -69,6 +108,66 @@ export class UI {
       root.querySelector('#toggle-debug').onclick = () => root.querySelector('#debug').classList.toggle('open');
     }
     document.addEventListener('pointerdown', e => { if (!this.menu.contains(e.target)) this.hideMenu(); }, true);
+  }
+  // The shell on or off: the class the stylesheet keys off, a tab to start on, and the drawer shut again if the
+  // window has grown back into a desktop.
+  applyShell() {
+    const on = this.phoneQuery.matches;
+    document.body.classList.toggle('phone-shell', on);
+    if (on && ![...document.body.classList].some(c => c.startsWith('tab-'))) this.setTab('log');
+    if (!on) this.setDrawer(false);
+  }
+  setTab(tab) {
+    const body = document.body;
+    for (const c of [...body.classList]) if (c.startsWith('tab-')) body.classList.remove(c);
+    body.classList.add('tab-' + tab);
+    for (const b of this.tabs.querySelectorAll('button[data-tab]')) b.classList.toggle('on', b.dataset.tab === tab);
+    if (tab !== 'log') this.setDrawer(true);          // a list asked for is a list to read, so open it whole
+    if (tab === 'type') document.querySelector('#command')?.focus();
+    if (tab === 'log') this.scroll();
+  }
+  // Two heights, not a free drag: a glance (the tail of the log over the picture) and a read.
+  setDrawer(open) {
+    document.body.classList.toggle('drawer-open', open);
+    const h = document.querySelector('#drawer-handle');
+    h.setAttribute('aria-expanded', String(open));
+    h.setAttribute('aria-label', open ? 'Shrink the panel' : 'Expand the panel');
+    if (document.body.classList.contains('tab-log')) this.scroll();
+  }
+  // EVERYTHING THE ROOM OFFERS, AS A LIST -- the answer to a prop that projects to a few pixels (the key at
+  // 9.7x21.2 px and the fused bedistor at 16.9x12 already fail the pick harness's minimum on a DESKTOP, scripts/
+  // browser.mjs; at 390 px across they are specks). It is built from the pickables THE SCENE ACTUALLY DREW -- the
+  // same array a click raycasts against, handed over by game.js on every render -- so the list and the picture can
+  // never disagree, and every row opens the very same menu a click on the thing opens. The ways out come first,
+  // with where they go: on the desktop that is a tooltip (refresh's b.title), which is nothing a phone can show.
+  renderHere() {
+    const g = this.g;
+    this.here.replaceChildren();
+    const row = (label, where, run) => {
+      const b = el('button', 'row');
+      b.appendChild(document.createTextNode(label));
+      if (where) { b.appendChild(document.createTextNode(' · ')); b.appendChild(el('span', 'where', where)); }
+      b.onclick = run; this.here.appendChild(b);
+    };
+    const exits = exitChoices(g);
+    if (exits.length) {
+      this.here.appendChild(el('h3', null, 'Ways out'));
+      for (const e of exits) {
+        const note = exitNote(g, e);
+        const dest = e.target ? (g.state.rooms[e.target].touched ? g.name(e.target) : 'unexplored')
+          : note ? (isMarker(note) ? note.slice(1, -1) : note) : null;
+        const door = e.door ? `${g.name(e.door)}, ${e.open ? 'open' : 'shut'}` : null;
+        row(`Go ${DIR_WORD[e.direction]}`, [dest, door].filter(Boolean).join(' · '), () => this.onCommand({ verb: 'WALK', dir: e.direction }));
+      }
+    }
+    const seen = new Set(), things = [];
+    for (const p of this.pickables) {
+      if (p.kind === 'object') { if (seen.has(p.id)) continue; seen.add(p.id); things.push({ name: g.name(p.id), open: ev => this.objectMenu(ev.clientX, ev.clientY, p.id) }); }
+      else if (p.kind === 'pseudo') { const k = 'pseudo:' + p.routine; if (seen.has(k)) continue; seen.add(k); things.push({ name: p.label ?? p.word, open: ev => this.pseudoMenu(ev.clientX, ev.clientY, p) }); }
+    }
+    things.sort((a, b) => a.name.localeCompare(b.name));
+    this.here.appendChild(el('h3', null, things.length ? 'Things here' : 'Nothing here to touch'));
+    for (const t of things) row(t.name, null, t.open);
   }
   // One button per quickButtons entry, in its order; the rest of the row hidden (see the constructor).
   renderQuick(g) {
@@ -109,24 +208,32 @@ export class UI {
   // An item is { label, run } or { label, number: true, run(n) } or { label, sub: [items] }: a submenu opens in place
   // ("Put in…" on a container lists the things that fit, "Throw at…" on an actor lists what you carry).
   showMenu(x, y, title, items) {
+    this.openedAt = performance.now();                 // see the constructor: the tap's own click must not act on this
     this.menu.replaceChildren(el('div', 'title', title));
     for (const it of items) {
-      if (it.sub) { const b = el('button', 'sub', it.label); b.onclick = () => this.showMenu(x, y, `${title} · ${it.label.replace(/…$/, '')}`, it.sub); this.menu.appendChild(b); continue; }
+      if (it.sub) { const b = el('button', 'sub', it.label); b.onclick = () => { if (this.settling()) return; this.showMenu(x, y, `${title} · ${it.label.replace(/…$/, '')}`, it.sub); }; this.menu.appendChild(b); continue; }
       if (it.number) {   // a dial or keyboard entry: a number field plus its button
         const row = el('div', 'number'), input = el('input'), b = el('button', null, it.label);
         input.type = 'number'; input.min = '0'; input.placeholder = '0';
-        b.onclick = () => { const n = parseInt(input.value, 10); if (!Number.isFinite(n)) { input.focus(); return; } this.hideMenu(); it.run(n); };
+        b.onclick = () => { if (this.settling()) return; const n = parseInt(input.value, 10); if (!Number.isFinite(n)) { input.focus(); return; } this.hideMenu(); it.run(n); };
         input.addEventListener('keydown', e => { if (e.key === 'Enter') b.click(); });
         row.append(input, b); this.menu.appendChild(row); continue;
       }
-      const b = el('button', null, it.label); b.onclick = () => { this.hideMenu(); it.run(); }; this.menu.appendChild(b);
+      const b = el('button', null, it.label); b.onclick = () => { if (this.settling()) return; this.hideMenu(); it.run(); }; this.menu.appendChild(b);
     }
     this.menu.hidden = false;
+    // A MENU IS A SHEET ON A PHONE. A popover at the fingertip opens under the hand that asked for it, so on the
+    // shell the coordinates are dropped and it comes up from the bottom edge, full width, behind a scrim. Same
+    // items, same code path, submenus and number fields included.
+    const sheet = this.phoneQuery.matches;
+    this.menu.classList.toggle('sheet', sheet);
+    this.scrim.hidden = !sheet;
+    if (sheet) { this.menu.style.left = ''; this.menu.style.top = ''; return; }
     // Clamp to the viewport using the rendered size so long titles or many items never fall off the bottom edge.
     const { offsetWidth: w, offsetHeight: h } = this.menu;
     this.menu.style.left = Math.max(0, Math.min(x, innerWidth - w - 8)) + 'px'; this.menu.style.top = Math.max(0, Math.min(y, innerHeight - h - 8)) + 'px';
   }
-  hideMenu() { this.menu.hidden = true; }
+  hideMenu() { this.menu.hidden = true; this.scrim.hidden = true; }
   // Verb menu for an object, including "Put in ..." targets and a free-text prompt.
   objectMenu(x, y, id) {
     const g = this.g;
@@ -200,6 +307,7 @@ export class UI {
     };
     walk('ADVENTURER', 0);
     if (!g.contents('ADVENTURER').length) this.inventory.appendChild(el('p', 'muted', 'Empty-handed.'));
+    this.renderHere();                 // the ways out and the things, from the pickables game.js handed over
     // Status, and the way out of a vehicle (safety web, bed, ...) without having to find it in the scene.
     const v = g.inVehicle();
     this.renderQuick(g);

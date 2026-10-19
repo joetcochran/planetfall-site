@@ -194,6 +194,7 @@ async function renderNow() {
     view.setLighting(null);                        // no sky dome or gradient: a sky room's sky is not seen in the dark
     view.scene.background = new THREE.Color('#000000');
     view.setRoom(new THREE.Group(), [], design[room]?.eye ?? [0, 1.6, 0]);
+    ui.pickables = [];                               // nothing drawn, so the Here list has nothing to offer either
     ui.refresh();
     try { localStorage.setItem(SAVE_KEY, g.save()); } catch { /* storage unavailable */ }
     return;
@@ -238,6 +239,9 @@ async function renderNow() {
   view.setClamp(clamp);
   view.setRoom(built.group, built.pickables, built.eye);
   builtRoom = viewRoom;
+  // WHAT THE SCENE DREW, FOR THE HERE LIST (ui.renderHere; PLAN-MOBILE-PLAY Option B): the same array a click
+  // raycasts against, so the phone's list of things cannot drift from the picture.
+  ui.pickables = built.pickables;
   ui.refresh();
   try { localStorage.setItem(SAVE_KEY, g.save()); } catch { /* storage unavailable */ }
 }

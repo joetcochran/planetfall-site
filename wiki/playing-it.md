@@ -10,6 +10,8 @@ Both interfaces arrived together with the first engine milestone on 9 September;
 
 The user played it straight away and, at 12:41, reported the first gap: ***in the escape pod they had had to type STAND UP and OPEN POD DOOR by hand, which was neither intuitive nor consistent with the point-and-click actions elsewhere***. The pod's exits are special routines with no door attached, and the pod door existed only as a global object, so there was nothing to click.
 
+A third device arrived late. On 19 October ***the user said that playing on a phone was rather challenging, and asked for a plan to port the interactions to something friendlier to a thumb, in the browser and never as an app***. The page had no touch support at all: a tap that wandered more than four pixels was read as a look-drag and swallowed, a swipe fought the browser's own panning, and the controls covered the picture and each other at 390 px. The first tier of the fixes, the input bugs, shipped that morning behind coarse-pointer rules so that the desktop did not move; a phone layout, with a list of the things in the room so that no action depends on hitting a four-pixel box, is the work that follows. The plan, the decisions and what shipped are in the [journal](journal.md).
+
 ## The click contract
 
 Norm's answer (b0aa81d, 9 September 16:54) became a rule for the rest of the project:

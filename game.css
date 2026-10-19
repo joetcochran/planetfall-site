@@ -86,3 +86,85 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid 
 @keyframes pf-spin{to{transform:rotate(360deg)}}
 @keyframes pf-bob{0%,100%{transform:scale(1)}50%{transform:scale(.94)}}
 @media (prefers-reduced-motion:reduce){#loading .ring,#loading .head{animation:none}}
+
+/* ------------------------------------------------------------------------------------------------------------------
+   THE PHONE SHELL (PLAN-MOBILE-PLAY.md, Option B; the user, 2026-10-19: playing on a phone is rather challenging,
+   and it stays in the browser). ONE THING OWNS THE SCREEN AT A TIME: the painting fills it, the log is a drawer at
+   the bottom with the inventory, the actions and the typed command as tabs beside it, and the compass sits under the
+   thumb. Everything here hangs off body.phone-shell, which ui.js sets from (max-width:760px) or a coarse pointer in
+   landscape -- a phone turned sideways is still a phone, and a width query alone hands it the desktop.
+
+   NOTHING IS MOVED IN THE DOM, only re-laid out: the drawer's grip, tabs and Here panel are flat siblings of the
+   status, the transcript and the inventory, so the desktop column is the same three boxes it always was with the
+   rest display:none -- and the quick row and the command line, both already positioned elements, are re-placed into
+   the drawer's panel region rather than reparented. That is what keeps the desktop screenshots identical and the
+   browser harness's selectors pointing at the same things.
+   ------------------------------------------------------------------------------------------------------------------ */
+#drawer-handle,#tabs,#here,#hud-more{display:none}
+#scrim{position:fixed;inset:0;z-index:15;background:rgba(3,8,12,.55)}
+body.phone-shell{grid-template-columns:1fr;grid-template-rows:1fr}
+body.phone-shell #view{grid-area:1/1}
+/* THE DRAWER'S GEOMETRY IN TWO NUMBERS, so the parts cannot drift apart: --panel is the band at the bottom of the
+   screen that whichever panel is showing occupies, --chrome is the grip, the status line and the tabs above it.
+   The compass is placed off the same sum, and the quick row and the command line -- fixed elements standing in for
+   panels -- are given the same band. Declared, because left to itself the transcript sized the drawer from how much
+   the player had read: it came out 526 px of an 844-px screen, swallowed the lower half of the painting with every
+   object drawn in it, and the grip could not change it. */
+body.phone-shell{--panel:22dvh;--chrome:110px}
+body.phone-shell.drawer-open{--panel:56dvh}
+/* The drawer. Its last child is the panel, so the panel is the bottom PANEL_H of the screen -- which is what lets the
+   quick row and the command line be placed into the same band with bottom:0 and the same height. */
+body.phone-shell aside{position:fixed;left:0;right:0;bottom:0;height:calc(var(--panel) + var(--chrome));z-index:30;border-left:0;border-top:1px solid #274556;background:#0d1d2b;box-shadow:0 -8px 24px rgba(0,0,0,.45)}
+/* THE GRIP, THE STATUS AND THE TABS DO NOT FLEX. They are flex items in a drawer of declared height, so they are
+   shrinkable by default -- and once the transcript had a few turns in it, the tabs row was squeezed under its own
+   buttons and the transcript, a later sibling, painted straight over them: the tabs still measured 44 px and had
+   stopped answering a tap. Found by the touch check after one command on 2026-10-19; nothing on the desktop, whose
+   aside has no height to divide. */
+body.phone-shell #drawer-handle,body.phone-shell #status,body.phone-shell #tabs{flex:0 0 auto}
+body.phone-shell #drawer-handle{display:block;width:100%;height:30px;padding:0;border:0;background:none;cursor:pointer}
+body.phone-shell #drawer-handle::before{content:"";display:block;width:44px;height:4px;margin:13px auto;border-radius:2px;background:#3d6379}
+body.phone-shell #status{padding:0 14px 6px;border-bottom:0}
+body.phone-shell #tabs{display:flex;gap:6px;padding:0 10px 8px;overflow-x:auto;scrollbar-width:none}
+body.phone-shell #tabs button{flex:0 0 auto;min-height:44px;padding:0 15px;font:inherit;background:#132e42;color:#cfe6f2;border:1px solid #3d6379;border-radius:22px;cursor:pointer}
+body.phone-shell #tabs button.on{background:#24485d;color:#fff;border-color:#6fdaea}
+/* One panel on screen, and the drawer has two heights: a glance and a read. */
+body.phone-shell #transcript,body.phone-shell #here,body.phone-shell #inventory,body.phone-shell #quick{display:none;flex:1 1 auto;min-height:0;height:auto;max-height:none;border-top:1px solid #1c3447;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+body.phone-shell.tab-log #transcript,body.phone-shell.tab-here #here,body.phone-shell.tab-carrying #inventory{display:block;overflow:auto}
+body.phone-shell #here{padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+body.phone-shell #here h3{margin:8px 0 6px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#94c3d5}
+body.phone-shell #here .row{display:block;width:100%;min-height:48px;text-align:left;font:inherit;background:#102a3c;color:#e7f3fa;border:1px solid #27465b;border-radius:8px;padding:12px;margin-bottom:6px;cursor:pointer}
+body.phone-shell #here .row .where{color:#94c3d5}
+body.phone-shell #inventory{border-top:1px solid #1c3447}
+body.phone-shell #inventory h3{display:none}
+body.phone-shell #inventory .item{min-height:48px;padding:12px 10px}
+/* THE QUICK ROW IS THE ACTIONS PANEL. On the desktop it is an overlay on the view that wraps upward; at phone width
+   its left edge (calc(32px + 17em)) left it 90 px of a 390-px screen, so a dozen entries stacked into a column up the
+   painting. Here it is the drawer's panel, wrapping across the full width. */
+body.phone-shell #quick{position:fixed;inset:auto 0 0;left:0;height:var(--panel);flex-wrap:wrap;justify-content:flex-start;align-content:flex-start;gap:8px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));overflow:auto;background:#0d1d2b;pointer-events:auto;z-index:31}
+body.phone-shell.tab-actions #quick{display:flex}
+body.phone-shell #quick button{min-height:44px;padding:0 15px}
+body.phone-shell #command-row{display:none;position:fixed;inset:auto 0 0;height:var(--panel);align-items:flex-start;z-index:31;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+body.phone-shell.tab-type #command-row{display:flex}
+body.phone-shell #command{font-size:16px}   /* under 16 px, iOS zooms the whole page when the field takes focus */
+/* THE COMPASS UNDER THE THUMB, keeping its fixed slots: every direction holds one place for the whole game (see the
+   rose's note above), now at 44 px a cell and in the bottom-right corner, where a thumb is. It stands clear of the
+   drawer's shut height, and goes away while the drawer is open -- the player is reading, not walking. */
+body.phone-shell #compass{left:auto;right:calc(12px + env(safe-area-inset-right));bottom:calc(var(--panel) + var(--chrome) + 10px);gap:4px}
+body.phone-shell.drawer-open #compass{display:none}
+body.phone-shell #compass .rose,body.phone-shell #compass .vert{gap:5px}
+body.phone-shell #compass .dir,body.phone-shell #compass .slot{min-width:44px;width:44px;height:44px}
+body.phone-shell #compass .dir{font-weight:600;background:rgba(19,46,66,.92)}
+/* The HUD: no hover readout to show, and the row of 13-px links becomes one 44-px button (ui.js hudMenu). */
+body.phone-shell #hud{top:calc(10px + env(safe-area-inset-top));left:calc(12px + env(safe-area-inset-left));right:calc(12px + env(safe-area-inset-right));align-items:flex-start}
+body.phone-shell #hover,body.phone-shell #hud .links{display:none}
+body.phone-shell #hud-more{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;pointer-events:auto;font:inherit;line-height:1;background:rgba(8,14,20,.72);color:#cfe6f2;border:1px solid #3d6379;border-radius:22px;cursor:pointer}
+/* A MENU IS A SHEET, not a popover at the fingertip: a popover opens under the hand that asked for it. Same items,
+   same code path (ui.js showMenu stops placing it by coordinates when the shell is on). */
+#menu.sheet{left:0;right:0;bottom:0;top:auto;width:100%;max-height:72dvh;overflow:auto;border-radius:14px 14px 0 0;padding:10px 10px calc(14px + env(safe-area-inset-bottom));z-index:40}
+#menu.sheet .title{font-size:13px;padding:6px 12px 10px}
+#menu.sheet button{min-height:48px;padding:12px;font-size:16px}
+#menu.sheet .number{padding:8px 12px}
+#menu.sheet .number input{font-size:16px;padding:10px;width:110px}
+#menu.sheet .number button{min-height:44px}
+body.phone-shell #death div{padding:0 16px}
+body.phone-shell #death button,body.phone-shell #restart2{min-height:48px;padding:12px 18px}

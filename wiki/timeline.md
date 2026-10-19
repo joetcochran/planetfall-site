@@ -136,3 +136,9 @@ The milestones of the remake, no more than three a day, each with the commit or 
 | When | Milestone | Record |
 |---|---|---|
 | 16:39 | **The published paintings ship as WebP at quality 85: the site goes from 1.97 GB to 194 MB, under GitHub Pages' 1 GB limit, and a room from about 18 MB to 1.4; the loading head shows the percentage arrived.** Every accepted room goes back to the user for a look | d8fb9dbc |
+
+## 19 October: playing on a phone
+
+| When | Milestone | Record |
+|---|---|---|
+| 08:18 | **The phone work begins: Tier 0, the input bugs, with a thumb's tap tolerance, the canvas owning its gestures and a pinch that turns nothing.** The user chooses Option B, a phone layout, and the plan is also written game-agnostic for their other ports | 6c1c9a4e |
